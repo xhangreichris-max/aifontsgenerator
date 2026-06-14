@@ -1,36 +1,27 @@
-// ── CATEGORY FILTER ──
-// Sub-pages set data-categories on <body> e.g. data-categories="Complex / Glitched,Ugly"
-// Homepage has no data-categories → shows all styles
-(function patchCategoryFilter() {
-  var raw = document.body.dataset.categories;
-  if (!raw) return; // homepage — no filter
-
-  var allowed = raw.split(',').map(function(s) { return s.trim(); });
-
-  // Filter window.styles (remix/fusion styles from fonts-core.js)
-  var _origStyles = window.styles || [];
-  Object.defineProperty(window, 'styles', {
-    get: function() { return _origStyles; },
-    set: function(val) {
-      _origStyles = val.filter(function(s) {
-        return !s.category || allowed.indexOf(s.category) !== -1;
-      });
-    },
-    configurable: true
-  });
-
-  // Filter window.FONT_STYLES (pack styles from fonts-extra.js)
-  var _origFontStyles = window.FONT_STYLES || [];
-  Object.defineProperty(window, 'FONT_STYLES', {
-    get: function() { return _origFontStyles; },
-    set: function(val) {
-      _origFontStyles = val.filter(function(s) {
-        return !s.category || allowed.indexOf(s.category) !== -1;
-      });
-    },
-    configurable: true
-  });
+// ── CATEGORY FILTER FOR SUB-PAGES ──
+window.__categoryFilter = (function() {
+  var raw = document.body.getAttribute('data-categories');
+  if (!raw) return null;
+  return raw.split(',').map(function(s) { return s.trim(); });
 })();
+
+// Override after fonts load
+window.__applyFilter = function() {
+  var allowed = window.__categoryFilter;
+  if (!allowed) return;
+
+  if (window.styles && window.styles.length) {
+    window.styles = window.styles.filter(function(s) {
+      return !s.category || allowed.indexOf(s.category) !== -1;
+    });
+  }
+
+  if (window.FONT_STYLES && window.FONT_STYLES.length) {
+    window.FONT_STYLES = window.FONT_STYLES.filter(function(s) {
+      return !s.category || allowed.indexOf(s.category) !== -1;
+    });
+  }
+};
 
 const DOM = {
   desktopInput: document.getElementById("input-text-desktop"),
@@ -811,6 +802,9 @@ function initFloatingButtons() {
 
 /* ------------------ Boot ------------------ */
 document.addEventListener("DOMContentLoaded", () => {
+  // Apply category filter before rendering
+  if (window.__applyFilter) window.__applyFilter();
+
   const initial = DOM.desktopInput?.value ||
   DOM.mobileInput?.value || '';
   state.text = initial;
@@ -1211,23 +1205,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Platform share buttons
-  document.getElementById('battleWhatsApp').addEventListener('click', function() {
+  var bwa = document.getElementById('battleWhatsApp');
+  if (bwa) bwa.addEventListener('click', function() {
     window.open('https://wa.me/?text=' + encodeURIComponent(buildChallengeMessage()), '_blank');
     flashBtn(this);
   });
-  document.getElementById('battleDiscord').addEventListener('click', function() {
+  var bdc = document.getElementById('battleDiscord');
+  if (bdc) bdc.addEventListener('click', function() {
     navigator.clipboard.writeText(buildChallengeMessage()).then(function() {
       alert('Copied! Paste into Discord.');
     });
     flashBtn(document.getElementById('battleDiscord'));
   });
-  document.getElementById('battleTikTok').addEventListener('click', function() {
+  var btt = document.getElementById('battleTikTok');
+  if (btt) btt.addEventListener('click', function() {
     navigator.clipboard.writeText(buildChallengeMessage()).then(function() {
       alert('Copied! Paste into TikTok.');
     });
     flashBtn(document.getElementById('battleTikTok'));
   });
-  document.getElementById('battleInsta').addEventListener('click', function() {
+  var bin = document.getElementById('battleInsta');
+  if (bin) bin.addEventListener('click', function() {
     navigator.clipboard.writeText(buildChallengeMessage()).then(function() {
       alert('Copied! Paste into Instagram.');
     });
@@ -1235,13 +1233,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Close button
-  document.getElementById('battleCloseBtn').addEventListener('click', function() {
+  var bcb = document.getElementById('battleCloseBtn');
+  if (bcb) bcb.addEventListener('click', function() {
     document.getElementById('challengeOverlay').classList.remove('active');
     document.getElementById('battleCard').classList.remove('visible');
   });
 
   // Close on overlay click outside card
-  document.getElementById('challengeOverlay').addEventListener('click', function(e) {
+  var cov = document.getElementById('challengeOverlay');
+  if (cov) cov.addEventListener('click', function(e) {
     if (e.target === this) {
       this.classList.remove('active');
       document.getElementById('battleCard').classList.remove('visible');

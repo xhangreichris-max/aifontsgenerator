@@ -1,0 +1,242 @@
+[
+  {
+    "slug": "glitch-text",
+    "filename": "glitch-text.html",
+    "title": "Glitch Text Generator — Copy Paste Free",
+    "meta_desc": "Free glitch text generator with 22+ corrupted font styles. Create glitch text for Free Fire, Discord, Instagram. Copy paste instantly.",
+    "h1": "Glitch Text Generator",
+    "hero_sub": "Corrupted fonts for Free Fire, Discord & Instagram",
+    "default_text": "Free Fire",
+    "categories": ["Complex / Glitched"],
+    "keyword": "glitch text generator",
+    "internal_links": [
+      {"text": "Zalgo Text Generator", "url": "zalgo-text.html"},
+      {"text": "Creepy Text Generator", "url": "creepy-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"}
+    ]
+  },
+  {
+    "slug": "bold-text",
+    "filename": "bold-text.html",
+    "title": "Bold Text Generator — Unicode Bold Free",
+    "meta_desc": "Free bold text generator. Create Unicode bold fonts for Instagram, BGMI, Discord. Copy paste bold text instantly. No download needed.",
+    "h1": "Bold Text Generator",
+    "hero_sub": "Unicode bold fonts for Instagram, BGMI & Discord",
+    "default_text": "BGMI Name",
+    "categories": ["Bold", "Classic Styles"],
+    "keyword": "bold text generator",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"}
+    ]
+  },
+  {
+    "slug": "cursive-text",
+    "filename": "cursive-text.html",
+    "title": "Cursive Text Generator — Fancy Script Free",
+    "meta_desc": "Free cursive text generator. Create elegant script fonts for Instagram bios, Discord names and more. Copy paste cursive text instantly.",
+    "h1": "Cursive Text Generator",
+    "hero_sub": "Elegant script fonts for Instagram & Discord",
+    "default_text": "Stylish Name",
+    "categories": ["Classic Styles"],
+    "keyword": "cursive text generator",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"}
+    ]
+  },
+  {
+    "slug": "tiny-text",
+    "filename": "tiny-text.html",
+    "title": "Tiny Text Generator — Small Text Free",
+    "meta_desc": "Free tiny text generator. Create superscript small text for Instagram bios, Discord and TikTok. Copy paste tiny fonts instantly.",
+    "h1": "Tiny Text Generator",
+    "hero_sub": "Superscript small text for Instagram & TikTok",
+    "default_text": "tiny text",
+    "categories": ["Algorithmic & Combining Marks"],
+    "keyword": "tiny text generator",
+    "internal_links": [
+      {"text": "Bubble Text Generator", "url": "bubble-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"}
+    ]
+  },
+  {
+    "slug": "zalgo-text",
+    "filename": "zalgo-text.html",
+    "title": "Zalgo Text Generator — Cursed Text Free",
+    "meta_desc": "Free zalgo text generator. Create extreme corrupted cursed text for Discord, Instagram and gaming. Copy paste zalgo fonts instantly.",
+    "h1": "Zalgo Text Generator",
+    "hero_sub": "Extreme corrupted text for Discord & gaming",
+    "default_text": "Zalgo Text",
+    "categories": ["Complex / Glitched", "Ugly"],
+    "keyword": "zalgo text generator",
+    "internal_links": [
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Creepy Text Generator", "url": "creepy-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"}
+    ]
+  },
+  {
+    "slug": "upside-down-text",
+    "filename": "upside-down-text.html",
+    "title": "Upside Down Text Generator — Flip Text Free",
+    "meta_desc": "Free upside down text generator. Flip your text upside down for Instagram, Discord and TikTok. Copy paste flipped text instantly.",
+    "h1": "Upside Down Text Generator",
+    "hero_sub": "Flip your text upside down for any platform",
+    "default_text": "Flip This",
+    "categories": ["Flip & Mirror"],
+    "keyword": "upside down text generator",
+    "internal_links": [
+      {"text": "Mirror Text Generator", "url": "mirror-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Strikethrough Text Generator", "url": "strikethrough-text.html"}
+    ]
+  },
+  {
+    "slug": "gothic-text",
+    "filename": "gothic-text.html",
+    "title": "Gothic Text Generator — Blackletter Font Free",
+    "meta_desc": "Free gothic text generator. Create medieval blackletter fonts for Instagram, Discord and gaming names. Copy paste gothic text instantly.",
+    "h1": "Gothic Text Generator",
+    "hero_sub": "Medieval blackletter fonts for Instagram & Discord",
+    "default_text": "Gothic Name",
+    "categories": ["Classic Styles", "Featured Styles"],
+    "keyword": "gothic text generator",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Runic Text Generator", "url": "runic-text.html"}
+    ]
+  },
+  {
+    "slug": "creepy-text",
+    "filename": "creepy-text.html",
+    "title": "Creepy Text Generator — Horror Fonts Free",
+    "meta_desc": "Free creepy text generator. Create horror and dark aesthetic fonts for Discord, Instagram and gaming. Copy paste creepy text instantly.",
+    "h1": "Creepy Text Generator",
+    "hero_sub": "Horror fonts for Discord, Instagram & gaming",
+    "default_text": "Creepy Name",
+    "categories": ["Complex / Glitched", "Ugly"],
+    "keyword": "creepy text generator",
+    "internal_links": [
+      {"text": "Zalgo Text Generator", "url": "zalgo-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"}
+    ]
+  },
+  {
+    "slug": "strikethrough-text",
+    "filename": "strikethrough-text.html",
+    "title": "Strikethrough Text Generator — Crossed Out Text Free",
+    "meta_desc": "Free strikethrough text generator. Create crossed out text for Discord, Instagram, TikTok and more. Copy paste strikethrough instantly.",
+    "h1": "Strikethrough Text Generator",
+    "hero_sub": "Crossed out text for Discord, Instagram & TikTok",
+    "default_text": "Crossed Out",
+    "categories": ["Lines"],
+    "keyword": "strikethrough text generator",
+    "internal_links": [
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Upside Down Text Generator", "url": "upside-down-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"}
+    ]
+  },
+  {
+    "slug": "unicode-text",
+    "filename": "unicode-text.html",
+    "title": "Unicode Text Converter — All Font Styles Free",
+    "meta_desc": "Free Unicode text converter with 168+ font styles. Convert text to Unicode for Instagram, Discord, PUBG, Free Fire. Copy paste instantly.",
+    "h1": "Unicode Text Converter",
+    "hero_sub": "168+ Unicode font styles for any platform",
+    "default_text": "Stylish Name",
+    "categories": ["Classic Styles", "Bold", "Complex / Glitched", "Ugly", "Flip & Mirror", "Lines", "Beautiful", "Flourish Decorated", "Creative & Mixed Styles", "Exotic & International Styles", "Featured Styles", "Asian", "Attitude", "Boxed", "Crown", "Cute", "Gun", "Heart", "Mood", "Russian", "Squiggle", "Star", "Algorithmic & Combining Marks", "Symbol–Alphabet Fusion"],
+    "keyword": "unicode text converter",
+    "internal_links": [
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"}
+    ]
+  },
+  {
+    "slug": "bubble-text",
+    "filename": "bubble-text.html",
+    "title": "Bubble Text Generator — Bubble Letters Free",
+    "meta_desc": "Free bubble text generator. Create cute bubble letter fonts for Instagram, TikTok and Discord. Copy paste bubble text instantly.",
+    "h1": "Bubble Text Generator",
+    "hero_sub": "Cute bubble letters for Instagram & TikTok",
+    "default_text": "Kawaii Name",
+    "categories": ["Cute", "Classic Styles"],
+    "keyword": "bubble text generator",
+    "internal_links": [
+      {"text": "Tiny Text Generator", "url": "tiny-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"}
+    ]
+  },
+  {
+    "slug": "mirror-text",
+    "filename": "mirror-text.html",
+    "title": "Mirror Text Generator — Reverse Text Free",
+    "meta_desc": "Free mirror text generator. Reverse and mirror your text for Instagram, Discord and TikTok. Copy paste mirror text instantly.",
+    "h1": "Mirror Text Generator",
+    "hero_sub": "Reverse and mirror text for any platform",
+    "default_text": "Mirror Text",
+    "categories": ["Flip & Mirror"],
+    "keyword": "mirror text generator",
+    "internal_links": [
+      {"text": "Upside Down Text Generator", "url": "upside-down-text.html"},
+      {"text": "Strikethrough Text Generator", "url": "strikethrough-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"}
+    ]
+  },
+  {
+    "slug": "aesthetic-text",
+    "filename": "aesthetic-text.html",
+    "title": "Aesthetic Text Generator — Aesthetic Fonts Free",
+    "meta_desc": "Free aesthetic text generator. Create beautiful decorated aesthetic fonts for Instagram bios and TikTok. Copy paste aesthetic text instantly.",
+    "h1": "Aesthetic Text Generator",
+    "hero_sub": "Beautiful decorated fonts for Instagram & TikTok",
+    "default_text": "Aesthetic",
+    "categories": ["Beautiful", "Flourish Decorated"],
+    "keyword": "aesthetic text generator",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Bubble Text Generator", "url": "bubble-text.html"},
+      {"text": "Tiny Text Generator", "url": "tiny-text.html"}
+    ]
+  },
+  {
+    "slug": "vaporwave-text",
+    "filename": "vaporwave-text.html",
+    "title": "Vaporwave Text Generator — Full Width Text Free",
+    "meta_desc": "Free vaporwave text generator. Create retro full-width vaporwave fonts for Instagram, Discord and TikTok. Copy paste vaporwave text instantly.",
+    "h1": "Vaporwave Text Generator",
+    "hero_sub": "Retro full-width fonts for Instagram & Discord",
+    "default_text": "Vaporwave",
+    "categories": ["Creative & Mixed Styles"],
+    "keyword": "vaporwave text generator",
+    "internal_links": [
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"}
+    ]
+  },
+  {
+    "slug": "runic-text",
+    "filename": "runic-text.html",
+    "title": "Runic Text Generator — Elder Futhark Runes Free",
+    "meta_desc": "Free runic text generator. Create Elder Futhark and ancient rune style fonts for Discord, Instagram and gaming. Copy paste runic text instantly.",
+    "h1": "Runic Text Generator",
+    "hero_sub": "Elder Futhark runes for Discord & gaming",
+    "default_text": "Runic Name",
+    "categories": ["Exotic & International Styles"],
+    "keyword": "runic text generator",
+    "internal_links": [
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Creepy Text Generator", "url": "creepy-text.html"}
+    ]
+  }
+]

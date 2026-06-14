@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <title>Font Style Categories — Glitch, Cursive, Tiny &amp; More | AI Fonts Generator</title>
+  <meta name="description" content="Browse 15 free Unicode font generators. Glitch text, cursive fonts, tiny text, bubble text, gothic, zalgo and more. Copy paste free.">
+  <meta property="og:title" content="Font Style Categories — AI Fonts Generator">
+  <meta property="og:description" content="Browse all Unicode font style categories. Glitch text, cursive, tiny text, bubble text, gothic and 10 more free generators.">
+  <meta property="og:url" content="https://aifontsgenerator.com/categories.html">
+  <meta property="og:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Fonts Generator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Font Style Categories — AI Fonts Generator">
+  <meta name="twitter:description" content="Browse all Unicode font style categories. Glitch text, cursive, tiny text, bubble text, gothic and 10 more free generators.">
+  <meta name="twitter:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="effects.css">
+
+  <style>
+    /* ── CAT HERO ── */
+    .cat-hero {
+      padding: 60px 0 40px;
+      text-align: center;
+      width: min(1400px, 92%);
+      margin: 0 auto;
+    }
+
+    .cat-h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+
+    .cat-sub {
+      font-size: 16px;
+      color: #888;
+      font-family: Georgia, serif;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ── CARDS GRID ── */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      width: min(1400px, 92%);
+      margin: 0 auto;
+      padding: 40px 0 80px;
+    }
+
+    .cat-card {
+      display: flex;
+      flex-direction: column;
+      background: #111;
+      border: 1px solid #222;
+      text-decoration: none;
+      color: inherit;
+      padding: 28px 24px 20px;
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s;
+      overflow: hidden;
+    }
+
+    .cat-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-3px);
+      border-color: #333;
+    }
+
+    .cat-card:hover::before {
+      opacity: 1;
+    }
+
+    .cat-card-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .cat-card-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .cat-card-desc {
+      font-size: 13px;
+      color: #666;
+      font-family: Georgia, serif;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .cat-card-preview {
+      font-size: 15px;
+      color: #d0d0d0;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+      line-height: 1.8;
+      min-height: 28px;
+    }
+
+    .cat-card-meta {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .vol-badge {
+      font-size: 10px;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+      color: #555;
+      background: #0d0d0d;
+      padding: 3px 8px;
+      border: 1px solid #1a1a1a;
+    }
+
+    .kd-badge {
+      font-size: 10px;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border: 1px solid transparent;
+    }
+
+    .kd-easy {
+      color: var(--accent);
+      border-color: rgba(215,255,0,0.2);
+      background: rgba(215,255,0,0.05);
+    }
+
+    .kd-medium {
+      color: var(--orange);
+      border-color: rgba(255,90,31,0.2);
+      background: rgba(255,90,31,0.05);
+    }
+
+    .kd-hard {
+      color: #666;
+      border-color: #222;
+      background: #0d0d0d;
+    }
+
+    .cat-card-cta {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid #1a1a1a;
+      transition: letter-spacing 0.2s;
+    }
+
+    .cat-card:hover .cat-card-cta {
+      letter-spacing: 3px;
+    }
+
+    /* ── ARTICLE ── */
+    .cat-article {
+      width: min(900px, 92%);
+      margin: 0 auto;
+      padding: 60px 0 100px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .cat-article h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cat-article h2::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .cat-article h2::after {
+      content: "";
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: #1a1a1a;
+    }
+
+    .cat-article p {
+      font-size: 15px;
+      line-height: 2;
+      color: #888;
+      font-family: Georgia, serif;
+      margin-bottom: 20px;
+    }
+
+    .cat-article a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .cat-article a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── FOOTER OVERRIDE: 4 columns ── */
+    footer {
+      grid-template-columns: 1fr 1fr 1fr auto;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cat-h1 {
+        font-size: 36px;
+      }
+      footer {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cat-grid {
+        grid-template-columns: 1fr;
+      }
+      .cat-h1 {
+        font-size: 26px;
+      }
+      .cat-sub {
+        font-size: 14px;
+      }
+      .cat-card {
+        padding: 22px 18px 16px;
+      }
+      footer {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <h2>AI FONTS</h2>
+    <span>GENERATOR</span>
+  </div>
+  <nav>
+    <a href="index.html">GENERATOR</a>
+    <a class="active" href="categories.html">CATEGORIES</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <button class="menu-btn">⊕ MENU</button>
+</header>
+
+<!-- HERO -->
+<section class="cat-hero">
+  <h1 class="cat-h1">Font Style Categories</h1>
+  <p class="cat-sub">15 free Unicode text generators.
+  Glitch, cursive, tiny, gothic and more.
+  Pick your style — copy paste anywhere.</p>
+</section>
+
+<!-- CARDS GRID -->
+<div class="cat-grid">
+
+  <!-- 1. Glitch -->
+  <a href="glitch-text.html" class="cat-card">
+    <div class="cat-card-icon">▓</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Glitch Text Generator</h2>
+      <p class="cat-card-desc">Corrupted fonts for Free Fire &amp; Discord</p>
+      <div class="cat-card-preview">
+        Ħ̷ȅ̸l̵l̶o̴&nbsp; H̸e̷l̶l̵o̴&nbsp; Ħěļļō
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">22,200/mo</span>
+        <span class="kd-badge kd-medium">KD 40</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 2. Bold -->
+  <a href="bold-text.html" class="cat-card">
+    <div class="cat-card-icon">𝐁</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Bold Text Generator</h2>
+      <p class="cat-card-desc">Unicode bold for Instagram &amp; BGMI</p>
+      <div class="cat-card-preview">
+        𝗛𝗲𝗹𝗹𝗼&nbsp; 𝐇𝐞𝐥𝐥𝐨&nbsp; 𝗛𝗲𝗹𝗹𝗼
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">27,100/mo</span>
+        <span class="kd-badge kd-hard">KD 61</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 3. Cursive -->
+  <a href="cursive-text.html" class="cat-card">
+    <div class="cat-card-icon">𝒞</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Cursive Text Generator</h2>
+      <p class="cat-card-desc">Elegant script for bios &amp; names</p>
+      <div class="cat-card-preview">
+        𝒽𝑒𝓁𝓁𝑜&nbsp; 𝓗𝓮𝓵𝓵𝓸&nbsp; ℋello
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">14,800/mo</span>
+        <span class="kd-badge kd-medium">KD 43</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 4. Tiny -->
+  <a href="tiny-text.html" class="cat-card">
+    <div class="cat-card-icon">ᵀ</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Tiny Text Generator</h2>
+      <p class="cat-card-desc">Superscript small text for Instagram</p>
+      <div class="cat-card-preview">
+        ʰᵉˡˡᵒ&nbsp; ₕₑₗₗₒ&nbsp; ʰᵉˡˡᵒ
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">14,800/mo</span>
+        <span class="kd-badge kd-medium">KD 35</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 5. Zalgo -->
+  <a href="zalgo-text.html" class="cat-card">
+    <div class="cat-card-icon">Z̴</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Zalgo Text Generator</h2>
+      <p class="cat-card-desc">Extreme corrupted overflow text</p>
+      <div class="cat-card-preview">
+        H̴̢͓̅e̵͔͝l̷͎̈l̸͓̃o̶̲͠
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">14,800/mo</span>
+        <span class="kd-badge kd-medium">KD 49</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 6. Upside Down -->
+  <a href="upside-down-text.html" class="cat-card">
+    <div class="cat-card-icon">ⓤ</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Upside Down Text Generator</h2>
+      <p class="cat-card-desc">Flip your text upside down instantly</p>
+      <div class="cat-card-preview">
+        ʇxǝʇ&nbsp; ollǝɥ&nbsp; ǝɯɐu
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">9,900/mo</span>
+        <span class="kd-badge kd-easy">KD 26</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 7. Gothic -->
+  <a href="gothic-text.html" class="cat-card">
+    <div class="cat-card-icon">𝔊</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Gothic Text Generator</h2>
+      <p class="cat-card-desc">Medieval blackletter style fonts</p>
+      <div class="cat-card-preview">
+        𝔥𝔢𝔩𝔩𝔬&nbsp; 𝕳𝖊𝖑𝖑𝖔&nbsp; ℌello
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">6,600/mo</span>
+        <span class="kd-badge kd-medium">KD 41</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 8. Creepy -->
+  <a href="creepy-text.html" class="cat-card">
+    <div class="cat-card-icon">☠</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Creepy Text Generator</h2>
+      <p class="cat-card-desc">Horror &amp; dark aesthetic text</p>
+      <div class="cat-card-preview">
+        ĥ̷e̸l̵l̶o̴&nbsp; h̸̢͓e̵l̷l̸o̵
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">5,400/mo</span>
+        <span class="kd-badge kd-medium">KD 31</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 9. Strikethrough -->
+  <a href="strikethrough-text.html" class="cat-card">
+    <div class="cat-card-icon">S̶</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Strikethrough Text Generator</h2>
+      <p class="cat-card-desc">Crossed out text for any platform</p>
+      <div class="cat-card-preview">
+        H̶e̶l̶l̶o̶&nbsp; s̶t̶y̶l̶e̶&nbsp; t̶e̶x̶t̶
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">3,600/mo</span>
+        <span class="kd-badge kd-medium">KD 41</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 10. Unicode -->
+  <a href="unicode-text.html" class="cat-card">
+    <div class="cat-card-icon">∪</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Unicode Text Converter</h2>
+      <p class="cat-card-desc">All 168 Unicode styles in one place</p>
+      <div class="cat-card-preview">
+        𝓗𝓮𝓵𝓵𝓸&nbsp; 𝔥𝔢𝔩𝔩𝔬&nbsp; Ħello
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">2,900/mo</span>
+        <span class="kd-badge kd-medium">KD 42</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 11. Bubble -->
+  <a href="bubble-text.html" class="cat-card">
+    <div class="cat-card-icon">ⓑ</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Bubble Text Generator</h2>
+      <p class="cat-card-desc">Cute bubble &amp; circled letter fonts</p>
+      <div class="cat-card-preview">
+        Ⓗⓔⓛⓛⓞ&nbsp; ⓗⓔⓛⓛⓞ&nbsp; Ⓗello
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">1,300/mo</span>
+        <span class="kd-badge kd-easy">KD 28</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 12. Mirror -->
+  <a href="mirror-text.html" class="cat-card">
+    <div class="cat-card-icon">◫</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Mirror Text Generator</h2>
+      <p class="cat-card-desc">Reverse &amp; mirror your text</p>
+      <div class="cat-card-preview">
+        oןןǝH&nbsp; ollǝɥ&nbsp; oƖƖǝH
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">1,300/mo</span>
+        <span class="kd-badge kd-easy">KD 14</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 13. Aesthetic -->
+  <a href="aesthetic-text.html" class="cat-card">
+    <div class="cat-card-icon">✦</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Aesthetic Text Generator</h2>
+      <p class="cat-card-desc">Beautiful decorated text styles</p>
+      <div class="cat-card-preview">
+        𝓗𝓮𝓵𝓵𝓸&nbsp; ℋello&nbsp; 𝒽ello
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">880/mo</span>
+        <span class="kd-badge kd-hard">KD 50</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 14. Vaporwave -->
+  <a href="vaporwave-text.html" class="cat-card">
+    <div class="cat-card-icon">ａ</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Vaporwave Text Generator</h2>
+      <p class="cat-card-desc">Full-width retro vaporwave fonts</p>
+      <div class="cat-card-preview">
+        Ｈｅｌｌｏ&nbsp; Ｗｏｒｌｄ&nbsp; Ｎａｍｅ
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">880/mo</span>
+        <span class="kd-badge kd-easy">KD 19</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+  <!-- 15. Runic -->
+  <a href="runic-text.html" class="cat-card">
+    <div class="cat-card-icon">ᚱ</div>
+    <div class="cat-card-body">
+      <h2 class="cat-card-name">Runic Text Generator</h2>
+      <p class="cat-card-desc">Elder Futhark &amp; ancient rune styles</p>
+      <div class="cat-card-preview">
+        ᚺᛖᛚᛚᛟ&nbsp; ᚱᚢᚾᛖ&nbsp; ᚺᛖᛚᛚ
+      </div>
+      <div class="cat-card-meta">
+        <span class="vol-badge">110/mo</span>
+        <span class="kd-badge kd-easy">KD 4</span>
+      </div>
+    </div>
+    <div class="cat-card-cta">TRY GENERATOR →</div>
+  </a>
+
+</div><!-- /cat-grid -->
+
+<!-- ARTICLE -->
+<section class="cat-article">
+
+  <h2>What Are Unicode Font Generators?</h2>
+  <p>Unicode font generators convert plain text into stylish
+  characters using Unicode's mathematical and symbolic
+  character sets. The output is real text — not images —
+  so it pastes directly into Free Fire names, Instagram
+  bios, Discord usernames, WhatsApp status, and anywhere
+  else that accepts text input. No downloads, no fonts
+  to install.</p>
+
+  <h2>How to Use These Text Generators</h2>
+  <p>Click any category above to open that generator.
+  Type your name or text into the input field — all
+  styles update instantly. Click any row to copy it.
+  Paste it anywhere. Takes under thirty seconds.
+  For gaming names, <a href="glitch-text.html">glitch text</a>
+  and <a href="bold-text.html">bold text</a> work best.
+  For Instagram and TikTok,
+  <a href="cursive-text.html">cursive</a> and
+  <a href="aesthetic-text.html">aesthetic styles</a>
+  are most popular. For something experimental, try
+  <a href="upside-down-text.html">upside down text</a>
+  or <a href="zalgo-text.html">zalgo text</a>.
+  All generators are free at
+  <a href="index.html">AI Fonts Generator</a>.</p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <h3>AI FONTS GENERATOR</h3>
+    <p style="color:var(--accent);letter-spacing:3px;font-size:12px;margin-top:8px;">
+      168+ UNICODE FONT STYLES
+    </p>
+    <p style="color:#666;font-size:12px;margin-top:16px;line-height:1.9;font-family:'Special Elite',cursive;">
+      Free stylish text generator for<br>
+      Free Fire, PUBG, Instagram,<br>
+      Discord, TikTok and more.
+    </p>
+    <p style="color:#444;font-size:11px;margin-top:20px;letter-spacing:1px;">
+      &copy; 2025 aifontsgenerator.com
+    </p>
+  </div>
+
+  <div class="footer-links">
+    <strong style="margin-bottom:12px;display:block;letter-spacing:2px;font-size:12px;color:#fff;">
+      GENERATORS
+    </strong>
+    <a href="glitch-text.html">Glitch Text Generator</a>
+    <a href="cursive-text.html">Cursive Text Generator</a>
+    <a href="tiny-text.html">Tiny Text Generator</a>
+    <a href="bold-text.html">Bold Text Generator</a>
+    <a href="zalgo-text.html">Zalgo Text Generator</a>
+    <a href="gothic-text.html">Gothic Text Generator</a>
+    <a href="categories.html">All Categories</a>
+  </div>
+
+  <div class="footer-links">
+    <strong style="margin-bottom:8px;display:block;letter-spacing:2px;font-size:13px;">QUICK LINKS</strong>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="footer-quote">
+    Fonts are the voice of<br>
+    imagination. Make yours louder.
+  </div>
+</footer>
+
+<script src="hamburger.js"></script>
+</body>
+</html>

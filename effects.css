@@ -1,0 +1,511 @@
+/* ==========================================
+   EFFECTS.CSS
+   AI FONTS GENERATOR
+   Animations, hover effects, motion
+========================================== */
+
+/* ==========================================
+   ANIMATED FILM GRAIN
+========================================== */
+
+.grain{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9999;
+    opacity:.05;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAABlBMVEUAAAD///+l2Z/dAAAAEklEQVQY02NgYGBg/w9EMIAuAEk+yKz+t7B4AAAAAElFTkSuQmCC");
+    background-size: 50px 50px;
+}
+
+/* ==========================================
+   NEON CURSOR GLOW
+========================================== */
+
+.cursor-glow{
+    display:none;
+}
+
+/* ==========================================
+   HERO PAPER HOVER
+========================================== */
+
+.input-area{
+
+    transition:.4s;
+}
+
+.input-area:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+
+    0 30px 70px
+    rgba(0,0,0,.35);
+}
+
+/* ==========================================
+   CARD MAGNETIC HOVER
+========================================== */
+
+.font-card{
+
+    transition:
+
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+
+
+/* ==========================================
+   GLOW ON CARD HOVER
+========================================== */
+
+.font-card:hover:nth-child(1){
+
+    box-shadow:
+
+    0 0 40px
+    rgba(215,255,0,.12),
+
+    0 30px 60px
+    rgba(0,0,0,.45);
+}
+
+.font-card:hover:nth-child(2){
+
+    box-shadow:
+
+    0 0 40px
+    rgba(255,90,31,.12),
+
+    0 30px 60px
+    rgba(0,0,0,.45);
+}
+
+.font-card:hover:nth-child(3){
+
+    box-shadow:
+
+    0 0 40px
+    rgba(61,125,255,.12),
+
+    0 30px 60px
+    rgba(0,0,0,.45);
+}
+
+.font-card:hover:nth-child(4){
+
+    box-shadow:
+
+    0 0 40px
+    rgba(208,77,255,.12),
+
+    0 30px 60px
+    rgba(0,0,0,.45);
+}
+
+/* ==========================================
+   GLITCH TITLE EFFECT
+========================================== */
+
+.glitch .card-header h2{
+
+    position:relative;
+}
+
+/* ==========================================
+   COPY BUTTON SHINE
+========================================== */
+
+.font-row button{
+
+    position:relative;
+    overflow:hidden;
+}
+
+.font-row button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120px;
+
+    width:60px;
+    height:100%;
+
+    background:
+    rgba(255,255,255,.25);
+
+    transform:
+    skewX(-25deg);
+
+    transition:.5s;
+}
+
+.font-row button:hover::before{
+
+    left:150px;
+}
+
+/* ==========================================
+   FRAME HOVER
+========================================== */
+
+.frame{
+
+    transition:
+    .3s;
+}
+
+.frame:hover{
+
+    transform:
+    translateY(-5px)
+    rotate(-1deg);
+}
+
+/* ==========================================
+   CATEGORY HOVER
+========================================== */
+
+.cat{
+
+    transition:
+    transform .3s,
+    box-shadow .3s;
+}
+
+.cat:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+
+    0 0 25px
+    rgba(215,255,0,.15);
+}
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+    translateY(50px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+/* ==========================================
+   PARALLAX STATUE
+========================================== */
+
+.statue{
+
+    position:absolute;
+
+    right:0;
+    top:-40px;
+
+    width:220px;
+
+    opacity:.15;
+
+    pointer-events:none;
+
+    transition:
+    transform .4s ease;
+}
+
+
+
+/* ==========================================
+   GLITCH FACE
+========================================== */
+
+.glitch-face{
+
+    position:absolute;
+
+    right:20px;
+    bottom:20px;
+
+    width:160px;
+
+    opacity:.12;
+
+    mix-blend-mode:screen;
+
+    pointer-events:none;
+}
+
+/* ==========================================
+   BUTTON PRESS
+========================================== */
+
+.generate-btn:active,
+.clear-btn:active,
+.load-btn:active{
+
+    transform:
+    scale(.97);
+}
+
+/* ==========================================
+   NAV LINK UNDERLINE
+========================================== */
+
+nav a{
+
+    position:relative;
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:
+    var(--accent);
+
+    transition:.3s;
+}
+
+nav a:hover::after{
+
+    width:100%;
+}
+
+/* ==========================================
+   HERO NEON AMBIENT LIGHT
+========================================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    top:-100px;
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(215,255,0,.06),
+    transparent 70%);
+
+    pointer-events:none;
+}
+
+/* ==========================================
+   LOADER SHIMMER
+========================================== */
+
+.shimmer{
+
+    background:
+
+    linear-gradient(
+    90deg,
+    rgba(255,255,255,.03),
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.03));
+
+    background-size:
+    200% 100%;
+
+    animation:
+    shimmer 1.5s infinite;
+}
+
+@keyframes shimmer{
+
+    from{
+        background-position:200% 0;
+    }
+
+    to{
+        background-position:-200% 0;
+    }
+}
+
+/* ==========================================
+   BURNT THERMAL RECEIPT — MOTION + BLEND
+========================================== */
+
+/* Paper grain blend mode */
+.font-card[data-card-style="receipt"] .font-row::before {
+  mix-blend-mode: multiply;
+}
+
+/* Burnt top edge */
+.font-card[data-card-style="receipt"] .font-row-burn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background:
+    radial-gradient(circle at 10% 100%, #1c130d 0, transparent 45%),
+    radial-gradient(circle at 30% 100%, #2a1c14 0, transparent 40%),
+    radial-gradient(circle at 55% 100%, #130d08 0, transparent 45%),
+    radial-gradient(circle at 75% 100%, #2c1c12 0, transparent 40%),
+    radial-gradient(circle at 95% 100%, #160d08 0, transparent 45%);
+  filter: blur(2px);
+  opacity: .9;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Receipt row hover — warm lift */
+.font-card[data-card-style="receipt"] 
+
+/* Override nth-child tilt on hover */
+.font-card[data-card-style="receipt"] .font-row:nth-child(odd):hover {
+  transform: translateY(-4px) rotate(-0.3deg) !important;
+}
+
+.font-card[data-card-style="receipt"] .font-row:nth-child(even):hover {
+  transform: translateY(-4px) rotate(0.3deg) !important;
+}
+
+/* Copy button hover — warm */
+.font-card[data-card-style="receipt"] .font-row .btn-copy:hover {
+  background: #D49A75 !important;
+  transition: background 0.2s !important;
+}
+
+/* Remix button hover */
+.font-card[data-card-style="receipt"] .font-row 
+
+/* ==========================================
+   DAMAGED FILM NEGATIVE — MOTION + BLEND
+========================================== */
+
+/* Film row hover */
+.font-card[data-card-style="film"] 
+
+/* VHS chromatic aberration on hover — font sample only */
+.font-card[data-card-style="film"] .font-row:hover .font-sample {
+  text-shadow:
+    1px 0 rgba(0,255,255,.45),
+    -1px 0 rgba(255,0,85,.45) !important;
+  transition: text-shadow 0.15s ease !important;
+}
+
+/* Remix button hover */
+.font-card[data-card-style="film"] .font-row 
+
+/* ==========================================
+   RESPONSIVE — disable heavy effects mobile
+========================================== */
+
+@media (max-width: 768px) {
+  .font-card[data-card-style="receipt"] 
+
+  .font-card[data-card-style="film"] 
+
+  .font-card[data-card-style="film"] .font-row:hover .font-sample {
+    text-shadow: none !important;
+  }
+}
+
+/* ==========================================
+   REMIX BUTTON GLOW PULSE
+========================================== */
+
+/* ==========================================
+   REMIX BUTTON — LIGHTWEIGHT OPACITY PULSE
+   Uses opacity only — GPU composited, zero repaint
+========================================== */
+
+/* Dot indicator instead of box-shadow pulse */
+
+
+/* ==========================================
+   GRAIN — SLOW DOWN TO REDUCE REPAINT
+========================================== */
+
+.grain {
+  display: none !important;
+}
+
+/* Remove hover lift from font rows — was causing overlap */
+
+
+
+
+.font-card[data-card-style="receipt"] 
+
+/* ==========================================
+   HOVER EFFECTS — THEME MATCHED OVERRIDES
+   Replaces old dark hover that hid cards
+========================================== */
+
+/* Kill all old transform hovers on rows */
+
+
+/* Kill old font-card lift hover */
+
+
+/* VHS effect stays on film hover — text only */
+.font-card[data-card-style="film"] .font-row:hover .font-sample {
+  text-shadow:
+    1px 0 rgba(0,255,255,.35),
+    -1px 0 rgba(255,0,85,.35) !important;
+  transition: text-shadow 0.15s ease !important;
+}
+
+/* Receipt row hover — no text-shadow needed */
+.font-card[data-card-style="receipt"] .font-row:hover .font-sample {
+  text-shadow: none !important;
+}
+
+/* ==========================================
+   REMIX BUTTON — STATIC INDICATOR
+   Zero animation cost — no repaint
+========================================== */
+
+/* Static dot — no animation, no repaint */
+
+
+/* Receipt card — ink blue dot */
+.font-card[data-card-style="receipt"] 
+
+/* Done state — green dot, instant */
+

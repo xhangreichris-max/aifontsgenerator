@@ -805,6 +805,53 @@ document.addEventListener("DOMContentLoaded", () => {
   // Apply category filter before rendering
   if (window.__applyFilter) window.__applyFilter();
 
+  // Build font rows dynamically if page has no hardcoded rows
+  var cardsRoot = document.getElementById('all-font-cards');
+  if (cardsRoot && cardsRoot.querySelectorAll('.font-row').length === 0) {
+    var defaultTxt = document.body.dataset.defaultText || 'Stylish Name';
+    var allStyles = (window.styles || []);
+
+    // Group by category
+    var groups = {};
+    allStyles.forEach(function(style) {
+      var cat = style.category || 'Styles';
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(style);
+    });
+
+    Object.keys(groups).forEach(function(cat) {
+      var card = document.createElement('div');
+      card.className = 'font-card';
+      card.setAttribute('data-card-style', 'receipt');
+
+      var count = groups[cat].length;
+      card.innerHTML = '<div class="card-header">' +
+        '<div><h2 data-text="' + cat.toUpperCase() + '">' + cat.toUpperCase() + '</h2>' +
+        '<p>STYLES</p></div>' +
+        '<div class="badge">' + String(count).padStart(2,'0') + '<span>FONTS</span></div>' +
+        '</div>' +
+        '<div class="font-list"></div>';
+
+      var fontList = card.querySelector('.font-list');
+      groups[cat].forEach(function(style) {
+        var row = document.createElement('div');
+        row.className = 'font-row';
+        row.setAttribute('data-style-name', style.name);
+        row.innerHTML =
+          '<span class="font-row-burn"></span>' +
+          '<span class="font-row-num"></span>' +
+          '<span class="font-sample">' + defaultTxt + '</span>' +
+          '<span class="style-name-label">' + style.name + '</span>';
+        fontList.appendChild(row);
+      });
+
+      cardsRoot.appendChild(card);
+    });
+
+    // Trigger render after building rows
+    if (typeof updateAllRows === 'function') updateAllRows();
+  }
+
   const initial = DOM.desktopInput?.value ||
   DOM.mobileInput?.value || '';
   state.text = initial;

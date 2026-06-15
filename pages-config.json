@@ -39,7 +39,7 @@
     "h1": "Cursive Text Generator",
     "hero_sub": "Elegant script fonts for Instagram & Discord",
     "default_text": "Stylish Name",
-    "categories": ["Classic Styles"],
+    "categories": ["Classic Styles", "Cursive Extended"],
     "keyword": "cursive text generator",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},

@@ -93,6 +93,7 @@ def build_pages():
         html = html.replace('{{DEFAULT_TEXT}}', page['default_text'])
         html = html.replace('{{CATEGORIES}}', categories_str)
         html = html.replace('{{FILENAME}}', page['filename'])
+        html = html.replace('{{SLUG}}', page['slug'])
         html = html.replace('{{WHAT_IS_CONTENT}}', content.get('what_is', ''))
         html = html.replace('{{PLATFORM_CONTENT}}', content.get('platform', ''))
         html = html.replace('{{INTERNAL_LINKS_HTML}}', internal_links_html)

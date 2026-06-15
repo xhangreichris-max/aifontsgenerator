@@ -7,7 +7,7 @@
     "h1": "Glitch Text Generator",
     "hero_sub": "Corrupted fonts for Free Fire, Discord & Instagram",
     "default_text": "Free Fire",
-    "categories": ["Complex / Glitched"],
+    "categories": ["Complex / Glitched", "Glitch Extended"],
     "keyword": "glitch text generator",
     "internal_links": [
       {"text": "Zalgo Text Generator", "url": "zalgo-text.html"},
@@ -22,8 +22,8 @@
     "meta_desc": "Free bold text generator. Create Unicode bold fonts for Instagram, BGMI, Discord. Copy paste bold text instantly. No download needed.",
     "h1": "Bold Text Generator",
     "hero_sub": "Unicode bold fonts for Instagram, BGMI & Discord",
-    "default_text": "BGMI Name", 
-    "categories": ["Bold", "Classic Styles"],
+    "default_text": "BGMI Name",
+    "categories": ["Bold", "Classic Styles", "Bold Extended"],
     "keyword": "bold text generator",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
@@ -55,7 +55,7 @@
     "h1": "Tiny Text Generator",
     "hero_sub": "Superscript small text for Instagram & TikTok",
     "default_text": "tiny text",
-    "categories": ["Algorithmic & Combining Marks"],
+    "categories": ["Algorithmic & Combining Marks", "Tiny Extended"],
     "keyword": "tiny text generator",
     "internal_links": [
       {"text": "Bubble Text Generator", "url": "bubble-text.html"},
@@ -71,7 +71,7 @@
     "h1": "Zalgo Text Generator",
     "hero_sub": "Extreme corrupted text for Discord & gaming",
     "default_text": "Zalgo Text",
-    "categories": ["Complex / Glitched", "Ugly"],
+    "categories": ["Complex / Glitched", "Ugly", "Zalgo Extended"],
     "keyword": "zalgo text generator",
     "internal_links": [
       {"text": "Glitch Text Generator", "url": "glitch-text.html"},
@@ -87,7 +87,7 @@
     "h1": "Upside Down Text Generator",
     "hero_sub": "Flip your text upside down for any platform",
     "default_text": "Flip This",
-    "categories": ["Flip & Mirror"],
+    "categories": ["Flip & Mirror", "Flip Extended"],
     "keyword": "upside down text generator",
     "internal_links": [
       {"text": "Mirror Text Generator", "url": "mirror-text.html"},
@@ -103,7 +103,7 @@
     "h1": "Gothic Text Generator",
     "hero_sub": "Medieval blackletter fonts for Instagram & Discord",
     "default_text": "Gothic Name",
-    "categories": ["Classic Styles", "Featured Styles"],
+    "categories": ["Classic Styles", "Featured Styles", "Gothic Extended"],
     "keyword": "gothic text generator",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
@@ -119,7 +119,7 @@
     "h1": "Creepy Text Generator",
     "hero_sub": "Horror fonts for Discord, Instagram & gaming",
     "default_text": "Creepy Name",
-    "categories": ["Complex / Glitched", "Ugly"],
+    "categories": ["Complex / Glitched", "Ugly", "Creepy Extended"],
     "keyword": "creepy text generator",
     "internal_links": [
       {"text": "Zalgo Text Generator", "url": "zalgo-text.html"},
@@ -135,7 +135,7 @@
     "h1": "Strikethrough Text Generator",
     "hero_sub": "Crossed out text for Discord, Instagram & TikTok",
     "default_text": "Crossed Out",
-    "categories": ["Lines"],
+    "categories": ["Lines", "Strikethrough Extended"],
     "keyword": "strikethrough text generator",
     "internal_links": [
       {"text": "Glitch Text Generator", "url": "glitch-text.html"},
@@ -167,7 +167,7 @@
     "h1": "Bubble Text Generator",
     "hero_sub": "Cute bubble letters for Instagram & TikTok",
     "default_text": "Kawaii Name",
-    "categories": ["Cute", "Classic Styles"],
+    "categories": ["Cute", "Classic Styles", "Bubble Extended"],
     "keyword": "bubble text generator",
     "internal_links": [
       {"text": "Tiny Text Generator", "url": "tiny-text.html"},
@@ -183,7 +183,7 @@
     "h1": "Mirror Text Generator",
     "hero_sub": "Reverse and mirror text for any platform",
     "default_text": "Mirror Text",
-    "categories": ["Flip & Mirror"],
+    "categories": ["Flip & Mirror", "Mirror Extended"],
     "keyword": "mirror text generator",
     "internal_links": [
       {"text": "Upside Down Text Generator", "url": "upside-down-text.html"},
@@ -199,7 +199,7 @@
     "h1": "Aesthetic Text Generator",
     "hero_sub": "Beautiful decorated fonts for Instagram & TikTok",
     "default_text": "Aesthetic",
-    "categories": ["Beautiful", "Flourish Decorated"],
+    "categories": ["Beautiful", "Flourish Decorated", "Aesthetic Extended"],
     "keyword": "aesthetic text generator",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
@@ -215,7 +215,7 @@
     "h1": "Vaporwave Text Generator",
     "hero_sub": "Retro full-width fonts for Instagram & Discord",
     "default_text": "Vaporwave",
-    "categories": ["Creative & Mixed Styles"],
+    "categories": ["Creative & Mixed Styles", "Vaporwave Extended"],
     "keyword": "vaporwave text generator",
     "internal_links": [
       {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
@@ -231,7 +231,7 @@
     "h1": "Runic Text Generator",
     "hero_sub": "Elder Futhark runes for Discord & gaming",
     "default_text": "Runic Name",
-    "categories": ["Exotic & International Styles"],
+    "categories": ["Exotic & International Styles", "Runic Extended"],
     "keyword": "runic text generator",
     "internal_links": [
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},

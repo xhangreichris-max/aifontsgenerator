@@ -45,6 +45,7 @@ def build_pages():
         html = html.replace('{{CATEGORIES}}', categories_str)
         html = html.replace('{{FILENAME}}', page['filename'])
         html = html.replace('{{SLUG}}', page['slug'])
+        html = html.replace('{{HERO_IMAGE}}', page.get('hero_image', 'images/article-hero.png'))
         html = html.replace('{{WHAT_IS}}', article.get('what_is', ''))
         html = html.replace('{{HOW_TO_USE}}', article.get('how_to_use', ''))
         html = html.replace('{{FOR_INSTAGRAM}}', article.get('for_instagram', ''))

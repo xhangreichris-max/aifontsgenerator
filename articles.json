@@ -1,212 +1,347 @@
 {
   "glitch-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Glitch text is Unicode text that looks intentionally broken. It works by layering combining diacritical marks on top of standard characters until they overflow their normal line boundaries. The result is text that appears corrupted, unstable, or digitally distorted. No special font is required. The characters are standard Unicode, which means they paste and render on any modern platform without installation. Glitch text became popular in gaming communities first, particularly in Free Fire and Discord servers where standing out visually matters. The effect ranges from subtle character distortion to full overflow that bleeds into surrounding lines. The glitch text generator on this site outputs multiple intensity levels so you can pick the distortion that fits your use case.",
+    "how_to_use": "Type or paste your text into the input field. The glitch text generator outputs results instantly as you type. Scroll through the style options below the input, find the distortion level you want, and click the copy button. Paste the copied text directly into Free Fire, Discord, Instagram, or any other platform. Nothing installs. No account needed. The entire process takes under a minute, and the output is plain Unicode that works anywhere standard text does.",
+    "for_instagram": "Instagram bio and name fields accept Unicode text, which means glitch text pastes and displays correctly without any special setup. Lighter glitch styles with subtle character distortion tend to display most reliably across both mobile and desktop views of Instagram profiles. Heavy zalgo-style overflow glitch can sometimes appear inconsistently in Instagram captions, so the bio field is the safer place for it. A glitched display name on Instagram reads immediately as intentional and designed rather than default.",
+    "for_discord": "Discord renders Unicode well across name fields, server nicknames, and bios. Glitch text pastes cleanly into all of these. The distortion effect is particularly effective in Discord because server lists and member sidebars show names at small sizes where a glitched name catches attention faster than a standard one. Heavy overflow glitch may display slightly differently across Discord client versions, but most intensity levels from the generator work without issues.",
+    "for_gaming": "Free Fire allows Unicode characters in player display names, which makes glitch text a popular choice for names that look hacked or corrupted in lobbies and kill feeds. The effect reads well at the small text sizes games use for player names. Avoid maximum-intensity zalgo overflow in Free Fire names as the character count limit can cut the text off. Medium-intensity glitch or light strikethrough distortion gives the visual effect without hitting character limits.",
+    "platform_guide": "Glitch text from the generator is compatible with most major platforms. Instagram bio and name fields support it. Discord nickname and bio fields support it. Free Fire and BGMI display names support Unicode, and lighter glitch styles work reliably in both. TikTok display names accept Unicode as well. WhatsApp messages render glitch text correctly on both iOS and Android. The main compatibility limitation is platform-specific character limits in games. If glitched text gets cut off in a game name field, reduce the intensity level or shorten the base text.",
+    "why_unicode": "Glitch text works because Unicode includes thousands of combining characters that were designed to create accented letters and diacritical marks across languages. When stacked in large numbers on a single base character, they create visual overflow that looks like digital corruption. Because these are standard Unicode characters, every modern device already supports them. No font file is required on either end. The person reading your glitch text sees it correctly on their device without installing anything.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What exactly is glitch text and how does it work?",
+        "a": "Glitch text uses Unicode combining characters stacked on top of standard letters to create a corrupted or distorted visual effect. The characters are all standard Unicode, which means any modern device displays them without a special font. The generator handles the stacking and lets you copy the result directly."
+      },
+      {
+        "q": "Does glitch text work in Free Fire player names?",
+        "a": "Yes, Free Fire supports Unicode in display names, so glitch text pastes correctly. Heavy overflow styles may get truncated by the character limit. Medium-intensity glitch or strikethrough distortion styles tend to work best. Test the name in the rename field before confirming to make sure it displays how you want."
+      },
+      {
+        "q": "What is the difference between glitch text and zalgo text?",
+        "a": "Zalgo is a specific type of glitch text that stacks diacritical marks so aggressively the characters overflow into lines above and below. Standard glitch text covers a broader range of distortion styles including light character corruption and strikethrough effects that do not overflow. Zalgo is the most extreme version."
+      }
     ]
   },
   "bold-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Bold Unicode text replaces standard letters with their bold equivalents from the Unicode Mathematical Alphanumeric Symbols block. Every character has a bold counterpart in Unicode, and the bold text generator swaps them automatically. The result looks identical to formatted bold text but is actually plain text characters. This matters because most apps do not allow text formatting in name fields, bios, or chat inputs. Unicode bold bypasses that entirely. It pastes as-is into Instagram bios, Discord nicknames, BGMI display names, and anywhere else that accepts text input. The bold effect is clean and readable, which makes it one of the most widely used styles across all platforms.",
+    "how_to_use": "Type your text into the input field and the bold text generator outputs the Unicode bold version immediately. Click the copy button next to the bold style you want. There are several bold variants available including bold serif, bold italic, and bold sans-serif. Paste the copied text into Instagram, Discord, BGMI, or wherever you need it. The text looks bold on every device that reads it without requiring any formatting support from the app.",
+    "for_instagram": "Instagram does not support markdown or text formatting in bio or name fields, but it does display Unicode. Bold Unicode text in an Instagram bio stands out immediately because almost no standard bio text is bold. It reads as intentional and professional. The display name field on Instagram is particularly effective for bold Unicode since it appears at the top of every profile view. Both bold serif and bold sans-serif variants display cleanly on Instagram mobile and desktop.",
+    "for_discord": "Discord strips markdown formatting in some contexts but renders Unicode text correctly everywhere. Bold Unicode text in a Discord nickname looks visually bold in the member list and in chat, even though it is technically plain text. This works in server nicknames, display names, and bios. Bold text in a Discord server nickname is one of the cleaner ways to make a name stand out in a busy member list without using symbols or distortion.",
+    "for_gaming": "BGMI display names support Unicode characters, and bold Unicode text renders correctly in the game's name fields. A bold name in BGMI reads clearly in kill notifications and the scoreboard, where small text size makes standard names look thin. Bold sans-serif Unicode tends to display most cleanly in gaming contexts. Avoid mixing bold Unicode with symbols or other Unicode styles in the same name, as the combination can look cluttered at small sizes.",
+    "platform_guide": "Bold Unicode text has the widest platform compatibility of any style on this site. Instagram, Discord, TikTok, Twitter, Facebook, WhatsApp, and most mobile games with Unicode name support all display it correctly. BGMI and PUBG Mobile both support it in display names. The text looks bold on every device that reads it. There are no known major platforms where bold Unicode fails to display. If you are unsure which style to use, bold Unicode is the safest starting point.",
+    "why_unicode": "Standard bold text requires an app to support formatting. Unicode bold works differently. Each bold character is its own Unicode code point, a distinct character in the Unicode standard, not a formatting instruction. When you paste bold Unicode text, the app sees individual characters and displays them as-is. This is why bold text from the generator looks bold in fields that have no formatting support at all.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "How do I make bold text in places that do not allow formatting?",
+        "a": "Use Unicode bold text. Each character has a bold equivalent in the Unicode standard, so the text looks bold without requiring any formatting support from the app. Type your text into the bold text generator, copy the output, and paste it wherever you need it. The bold effect is visible on every device."
+      },
+      {
+        "q": "Does bold Unicode text work in BGMI display names?",
+        "a": "Yes. BGMI supports Unicode characters in player names, and bold Unicode text displays correctly in name fields. It reads clearly in kill feeds and scoreboards. Bold sans-serif Unicode tends to look the cleanest in-game. Type your name into the generator, copy the bold output, and paste it into the BGMI name change field."
+      },
+      {
+        "q": "Can I use bold Unicode text in my Instagram bio?",
+        "a": "Yes, and it works well there. Instagram bio and name fields do not support markdown formatting, but they do display Unicode text correctly. Bold Unicode in a bio or display name looks visually bold on every device viewing the profile. Both bold serif and bold sans-serif styles work reliably on Instagram."
+      }
     ]
   },
   "cursive-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Cursive Unicode text uses characters from the Unicode Mathematical Script block to produce text that looks handwritten or calligraphic. Each standard letter maps to a script equivalent that has a flowing, connected appearance. The cursive text generator converts your input instantly and outputs several script variants including bold cursive and double-struck styles. The result is plain Unicode text that pastes directly into Instagram bios, TikTok display names, Discord profiles, and other fields without any special setup. Cursive text is popular for personal branding on Instagram because it reads as elegant and considered rather than default. It is also one of the most requested styles for TikTok display names.",
+    "how_to_use": "Type your name or text into the input field. The cursive text generator outputs script variants below it in real time. Pick the style you want from the options, which include light cursive, bold cursive, and variations with different letter forms. Click copy and paste the result into Instagram, TikTok, Discord, or any other text field. The cursive characters render correctly on any device without font installation, because they are standard Unicode.",
+    "for_instagram": "Cursive text is one of the most used Unicode styles for Instagram bios. The script letterforms read as decorative and personal, which fits most content creator aesthetics. The Instagram name field, which appears in bold at the top of every profile, looks noticeably different when set in cursive Unicode compared to a standard name. For bio copy, mixing a cursive line with regular text can create visual hierarchy without needing images or special formatting.",
+    "for_discord": "Cursive text in Discord nicknames and bios gives a softer, more distinctive look than bold or standard text. It works well in servers where members customize their names, particularly in creative or aesthetic-focused communities. The script characters paste cleanly into Discord fields and render correctly across desktop and mobile clients. Bold cursive Unicode is slightly more legible at small sizes, which makes it better suited for server nicknames that appear in the member list.",
+    "for_gaming": "Cursive text sees less use in competitive gaming names than glitch or bold styles, but it works for players who want a distinctive name that reads as personal rather than aggressive. TikTok gaming creators use cursive display names to separate their profile from the default. The style pastes correctly into TikTok display name fields and Instagram bio fields. For actual game name fields, test compatibility first as some games restrict the Unicode ranges that cursive characters fall in.",
+    "platform_guide": "Cursive Unicode text works reliably on Instagram, TikTok, Discord, Twitter, and WhatsApp. These platforms support the Unicode Mathematical Script block where cursive characters live. Facebook displays most cursive Unicode correctly as well. For gaming platforms, compatibility varies. PUBG Mobile and Free Fire support some script Unicode ranges and reject others, so testing is necessary. The safest platforms for cursive text are Instagram and Discord, where the characters display correctly across all client versions.",
+    "why_unicode": "Cursive text from this generator is not a font. Each character is an individual Unicode code point in the Mathematical Script block, which was added to Unicode to support mathematical notation in academic publishing. Content creators repurposed it for stylized text because the characters look like handwriting. Because they are Unicode, every modern device displays them correctly without any font being installed.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "How do I get cursive text for my Instagram bio?",
+        "a": "Type your bio text into the cursive text generator and copy the script output. Paste it directly into the Instagram bio field. The characters are Unicode, so they display as cursive on every device that views your profile. No font needs to be installed by you or the people viewing your profile."
+      },
+      {
+        "q": "Does cursive Unicode text work on TikTok?",
+        "a": "Yes. TikTok display names support Unicode, and cursive text pastes cleanly into the name field. The script characters display correctly on both iOS and Android TikTok. The display name appears above every video you post, so a cursive name stays visible to everyone watching your content."
+      },
+      {
+        "q": "Is cursive text from the generator a real font?",
+        "a": "No. It is Unicode text, not a font. Each cursive-looking character is an individual code point in the Unicode Mathematical Script block. This is why it pastes into any text field and looks cursive without requiring a font to be installed. Your device already supports these characters as part of its standard Unicode implementation."
+      }
     ]
   },
   "tiny-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Tiny text uses Unicode superscript and subscript characters to produce letters that render visually smaller than normal text. The tiny text generator maps standard letters to their superscript or small capitals equivalents in Unicode. The output looks like miniature text sitting at a smaller scale than the surrounding content. It is a popular choice for Instagram bios where space is limited and visual layering matters. TikTok creators use tiny text in display names for a subtle, distinctive look. Discord users add it to bios and status fields. The characters are plain Unicode, so tiny text pastes into any platform text field and displays at the small scale on every device without any formatting support needed.",
+    "how_to_use": "Type your text into the input field. The tiny text generator outputs superscript and small caps variants instantly. Copy the style you want and paste it into your Instagram bio, TikTok name, Discord field, or anywhere else. The small size is a property of the Unicode characters themselves, not of any formatting. This means the text looks tiny on every device that reads it, without needing the platform to support any special display mode.",
+    "for_instagram": "Tiny text in an Instagram bio creates visual contrast when mixed with normal-size text. A common use is a small line of descriptive text between larger bold lines, or a tiny tagline beneath a display name. The Instagram name field also accepts tiny Unicode, though the small size can be hard to read in that context. The bio is the better location for tiny text on Instagram, particularly for decorative or secondary information that does not need to be the focal point.",
+    "for_discord": "Discord bios and status fields are natural homes for tiny text. A status message in tiny Unicode reads as quieter and more considered than standard text. In creative or aesthetic Discord communities, small text bio lines are common for secondary details like pronouns, locations, or interests. Tiny text also works in Discord nicknames, though legibility at the small sizes used in member lists is a trade-off to consider.",
+    "for_gaming": "Tiny text is less common for gaming names because readability at small in-game text sizes matters more than aesthetics in competitive contexts. The style is more popular for content creator usernames on TikTok and Instagram where a small, elegant name above a video or in a bio adds a visual touch. If you do use tiny text in a gaming name, test how it reads in-game before committing, as some platforms reduce the visual difference between tiny Unicode and normal characters.",
+    "platform_guide": "Tiny text works on Instagram, Discord, TikTok, Twitter, and WhatsApp. The superscript Unicode block is widely supported across modern platforms. Facebook renders most tiny text correctly. Gaming platforms vary. Some support superscript characters and some do not. The most reliable use cases are Instagram bios, Discord status and bio fields, and TikTok display names. If tiny text displays as normal-size text on a specific platform, that platform does not support the Unicode range the characters come from.",
+    "why_unicode": "Tiny text is possible because Unicode includes superscript and small capital character variants originally added for phonetic notation and mathematical expressions. The characters look small because they are defined that way in Unicode, not because of any font size instruction. When you paste tiny text into an app, the app displays those specific Unicode characters at their defined visual weight, which is smaller than standard letters.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "How do I make tiny text for my Instagram bio?",
+        "a": "Type your text into the tiny text generator and copy the superscript or small caps output. Paste it directly into the Instagram bio field. The text will appear small on every device viewing your profile. Mix it with normal-size text or bold Unicode for contrast. Instagram supports the Unicode ranges used for tiny text."
+      },
+      {
+        "q": "What is superscript text and how is it different from normal text?",
+        "a": "Superscript text uses Unicode characters that are defined as smaller and raised relative to the baseline. They are distinct characters in Unicode, not normal letters scaled down by formatting. This is why superscript text appears small even in apps that have no font size controls. The size is a property of the character itself."
+      },
+      {
+        "q": "Does tiny text display correctly on all phones?",
+        "a": "On most modern phones, yes. Android and iOS both support the Unicode superscript and small capitals blocks. The text will look small on any device that views it. Older Android versions occasionally display some Unicode ranges as boxes, but current phones handle tiny text without issues across Instagram, TikTok, Discord, and WhatsApp."
+      }
     ]
   },
   "zalgo-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Zalgo text is a specific type of distorted Unicode text that stacks combining diacritical marks so heavily on each character that the text visually overflows its normal line boundaries. Letters appear to bleed upward and downward, consuming surrounding white space and sometimes engulfing the lines above and below. The name comes from an internet horror meme. The effect is used in horror-themed Discord servers, creepypasta communities, and social profiles where an unsettling aesthetic is the point. The zalgo text generator outputs multiple intensity levels, from light mark stacking to full line-overflow chaos. The underlying characters are plain Unicode, so zalgo text pastes into Discord, Instagram, and other fields without any installation.",
+    "how_to_use": "Type your text into the input field and the zalgo text generator outputs several intensity levels immediately. Low intensity adds a small number of combining marks for a subtle distorted look. High intensity stacks marks aggressively until the text overflows surrounding lines. Choose the level that fits your use case and click copy. Paste into Discord, Instagram, or any other platform. Keep in mind that some platforms have character limits, and high-intensity zalgo significantly increases character count.",
+    "for_instagram": "Zalgo text in Instagram bios reads as intentional horror or glitch aesthetic when the intensity is kept moderate. High-intensity zalgo can be unpredictable in Instagram's bio field display depending on the viewer's device. The name field is less suited for zalgo because the overflow effect can make the display name hard to read. The bio, where longer text gives the zalgo marks more room to breathe, is the better location for this style on Instagram.",
+    "for_discord": "Discord is the most natural home for zalgo text. Horror and SCP-themed servers, creepypasta communities, and aesthetic dark servers use zalgo usernames and bios as part of their visual identity. Discord renders combining marks and zalgo overflow reliably across most client versions. High-intensity zalgo in a Discord nickname is visible and distinctive in member lists. Status and bio fields handle zalgo well at all intensity levels.",
+    "for_gaming": "Zalgo text in gaming is most popular in horror game communities and servers, rather than in actual in-game names. Many games restrict the Unicode ranges used for combining marks, which limits zalgo display in name fields. Free Fire and BGMI may truncate or strip zalgo characters entirely. For gaming use, test a zalgo paste in the game's name field before confirming. Discord gaming server profiles and usernames are more reliable locations for zalgo text than in-game name fields.",
+    "platform_guide": "Discord is the most compatible platform for zalgo text at all intensity levels. Instagram bio fields support light to medium intensity. High-intensity zalgo on Instagram can display inconsistently depending on device and app version. WhatsApp renders zalgo in messages. TikTok display names support light zalgo. Most mobile games restrict combining mark Unicode, making zalgo unreliable in game name fields. Twitter renders zalgo in tweets and bios. For maximum reliability, keep intensity at medium or below when targeting platforms other than Discord.",
+    "why_unicode": "Zalgo text exploits Unicode combining characters, which are diacritical marks that attach to the character before them. Combining marks were added to Unicode to handle accent notation in dozens of languages. There is no technical limit in Unicode on how many combining marks can be stacked on a single base character. Zalgo takes advantage of this by stacking far more marks than any language needs, creating visual overflow. The characters are completely standard and display on any Unicode-supporting device.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What is zalgo text and where does it come from?",
+        "a": "Zalgo text stacks Unicode combining marks on characters until the text visually overflows its line, creating a corrupted or horror-aesthetic appearance. The name comes from an internet horror meme that used this style of text. It is technically just standard Unicode used in a way its designers did not intend. The effect became popular in horror communities on Discord and Reddit."
+      },
+      {
+        "q": "Is zalgo text safe to use on Discord and other platforms?",
+        "a": "Yes. Zalgo text is plain Unicode and does not contain any code or scripts. It cannot cause harm or break apps. High-intensity zalgo in Discord can be visually disruptive in chat because it pushes surrounding messages apart. Some Discord servers have rules against extreme zalgo in chat for readability reasons. In bios and name fields, zalgo is safe and widely used."
+      },
+      {
+        "q": "Does zalgo text work in Discord names and bios?",
+        "a": "Yes, Discord handles zalgo text well. Combining mark characters render correctly in Discord nicknames, display names, and bio fields across desktop and mobile clients. High-intensity zalgo increases character count significantly, so very heavy zalgo may hit Discord's character limits in name fields. Medium intensity is usually the best balance between the visual effect and staying within limits."
+      }
     ]
   },
   "upside-down-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Upside down text flips your text so each character appears rotated 180 degrees. The upside down text generator maps standard letters to Unicode characters that resemble their flipped versions, such as using the schwa character for a flipped e or an inverted a from the IPA Unicode block. The result reads as your original text but upside down and often reversed. It is a popular novelty style on Instagram captions and TikTok comments where the visual trick of readable-but-flipped text catches attention. WhatsApp users send flipped text messages as a running joke. The characters are all Unicode, so the flipped text pastes into any standard text field without special fonts.",
+    "how_to_use": "Type your text into the input field. The upside down text generator flips each character to its Unicode equivalent immediately. Copy the flipped output and paste it into Instagram, TikTok, WhatsApp, or wherever you need it. The text will appear upside down and reversed on every device that reads it. No font is needed. The flipped characters are standard Unicode and render correctly across all modern devices and platforms.",
+    "for_instagram": "Upside down text in Instagram captions reads as playful and self-aware. A caption written entirely upside down makes viewers tilt their heads or screenshot to read it, which increases engagement. It also works in Instagram bios as a single line or tagline that stands out by being different from all the normal-orientation text around it. The style is casual and light, better suited for entertainment or humor accounts than for professional or brand profiles.",
+    "for_discord": "Upside down text in Discord messages is a common way to add visual humor to a conversation. Pasting flipped text in a server chat makes other members do a double take. It works in Discord bios as a standalone detail that reads as intentionally odd. In nickname fields, upside down text is recognizable and memorable, particularly in casual friend group servers or gaming communities where personality in names matters.",
+    "for_gaming": "Upside down text sees limited use in serious gaming name fields because legibility matters there. The style works better in casual gaming communities on Discord or in TikTok usernames for gaming creators. Some mobile games do support the Unicode characters used for upside down text, so it is worth testing if you want a distinctive name. WhatsApp gaming group chats are another place where flipped text messages land as a running gag.",
+    "platform_guide": "Instagram, TikTok, Discord, Twitter, and WhatsApp all support the Unicode characters used for upside down text. The flipped characters come from the International Phonetic Alphabet and other Unicode blocks that modern devices support by default. Facebook renders upside down text correctly in posts and comments. Most gaming platforms have inconsistent support for the IPA Unicode ranges, so upside down text in game name fields may display as boxes on some platforms. Test before committing to an in-game name.",
+    "why_unicode": "Upside down text does not technically rotate characters. It maps each letter to an existing Unicode character that visually resembles the rotated version. For example, the letter p resembles an upside down d, and several IPA characters look like flipped versions of Latin letters. The generator finds the closest Unicode match for each character you type. Because these are real Unicode characters, they render on any device without a special font.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "How does upside down text actually work technically?",
+        "a": "The generator maps each standard letter to a Unicode character that visually resembles its rotated version. These characters come from the International Phonetic Alphabet and other Unicode blocks. The text is not actually rotated. Each flipped-looking character is a real Unicode code point that your device already supports, which is why it displays correctly everywhere without a special font."
+      },
+      {
+        "q": "Does upside down text display correctly on Instagram?",
+        "a": "Yes. Instagram supports the Unicode blocks used for upside down characters. Flipped text pastes into captions, bios, and comment fields and displays upside down on every device viewing the content. The effect works on both iOS and Android Instagram apps. It is one of the more consistent novelty Unicode styles across Instagram."
+      },
+      {
+        "q": "Can I use upside down text in WhatsApp messages?",
+        "a": "Yes. WhatsApp renders the Unicode characters used for upside down text correctly on both iOS and Android. Paste the flipped text into a WhatsApp message or group chat and it appears upside down for everyone receiving the message. The characters are standard Unicode, so recipients do not need any special app version to see the effect."
+      }
     ]
   },
   "gothic-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Gothic text uses Unicode characters from the Old English and Fraktur blackletter tradition. The gothic text generator maps standard letters to their blackletter Unicode equivalents, producing text with the heavy, angular letterforms associated with medieval manuscripts and German printing. Gothic Unicode is one of the most visually distinctive text styles available without requiring a font download. It is popular for Instagram bios in music, tattoo, and dark aesthetic communities. PUBG players use it for names that read as heavy and imposing. Discord servers with metal, horror, or alternative aesthetics use gothic text in nicknames and server branding. The characters paste and display correctly anywhere Unicode is supported.",
+    "how_to_use": "Type your text into the input field. The gothic text generator converts each letter to its blackletter Unicode equivalent in real time. Several gothic variants are available including standard Fraktur, bold Fraktur, and mathematical blackletter. Copy the style you want and paste it into Instagram, PUBG, Discord, or any other field. The gothic characters are Unicode, so they display correctly on every device. No font installation is required on your end or the reader's end.",
+    "for_instagram": "Gothic text is one of the most popular Unicode styles for Instagram bios in alternative, tattoo, metal, and dark aesthetic communities. A gothic bio or display name reads as deliberate and on-brand for those audiences. The heavy letterforms of blackletter Unicode are distinctive even at the small size of Instagram profile names. Bold Fraktur Unicode is the most reliable gothic variant for Instagram, displaying cleanly on both the mobile app and the desktop web view.",
+    "for_discord": "Gothic text in Discord nicknames and bios is common in metal music servers, horror communities, role-playing servers, and alternative aesthetic spaces. The blackletter letterforms set a tone immediately. Discord renders Fraktur Unicode correctly across all client versions. A gothic nickname stands out in member lists because the letterform weight is so different from standard text. Gothic text also works well in Discord server names and channel descriptions where it contributes to a server's visual identity.",
+    "for_gaming": "PUBG Mobile supports Unicode in display names, and gothic text works in PUBG name fields. A blackletter name reads as imposing and deliberate in kill notifications and the player roster. Bold Fraktur is the most legible gothic variant at small sizes, which matters when names appear in-game at reduced sizes. Free Fire also supports gothic Unicode in player names. Test the paste in the name field before confirming, as some gothic Unicode variants use character ranges that specific games may not support.",
+    "platform_guide": "Gothic blackletter Unicode works on Instagram, Discord, PUBG Mobile, and most Twitter and TikTok fields. The Mathematical Fraktur block is widely supported in modern Unicode implementations on Android and iOS. WhatsApp renders gothic text correctly in messages. Facebook displays most gothic variants without issues. For gaming platforms, PUBG Mobile and Free Fire both support the most commonly used Fraktur Unicode ranges. Some older mobile game clients may display gothic characters as boxes, so testing is always the right call before setting a permanent name.",
+    "why_unicode": "Gothic text is available as Unicode because the Unicode Consortium included Fraktur and other blackletter character sets in the Mathematical Alphanumeric Symbols block, originally for use in mathematical and scientific notation. These characters were never intended for decorative text use, but their visual resemblance to blackletter fonts made them popular for styling text on social media. Because they are Unicode, every modern device supports them without any additional font.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What is gothic blackletter text and where does it come from?",
+        "a": "Gothic blackletter text uses Unicode characters from the Mathematical Fraktur block, which contains letterforms based on medieval and early modern German printing styles. These characters were added to Unicode for mathematical notation. Their visual resemblance to gothic fonts made them popular for social media styling. The output is plain Unicode text, not a font."
+      },
+      {
+        "q": "Does gothic Unicode text work in PUBG display names?",
+        "a": "Yes. PUBG Mobile supports Unicode characters in player names, and bold Fraktur gothic text works in the name field. The heavy letterforms look distinctive in kill notifications and the player roster. Standard Fraktur is slightly lighter and may be less legible at small in-game text sizes. Bold Fraktur is the better choice for PUBG names."
+      },
+      {
+        "q": "What is the difference between gothic text and normal bold text?",
+        "a": "Bold Unicode text uses the Mathematical Bold block, which produces heavier versions of standard letterforms. Gothic or Fraktur text uses the Mathematical Fraktur block, which produces medieval blackletter-style letterforms that look significantly different from standard letters. Gothic text is more ornate and angular. Bold text is heavier but retains the same basic letter shapes as regular text."
+      }
     ]
   },
   "creepy-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Creepy text combines multiple Unicode distortion techniques to produce text that looks unsettling or supernatural. The creepy text generator uses combinations of combining diacritical marks, IPA lookalike characters, and symbol substitutions to make text appear diseased, corrupted, or otherworldly. It sits between subtle glitch and full zalgo on the distortion spectrum. The effect is popular in horror-themed Discord servers, Free Fire names meant to intimidate, and Instagram accounts running a dark or paranormal aesthetic. Creepy text reads as intentional and atmospheric rather than random. The characters are Unicode, so the output pastes into any standard text field and displays on any modern device without font installation.",
+    "how_to_use": "Type your text into the input field. The creepy text generator outputs several distortion variants below it instantly. The options range from lightly unsettling character substitutions to heavier combinations that approach zalgo intensity. Pick the level that fits your use case, click copy, and paste into Discord, Free Fire, Instagram, or wherever you need it. Creepy text has higher character counts than standard text due to the combining marks, so check platform character limits before using it in game name fields.",
+    "for_instagram": "Creepy text in Instagram bios and name fields works for accounts running horror, paranormal, dark fiction, or gothic aesthetics. A bio with light creepy distortion reads as intentional and on-brand in those communities. Heavy distortion in a name field can reduce legibility, which may or may not be the effect you want. If the goal is disturbing-but-readable, medium-intensity creepy text from the generator hits that mark better than maximum zalgo.",
+    "for_discord": "Creepy text is at home in Discord horror servers, SCP communities, and dark RP servers. It works in nicknames, bios, and status messages. A creepy nickname in a horror Discord server reads as character-appropriate and immersive. The distortion effect is more subtle than full zalgo, which makes creepy text a better choice when you want unsettling-looking text that still reads clearly in member lists and chat.",
+    "for_gaming": "Free Fire is the main gaming platform where creepy text names are used. Players who want intimidating or supernatural-looking names use creepy distortion to set their profile tone. The intensity needs to be moderated for game name fields because character limits are tight and heavy combining marks increase character count quickly. Light to medium creepy distortion in a Free Fire name is effective without hitting limits. Test the paste in the rename field before confirming.",
+    "platform_guide": "Discord supports creepy text well at all intensity levels. Instagram supports light to medium creepy text in bios. TikTok display names support most creepy text variants. WhatsApp renders creepy text correctly in messages. Free Fire and other mobile games support lighter creepy distortion but may reject heavy combining mark sequences. Twitter and Facebook both display creepy text without issues in posts and bios. The main limitation across platforms is character count from combining marks rather than Unicode support.",
+    "why_unicode": "Creepy text works by combining multiple Unicode techniques in the same output. Combining diacritical marks add visual noise to characters. IPA lookalike characters substitute letters with visually similar but slightly wrong Unicode equivalents. Symbol substitutions replace some letters entirely with characters from other Unicode blocks. The combination produces text that looks corrupted in a different way from pure zalgo or pure glitch. All of it is standard Unicode that any modern device supports.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What makes text look creepy and how does the generator do it?",
+        "a": "Creepy-looking text combines multiple Unicode distortion techniques: combining diacritical marks that add visual noise, IPA lookalike characters that replace standard letters with slightly wrong-looking equivalents, and symbol substitutions. The generator applies these automatically at different intensity levels. The result is text that looks wrong in ways that read as unsettling rather than just corrupted."
+      },
+      {
+        "q": "Does creepy text work in Free Fire player names?",
+        "a": "Light to medium creepy distortion works in Free Fire names. Free Fire supports Unicode in player name fields, but heavy combining mark sequences may get truncated by the character limit. Paste the creepy text into the Free Fire rename field first to confirm it displays correctly and fits within the limit before saving. Medium intensity usually gives the best result."
+      },
+      {
+        "q": "What is the difference between creepy text and zalgo text?",
+        "a": "Zalgo text uses one technique: stacking combining marks aggressively until text overflows its line boundaries. Creepy text uses multiple techniques including combining marks, character substitutions, and lookalike replacements at lower intensity levels. Creepy text looks disturbing while remaining more legible than full zalgo. Zalgo is maximalist. Creepy text is more controlled."
+      }
     ]
   },
   "strikethrough-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Strikethrough text uses Unicode combining characters to draw a horizontal line through standard letters, making the text appear crossed out. The strikethrough text generator adds the Unicode combining long stroke overlay to each character in your input. The result is readable text with a visible line through it, which reads visually as deleted, sarcastic, or ironic depending on the context. It is popular on Discord for sarcasm in chat messages, on Instagram for before-and-after style bio formatting, and on TikTok for display names and captions with a self-aware tone. The output is plain Unicode that pastes anywhere without formatting support from the platform.",
+    "how_to_use": "Type your text into the input field and the strikethrough text generator applies the crossing overlay to every character instantly. Copy the output and paste it into Discord, Instagram, TikTok, or any other platform. The strikethrough line appears on every device that reads the text. This is different from Discord's own markdown strikethrough, which only works in chat messages. Unicode strikethrough works in name fields, bios, and anywhere else that accepts text input.",
+    "for_instagram": "Strikethrough text in an Instagram bio adds visual variation and can signal irony or a before-and-after format. A struck-out word followed by its replacement reads as a personality note: something you used to be versus what you are now. The formatting also works as a visual separator. Instagram does not support markdown, so Unicode strikethrough is the only way to get struck-out text in bio or name fields.",
+    "for_discord": "Discord has its own markdown strikethrough using double tildes, but that only works in chat messages. In nickname fields, bios, and status messages where markdown does not apply, Unicode strikethrough is the only option for struck-through text. A strikethrough nickname in Discord reads as sarcastic or self-deprecating, which works well in casual or humorous servers. The effect also works in Discord status messages for ironic or running-joke statuses.",
+    "for_gaming": "Strikethrough text is used less in gaming name fields than in social media contexts, but some players use it for a deleted-feeling name aesthetic. TikTok gaming creators use strikethrough display names as a personality signal. The Unicode combining stroke character is supported on most major social platforms, though gaming platforms vary in their support. Test strikethrough text in any game's name field before committing to it as a permanent display name.",
+    "platform_guide": "Discord, Instagram, TikTok, Twitter, and WhatsApp all support Unicode strikethrough text. It displays as struck-through text on every device using these platforms. Facebook renders Unicode strikethrough correctly in posts and comments. Most gaming platforms have inconsistent support for the combining overlay Unicode character. PUBG Mobile and Free Fire may or may not display it correctly depending on the client version. For social media use, strikethrough is one of the most reliably compatible Unicode styles available.",
+    "why_unicode": "Unicode strikethrough uses a combining character called the combining long stroke overlay. Combining characters attach to the character before them and add a visual mark. The long stroke overlay was designed for linguistic and mathematical notation. When applied to every character in a word, it produces the appearance of crossed-out text. Because it is a combining Unicode character, it works without any formatting support from the app.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "How do I make strikethrough text without using markdown or formatting?",
+        "a": "Use Unicode strikethrough text. The generator adds a Unicode combining stroke overlay to each character, which makes text appear crossed out without any markdown. The output is plain text you can paste into any field, including name fields and bios where markdown formatting does not work. The strikethrough line appears on every device that reads the text."
+      },
+      {
+        "q": "Does strikethrough Unicode text work in Discord nickname fields?",
+        "a": "Yes. Discord's own markdown strikethrough only works in chat messages, not in nickname or bio fields. Unicode strikethrough works in all Discord fields because it is plain text, not markdown. Paste it into your Discord nickname or bio and the struck-through text will appear correctly for everyone who sees your profile or name."
+      },
+      {
+        "q": "Can I use strikethrough text in my Instagram bio?",
+        "a": "Yes. Instagram does not support markdown or text formatting in bio or name fields. Unicode strikethrough is the only way to get struck-through text in an Instagram bio. The combining stroke overlay character is supported in Instagram and displays correctly on both iOS and Android. It is one of the more visually effective Unicode styles for Instagram formatting."
+      }
     ]
   },
   "unicode-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "A Unicode text converter transforms standard text into alternate Unicode character sets that look visually different from the default alphabet but paste as plain text anywhere. This converter covers 168+ Unicode styles from the same generator, including bold, italic, script, Fraktur, monospace, double-struck, and many more. Each style uses a different Unicode block that maps to the standard Latin alphabet visually but uses distinct code points. The result is text that looks styled without requiring any font installation. Unicode text converter tools are used by everyone from gamers setting PUBG and Free Fire names to Instagram creators styling bios to Discord users customizing profiles.",
+    "how_to_use": "Type any text into the input field. The Unicode text converter outputs all available style variants simultaneously, updating as you type. Scroll through the results to find the style that fits your use case. Click the copy button next to any style and paste the result into Instagram, Discord, PUBG, Free Fire, TikTok, or anywhere else. The converted text is plain Unicode that renders correctly on every modern device and platform without font installation.",
+    "for_instagram": "Instagram does not support formatting in bio or name fields, but it fully supports Unicode. A Unicode text converter gives Instagram users access to bold, italic, cursive, gothic, and dozens of other visual styles that display directly in bios and display names. This is why Unicode converter tools are among the most searched utilities for Instagram customization. The 168+ styles in this generator cover every common Instagram bio style from minimalist sans-serif alternatives to heavy blackletter.",
+    "for_discord": "Discord renders a wide range of Unicode correctly across name fields, bios, and chat. A Unicode text converter used for Discord lets users set nicknames in bold, italic, gothic, script, monospace, and other styles that are not available through Discord's own formatting tools. Server nicknames converted through a Unicode text converter look styled in the member list and in chat without the user needing to change any Discord settings.",
+    "for_gaming": "PUBG, Free Fire, BGMI, and Mobile Legends all allow Unicode in player display names to varying degrees. A Unicode text converter is the standard tool players use to set stylized names in these games. Bold, gothic, and script styles work in most of these games. Glitch and zalgo styles work in some. The converter outputs 168+ options, so if one style does not paste correctly in a game, others from a different Unicode block likely will.",
+    "platform_guide": "Unicode text is supported across Instagram, Discord, TikTok, Twitter, Facebook, WhatsApp, and most gaming platforms. The specific Unicode blocks that work vary by platform. Bold and italic Mathematical Alphanumeric Symbols display on virtually every platform. Script and Fraktur styles work on most social platforms. Combining mark styles like zalgo and strikethrough have narrower gaming platform support. The converter outputs all styles so you can test what works for your specific platform.",
+    "why_unicode": "Unicode is an international text standard that defines over 140,000 characters covering every writing system and a large number of symbol sets. Many Unicode blocks contain what amount to alternate visual representations of the Latin alphabet, added for mathematical, phonetic, or historical reasons. A Unicode text converter maps your standard input text to these alternate blocks, producing text that looks different but behaves as plain text on every device that supports Unicode, which is all of them.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What is Unicode text and how is it different from regular text?",
+        "a": "Regular text uses the basic Latin Unicode block, which is the standard alphabet. Unicode text from a converter uses alternate blocks that contain different visual representations of the same alphabet, added to Unicode for mathematical, phonetic, and historical purposes. The text looks styled but is technically plain text that any app can display without a special font."
+      },
+      {
+        "q": "Do Unicode fonts work on all platforms and devices?",
+        "a": "Most Unicode styles work across all major platforms including Instagram, Discord, TikTok, WhatsApp, and Twitter. The specific blocks that work vary by platform. Bold and script Unicode work almost everywhere. Heavy combining mark styles like zalgo work on social platforms but have inconsistent support in mobile games. The converter shows you all styles, so you can test what works for your platform."
+      },
+      {
+        "q": "Why does Unicode text sometimes paste differently on certain apps?",
+        "a": "Some apps filter or restrict certain Unicode ranges. Mobile games are the most common case where Unicode pasting gives unexpected results, because games often restrict name fields to basic Latin and a limited set of additional characters. Social media platforms generally support a wider Unicode range. If a style shows as boxes or question marks, switch to a different Unicode block from the same converter."
+      }
     ]
   },
   "bubble-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Bubble text encloses each letter inside a circle, producing text that looks like each character is inside a bubble or button. The bubble text generator uses the Unicode enclosed alphanumerics block, which contains circled letters and numbers designed for use in lists and infographics. The filled circle variants produce dark bubbles with white letters, while the outline variants show letters inside unfilled circles. Bubble text reads as playful and designed, which makes it popular for Instagram bios with a fun or youthful aesthetic, TikTok display names, and WhatsApp group names. The characters are Unicode and paste directly into any platform text field without font installation.",
+    "how_to_use": "Type your text into the input field. The bubble text generator outputs circled and enclosed letter variants instantly. Copy the style you want, either filled dark bubbles or outline circle letters, and paste into Instagram, TikTok, WhatsApp, or any other platform. Bubble text characters are individual Unicode code points, so they display on every device that reads the text. No font needs to be installed. The enclosed character block is widely supported across modern platforms.",
+    "for_instagram": "Bubble text in an Instagram bio reads as cheerful and graphic without requiring any actual design work. The circled letters add a visual block quality to bio text that stands out against standard text bios. TikTok display names in bubble text are distinctive in the feed because the circles add visual weight at small sizes. Instagram display names in bubble text are recognizable and visually distinct in comment threads and follower lists.",
+    "for_discord": "Bubble text in Discord bios and nicknames works well in casual, fun, or kawaii-aesthetic servers. The circled letters are legible in Discord's member list at smaller display sizes, which is an advantage over some more ornate Unicode styles. A nickname in bubble text reads as approachable and distinctive. Discord renders the enclosed alphanumeric Unicode block correctly across all client versions.",
+    "for_gaming": "Bubble text is less common in competitive gaming names but is used by casual gamers and content creators for a softer, more playful name aesthetic. WhatsApp gaming group names are a popular use case for bubble text among mobile game players. TikTok gaming creators sometimes use bubble display names. In actual game name fields, the enclosed alphanumeric Unicode block has variable support. Test before committing to it in games like Free Fire or PUBG.",
+    "platform_guide": "Instagram, TikTok, Discord, Twitter, and WhatsApp all support the Unicode enclosed alphanumeric block used for bubble text. The characters display as circled letters on all modern phones and desktops using these platforms. Facebook renders bubble text correctly in posts, comments, and bios. Gaming platform support is inconsistent. WhatsApp group names and status fields support bubble text reliably. For the most consistent display, use bubble text on social platforms rather than in game name fields.",
+    "why_unicode": "Bubble text uses the Unicode enclosed alphanumeric symbols block, which was added to Unicode for use in lists, reference labels, and informational graphics where circled numbers and letters provide a visual hierarchy. Content creators and social media users repurposed these characters for stylized text because the circled format gives text a designed, graphic appearance. Because the characters are standard Unicode, they display without any font installation.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What is bubble text and how does it look?",
+        "a": "Bubble text encloses each letter inside a circle using Unicode enclosed alphanumeric characters. Filled bubble text shows white letters inside dark circles. Outline bubble text shows letters inside unfilled circles. Both styles make text look graphic and designed. The characters come from a Unicode block originally used for list labels and infographics."
+      },
+      {
+        "q": "Does bubble text display correctly on Instagram?",
+        "a": "Yes. Instagram supports the Unicode enclosed alphanumeric block. Bubble text pastes correctly into Instagram bio and name fields and displays as circled letters on every device viewing the profile. The characters render on both iOS and Android Instagram. It is one of the more reliably compatible decorative Unicode styles for Instagram use."
+      },
+      {
+        "q": "What is the difference between bubble text and circled text?",
+        "a": "They are the same thing. Bubble text and circled text both refer to text that uses Unicode enclosed alphanumeric characters, which place each letter inside a circle. Some generators use filled circles that look like bubbles and some use outline circles. This generator provides both variants so you can choose which visual weight fits your use case."
+      }
     ]
   },
   "mirror-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Mirror text flips your text horizontally so it reads backwards and with characters that appear reflected, as if held up to a mirror. The mirror text generator reverses the order of characters and maps each letter to its horizontally flipped Unicode equivalent where one exists. Some characters have close Unicode mirror equivalents, while others are approximated or reversed without a visual flip. The output reads as a reflection of the input. It is used on Instagram and TikTok as a visual novelty, in Discord bios as a quirky detail, and in some cases for aesthetic usernames that look unusual without being completely unreadable. The characters are Unicode and paste into standard text fields.",
+    "how_to_use": "Type your text into the input field. The mirror text generator reverses the character order and applies horizontal flip Unicode substitutions where they exist. Copy the mirrored output and paste it into Instagram, TikTok, Discord, or any other platform. The reversed text appears as mirrored on every device. Some characters look more convincingly mirrored than others depending on the letter, as not every Latin character has an exact Unicode mirror equivalent.",
+    "for_instagram": "Mirror text works as a caption novelty on Instagram, where a mirrored phrase catches the eye in a feed of standard text. The effect also works in bios as a visual trick: a mirrored bio line prompts viewers to physically tilt their phone or screenshot to try to read it, which is an engagement signal. For Instagram display names, mirrored text is distinctive but may reduce readability, so it is better for accounts where the unusual name is itself the point.",
+    "for_discord": "Mirror text in Discord bios or status messages reads as intentionally unusual and a bit cryptic. In friend group servers, a mirrored nickname can be a long-running visual joke. In servers with a surrealist or absurdist theme, mirror text fits the aesthetic naturally. Discord renders the Unicode characters used for mirror text correctly across client versions.",
+    "for_gaming": "Mirror text in gaming contexts is mostly a cosmetic choice for people who want an unusual-looking username. TikTok gaming creators sometimes use mirrored display names as a distinctive identity marker. In actual game name fields, mirrored text depends on the Unicode ranges the game supports. Since mirror text uses a mix of Unicode characters from several blocks, compatibility in game name fields is inconsistent. Test before using in PUBG or Free Fire name fields.",
+    "platform_guide": "Instagram, Discord, Twitter, and WhatsApp support the Unicode characters used in mirror text. TikTok display names support most mirror text variants. The characters come from a mix of Unicode blocks depending on the letter, and not all blocks have equal support across platforms. Some mirrored characters may display as their standard counterpart or a close substitute on platforms with narrower Unicode support. The effect is most reliable on Instagram and Discord.",
+    "why_unicode": "Mirror text is only approximate because Unicode was not designed to include mirror versions of every Latin letter. Some characters, like p and q or b and d, are visual mirrors of each other and already exist in Unicode. Others have close lookalikes in IPA or symbol blocks. The generator picks the closest Unicode match for each letter and reverses the character order. The result resembles mirrored text but is technically a creative substitution using available Unicode code points.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "How does mirror text actually work technically?",
+        "a": "Mirror text reverses the order of your characters and substitutes each letter with a Unicode equivalent that visually resembles its horizontal flip. Not every Latin letter has an exact mirror in Unicode, so the generator uses the closest available match from IPA, symbol, and other Unicode blocks. The result approximates mirrored text using real Unicode characters."
+      },
+      {
+        "q": "Can people actually read mirror text?",
+        "a": "With effort, yes. Mirror text is not designed for easy readability. The point is that it takes a moment to decode, which is part of the appeal on social media. Short words and names are more readable than long phrases. If you want your text to be readable without effort, a different style like bold or cursive Unicode is more practical."
+      },
+      {
+        "q": "Does mirror text work in WhatsApp status or messages?",
+        "a": "Yes. WhatsApp supports the Unicode characters used for mirror text and renders them correctly on iOS and Android. Paste the mirrored output into a WhatsApp status or message and it appears as mirrored text for the people receiving it. The visual trick works well in chat as a novelty message."
+      }
     ]
   },
   "aesthetic-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Aesthetic text refers to Unicode styles that produce text with a considered, artistic, or deliberately stylized appearance. The aesthetic text generator covers several Unicode styles that fit this category including full-width characters, small caps, bold serif, script, and combinations that give text a spaced-out or intentionally designed feel. Full-width Unicode, where each character takes up the same horizontal width as a Chinese character, is the most commonly associated style with the aesthetic or vaporwave text look. Aesthetic text is particularly popular for Instagram bios and TikTok display names where visual presentation is part of the profile's identity. Pinterest descriptions and headers also see frequent aesthetic Unicode use.",
+    "how_to_use": "Type your text into the input field. The aesthetic text generator outputs multiple variants including full-width, small caps, bold serif, and script styles that fit an aesthetic sensibility. Browse the results, pick the style that fits your profile tone, click copy, and paste into Instagram, TikTok, Pinterest, or wherever you need it. The characters are Unicode and display correctly on every device without font installation.",
+    "for_instagram": "Aesthetic Unicode text is one of the most searched Instagram bio customization methods. Full-width characters give bio text a spaced, editorial feel. Small caps Unicode gives headers a typographic quality. Script Unicode reads as personal and handwritten. The combination of these with regular text creates visual hierarchy in an Instagram bio that reads as designed without actual design work. The name field also accepts aesthetic Unicode and a styled display name reinforces the overall profile aesthetic.",
+    "for_discord": "Aesthetic text in Discord bios and server profiles works well in lifestyle, art, photography, and kawaii-themed servers. A bio written in full-width or small caps Unicode reads as intentional and polished. Discord renders all the Unicode styles in the aesthetic category correctly. Aesthetic text in Discord nicknames is distinctive in a different way from bold or gothic, reading as softer and more personal.",
+    "for_gaming": "Aesthetic text in the traditional sense is less common in competitive gaming names, where bold and glitch styles dominate. TikTok gaming creators use aesthetic display names to separate their personal style from the rest of their content presentation. Pinterest boards about gaming aesthetics use full-width and small caps Unicode in board titles and descriptions. The style fits content creation contexts more than in-game name fields.",
+    "platform_guide": "Instagram, TikTok, Pinterest, Discord, and Twitter all support the Unicode styles that fall under aesthetic text. Full-width Unicode is one of the most widely compatible styles across platforms. Small caps and bold serif Unicode also work without issues on all major social platforms. Facebook renders aesthetic text variants correctly. Gaming platforms have variable support. The aesthetic text styles in this generator prioritize legibility, which means they tend to have better compatibility than more distortion-heavy styles.",
+    "why_unicode": "Aesthetic text draws from several Unicode blocks depending on the style. Full-width characters come from the Halfwidth and Fullwidth Forms block, which was added to Unicode to support compatibility with East Asian text encoding standards. Mathematical Alphanumeric Symbols provides bold and italic variants. Small capitals come from the IPA Extensions block. The combination of these produces the varied visual styles that content creators categorize as aesthetic text.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What is aesthetic text and what does it look like?",
+        "a": "Aesthetic text is a loose category of Unicode styles that produce text with a designed or artistic appearance. Common aesthetic styles include full-width characters with extra spacing, small caps that give text a typographic quality, and script Unicode that looks handwritten. The aesthetic text generator outputs multiple variants in this category so you can choose the style that fits your profile."
+      },
+      {
+        "q": "How do I use aesthetic text for my Instagram bio?",
+        "a": "Type your bio text into the aesthetic text generator, browse the style options, and copy the variant you want. Paste directly into the Instagram bio field. Full-width Unicode gives a spaced, editorial look. Script gives a personal feel. Small caps gives a typographic quality. Mix different styles within your bio for visual hierarchy. All variants display correctly on Instagram."
+      },
+      {
+        "q": "Does aesthetic text work on TikTok?",
+        "a": "Yes. TikTok display names support the Unicode styles in the aesthetic category. Full-width and script Unicode paste into TikTok display names and display correctly on both iOS and Android. The display name appears above every video you post, so an aesthetic name is visible to everyone who sees your content. Most aesthetic Unicode variants are among the more compatible styles across TikTok."
+      }
     ]
   },
   "vaporwave-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Vaporwave text uses full-width Unicode characters to produce text with wide, evenly spaced letters that give it a retro, digital, or glitchy aesthetic. The style takes its name from the vaporwave art movement, which used wide Latin characters in its imagery and album art. The vaporwave text generator converts standard text to full-width Unicode, which is a character set originally designed to make Latin letters compatible with East Asian fixed-width text layouts. The visual effect is text that reads normally but looks like it belongs on a retro computer screen or a vaporwave aesthetic post. It is popular on Instagram, Discord, and TikTok.",
+    "how_to_use": "Type your text into the input field. The vaporwave text generator converts each character to its full-width Unicode equivalent immediately. Copy the output and paste into Instagram, Discord, TikTok, or any other platform. The wide-character format of full-width Unicode renders on every modern device. The text looks identical to what you typed but with each character occupying the same width as a CJK character, which produces the characteristic spaced-out look.",
+    "for_instagram": "Vaporwave text in Instagram bios gives a retro digital look that fits aesthetic, music, art, and internet culture accounts. The evenly spaced characters read as designed and intentional compared to standard bio text. A vaporwave display name on Instagram is visually distinctive in comment threads and follower lists. The full-width Unicode block is well-supported on Instagram and displays correctly in bio, name, and caption fields.",
+    "for_discord": "Vaporwave text is popular in Discord servers themed around music, internet aesthetics, 80s and 90s culture, and lo-fi. The wide character style in a Discord nickname or bio reads as a personality signal aligned with those communities. Discord renders full-width Unicode correctly across all client versions and platforms. A vaporwave nickname stands out in member lists because the character width makes it visually wider than standard nicknames.",
+    "for_gaming": "Vaporwave text in gaming is more of a TikTok creator aesthetic choice than an in-game name style. TikTok gaming creators use vaporwave display names as part of a broader retro or aesthetic identity. In actual game name fields, full-width Unicode is inconsistently supported. Some games render it correctly and some reject it or display boxes. Test the paste in your game's name field before committing. Discord gaming server profiles are a more reliable location for vaporwave text.",
+    "platform_guide": "Instagram, Discord, TikTok, Twitter, and WhatsApp all support full-width Unicode characters used for vaporwave text. The full-width Unicode block is one of the most widely compatible character sets in the Unicode standard, because it was designed for compatibility with East Asian text systems. Facebook renders vaporwave text correctly. Most modern social platforms handle full-width Unicode without issues. Gaming platform support varies, with social-focused games being more compatible than competitive titles.",
+    "why_unicode": "Vaporwave text uses the Halfwidth and Fullwidth Forms Unicode block, which was added to Unicode to ensure compatibility between Latin text and the fixed-width character grids used in East Asian computing. In those systems, CJK characters occupy twice the width of standard Latin characters, and full-width Latin equivalents were added to match. The unintended visual effect is Latin text that looks wider and more uniformly spaced, which content creators adopted for the vaporwave aesthetic.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What is vaporwave text and why does it look the way it does?",
+        "a": "Vaporwave text uses full-width Unicode characters, which are Latin letters designed to occupy the same width as East Asian characters in fixed-width text layouts. The result is Latin text that looks wider and more evenly spaced than normal. The style takes its name from the vaporwave art movement, which used this character style in album art and graphics."
+      },
+      {
+        "q": "Does vaporwave text work in Discord bios and nicknames?",
+        "a": "Yes. Discord supports full-width Unicode characters and renders them correctly in nickname fields, bios, and chat messages. Vaporwave text in a Discord nickname appears wider than a standard nickname in member lists, which makes it visually distinctive. The full-width Unicode block has reliable compatibility across all Discord client versions."
+      },
+      {
+        "q": "What is the difference between vaporwave text and full-width text?",
+        "a": "They are the same thing. Vaporwave text is a content creator term for full-width Unicode text, which uses the Halfwidth and Fullwidth Forms Unicode block. The term vaporwave comes from the art movement that popularized the visual style. Full-width is the technical Unicode term. Both refer to the same character set that produces the wide, evenly spaced letter appearance."
+      }
     ]
   },
   "runic-text": {
-    "what_is": "",
-    "how_to_use": "",
-    "for_instagram": "",
-    "for_discord": "",
-    "for_gaming": "",
-    "platform_guide": "",
-    "why_unicode": "",
+    "what_is": "Runic text uses characters from the Elder Futhark and other runic scripts included in the Unicode Runic block. The runic text generator substitutes Latin letters with visually similar or phonetically equivalent runic characters, producing text that looks ancient, mystical, or fantasy-themed. Runic Unicode is popular in gaming communities, particularly for PUBG usernames and Discord profiles in fantasy or Norse-themed servers. The characters come from actual historical writing systems used in Germanic languages before the Latin alphabet became dominant. Because they are Unicode, runic characters paste into any platform text field and display on any modern device without font installation.",
+    "how_to_use": "Type your text into the input field. The runic text generator maps each Latin letter to a runic Unicode equivalent and outputs the result immediately. Copy the runic output and paste into your PUBG name, Discord profile, gaming forum bio, or any other text field. The runic characters render correctly on every modern device. The substitution is approximate since the runic alphabet does not have exact one-to-one equivalents for every Latin letter, but the results are consistently recognizable and visually distinctive.",
+    "for_instagram": "Runic text on Instagram works for profiles with fantasy, Norse mythology, paganism, or historical culture themes. A runic bio or display name signals a specific aesthetic and community affiliation immediately. The characters are legible enough for short names and bio lines, though longer runic text can be harder to read at a glance. Instagram supports the Unicode Runic block and displays it correctly on both mobile and desktop.",
+    "for_discord": "Discord is the most active platform for runic text outside of gaming name fields. Fantasy RP servers, Norse mythology communities, and Viking-themed servers use runic nicknames and bio text as part of their community identity. Discord renders the Unicode Runic block correctly across all client versions. A runic nickname in a fantasy Discord server reads as in-character and immersive. Status messages in runic text add to a character-consistent profile presentation.",
+    "for_gaming": "PUBG Mobile is the most common game where runic text names are used. Runic Unicode often works in PUBG Mobile name fields, giving players a name that reads as ancient or mythological in kill feeds and lobbies. The Unicode Runic block is a distinct character set, and some games support it while others restrict it. Free Fire and BGMI have variable support for runic characters. Test the runic paste in your game's name field before confirming. Gaming profile pages on Discord and in forums are more reliably compatible.",
+    "platform_guide": "Discord supports the Unicode Runic block reliably. Instagram and TikTok render runic characters correctly on modern devices. Twitter displays runic text in posts and bios. WhatsApp renders runic characters in messages. PUBG Mobile supports runic Unicode in name fields in most client versions. Free Fire and BGMI have less consistent support. The Runic Unicode block is a specialized set that older devices and some restricted platforms may display as boxes. Testing before committing to runic text in any game is always the right approach.",
+    "why_unicode": "The Unicode Runic block was added to Unicode to support scholarly and historical use of Elder Futhark, Younger Futhark, and Anglo-Saxon runic scripts. These were real writing systems used across Scandinavia, Britain, and Germany from roughly the 2nd to the 13th centuries. Including them in Unicode allows historians, linguists, and archaeologists to use digital text for runic research. Content creators and gamers adopted the characters for stylized display text because of their distinctive angular visual quality.",
     "faq": [
-      {"q": "", "a": ""},
-      {"q": "", "a": ""},
-      {"q": "", "a": ""}
+      {
+        "q": "What are runic letters and are they a real writing system?",
+        "a": "Yes, runic letters are from real historical writing systems used in Scandinavia, Britain, and Germany roughly between the 2nd and 13th centuries. Elder Futhark is the oldest and most widely recognized runic alphabet. The characters in the Unicode Runic block represent these historical scripts, which is why they appear in Unicode. The runic text generator uses them for visual stylization."
+      },
+      {
+        "q": "Does runic text work in PUBG Mobile player names?",
+        "a": "In most cases, yes. PUBG Mobile supports the Unicode Runic block in display name fields, and runic text pastes correctly in many client versions. A runic name in PUBG reads as ancient or mystical in kill feeds. Paste the runic text into the name change field first to confirm it displays correctly before confirming, as support can vary by device and game version."
+      },
+      {
+        "q": "What is the difference between runic text and gothic text?",
+        "a": "Runic text uses characters from the Elder Futhark and related historical runic scripts, which have angular letterforms associated with ancient Germanic and Norse cultures. Gothic or Fraktur text uses medieval blackletter letterforms from the Unicode Mathematical Fraktur block, associated with medieval European manuscripts and German printing. Both look historical but come from different writing traditions and different Unicode blocks."
+      }
     ]
   }
 }

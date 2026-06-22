@@ -1,0 +1,98 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit generated HTML back to main
+  pages: write      # deploy to GitHub Pages
+  id-token: write   # OIDC token for Pages
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install terser
+        run: npm install -g terser@5
+
+      # ── Build HTML from template + pages-config.json ─────────────────────
+      - name: Build HTML pages
+        run: python build.py
+
+      # ── Commit generated HTML back to main (replaces build-pages.yml) ────
+      - name: Commit generated HTML
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.html
+          git diff --staged --quiet || git commit -m "Build: auto-generate sub-pages [skip ci]"
+          git push
+
+      # ── Stage all site files into dist/ ───────────────────────────────────
+      - name: Stage site files
+        run: |
+          mkdir -p dist
+          # HTML (freshly built above)
+          cp *.html dist/ 2>/dev/null || true
+          # Stylesheets
+          cp *.css  dist/ 2>/dev/null || true
+          # JavaScript (source — will be minified in next step)
+          cp *.js   dist/ 2>/dev/null || true
+          # Static assets
+          cp *.xml  dist/ 2>/dev/null || true
+          cp *.txt  dist/ 2>/dev/null || true
+          cp CNAME  dist/ 2>/dev/null || true
+          cp -r images dist/ 2>/dev/null || true
+          echo "=== dist/ contents ==="
+          ls -la dist/
+
+      # ── Minify JS in dist/ only — source files in repo stay readable ──────
+      - name: Minify JS
+        run: |
+          echo "=== Minifying JS files in dist/ ==="
+          for f in dist/*.js; do
+            before=$(wc -c < "$f")
+            terser "$f" \
+              --compress \
+              --mangle \
+              --ecma 2020 \
+              -o "$f"
+            after=$(wc -c < "$f")
+            pct=$(awk "BEGIN {printf \"%.1f\", (1 - $after / $before) * 100}")
+            echo "  $(basename $f): ${before}B → ${after}B (${pct}% smaller)"
+          done
+          echo "=== Minification complete ==="
+
+      # ── Upload artifact for Pages deployment ──────────────────────────────
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      # ── Deploy to GitHub Pages ────────────────────────────────────────────
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

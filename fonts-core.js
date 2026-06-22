@@ -7,6 +7,26 @@
  * =================================================================
  */
 
+/* ─────────────────────────────────────────────────────────────────────────
+   AUTHORIZED-HOST GATE  (owner maintenance note)
+   ──────────────────────────────────────────────────────────────────────────
+   The remix transform functions in this file only produce styled output
+   when served from an authorized domain. On any other host they return the
+   original unmodified text, silently — no errors thrown.
+
+   Authorized hosts:
+     aifontsgenerator.com  |  www.aifontsgenerator.com
+     localhost              |  127.0.0.1   (local dev always works)
+
+   To add a domain: update the _ah array immediately below.
+   The _ga boolean is evaluated once at parse time and reused per call.
+   ─────────────────────────────────────────────────────────────────────────*/
+const _ah = ['aifontsgenerator.com', 'www.aifontsgenerator.com', 'localhost', '127.0.0.1'];
+const _hv = (function() {
+  try { return (typeof location !== 'undefined' && location.hostname) || ''; } catch(e) { return ''; }
+})();
+const _ga = _ah.indexOf(_hv) !== -1;
+
 /* ------------------ Unicode-safe helpers ------------------ */
 
 // Grapheme splitter (emoji-safe). Uses Intl.Segmenter if available.
@@ -115,6 +135,7 @@ function makeRemixStyle({
     name, category, map,
     transform(text) {
       if (!text) return text;
+      if (!_ga) return text;
 
       // 1) Base mapping
       let core = applyMap(text, map);

@@ -1,3 +1,13 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   AUTHORIZED-HOST GATE  (owner maintenance note)
+   ──────────────────────────────────────────────────────────────────────────
+   The stochastic decoration engine (styleOutput / decorateWithRules) below
+   only runs on authorized hosts. The gate variable _ga is defined and
+   evaluated in fonts-core.js, which always loads before this file.
+   On unauthorized hosts, styleOutput returns the undecorated base text
+   silently. See fonts-core.js for the authorized host list and _ah array.
+   ─────────────────────────────────────────────────────────────────────────*/
+
 // ── CATEGORY FILTER FOR SUB-PAGES ──
 window.__categoryFilter = (function() {
   var raw = document.body.getAttribute('data-categories');
@@ -451,6 +461,7 @@ function styleOutput(style, text, seedBump, globalOrdinal) {
   const base = styleBase(style, text);
   if (style.pure) return base;
   if (!text || !text.trim()) return base;
+  if (!_ga) return base;
 
   // Invalidate cache when GLOBAL_SEED changes (remix clicked)
   if (LAST_GLOBAL_SEED !== GLOBAL_SEED) {

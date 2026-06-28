@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator</title>
+  <meta name="description" content="See the letter D rendered in 15 Unicode font styles. Copy paste fancy D symbols in double-struck, gothic, and bold styles for any platform.">
+  <meta property="og:title" content="D in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator">
+  <meta property="og:description" content="See the letter D rendered in 15 Unicode font styles. Copy paste fancy D symbols in double-struck, gothic, and bold styles for any platform.">
+  <meta property="og:url" content="https://aifontsgenerator.com/different-fonts-d.html">
+  <meta property="og:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Fonts Generator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="D in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator">
+  <meta name="twitter:description" content="See the letter D rendered in 15 Unicode font styles. Copy paste fancy D symbols in double-struck, gothic, and bold styles for any platform.">
+  <meta name="twitter:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="effects.css">
+  <style>
+    .letter-font-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 24px 0 32px;
+    }
+    .letter-font-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 10px 14px;
+      gap: 12px;
+    }
+    .lf-name {
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #888;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .lf-char {
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      color: #fff;
+      transition: color 0.15s, transform 0.15s;
+      user-select: none;
+    }
+    .lf-char:hover {
+      color: #ccff00;
+      transform: scale(1.15);
+    }
+    .lf-char.copied {
+      color: #ccff00;
+    }
+    .az-browse-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 16px 0 32px;
+    }
+    .az-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 4px;
+      color: #ccc;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .az-link:hover {
+      background: #1a1a1a;
+      border-color: #ccff00;
+      color: #ccff00;
+    }
+    .az-link.az-current {
+      background: #ccff00;
+      border-color: #ccff00;
+      color: #0a0a0a;
+    }
+    @media (max-width: 600px) {
+      .letter-font-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+  <script>
+    window.styles = window.styles || [];
+    window.FONT_STYLES = window.FONT_STYLES || [];
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXF5XFXH22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CXF5XFXH22');
+  </script>
+</head>
+
+<body data-categories="Classic Styles,Bold,Beautiful,Featured Styles,Letter Extended" data-default-text="D">
+
+<div class="float-btns" id="floatBtns">
+  <button class="float-btn float-top" id="floatScrollTop" title="Back to top" aria-label="Scroll to top">↑</button>
+  <button class="float-btn float-reroll" id="btnShuffle" title="Reroll all font styles" aria-label="Reroll font styles">
+    <span class="reroll-icon">⚡</span>
+    <span class="reroll-label">REROLL</span>
+    <span class="reroll-count">STYLES</span>
+  </button>
+</div>
+
+<div class="sticky-input-bar" id="stickyBar">
+  <div class="sticky-logo">AI FONTS</div>
+  <textarea id="sticky-input" rows="1" placeholder="Type your text..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" wrap="soft"></textarea>
+  <button class="sticky-generate-btn" id="btnStickyGenerate">GENERATE ALL ⚡</button>
+</div>
+
+<header class="navbar">
+  <div class="logo">
+    <h2>AI FONTS</h2>
+    <span>GENERATOR</span>
+  </div>
+  <nav>
+    <a href="index.html">GENERATOR</a>
+    <a href="categories.html">CATEGORIES</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+  <button class="menu-btn">⊕ MENU</button>
+</header>
+
+<section class="hero">
+  <div class="type-card">
+    <div class="sticker">
+      TYPE
+      <span>SOMETHING EPIC</span>
+    </div>
+    <div class="input-area">
+      <textarea id="input-text-desktop" placeholder="D"></textarea>
+    </div>
+    <div class="action-buttons">
+      <button class="generate-btn" id="btnRemixAll">GENERATE ALL ⚡</button>
+      <button class="clear-btn" id="btnClear">CLEAR ✕</button>
+    </div>
+  </div>
+</section>
+
+<section class="frame-section">
+  <div class="section-head"><h3>CHOOSE A FRAME</h3></div>
+  <div class="frame-row" id="frameRow"></div>
+</section>
+
+<section class="fonts-grid" id="all-font-cards">
+</section>
+
+<section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
+  <div class="article-wrap">
+    <aside class="article-toc">
+      <div class="toc-inner">
+        <p class="toc-label">ON THIS PAGE</p>
+        <nav class="toc-nav">
+          <a href="#font-styles">Font Styles</a>
+          <a href="#how-to-copy">How to Copy</a>
+          <a href="#faq">FAQ</a>
+          <a href="#browse-letters">Browse A–Z</a>
+          <a href="#more-styles">More Generators</a>
+        </nav>
+      </div>
+    </aside>
+    <article class="article-body">
+
+      <h1 id="article-h1">'D' in Different Fonts</h1>
+      <p class="article-intro">15 Unicode styles for the letter D — click any to copy. Click any character below to copy it, or type your full text into the generator above for complete styled output.</p>
+
+      <h2 id="font-styles">D in Every Unicode Font Style</h2>
+      <p>The 15 styles below are hardcoded Unicode characters — real text that Googlebot indexes and every modern device renders without a font download. Click any character to copy it to your clipboard.</p>
+
+      <div class="letter-font-grid">
+<div class="letter-font-row"><span class="lf-name">Bold</span><span class="lf-char" data-char="𝐃" onclick="copyLetter(this)" title="Click to copy">𝐃</span></div>
+<div class="letter-font-row"><span class="lf-name">Italic</span><span class="lf-char" data-char="𝐷" onclick="copyLetter(this)" title="Click to copy">𝐷</span></div>
+<div class="letter-font-row"><span class="lf-name">Bold Italic</span><span class="lf-char" data-char="𝑫" onclick="copyLetter(this)" title="Click to copy">𝑫</span></div>
+<div class="letter-font-row"><span class="lf-name">Cursive Light</span><span class="lf-char" data-char="𝒟" onclick="copyLetter(this)" title="Click to copy">𝒟</span></div>
+<div class="letter-font-row"><span class="lf-name">Cursive Bold</span><span class="lf-char" data-char="𝓓" onclick="copyLetter(this)" title="Click to copy">𝓓</span></div>
+<div class="letter-font-row"><span class="lf-name">Gothic</span><span class="lf-char" data-char="𝔇" onclick="copyLetter(this)" title="Click to copy">𝔇</span></div>
+<div class="letter-font-row"><span class="lf-name">Double-Struck</span><span class="lf-char" data-char="𝔻" onclick="copyLetter(this)" title="Click to copy">𝔻</span></div>
+<div class="letter-font-row"><span class="lf-name">Bold Gothic</span><span class="lf-char" data-char="𝕯" onclick="copyLetter(this)" title="Click to copy">𝕯</span></div>
+<div class="letter-font-row"><span class="lf-name">Sans-Serif</span><span class="lf-char" data-char="𝖣" onclick="copyLetter(this)" title="Click to copy">𝖣</span></div>
+<div class="letter-font-row"><span class="lf-name">Sans Bold</span><span class="lf-char" data-char="𝗗" onclick="copyLetter(this)" title="Click to copy">𝗗</span></div>
+<div class="letter-font-row"><span class="lf-name">Sans Italic</span><span class="lf-char" data-char="𝘋" onclick="copyLetter(this)" title="Click to copy">𝘋</span></div>
+<div class="letter-font-row"><span class="lf-name">Sans Bold Italic</span><span class="lf-char" data-char="𝘿" onclick="copyLetter(this)" title="Click to copy">𝘿</span></div>
+<div class="letter-font-row"><span class="lf-name">Monospace</span><span class="lf-char" data-char="𝙳" onclick="copyLetter(this)" title="Click to copy">𝙳</span></div>
+<div class="letter-font-row"><span class="lf-name">Fullwidth</span><span class="lf-char" data-char="Ｄ" onclick="copyLetter(this)" title="Click to copy">Ｄ</span></div>
+<div class="letter-font-row"><span class="lf-name">Circled</span><span class="lf-char" data-char="Ⓓ" onclick="copyLetter(this)" title="Click to copy">Ⓓ</span></div>
+      </div>
+
+      <h2 id="how-to-copy">How to Copy D in Fancy Fonts</h2>
+      <p>Click any character in the grid above and it copies instantly. Paste it anywhere that accepts text — Instagram bio, Discord display name, TikTok username, BGMI or Free Fire name field, Twitter bio, WhatsApp status. Every character here is standard Unicode, so it pastes as plain text and renders correctly on any device. No font needs to be installed by you or anyone reading it. For full styled words and names, use the live generator at the top of this page: type your text, scroll through the styles, and click the copy button on whichever result you want.</p>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+<summary>How do I copy and paste the letter D in fancy fonts?
+<p>Click any character in the grid above — it copies to your clipboard instantly. Each Unicode D shown is a real text character, not an image, so it pastes directly into Instagram bios, Discord nicknames, TikTok display names, and gaming name fields without any font installation on either end. The live generator below also lets you type full words or names and copy complete styled text.</p>
+</details>
+<details class="faq-item">
+<summary>Does fancy D text work on Instagram and Discord?
+<p>Yes. Every character in the grid uses standard Unicode, which both Instagram and Discord render correctly. Bold, italic, script, gothic, and double-struck D all paste cleanly into bios, display names, and server nicknames. If a specific character shows as a box on a particular platform, switch to a bold or sans-serif variant — those have the widest compatibility across devices and client versions.</p>
+</details>
+<details class="faq-item">
+<summary>What's the most popular font style for the letter D?
+<p>The double-struck and bold styles tend to get the most use for D. D in double-struck (𝔻) has a clean mathematical appearance that works well for tech and gaming handles. The best choice depends on context — bold and sans-serif variants are easiest to read at the small sizes games use for player names, while script and gothic styles have more visual impact in profile display contexts.</p>
+</details>
+      </div>
+
+      <h2 id="browse-letters">Browse All Letters A–Z</h2>
+      <p>Each letter has its own Unicode style page. Click any letter to see all 15 font styles for it.</p>
+      <div class="az-browse-grid">
+<a href="different-fonts-a.html" class="az-link">A</a>
+<a href="different-fonts-b.html" class="az-link">B</a>
+<a href="different-fonts-c.html" class="az-link">C</a>
+<a href="different-fonts-d.html" class="az-link az-current" aria-current="page">D</a>
+<a href="different-fonts-e.html" class="az-link">E</a>
+<a href="different-fonts-f.html" class="az-link">F</a>
+<a href="different-fonts-g.html" class="az-link">G</a>
+<a href="different-fonts-h.html" class="az-link">H</a>
+<a href="different-fonts-i.html" class="az-link">I</a>
+<a href="different-fonts-j.html" class="az-link">J</a>
+<a href="different-fonts-k.html" class="az-link">K</a>
+<a href="different-fonts-l.html" class="az-link">L</a>
+<a href="different-fonts-m.html" class="az-link">M</a>
+<a href="different-fonts-n.html" class="az-link">N</a>
+<a href="different-fonts-o.html" class="az-link">O</a>
+<a href="different-fonts-p.html" class="az-link">P</a>
+<a href="different-fonts-q.html" class="az-link">Q</a>
+<a href="different-fonts-r.html" class="az-link">R</a>
+<a href="different-fonts-s.html" class="az-link">S</a>
+<a href="different-fonts-t.html" class="az-link">T</a>
+<a href="different-fonts-u.html" class="az-link">U</a>
+<a href="different-fonts-v.html" class="az-link">V</a>
+<a href="different-fonts-w.html" class="az-link">W</a>
+<a href="different-fonts-x.html" class="az-link">X</a>
+<a href="different-fonts-y.html" class="az-link">Y</a>
+<a href="different-fonts-z.html" class="az-link">Z</a>
+</div>
+
+      <h2 id="more-styles">More Font Style Generators</h2>
+      <p>Want to style complete words or names? These generators cover the full text:</p>
+      <ul class="internal-links-list">
+        <li><a href="bold-text.html">Bold Text Generator</a></li>
+<li><a href="unicode-text.html">Unicode Text Converter</a></li>
+<li><a href="gothic-text.html">Gothic Text Generator</a></li>
+
+      </ul>
+
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <h3>AI FONTS GENERATOR</h3>
+    <p style="color:var(--accent);letter-spacing:3px;font-size:12px;margin-top:8px;">EXPRESS YOUR IDENTITY</p>
+  </div>
+  <div class="footer-links">
+    <strong style="margin-bottom:8px;display:block;letter-spacing:2px;font-size:13px;">QUICK LINKS</strong>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-quote">Fonts are the voice of imagination. Make yours louder.</div>
+  <div class="footer-badge">
+    <a href="https://www.toolpilot.ai"
+       target="_blank"
+       rel="noopener">
+      <img src="images/toolpilot-badge.png"
+           alt="Featured on ToolPilot AI"
+           width="120"
+           height="40"
+           loading="lazy">
+    </a>
+  </div>
+</footer>
+
+<script>
+function copyLetter(el) {
+  var char = el.dataset.char;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(char).then(function() {
+      el.classList.add('copied');
+      setTimeout(function() { el.classList.remove('copied'); }, 1200);
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = char;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    el.classList.add('copied');
+    setTimeout(function() { el.classList.remove('copied'); }, 1200);
+  }
+}
+</script>
+
+<script src="fonts-core.js"></script>
+<script src="fonts-letter-page.js" defer></script>
+<link rel="preload" href="fonts-extra.js" as="script">
+<script src="apps.js" defer></script>
+<script src="hamburger.js"></script>
+
+<div class="mobile-bottom-bar" id="mobileBottomBar">
+  <div class="mobile-input-wrap">
+    <input type="text" class="mobile-bottom-input" id="input-text-mobile-bottom" placeholder="D" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <button class="mobile-clear-btn" id="btnMobileClear" aria-label="Clear text">✕</button>
+  </div>
+  <button class="mobile-generate-btn" id="btnMobileGenerate">⚡ GO</button>
+</div>
+
+</body>
+</html>

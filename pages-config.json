@@ -253,5 +253,473 @@
       {"text": "Glitch Text Generator", "url": "glitch-text.html"},
       {"text": "Creepy Text Generator", "url": "creepy-text.html"}
     ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-a",
+    "letter": "A",
+    "filename": "different-fonts-a.html",
+    "title": "A in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter A rendered in 15 Unicode font styles. Copy and paste fancy A symbols for Instagram, Discord, gaming usernames, and more.",
+    "h1": "'A' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter A — click any to copy",
+    "default_text": "A",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "a in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-b",
+    "letter": "B",
+    "filename": "different-fonts-b.html",
+    "title": "B in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter B rendered in 15 Unicode font styles. Copy and paste bold B symbols for gaming names, Discord servers, and Instagram bios.",
+    "h1": "'B' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter B — click any to copy",
+    "default_text": "B",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "b in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-c",
+    "letter": "C",
+    "filename": "different-fonts-c.html",
+    "title": "C in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter C rendered in 15 Unicode font styles. Copy paste cursive C symbols for Instagram bios, aesthetic usernames, and Discord display names.",
+    "h1": "'C' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter C — click any to copy",
+    "default_text": "C",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "c in different fonts",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
+      {"text": "Bubble Text Generator", "url": "bubble-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-d",
+    "letter": "D",
+    "filename": "different-fonts-d.html",
+    "title": "D in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter D rendered in 15 Unicode font styles. Copy paste fancy D symbols in double-struck, gothic, and bold styles for any platform.",
+    "h1": "'D' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter D — click any to copy",
+    "default_text": "D",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "d in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Unicode Text Converter", "url": "unicode-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-e",
+    "letter": "E",
+    "filename": "different-fonts-e.html",
+    "title": "E in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter E rendered in 15 Unicode font styles. Copy paste fancy E symbols — script, italic, bold — for Instagram, Discord, and TikTok.",
+    "h1": "'E' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter E — click any to copy",
+    "default_text": "E",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "e in different fonts",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-f",
+    "letter": "F",
+    "filename": "different-fonts-f.html",
+    "title": "F in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter F rendered in 15 Unicode font styles. Copy paste gothic and cursive F symbols for Discord servers, gaming tags, and Instagram bios.",
+    "h1": "'F' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter F — click any to copy",
+    "default_text": "F",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "f in different fonts",
+    "internal_links": [
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-g",
+    "letter": "G",
+    "filename": "different-fonts-g.html",
+    "title": "G in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter G rendered in 15 Unicode font styles. Copy paste gothic, bold, and sans-serif G symbols for gaming names and Instagram bios.",
+    "h1": "'G' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter G — click any to copy",
+    "default_text": "G",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "g in different fonts",
+    "internal_links": [
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Creepy Text Generator", "url": "creepy-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-h",
+    "letter": "H",
+    "filename": "different-fonts-h.html",
+    "title": "H in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter H rendered in 15 Unicode font styles. Copy paste bold, sans-serif, and script H symbols for Instagram, Discord, and gaming names.",
+    "h1": "'H' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter H — click any to copy",
+    "default_text": "H",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "h in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Unicode Text Converter", "url": "unicode-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-i",
+    "letter": "I",
+    "filename": "different-fonts-i.html",
+    "title": "I in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter I rendered in 15 Unicode font styles. Copy paste script and cursive I symbols for aesthetic Instagram bios and Discord usernames.",
+    "h1": "'I' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter I — click any to copy",
+    "default_text": "I",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "i in different fonts",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
+      {"text": "Tiny Text Generator", "url": "tiny-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-j",
+    "letter": "J",
+    "filename": "different-fonts-j.html",
+    "title": "J in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter J rendered in 15 Unicode font styles. Copy paste bold script J symbols for Instagram bios, Discord display names, and gaming usernames.",
+    "h1": "'J' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter J — click any to copy",
+    "default_text": "J",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "j in different fonts",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-k",
+    "letter": "K",
+    "filename": "different-fonts-k.html",
+    "title": "K in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter K rendered in 15 Unicode font styles. Copy paste gothic and bold K symbols for gaming names like Kira, Killer, and King.",
+    "h1": "'K' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter K — click any to copy",
+    "default_text": "K",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "k in different fonts",
+    "internal_links": [
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-l",
+    "letter": "L",
+    "filename": "different-fonts-l.html",
+    "title": "L in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter L rendered in 15 Unicode font styles. The script ℒ is one of the most elegant single-letter Unicode forms. Copy paste instantly.",
+    "h1": "'L' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter L — click any to copy",
+    "default_text": "L",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "l in different fonts",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-m",
+    "letter": "M",
+    "filename": "different-fonts-m.html",
+    "title": "M in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter M rendered in 15 Unicode font styles. The script ℳ is a recognised decorative Unicode letter. Copy paste for Instagram, Discord, and more.",
+    "h1": "'M' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter M — click any to copy",
+    "default_text": "M",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "m in different fonts",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-n",
+    "letter": "N",
+    "filename": "different-fonts-n.html",
+    "title": "N in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter N rendered in 15 Unicode font styles. Copy paste double-struck and gothic N symbols — the double-struck ℕ is the symbol for natural numbers.",
+    "h1": "'N' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter N — click any to copy",
+    "default_text": "N",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "n in different fonts",
+    "internal_links": [
+      {"text": "Unicode Text Converter", "url": "unicode-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-o",
+    "letter": "O",
+    "filename": "different-fonts-o.html",
+    "title": "O in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter O rendered in 15 Unicode font styles. Copy paste circled Ⓞ and double-struck O symbols for Instagram bios, Discord, and gaming.",
+    "h1": "'O' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter O — click any to copy",
+    "default_text": "O",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "o in different fonts",
+    "internal_links": [
+      {"text": "Bubble Text Generator", "url": "bubble-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-p",
+    "letter": "P",
+    "filename": "different-fonts-p.html",
+    "title": "P in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter P rendered in 15 Unicode font styles. The double-struck ℙ is the symbol for prime numbers. Copy paste for Instagram, Discord, and gaming.",
+    "h1": "'P' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter P — click any to copy",
+    "default_text": "P",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "p in different fonts",
+    "internal_links": [
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Unicode Text Converter", "url": "unicode-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-q",
+    "letter": "Q",
+    "filename": "different-fonts-q.html",
+    "title": "Q in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter Q rendered in 15 Unicode font styles. A rare starting letter — bold and gothic Q symbols make an instant visual statement. Copy paste free.",
+    "h1": "'Q' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter Q — click any to copy",
+    "default_text": "Q",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "q in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-r",
+    "letter": "R",
+    "filename": "different-fonts-r.html",
+    "title": "R in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter R rendered in 15 Unicode font styles. The double-struck ℝ and gothic ℜ are recognised math symbols. Copy paste for Instagram and Discord.",
+    "h1": "'R' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter R — click any to copy",
+    "default_text": "R",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "r in different fonts",
+    "internal_links": [
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Unicode Text Converter", "url": "unicode-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-s",
+    "letter": "S",
+    "filename": "different-fonts-s.html",
+    "title": "S in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter S rendered in 15 Unicode font styles. Copy paste cursive and bold script S symbols for aesthetic Instagram bios and Discord display names.",
+    "h1": "'S' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter S — click any to copy",
+    "default_text": "S",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "s in different fonts",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-t",
+    "letter": "T",
+    "filename": "different-fonts-t.html",
+    "title": "T in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter T rendered in 15 Unicode font styles. Copy paste bold and sans-serif T symbols for gaming tags, streamer aliases, and Discord names.",
+    "h1": "'T' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter T — click any to copy",
+    "default_text": "T",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "t in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Unicode Text Converter", "url": "unicode-text.html"},
+      {"text": "Vaporwave Text Generator", "url": "vaporwave-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-u",
+    "letter": "U",
+    "filename": "different-fonts-u.html",
+    "title": "U in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter U rendered in 15 Unicode font styles. Copy paste bold and cursive U symbols for Instagram bios, Discord, and gaming usernames.",
+    "h1": "'U' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter U — click any to copy",
+    "default_text": "U",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "u in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-v",
+    "letter": "V",
+    "filename": "different-fonts-v.html",
+    "title": "V in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter V rendered in 15 Unicode font styles. Bold italic and gothic V symbols carry winning energy — copy paste for gaming names and Discord.",
+    "h1": "'V' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter V — click any to copy",
+    "default_text": "V",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "v in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-w",
+    "letter": "W",
+    "filename": "different-fonts-w.html",
+    "title": "W in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter W rendered in 15 Unicode font styles. Fullwidth and bold W symbols make a strong visual statement — copy paste for any platform.",
+    "h1": "'W' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter W — click any to copy",
+    "default_text": "W",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "w in different fonts",
+    "internal_links": [
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Vaporwave Text Generator", "url": "vaporwave-text.html"},
+      {"text": "Unicode Text Converter", "url": "unicode-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-x",
+    "letter": "X",
+    "filename": "different-fonts-x.html",
+    "title": "X in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter X rendered in 15 Unicode font styles. Gothic and double-struck X symbols are popular for edgy gaming usernames. Copy paste free.",
+    "h1": "'X' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter X — click any to copy",
+    "default_text": "X",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "x in different fonts",
+    "internal_links": [
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Creepy Text Generator", "url": "creepy-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-y",
+    "letter": "Y",
+    "filename": "different-fonts-y.html",
+    "title": "Y in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter Y rendered in 15 Unicode font styles. Copy paste bold script and cursive Y symbols for personalised initials and aesthetic display names.",
+    "h1": "'Y' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter Y — click any to copy",
+    "default_text": "Y",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "y in different fonts",
+    "internal_links": [
+      {"text": "Cursive Text Generator", "url": "cursive-text.html"},
+      {"text": "Bold Text Generator", "url": "bold-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"}
+    ]
+  },
+  {
+    "type": "letter-page",
+    "slug": "different-fonts-z",
+    "letter": "Z",
+    "filename": "different-fonts-z.html",
+    "title": "Z in Different Fonts — Copy & Paste Unicode Styles | AI Fonts Generator",
+    "meta_desc": "See the letter Z rendered in 15 Unicode font styles. Gothic ℨ and double-struck ℤ Z symbols are popular for usernames like Zoro, Zero, and Zeus.",
+    "h1": "'Z' in Different Fonts",
+    "hero_sub": "15 Unicode styles for the letter Z — click any to copy",
+    "default_text": "Z",
+    "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
+    "keyword": "z in different fonts",
+    "internal_links": [
+      {"text": "Gothic Text Generator", "url": "gothic-text.html"},
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Creepy Text Generator", "url": "creepy-text.html"}
+    ]
   }
 ]

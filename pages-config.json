@@ -1,4 +1,5 @@
-[
+{
+  "pages": [
   {
     "slug": "glitch-text",
     "filename": "glitch-text.html",
@@ -721,5 +722,66 @@
       {"text": "Glitch Text Generator", "url": "glitch-text.html"},
       {"text": "Creepy Text Generator", "url": "creepy-text.html"}
     ]
+  },
+  {
+    "type": "style-page",
+    "slug": "chicano-font-generator",
+    "filename": "chicano-font-generator/index.html",
+    "title": "Chicano Font Generator — Lettering, Script & Tattoo Styles",
+    "meta_desc": "Free chicano font generator with classic lettering, cursive script, gangster, and tattoo styles. Type your text and preview instantly. Download PNG free.",
+    "h1": "Chicano Font Generator",
+    "hero_sub": "Lettering, Cursive Script & Tattoo Styles",
+    "default_text": "Your Name",
+    "show_skin_preview": true,
+    "ai_coming_soon": true,
+    "ai_teaser_title": "AI Chicano Lettering",
+    "ai_teaser_sub": "Real AI-generated tattoo-style lettering — coming soon",
+    "style_fonts": [
+      {"name": "Brock Script", "label": "Brock Script", "category": "Script", "source": "local", "vibe": "SMOOTH SCRIPT"},
+      {"name": "Pinyon Script", "label": "Pinyon Script", "category": "Script", "source": "google", "vibe": "CHICANO CLASSIC"},
+      {"name": "Great Vibes", "label": "Great Vibes", "category": "Script", "source": "google", "vibe": "FLOWING CURSIVE"},
+      {"name": "Style Script", "label": "Style Script", "category": "Script", "source": "google", "vibe": "RETRO SCRIPT"},
+      {"name": "Mrs Saint Delafield", "label": "Saint Delafield", "category": "Script", "source": "google", "vibe": "ORNATE SCRIPT"},
+
+      {"name": "UnifrakturMaguntia", "label": "Unifraktur", "category": "Blackletter", "source": "google", "vibe": "OLD ENGLISH"},
+      {"name": "Dragonwick", "label": "Dragonwick", "category": "Blackletter", "source": "local", "vibe": "MEDIEVAL"},
+      {"name": "Pirata One", "label": "Pirata One", "category": "Blackletter", "source": "google", "vibe": "GANGSTER GOTHIC"},
+      {"name": "Grenze Gotisch", "label": "Grenze Gotisch", "category": "Blackletter", "source": "google", "vibe": "CLEAN GOTHIC"},
+      {"name": "MedievalSharp", "label": "Medieval Sharp", "category": "Blackletter", "source": "google", "vibe": "SHARP GOTHIC"},
+
+      {"name": "Eagle Lake", "label": "Eagle Lake", "category": "Ornate", "source": "google", "vibe": "DECORATIVE"},
+      {"name": "Cinzel Decorative", "label": "Cinzel", "category": "Ornate", "source": "google", "vibe": "ROMAN ORNATE"},
+      {"name": "Metamorphous", "label": "Metamorphous", "category": "Ornate", "source": "google", "vibe": "MEDIEVAL DISPLAY"},
+      {"name": "Almendra", "label": "Almendra", "category": "Ornate", "source": "google", "vibe": "ORNATE SERIF"},
+
+      {"name": "Crimson Italic", "label": "Crimson Italic", "category": "Fine Line", "source": "local", "vibe": "FINE SERIF"},
+      {"name": "Sacramento", "label": "Sacramento", "category": "Fine Line", "source": "google", "vibe": "ULTRA THIN"},
+      {"name": "Tangerine", "label": "Tangerine", "category": "Fine Line", "source": "google", "vibe": "ELEGANT THIN"},
+      {"name": "Zeyada", "label": "Zeyada", "category": "Fine Line", "source": "google", "vibe": "HANDWRITTEN"}
+    ],
+    "unicode_clusters": [
+      {"label": "Smooth Script", "vibe": "Payasa-style smooth lettering", "styles": ["cursive", "bold-cursive"]},
+      {"label": "Old English", "vibe": "Classic OG blackletter", "styles": ["fraktur", "gothic"]},
+      {"label": "Gangster Caps", "vibe": "Bold statement capitals", "styles": ["fullwidth", "bold-serif"]},
+      {"label": "Prayer Hands", "vibe": "Delicate fine-line feel", "styles": ["small-caps", "script"]}
+    ],
+    "gallery_examples": {
+      "names": ["Sofia", "Maria", "Angel", "Familia", "Esperanza", "Carlos", "Mi Vida", "Lupita", "Hermanos", "Diego"],
+      "count": 20
+    },
+    "local_fonts_path": "fonts/",
+    "has_local_fonts": true,
+    "keywords": ["chicano font generator", "chicano lettering generator", "chicano cursive font generator", "chicano tattoo font generator", "gangster chicano lettering generator", "chicano font generator free", "chicano script font generator"],
+    "internal_links": [
+      {"url": "/", "text": "More Font Styles"},
+      {"url": "/gothic-text.html", "text": "Gothic Fonts"},
+      {"url": "/cursive-text.html", "text": "Cursive Text Generator"}
+    ]
   }
-]
+  ],
+  "clusters": {
+    "dark": ["zalgo-text", "glitch-text", "creepy-text", "gothic-text", "mirror-text"],
+    "social": ["bold-text", "tiny-text", "aesthetic-text", "cursive-text", "vaporwave-text", "strikethrough-text", "upside-down-text", "bubble-text"],
+    "unicode": ["unicode-text", "runic-text"]
+  }
+}

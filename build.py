@@ -3,13 +3,71 @@ import os
 import html as html_module
 from datetime import date
 
+import gallery_generator
+
+BASE_URL = "https://aifontsgenerator.com"
+
 # ── Existing helpers ─────────────────────────────────────────────────────────
+
+def load_pages_config():
+    """Load pages-config.json, returning (pages_list, clusters_dict)."""
+    with open('pages-config.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return data['pages'], data.get('clusters', {})
+
 
 def generate_internal_links_html(links):
     html = ""
     for link in links:
         html += f'<li><a href="{link["url"]}">{link["text"]}</a></li>\n'
     return html
+
+
+# Tool-page slug -> H1/anchor text, used for cluster-based related-tools links.
+# unicode-text's real product name is "Unicode Text Converter" (matches its H1
+# and every existing internal_links entry site-wide), not "...Generator".
+TOOL_ANCHOR_TEXT = {
+    'glitch-text':          'Glitch Text Generator',
+    'bold-text':            'Bold Text Generator',
+    'cursive-text':         'Cursive Text Generator',
+    'tiny-text':            'Tiny Text Generator',
+    'zalgo-text':           'Zalgo Text Generator',
+    'upside-down-text':     'Upside Down Text Generator',
+    'gothic-text':          'Gothic Text Generator',
+    'creepy-text':          'Creepy Text Generator',
+    'strikethrough-text':   'Strikethrough Text Generator',
+    'unicode-text':         'Unicode Text Converter',
+    'bubble-text':          'Bubble Text Generator',
+    'mirror-text':          'Mirror Text Generator',
+    'aesthetic-text':       'Aesthetic Text Generator',
+    'vaporwave-text':       'Vaporwave Text Generator',
+    'runic-text':           'Runic Text Generator',
+}
+
+
+def generate_related_tools_html(slug, clusters):
+    """Build the related-tools section linking to sibling pages in this
+    tool's cluster, plus a link to categories.html."""
+    cluster_name = next((name for name, slugs in clusters.items() if slug in slugs), None)
+    if cluster_name is None:
+        return ''
+
+    siblings = [s for s in clusters[cluster_name] if s != slug]
+
+    links_html = ''
+    for sibling_slug in siblings:
+        anchor = TOOL_ANCHOR_TEXT.get(sibling_slug)
+        if not anchor:
+            continue
+        links_html += f'  <a href="/{sibling_slug}.html">{anchor}</a>\n'
+    links_html += '  <a href="/categories.html">Browse All Font Categories</a>\n'
+
+    return (
+        f'<section class="related-tools">\n'
+        f'  <h2>Related Font Tools</h2>\n'
+        f'{links_html}'
+        f'</section>'
+    )
 
 def generate_faq_html(faqs):
     html = ""
@@ -22,11 +80,10 @@ def generate_faq_html(faqs):
     return html
 
 def build_pages():
-    with open('pages-config.json', 'r', encoding='utf-8') as f:
-        pages = json.load(f)
+    all_pages, clusters = load_pages_config()
 
-    # Skip letter pages — handled by build_letter_pages()
-    pages = [p for p in pages if p.get('type') != 'letter-page']
+    # Skip letter pages and style pages — handled by their own builders
+    pages = [p for p in all_pages if p.get('type') not in ('letter-page', 'style-page')]
 
     with open('template.html', 'r', encoding='utf-8') as f:
         template = f.read()
@@ -42,6 +99,7 @@ def build_pages():
         categories_str = ','.join(page['categories'])
         internal_links_html = generate_internal_links_html(page['internal_links'])
         faq_html = generate_faq_html(faqs)
+        related_tools_html = generate_related_tools_html(slug, clusters)
 
         html = template
         html = html.replace('{{TITLE}}', page['title'])
@@ -62,6 +120,7 @@ def build_pages():
         html = html.replace('{{WHY_UNICODE}}', article.get('why_unicode', ''))
         html = html.replace('{{FAQ_HTML}}', faq_html)
         html = html.replace('{{INTERNAL_LINKS_HTML}}', internal_links_html)
+        html = html.replace('{{RELATED_TOOLS_HTML}}', related_tools_html)
 
         with open(page['filename'], 'w', encoding='utf-8') as f:
             f.write(html)
@@ -168,9 +227,36 @@ def generate_az_grid_html(current_letter):
     return '<div class="az-browse-grid">\n' + '\n'.join(parts) + '\n</div>'
 
 
+def generate_prev_next_letter_html(current_letter):
+    letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    idx = letters.index(current_letter)
+    prev_letter = letters[idx - 1] if idx > 0 else None
+    next_letter = letters[idx + 1] if idx < len(letters) - 1 else None
+
+    parts = []
+    if prev_letter:
+        parts.append(
+            f'<a href="different-fonts-{prev_letter.lower()}.html">'
+            f"&larr; '{prev_letter}' in Different Fonts</a>"
+        )
+    if next_letter:
+        parts.append(
+            f'<a href="different-fonts-{next_letter.lower()}.html">'
+            f"'{next_letter}' in Different Fonts &rarr;</a>"
+        )
+    parts.append('<a href="categories.html">Browse All Font Categories</a>')
+
+    links_html = '\n'.join(f'  {p}' for p in parts)
+    return (
+        f'<section class="related-tools">\n'
+        f'  <h2>More Letters</h2>\n'
+        f'{links_html}\n'
+        f'</section>'
+    )
+
+
 def build_letter_pages():
-    with open('pages-config.json', 'r', encoding='utf-8') as f:
-        all_pages = json.load(f)
+    all_pages, _clusters = load_pages_config()
 
     letter_pages = [p for p in all_pages if p.get('type') == 'letter-page']
 
@@ -188,6 +274,7 @@ def build_letter_pages():
         faq_html = generate_letter_faq_html(letter)
         internal_links_html = generate_internal_links_html(page['internal_links'])
         az_grid_html = generate_az_grid_html(letter)
+        prev_next_html = generate_prev_next_letter_html(letter)
 
         output = template
         output = output.replace('{{TITLE}}', page['title'])
@@ -204,6 +291,7 @@ def build_letter_pages():
         output = output.replace('{{FAQ_HTML}}', faq_html)
         output = output.replace('{{INTERNAL_LINKS_HTML}}', internal_links_html)
         output = output.replace('{{AZ_GRID}}', az_grid_html)
+        output = output.replace('{{PREV_NEXT_LETTER_HTML}}', prev_next_html)
 
         with open(page['filename'], 'w', encoding='utf-8') as f:
             f.write(output)
@@ -237,7 +325,7 @@ def update_sitemap(letter_pages):
               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
               '']
 
-    base = 'https://aifontsgenerator.com'
+    base = BASE_URL
     blocks.append(url_block(f'{base}/', '1.0', 'weekly'))
     blocks.append(url_block(f'{base}/categories.html', '0.9', 'weekly'))
 
@@ -783,7 +871,224 @@ def generate_homepage_previews():
         print("index.html previews already up to date.")
 
 
+# ── Style page infrastructure ─────────────────────────────────────────────────
+
+# Maps compact style keys (from pages-config.json unicode_clusters)
+# to STYLE_TRANSFORMS keys used for sample generation.
+_CLUSTER_STYLE_MAP = {
+    'cursive':      'Cursive',
+    'bold-cursive': 'Bold Script',
+    'fraktur':      'Fraktur',
+    'gothic':       'Medieval',
+    'fullwidth':    'Full Width',
+    'bold-serif':   'Ultra Bold',
+    'small-caps':   'Microcaps Hybrid',
+    'script':       'Cursive',
+    'italic':       'Italic',
+    'bold':         'Bold',
+    'double-struck': 'Double Struck',
+    'monospace':    'Monospace',
+    'circled':      'Circled',
+}
+
+
+def generate_unicode_cluster_html(clusters, sample_text='Your Name'):
+    """Build the unicode-cluster section HTML from pages-config cluster config."""
+    html = ''
+    for cluster in clusters:
+        label = html_module.escape(cluster.get('label', ''))
+        vibe  = html_module.escape(cluster.get('vibe', ''))
+        styles = cluster.get('styles', [])
+
+        samples_html = ''
+        for style_key in styles:
+            transform_name = _CLUSTER_STYLE_MAP.get(style_key)
+            transform = STYLE_TRANSFORMS.get(transform_name) if transform_name else None
+            if not transform:
+                continue
+            try:
+                preview = transform(sample_text)
+            except Exception:
+                preview = sample_text
+            safe_preview = html_module.escape(preview, quote=True)
+            samples_html += (
+                f'<div class="cluster-sample">'
+                f'<span class="sample-style-name">{html_module.escape(transform_name or style_key)}</span>'
+                f'<span class="sample-text">{html_module.escape(preview)}</span>'
+                f'<button class="sample-copy-btn" onclick="copyClusterSample(this)" '
+                f'data-text="{safe_preview}">Copy</button>'
+                f'</div>\n'
+            )
+
+        if not samples_html:
+            continue
+
+        html += (
+            f'<div class="unicode-cluster">\n'
+            f'  <div class="cluster-header">\n'
+            f'    <div class="cluster-label">{label}</div>\n'
+            f'    <div class="cluster-vibe">{vibe}</div>\n'
+            f'  </div>\n'
+            f'  <div class="cluster-samples">\n'
+            f'{samples_html}'
+            f'  </div>\n'
+            f'</div>\n'
+        )
+    return html
+
+
+def generate_style_font_links(style_fonts):
+    """Return a single combined Google Fonts <link> tag for all style_fonts."""
+    if not style_fonts:
+        return ''
+    families = '&'.join(
+        'family=' + f['name'].replace(' ', '+') + ':wght@400'
+        for f in style_fonts
+    )
+    href = f'https://fonts.googleapis.com/css2?{families}&display=swap'
+    return f'  <link href="{href}" rel="stylesheet">'
+
+
+def generate_style_content_html(page):
+    """Generate minimal SEO content for a style page from its config."""
+    h1 = html_module.escape(page.get('h1', ''))
+    hero_sub = html_module.escape(page.get('hero_sub', ''))
+    keywords = page.get('keywords', [])
+    kw_list = ', '.join(keywords[:4]) if keywords else h1
+
+    return (
+        f'<h2>What Is a {h1}?</h2>\n'
+        f'<p>A {h1} lets you preview real web fonts on a live canvas. '
+        f'Type your name or any text, choose a style, and download a high-resolution PNG. '
+        f'All fonts are open-source (OFL licensed) and free for commercial use.</p>\n'
+        f'<h2>How to Use This Generator</h2>\n'
+        f'<p>Type your text in the input above. Each card updates instantly in the font shown. '
+        f'Click <strong>Download PNG</strong> to save any design, or <strong>Copy as Image</strong> '
+        f'to paste directly into Instagram, Discord, or your phone\'s photo library.</p>\n'
+        f'<h2>Popular Uses</h2>\n'
+        f'<p>These styles are used for tattoo consultations, Instagram headers, '
+        f'Discord server banners, TikTok overlays, and personalised name art. '
+        f'Search terms like <em>{html_module.escape(kw_list)}</em> '
+        f'all lead to this generator.</p>\n'
+    )
+
+
+def generate_gallery_section_html(gallery_items, style_keyword):
+    """Render the pre-rendered example gallery grid (SEO / Google Images target)."""
+    if not gallery_items:
+        return ''
+
+    figures = []
+    for item in gallery_items:
+        alt = f'{item["name"]} written in {style_keyword.lower()} {item["style_label"].lower()} lettering'
+        figures.append(
+            f'<figure class="gallery-item">\n'
+            f'  <img src="examples/{item["filename"]}" alt="{html_module.escape(alt, quote=True)}" '
+            f'loading="lazy" width="1200" height="630">\n'
+            f'  <figcaption>{html_module.escape(item["name"])} — {html_module.escape(item["style_label"])}</figcaption>\n'
+            f'</figure>'
+        )
+
+    grid = '\n'.join(figures)
+    return (
+        f'<div class="ink-divider" aria-hidden="true"><svg width="120" height="16"><use href="#ink-flourish"></use></svg></div>\n'
+        f'<section class="gallery-section">\n'
+        f'<h2>{style_keyword} lettering examples</h2>\n'
+        f'<div class="gallery-grid">\n{grid}\n</div>\n'
+        f'</section>'
+    )
+
+
+def build_style_pages():
+    all_pages, _clusters = load_pages_config()
+
+    style_pages = [p for p in all_pages if p.get('type') == 'style-page']
+
+    if not style_pages:
+        print("No style pages found in pages-config.json.")
+        return
+
+    with open('template-style.html', 'r', encoding='utf-8') as f:
+        template = f.read()
+
+    for page in style_pages:
+        slug     = page['slug']
+        filename = page['filename']
+        style_fonts = page.get('style_fonts', [])
+        clusters    = page.get('unicode_clusters', [])
+        sample_text = page.get('default_text', 'Your Name')
+
+        # Create output directory if needed
+        out_dir = os.path.dirname(filename)
+        if out_dir:
+            os.makedirs(out_dir, exist_ok=True)
+
+        # Build substitution values
+        style_fonts_json  = json.dumps(style_fonts, ensure_ascii=False)
+        font_links        = generate_style_font_links(style_fonts)
+        cluster_html      = generate_unicode_cluster_html(clusters, sample_text)
+        internal_links_html = generate_internal_links_html(page.get('internal_links', []))
+        content_html      = generate_style_content_html(page)
+
+        show_skin = 'true' if page.get('show_skin_preview') else 'false'
+        local_fonts_path = page.get('local_fonts_path', '') if page.get('has_local_fonts') else ''
+
+        clusters_heading = page.get('h1', 'Unicode Text Styles')
+        clusters_heading = f'Unicode {clusters_heading.split()[0]} Text Styles'
+
+        if page.get('ai_coming_soon'):
+            ai_title = html_module.escape(page.get('ai_teaser_title', 'AI Lettering'))
+            ai_sub   = html_module.escape(page.get('ai_teaser_sub', 'Coming soon'))
+            ai_section = (
+                f'<div id="ai-teaser-section" '
+                f'data-ai-title="{ai_title}" '
+                f'data-ai-sub="{ai_sub}">'
+                f'</div>'
+            )
+        else:
+            ai_section = ''
+
+        gallery_config = page.get('gallery_examples')
+        if gallery_config:
+            examples_dir = os.path.join(out_dir or '.', 'examples')
+            gallery_items = gallery_generator.generate_gallery(
+                slug, style_fonts, gallery_config.get('names', []),
+                examples_dir, gallery_config.get('count', 20)
+            )
+            style_keyword = page.get('h1', 'Style').split()[0]
+            gallery_html = generate_gallery_section_html(gallery_items, style_keyword)
+            print(f"  Gallery: {len(gallery_items)} PNGs -> {examples_dir}")
+        else:
+            gallery_html = ''
+
+        html = template
+        html = html.replace('{{TITLE}}',                page['title'])
+        html = html.replace('{{META_DESC}}',            page['meta_desc'])
+        html = html.replace('{{H1}}',                   page['h1'])
+        html = html.replace('{{HERO_SUB}}',             page.get('hero_sub', ''))
+        html = html.replace('{{DEFAULT_TEXT}}',         html_module.escape(sample_text))
+        html = html.replace('{{SLUG}}',                 slug)
+        html = html.replace('{{STYLE_FONT_LINKS}}',     font_links)
+        html = html.replace('{{STYLE_FONTS_JSON}}',     html_module.escape(style_fonts_json, quote=True))
+        html = html.replace('{{SHOW_SKIN_PREVIEW}}',    show_skin)
+        html = html.replace('{{LOCAL_FONTS_PATH}}',     html_module.escape(local_fonts_path, quote=True))
+        html = html.replace('{{AI_TEASER_SECTION}}',    ai_section)
+        html = html.replace('{{UNICODE_CLUSTERS_HEADING}}', clusters_heading)
+        html = html.replace('{{UNICODE_CLUSTER_HTML}}', cluster_html)
+        html = html.replace('{{CONTENT_HTML}}',         content_html)
+        html = html.replace('{{GALLERY_SECTION}}',      gallery_html)
+        html = html.replace('{{INTERNAL_LINKS_HTML}}',  internal_links_html)
+
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(html)
+
+        print(f"Built: {filename}")
+
+    print(f"\nDone. {len(style_pages)} style pages generated.")
+
+
 if __name__ == '__main__':
     build_pages()
     build_letter_pages()
+    build_style_pages()
     generate_homepage_previews()

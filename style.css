@@ -5028,6 +5028,34 @@ footer {
   background: rgba(196,160,82,0.08);
 }
 
+.related-tools {
+  margin: 32px 0;
+}
+
+.related-tools h2 {
+  margin-bottom: 12px;
+}
+
+.related-tools a {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  margin: 0 0 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.related-tools a:hover {
+  border-color: var(--accent);
+  background: rgba(196,160,82,0.08);
+}
+
 .footer-badge {
   display: flex;
   align-items: center;

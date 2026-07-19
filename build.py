@@ -1004,6 +1004,10 @@ def generate_gallery_section_html(gallery_items, style_keyword):
 
 
 def build_style_pages():
+    if not os.path.exists('template-style.html'):
+        print("template-style.html not found — skipping style pages (local-only feature)")
+        return
+
     all_pages, _clusters = load_pages_config()
 
     style_pages = [p for p in all_pages if p.get('type') == 'style-page']

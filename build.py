@@ -3,7 +3,11 @@ import os
 import html as html_module
 from datetime import date
 
-import gallery_generator
+try:
+    import gallery_generator
+    HAS_GALLERY = True
+except ModuleNotFoundError:
+    HAS_GALLERY = False
 
 BASE_URL = "https://aifontsgenerator.com"
 
@@ -1051,13 +1055,16 @@ def build_style_pages():
         gallery_config = page.get('gallery_examples')
         if gallery_config:
             examples_dir = os.path.join(out_dir or '.', 'examples')
-            gallery_items = gallery_generator.generate_gallery(
-                slug, style_fonts, gallery_config.get('names', []),
-                examples_dir, gallery_config.get('count', 20)
-            )
-            style_keyword = page.get('h1', 'Style').split()[0]
-            gallery_html = generate_gallery_section_html(gallery_items, style_keyword)
-            print(f"  Gallery: {len(gallery_items)} PNGs -> {examples_dir}")
+            if HAS_GALLERY:
+                gallery_items = gallery_generator.generate_gallery(
+                    slug, style_fonts, gallery_config.get('names', []),
+                    examples_dir, gallery_config.get('count', 20)
+                )
+                style_keyword = page.get('h1', 'Style').split()[0]
+                gallery_html = generate_gallery_section_html(gallery_items, style_keyword)
+                print(f"  Gallery: {len(gallery_items)} PNGs -> {examples_dir}")
+            else:
+                gallery_html = ''
         else:
             gallery_html = ''
 

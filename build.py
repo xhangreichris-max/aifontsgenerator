@@ -953,6 +953,243 @@ def generate_style_font_links(style_fonts):
     return f'  <link href="{href}" rel="stylesheet">'
 
 
+def markdown_inline_to_html(text):
+    """Convert **bold** and [text](url) inline markdown to HTML."""
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
+    text = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', text)
+    return text
+
+
+def markdown_strip_inline(text):
+    """Strip **bold** and [text](url) markup down to plain text, for JSON-LD."""
+    text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+    text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)
+    return text
+
+
+# Exact font names styled as inline reference chips (code.font-ref) wherever
+# they're mentioned in article prose. Sorted longest-first defensively, though
+# none of these 18 names are substrings of one another.
+FONT_REF_NAMES = sorted([
+    'Brock Script', 'Pinyon Script', 'Great Vibes', 'Style Script',
+    'Mrs Saint Delafield', 'Unifraktur', 'Dragonwick', 'Pirata One',
+    'Grenze Gotisch', 'Medieval Sharp', 'Eagle Lake', 'Cinzel',
+    'Almendra', 'Metamorphous', 'Crimson Italic', 'Sacramento',
+    'Tangerine', 'Zeyada',
+], key=len, reverse=True)
+FONT_REF_RE = re.compile('|'.join(re.escape(n) for n in FONT_REF_NAMES))
+
+
+def apply_font_refs(html_fragment):
+    return FONT_REF_RE.sub(lambda m: f'<code class="font-ref">{m.group(0)}</code>', html_fragment)
+
+
+def is_unicode_table_block(lines):
+    """A unicode-cluster comparison block: a bare title line (no colon)
+    followed by one or more 'Label: sample' lines."""
+    if len(lines) < 2:
+        return False
+    if ':' in lines[0]:
+        return False
+    return all(':' in l for l in lines[1:])
+
+
+def render_unicode_table(lines):
+    name = markdown_inline_to_html(lines[0])
+    rows = []
+    for l in lines[1:]:
+        label, _, sample = l.partition(':')
+        rows.append(
+            f'<div class="unicode-row">'
+            f'<span class="unicode-label">{markdown_inline_to_html(label.strip())}</span>'
+            f'<span class="unicode-sample">{markdown_inline_to_html(sample.strip())}</span>'
+            f'</div>'
+        )
+    return (
+        f'<div class="unicode-table">\n'
+        f'<div class="unicode-cluster-name">{name}</div>\n'
+        + '\n'.join(rows) +
+        '\n</div>'
+    )
+
+
+def markdown_to_html(md_text):
+    """Purpose-built converter for long-form article content: h2, bold,
+    links, paragraphs (including line-break stacks), ordered lists, and hr —
+    plus a handful of section-aware structural transforms specific to this
+    article: the opening/closing narrative gets wrapped as '.article-story',
+    font names get tagged as 'code.font-ref', the unicode style-comparison
+    blocks become '.unicode-table' markup, FAQ pairs under 'Common questions'
+    become '.faq-item' divs, and the Android-compatibility paragraph becomes
+    an '.article-caveat' aside. Deliberately not a general-purpose parser —
+    only covers what this article actually uses."""
+    raw_blocks = [b.strip() for b in re.split(r'\n\s*\n', md_text.strip()) if b.strip()]
+
+    ol_re = re.compile(r'^\d+\.\s+(.*)', re.S)
+    parsed = []
+    for b in raw_blocks:
+        if b == '---':
+            parsed.append({'kind': 'hr'})
+        elif b.startswith('## '):
+            parsed.append({'kind': 'h2', 'text': b[3:].strip()})
+        else:
+            m = ol_re.match(b)
+            if m:
+                parsed.append({'kind': 'ol_item', 'text': m.group(1).strip()})
+            else:
+                lines = [l.strip() for l in b.split('\n') if l.strip()]
+                parsed.append({'kind': 'para', 'lines': lines, 'raw': b})
+
+    h2_indices = [i for i, blk in enumerate(parsed) if blk['kind'] == 'h2']
+    first_h2_idx = h2_indices[0] if h2_indices else len(parsed)
+    last_h2_idx = h2_indices[-1] if h2_indices else -1
+    last_idx = len(parsed) - 1
+
+    out = []
+    story_buffer = []
+    list_items = []
+    current_section = None
+
+    def flush_list():
+        if list_items:
+            items_html = ''.join(f'<li>{apply_font_refs(item)}</li>' for item in list_items)
+            out.append(f'<ol>{items_html}</ol>')
+            list_items.clear()
+
+    for i, blk in enumerate(parsed):
+        kind = blk['kind']
+
+        if kind == 'h2':
+            flush_list()
+            current_section = blk['text']
+            out.append(f'<h2>{markdown_inline_to_html(blk["text"])}</h2>')
+            continue
+
+        if kind == 'hr':
+            flush_list()
+            out.append('<hr>')
+            continue
+
+        if kind == 'ol_item':
+            list_items.append(blk['text'])
+            continue
+
+        # kind == 'para'
+        flush_list()
+        lines, raw = blk['lines'], blk['raw']
+
+        # Opening narrative: every paragraph before the first H2.
+        if i < first_h2_idx:
+            story_buffer.append(f'<p>{apply_font_refs(markdown_inline_to_html(raw))}</p>')
+            continue
+
+        # Closing narrative: the very last block in the document, provided
+        # it falls after the last H2 (true for this article's Marcus outro).
+        if i == last_idx and last_h2_idx != -1 and i > last_h2_idx:
+            out.append(
+                f'<div class="article-story">\n'
+                f'<p>{apply_font_refs(markdown_inline_to_html(raw))}</p>\n'
+                f'</div>'
+            )
+            continue
+
+        # Android-compatibility caveat, called out as a flagged aside.
+        if raw.startswith('One caveat'):
+            out.append(f'<aside class="article-caveat">{markdown_inline_to_html(raw)}</aside>')
+            continue
+
+        q_match = re.fullmatch(r'\*\*(.+)\*\*', lines[0]) if lines else None
+
+        # FAQ question/answer pairs under "Common questions".
+        if current_section == 'Common questions' and q_match and len(lines) > 1:
+            question = markdown_strip_inline(lines[0])
+            answer = markdown_inline_to_html(' '.join(lines[1:]))
+            out.append(
+                f'<div class="faq-item">\n'
+                f'<p class="faq-question">{question}</p>\n'
+                f'<p class="faq-answer">{answer}</p>\n'
+                f'</div>'
+            )
+            continue
+
+        # Unicode style-comparison stacks ("Smooth Script / Cursive: ... / ...").
+        if is_unicode_table_block(lines):
+            out.append(render_unicode_table(lines))
+            continue
+
+        # Generic bold-lead paragraph pair (fallback, unused outside FAQ today).
+        if q_match and len(lines) > 1:
+            question = markdown_inline_to_html(lines[0])
+            answer = markdown_inline_to_html(' '.join(lines[1:]))
+            out.append(f'<p>{question}</p>\n<p>{answer}</p>')
+            continue
+
+        # Generic multi-line paragraph (line-break stack fallback).
+        if len(lines) > 1:
+            joined = '<br>\n'.join(markdown_inline_to_html(l) for l in lines)
+            out.append(f'<p>{apply_font_refs(joined)}</p>')
+            continue
+
+        out.append(f'<p>{apply_font_refs(markdown_inline_to_html(raw))}</p>')
+
+    flush_list()
+
+    result = []
+    if story_buffer:
+        result.append('<div class="article-story">\n' + '\n'.join(story_buffer) + '\n</div>')
+    result.extend(out)
+    return '\n'.join(result)
+
+
+def extract_faqs_from_markdown(md_text):
+    """Pull Q/A pairs out of the '## Common questions' section for FAQ schema."""
+    m = re.search(r'## Common questions\n(.*?)(?:\n## |\n---|\Z)', md_text, re.S)
+    if not m:
+        return []
+    section = m.group(1)
+    blocks = re.split(r'\n\s*\n', section.strip())
+    faqs = []
+    for block in blocks:
+        lines = [l.strip() for l in block.strip().split('\n') if l.strip()]
+        if not lines:
+            continue
+        q_match = re.fullmatch(r'\*\*(.+)\*\*', lines[0])
+        if q_match and len(lines) > 1:
+            question = markdown_strip_inline(q_match.group(1))
+            answer = markdown_strip_inline(' '.join(lines[1:]))
+            faqs.append({'q': question, 'a': answer})
+    return faqs
+
+
+def generate_faq_schema_json(faqs):
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": faq['q'],
+                "acceptedAnswer": {"@type": "Answer", "text": faq['a']},
+            }
+            for faq in faqs
+        ],
+    }
+    return json.dumps(schema, ensure_ascii=False, indent=2)
+
+
+def generate_webapp_schema_json(page):
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": page['h1'],
+        "url": f"{BASE_URL}/{page['slug']}/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    }
+    return json.dumps(schema, ensure_ascii=False, indent=2)
+
+
 def generate_style_content_html(page):
     """Generate minimal SEO content for a style page from its config."""
     h1 = html_module.escape(page.get('h1', ''))
@@ -1036,7 +1273,22 @@ def build_style_pages():
         font_links        = generate_style_font_links(style_fonts)
         cluster_html      = generate_unicode_cluster_html(clusters, sample_text)
         internal_links_html = generate_internal_links_html(page.get('internal_links', []))
-        content_html      = generate_style_content_html(page)
+
+        content_file = page.get('content_file')
+        if content_file:
+            with open(content_file, 'r', encoding='utf-8') as cf:
+                article_md = cf.read()
+            content_html = f'<article class="style-article">\n{markdown_to_html(article_md)}\n</article>'
+            faqs = extract_faqs_from_markdown(article_md)
+            schema_ld_json = (
+                f'<script type="application/ld+json">\n{generate_faq_schema_json(faqs)}\n</script>\n'
+                f'<script type="application/ld+json">\n{generate_webapp_schema_json(page)}\n</script>'
+            )
+            json.loads(generate_faq_schema_json(faqs))  # validate before writing
+            json.loads(generate_webapp_schema_json(page))
+        else:
+            content_html = generate_style_content_html(page)
+            schema_ld_json = ''
 
         show_skin = 'true' if page.get('show_skin_preview') else 'false'
         local_fonts_path = page.get('local_fonts_path', '') if page.get('has_local_fonts') else ''
@@ -1072,9 +1324,21 @@ def build_style_pages():
         else:
             gallery_html = ''
 
+        # og:image defaults to the site-wide generic image so every style
+        # page keeps working without a config change; a page that sets
+        # og_image (currently just chicano) gets its own social preview.
+        og_image = BASE_URL + page['og_image'] if page.get('og_image') else f'{BASE_URL}/images/og-image.png'
+        og_title = page.get('og_title', page['title'])
+        og_description = page.get('og_description', page['meta_desc'])
+        og_image_alt = page.get('og_image_alt', og_title)
+
         html = template
         html = html.replace('{{TITLE}}',                page['title'])
         html = html.replace('{{META_DESC}}',            page['meta_desc'])
+        html = html.replace('{{OG_IMAGE}}',              og_image)
+        html = html.replace('{{OG_TITLE}}',              og_title)
+        html = html.replace('{{OG_DESCRIPTION}}',        og_description)
+        html = html.replace('{{OG_IMAGE_ALT}}',          og_image_alt)
         html = html.replace('{{H1}}',                   page['h1'])
         html = html.replace('{{HERO_SUB}}',             page.get('hero_sub', ''))
         html = html.replace('{{DEFAULT_TEXT}}',         html_module.escape(sample_text))
@@ -1087,6 +1351,7 @@ def build_style_pages():
         html = html.replace('{{UNICODE_CLUSTERS_HEADING}}', clusters_heading)
         html = html.replace('{{UNICODE_CLUSTER_HTML}}', cluster_html)
         html = html.replace('{{CONTENT_HTML}}',         content_html)
+        html = html.replace('{{SCHEMA_LD_JSON}}',        schema_ld_json)
         html = html.replace('{{GALLERY_SECTION}}',      gallery_html)
         html = html.replace('{{INTERNAL_LINKS_HTML}}',  internal_links_html)
 

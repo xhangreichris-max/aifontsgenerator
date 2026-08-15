@@ -38,6 +38,9 @@ jobs:
       - name: Install terser
         run: npm install -g terser@5
 
+      - name: Install Pillow
+        run: pip install Pillow
+
       # ── Build HTML from template + pages-config.json ─────────────────────
       - name: Build HTML pages
         run: python build.py
@@ -47,7 +50,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add *.html
+          git add *.html chicano-font-generator/
           git diff --staged --quiet || git commit -m "Build: auto-generate sub-pages [skip ci]"
           git push
 
@@ -66,6 +69,9 @@ jobs:
           cp *.txt  dist/ 2>/dev/null || true
           cp CNAME  dist/ 2>/dev/null || true
           cp -r images dist/ 2>/dev/null || true
+          # Reusable component assets (CSS/JS) + style-page subfolders
+          cp -r assets dist/ 2>/dev/null || true
+          cp -r chicano-font-generator dist/ 2>/dev/null || true
           echo "=== dist/ contents ==="
           ls -la dist/
 

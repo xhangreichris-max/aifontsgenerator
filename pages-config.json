@@ -729,6 +729,10 @@
     "filename": "chicano-font-generator/index.html",
     "title": "Chicano Font Generator — Lettering, Script & Tattoo Styles",
     "meta_desc": "Free chicano font generator with classic lettering, cursive script, gangster, and tattoo styles. Type your text and preview instantly. Download PNG free.",
+    "og_image": "/assets/img/og-preview.png",
+    "og_title": "Chicano Font Generator — Free Tattoo Lettering Preview",
+    "og_description": "See your name in chicano lettering before you ink it. 18 fonts, skin preview, tattoo age slider, proof sheet export. Free.",
+    "og_image_alt": "Three chicano proof sheets showing Sofia in blood red script, Familia in gold gothic, and Maria in classic black — aifontsgenerator.com",
     "h1": "Chicano Font Generator",
     "hero_sub": "Lettering, Cursive Script & Tattoo Styles",
     "default_text": "Your Name",
@@ -771,6 +775,7 @@
     },
     "local_fonts_path": "fonts/",
     "has_local_fonts": true,
+    "content_file": "content/chicano-font-generator.md",
     "keywords": ["chicano font generator", "chicano lettering generator", "chicano cursive font generator", "chicano tattoo font generator", "gangster chicano lettering generator", "chicano font generator free", "chicano script font generator"],
     "internal_links": [
       {"url": "/", "text": "More Font Styles"},

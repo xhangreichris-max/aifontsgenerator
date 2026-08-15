@@ -1,0 +1,2208 @@
+/* style-preview.css — "ink studio" canvas font preview component
+ * Brand: bg #0A0A0A · accent #CCFF00 · text #FFF · cards #111 border #222
+ * Fonts: Space Grotesk (UI) · JetBrains Mono (mono/labels)
+ * Design language: fine-line single-needle tattoo art — thin lines,
+ * ornament used sparingly, monochrome except the accent.
+ */
+
+/* ── Chicano Studio design tokens ─────────────────────────────────────────
+ * Declared globally (harmless — unused custom properties have zero visual
+ * effect) but only ever CONSUMED inside the chicano-only scoped block near
+ * the end of this file, selected via
+ * `.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"])`.
+ * Every other style page built from this same file is visually unchanged. */
+
+:root {
+  --surface-page:    #0A0A0A;
+  --surface-panel:   #0F0F0F;
+  --surface-card:    #141414;
+  --surface-raised:  #1A1A1A;
+  --surface-overlay: #1F1F1F;
+
+  --border-subtle:   #1A1A1A;
+  --border-default:  #242424;
+  --border-strong:   #333333;
+  --border-accent:   rgba(204,255,0,0.25);
+
+  --text-primary:    #F0F0F0;
+  --text-secondary:  #A0A0A0;
+  --text-muted:      #5A5A5A;
+  --text-disabled:   #333333;
+  --text-inverse:    #0A0A0A;
+
+  --accent:          #CCFF00;
+  --accent-dim:      rgba(204,255,0,0.18);
+  --accent-ghost:    rgba(204,255,0,0.06);
+
+  --state-hover-bg:    rgba(255,255,255,0.04);
+  --state-active-bg:   rgba(255,255,255,0.07);
+  --state-selected-bg: rgba(204,255,0,0.08);
+  --state-hover-text:  #D0D0D0;
+  --state-focus-ring:  0 0 0 2px var(--accent);
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Article-only editorial fonts — never used in the tool zone (cards,
+     controls, canvas) which stays on --font-display/--font-mono. */
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-reading:   'DM Sans', system-ui, sans-serif;
+
+  --text-xs: 10px; --text-sm: 12px; --text-base: 14px;
+  --text-md: 16px; --text-lg: 18px; --text-xl: 22px;
+
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-full: 999px;
+
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:   cubic-bezier(0.64, 0, 0.78, 0);
+  --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-instant: 80ms;  --duration-fast: 150ms;
+  --duration-normal: 220ms;  --duration-slow: 350ms;
+}
+
+/* ── Layout zones ──────────────────────────────────────────────────────────
+ * Single source of truth for page width, replacing the per-section
+ * max-width:900px overrides that used to be scattered across this file.
+ * Zone padding is gated to ≥769px so mobile layout (handled entirely by
+ * each section's own existing mobile rules below) is unaffected. ── */
+
+.zone-tool {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .zone-tool {
+    padding: 0 var(--space-5);
+  }
+}
+
+/* ── Style preview section wrapper ──────────────────────────────────────── */
+
+.style-preview-section {
+  margin: 32px auto;
+}
+
+/* ── Text input (hero element) ──────────────────────────────────────────── */
+
+.text-input-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#style-text-input {
+  width: 100%;
+  height: 56px;
+  padding: 0 64px 0 18px;
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.18s;
+}
+
+#style-text-input::placeholder {
+  color: #555;
+}
+
+#style-text-input:focus {
+  border-color: #CCFF00;
+}
+
+.text-input-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #CCFF00;
+  border-radius: 0 0 8px 8px;
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+
+.text-input-wrapper:focus-within::after {
+  width: calc(100% - 2px);
+}
+
+.char-counter {
+  position: absolute;
+  right: 16px;
+  bottom: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #555;
+  pointer-events: none;
+}
+
+/* ── Ink color presets (horizontal scroll chip row) ──────────────────────── */
+
+.ink-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin: 10px 0 14px;
+  /* fade hint on right edge */
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+.ink-scroll-wrapper::-webkit-scrollbar { display: none; }
+
+.ink-chips {
+  display: flex;
+  gap: 8px;
+  padding: 2px 0;
+  width: max-content;
+  min-width: 100%;
+}
+
+.ink-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 150ms ease;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  color: #888;
+  min-width: 80px;
+}
+.ink-chip:hover {
+  border-color: #444;
+  color: #ccc;
+}
+.ink-chip.active {
+  border-color: #CCFF00;
+  color: #fff;
+}
+.ink-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+/* White ink chip special — show outline */
+.ink-chip[data-ink="white"] .ink-dot {
+  background: #F2E8DC;
+  border: 1px solid #666;
+}
+.ink-name {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ── Preview controls (segmented paper/skin toggle) ─────────────────────── */
+
+.preview-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mode-segmented {
+  display: inline-flex;
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.mode-seg {
+  height: 30px;
+  padding: 0 20px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #888888;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.mode-seg:hover {
+  color: #ffffff;
+}
+
+.mode-seg.is-active {
+  background: #CCFF00;
+  color: #0a0a0a;
+}
+
+.mode-seg.is-active:hover {
+  color: #0a0a0a;
+}
+
+/* ── Per-card Remix / Age sliders ─────────────────────────────────────────── */
+
+.card-sliders {
+  padding: 10px 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.slider-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+}
+.slider-track {
+  flex: 1;
+}
+.slider-track input[type="range"] {
+  width: 100%;
+  height: 3px;
+  accent-color: #CCFF00;
+  cursor: pointer;
+  background: transparent;
+}
+.slider-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #CCFF00;
+  min-width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Style grid ──────────────────────────────────────────────────────────── */
+
+#style-preview {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  #style-preview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  #style-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 599px) {
+  #style-preview {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Infinite-scroll category divider ─────────────────────────────────────── */
+
+.cat-header {
+  grid-column: 1 / -1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 0.12em;
+  padding: 16px 0 6px;
+  border-bottom: 1px solid #1a1a1a;
+  margin-bottom: 4px;
+  user-select: none;
+}
+
+#scroll-sentinel {
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* ── Style card (with tattoo-stencil registration-mark corners) ─────────── */
+
+.style-card {
+  position: relative;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s ease, transform 0.15s ease, opacity 0.4s ease;
+}
+
+.style-card:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.style-card::before,
+.style-card::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(204, 255, 0, 0.4);
+  transition: border-color 0.15s ease;
+  pointer-events: none;
+}
+
+.style-card::before {
+  top: 6px;
+  left: 6px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.style-card::after {
+  bottom: 6px;
+  right: 6px;
+  border-left: none;
+  border-top: none;
+}
+
+.style-card:hover {
+  border-color: #444444;
+  transform: translateY(-2px);
+}
+
+.style-card:hover::before,
+.style-card:hover::after {
+  border-color: #CCFF00;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .style-card {
+    transition: none;
+  }
+  .style-card:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Card label ──────────────────────────────────────────────────────────── */
+
+.style-card-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.style-card-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.style-card-vibe {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #666666;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ── License badge ───────────────────────────────────────────────────────── */
+
+.style-license-badge {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: #888888;
+  background: #1a1a1a;
+  border-radius: 4px;
+  padding: 2px 8px;
+  align-self: flex-start;
+}
+
+/* ── Card action buttons ─────────────────────────────────────────────────── */
+
+.style-card-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.style-btn {
+  flex: 1;
+  padding: 7px 10px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  color: #B0B0B0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.style-btn:hover {
+  border-color: #CCFF00;
+  color: #CCFF00;
+  background: #111;
+}
+
+.style-btn:active {
+  background: #1a1a1a;
+}
+
+.style-btn.is-copied {
+  border-color: #CCFF00;
+  color: #CCFF00;
+  background: #111;
+}
+
+/* ── AI coming soon card ─────────────────────────────────────────────────── */
+
+.style-card--ai {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid #CCFF00;
+  grid-column: span 2;
+  align-items: center;
+  text-align: center;
+  padding: 28px 24px;
+}
+
+@media (max-width: 768px) {
+  .style-card--ai {
+    grid-column: span 1;
+  }
+}
+
+.style-card-label--ai {
+  align-items: center;
+  margin-bottom: -4px;
+}
+
+.ai-card-icon {
+  font-size: 28px;
+  margin-bottom: 4px;
+  color: #CCFF00;
+  line-height: 1;
+}
+
+.ai-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px;
+  letter-spacing: 0.3px;
+}
+
+.ai-card-sub {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  color: #B0B0B0;
+  margin: 0 0 18px;
+}
+
+.ai-notify-form {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ai-notify-email {
+  height: 38px;
+  min-width: 200px;
+  padding: 0 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.ai-notify-email:focus {
+  border-color: #CCFF00;
+}
+
+.ai-notify-btn {
+  height: 38px;
+  padding: 0 18px;
+  background: #CCFF00;
+  border: none;
+  border-radius: 6px;
+  color: #0a0a0a;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.ai-notify-btn:hover {
+  opacity: 0.88;
+}
+
+.ai-notify-confirm {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #CCFF00;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ── Ornamental section dividers ─────────────────────────────────────────── */
+
+.ink-divider {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 40px auto;
+  opacity: 0.9;
+}
+
+.ink-divider svg {
+  display: block;
+}
+
+/* ── Pre-rendered example gallery ────────────────────────────────────────── */
+
+.gallery-section {
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.gallery-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0 0 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gallery-item {
+  margin: 0;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  background: #ffffff;
+}
+
+.gallery-item figcaption {
+  padding: 8px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #666666;
+  text-transform: uppercase;
+}
+
+/* ── Unicode clusters section (card aesthetic matches canvas cards) ──────── */
+
+.unicode-clusters-section {
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+}
+
+.unicode-section-header {
+  margin-bottom: 20px;
+}
+
+.unicode-section-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.unicode-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #555555;
+  margin: 0 0 12px;
+  letter-spacing: 0.04em;
+}
+
+.ornament-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  width: fit-content;
+}
+
+.ornament-toggle input[type="checkbox"] {
+  accent-color: #CCFF00;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.ornament-toggle span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #666666;
+  letter-spacing: 0.06em;
+  transition: color 150ms;
+}
+
+.ornament-toggle:hover span {
+  color: #CCFF00;
+}
+
+.unicode-cluster {
+  margin-bottom: 24px;
+}
+
+.cluster-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.cluster-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #888888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cluster-vibe {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #444444;
+  letter-spacing: 0.04em;
+}
+
+.cluster-samples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Sample card — matches the canvas card's corner-accent style */
+.cluster-sample {
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.cluster-sample::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #CCFF00;
+  border-left: 2px solid #CCFF00;
+  border-radius: 8px 0 0 0;
+}
+
+.sample-style-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #555555;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sample-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1.3;
+  word-break: break-word;
+  min-height: 28px;
+  transition: opacity 80ms ease;
+}
+
+.sample-copy-btn {
+  align-self: flex-start;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #888888;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: color 150ms, border-color 150ms, background 150ms;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sample-copy-btn:hover {
+  color: #CCFF00;
+  border-color: #CCFF00;
+  background: rgba(204, 255, 0, 0.06);
+}
+
+.sample-copy-btn:active {
+  transform: scale(0.96);
+}
+
+/* ── Per-card visual identity (unicode cluster cards) ─────────────────────
+ * Each card class gives one style its own background treatment, text
+ * size/color, and layout — all still within the #0A0A0A/#CCFF00 brand
+ * system, except card--boldsans which intentionally inverts to a white
+ * card for visual impact. */
+
+/* Smooth Script cluster */
+
+.card--script-hero {
+  background: linear-gradient(135deg, #141210 0%, #111 100%);
+  border-color: #2a2520;
+  text-align: center;
+  padding: 20px 14px;
+}
+.card--script-hero .sample-text {
+  font-size: 28px;
+  color: #F5ECD7;
+  letter-spacing: 0.02em;
+  display: block;
+  text-align: center;
+}
+.card--script-hero .sample-copy-btn {
+  align-self: center;
+}
+.card--script-hero::before {
+  border-color: #8B6914;
+}
+
+.card--boldscript {
+  border-left: 3px solid #7A1F1F;
+  background: #0f0d0d;
+}
+.card--boldscript .sample-text {
+  font-size: 24px;
+  color: #E8C4A0;
+}
+
+.card--italic {
+  border-color: #1e1e1e;
+  background: #0d0d0d;
+}
+.card--italic .sample-text {
+  font-size: 16px;
+  color: #aaaaaa;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+.card--bolditalic {
+  background: linear-gradient(160deg, #141008 0%, #111 100%);
+  border-color: #2a1f00;
+}
+.card--bolditalic .sample-text {
+  font-size: 18px;
+  color: #D4A832;
+}
+
+.card--sansitalic {
+  background: linear-gradient(160deg, #0a0d14 0%, #111 100%);
+  border-color: #151c2a;
+}
+.card--sansitalic .sample-text {
+  font-size: 22px;
+  color: #9EB4D0;
+}
+
+/* Old English cluster */
+
+.card--fraktur {
+  background: linear-gradient(135deg, #140808 0%, #111 100%);
+  border-color: #2a1010;
+}
+.card--fraktur .sample-text {
+  font-size: 22px;
+  color: #C87070;
+  letter-spacing: 0.05em;
+}
+
+.card--boldfraktur {
+  background: #0a0a0a;
+  border: 1px solid #333333;
+  padding: 20px 14px;
+}
+.card--boldfraktur .sample-text {
+  font-size: 26px;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+.card--boldfraktur::before {
+  border-color: #555555;
+}
+
+.card--doublestruck {
+  background: #111111;
+  border: 1px dashed #2a2a2a;
+}
+.card--doublestruck .sample-text {
+  font-size: 24px;
+  color: #888888;
+  letter-spacing: 0.08em;
+}
+
+.card--mono {
+  background: #0d0f0d;
+  border-color: #1a2a1a;
+}
+.card--mono .sample-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: #4CAF50;
+  letter-spacing: 0.12em;
+}
+.card--mono::before {
+  border-color: #4CAF50;
+}
+
+/* Gangster Caps cluster */
+
+.card--fullwidth {
+  background: #0a0a0a;
+  border-color: rgba(204, 255, 0, 0.12);
+  padding: 18px 10px;
+  overflow: hidden;
+}
+.card--fullwidth .sample-text {
+  font-size: 20px;
+  color: #CCFF00;
+  letter-spacing: -0.02em;
+  word-break: break-all;
+}
+
+/* Intentional brand inversion — white card for visual impact/contrast. */
+.card--boldsans {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+.card--boldsans .sample-text {
+  font-size: 22px;
+  color: #111111;
+  font-weight: 900;
+}
+.card--boldsans .sample-style-name {
+  color: #888888;
+}
+.card--boldsans .sample-copy-btn {
+  background: #111111;
+  color: #888888;
+  border-color: #333333;
+}
+.card--boldsans .sample-copy-btn:hover {
+  color: #CCFF00;
+  border-color: #CCFF00;
+  background: #111111;
+}
+.card--boldsans::before {
+  border-color: #111111;
+}
+
+.card--bold {
+  background: #111111;
+  border: 2px solid #222222;
+}
+.card--bold .sample-text {
+  font-size: 24px;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.card--spaced {
+  background: #0d0d0d;
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  border-left: 1px solid #1a1a1a;
+  border-right: 1px solid #1a1a1a;
+  border-radius: 0;
+}
+.card--spaced .sample-text {
+  font-size: 14px;
+  color: #888888;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Fine Line cluster */
+
+.card--smallcaps {
+  background: #111111;
+  border-color: #1e1e1e;
+  text-align: center;
+}
+.card--smallcaps .sample-text {
+  font-size: 20px;
+  color: #C0A882;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+.card--smallcaps .sample-copy-btn {
+  align-self: center;
+}
+
+.card--circled {
+  background: #0f0f0f;
+  border-color: #222222;
+}
+.card--circled .sample-text {
+  font-size: 22px;
+  color: #CCFF00;
+  letter-spacing: 0.05em;
+}
+.card--circled::before {
+  border-color: #CCFF00;
+  opacity: 0.5;
+}
+
+.card--sansbolditalic {
+  background: linear-gradient(160deg, #0a0d10 0%, #111 100%);
+  border-color: #1a2030;
+}
+.card--sansbolditalic .sample-text {
+  font-size: 22px;
+  color: #7AB8F5;
+}
+
+.card--pureitalic {
+  background: #111111;
+  border-color: #1e1e1e;
+  border-bottom: 2px solid #2a2a2a;
+}
+.card--pureitalic .sample-text {
+  font-size: 20px;
+  color: #cccccc;
+  font-style: italic;
+}
+
+/* Chicano Unique cluster */
+
+.card--letterspaced {
+  background: #0a0a0a;
+  border: 1px solid #222222;
+  padding: 18px 14px;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.card--letterspaced .sample-text {
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 0.35em;
+  text-align: center;
+}
+.card--letterspaced .sample-copy-btn {
+  align-self: center;
+}
+
+.card--zalgo {
+  background: linear-gradient(135deg, #0d0008 0%, #0f0f0f 100%);
+  border-color: #2a1535;
+}
+.card--zalgo .sample-text {
+  font-size: 20px;
+  color: #C084FC;
+  letter-spacing: 0.05em;
+}
+.card--zalgo::before {
+  border-color: #7C3AED;
+}
+
+.card--mirror {
+  background: #111111;
+  border-color: #222222;
+  direction: rtl;
+}
+.card--mirror .sample-text {
+  font-size: 20px;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+}
+.card--mirror .sample-style-name {
+  direction: ltr;
+}
+
+/* ── Related styles nav ──────────────────────────────────────────────────── */
+
+.related-styles {
+  margin: 48px auto 0;
+  padding: 0 16px 48px;
+}
+
+.related-styles h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #B0B0B0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.related-styles ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.related-styles a {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 6px;
+  color: #B0B0B0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.related-styles a:hover {
+  border-color: #CCFF00;
+  color: #CCFF00;
+}
+
+/* ── Style page hero ─────────────────────────────────────────────────────── */
+
+.style-page-hero {
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 0 16px;
+}
+
+.style-page-hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+}
+
+.style-page-hero .hero-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  color: #B0B0B0;
+  margin: 0;
+}
+
+/* ── SEO content section ─────────────────────────────────────────────────── */
+
+.style-content-section {
+  margin: 48px auto 0;
+  padding: 0 16px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #B0B0B0;
+}
+
+.style-content-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 32px 0 10px;
+  letter-spacing: 0.2px;
+}
+
+.style-content-section p {
+  margin: 0 0 14px;
+}
+
+/* ── AI teaser section wrapper ───────────────────────────────────────────── */
+
+#ai-teaser-section {
+  margin: 16px auto 0;
+}
+
+/* ── Mobile layout overhaul ───────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .style-preview-section {
+    padding: 12px 14px;
+  }
+
+  #style-text-input {
+    font-size: 18px;
+    height: 48px;
+  }
+
+  .preview-controls {
+    margin: 8px 0;
+  }
+
+  /* Full-width segmented control */
+  .mode-segmented {
+    width: 100%;
+  }
+  .mode-segmented .mode-seg {
+    flex: 1;
+  }
+
+  /* Single column cards, centered full-width — bottom padding clears the
+   * sticky bottom bar (now 2 rows: ink+surface controls, then text input). */
+  #style-preview {
+    gap: 14px;
+    padding-right: 14px;
+    padding-left: 14px;
+    padding-bottom: 150px;
+  }
+  #scroll-sentinel {
+    margin-bottom: 150px;
+  }
+
+  /* Bottom bar duplicates these — hide the originals. */
+  .style-preview-section > .text-input-wrapper,
+  .style-preview-section > .preview-controls {
+    display: none;
+  }
+  .ink-scroll-wrapper {
+    display: none;
+  }
+  /* Surface/background control moves to the bottom bar's bb-surface chips
+   * on mobile — see the mobile-hide override in the CHICANO STUDIO section
+   * below (has to be declared after the rule that turns .bg-selector on,
+   * since both share the same :has()-qualified specificity and cascade is
+   * decided by source order at that point). */
+
+  .style-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Canvas height cap */
+  .style-card canvas {
+    max-height: 220px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Card footer buttons full width */
+  .style-card .style-card-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .style-card .style-btn {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  /* Compact card header */
+  .style-card-label {
+    margin-bottom: 2px;
+  }
+  .style-card-name {
+    font-size: 13px;
+  }
+  .style-card-vibe {
+    font-size: 9px;
+  }
+
+  /* Tighter card sliders */
+  .card-sliders {
+    padding: 8px 8px 0;
+    gap: 6px;
+  }
+  .slider-val {
+    font-size: 9px;
+    min-width: 30px;
+  }
+
+  .style-card .style-card-btns {
+    margin-top: 4px;
+  }
+
+  /* Remix preview text can otherwise run long enough to crowd the
+   * download/copy buttons — truncate instead. */
+  .slider-val.remix-val {
+    max-width: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* AI coming soon card */
+  #ai-teaser-section {
+    padding: 0 14px;
+  }
+  .ai-notify-email {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  /* Unicode cluster cards — single column on mobile */
+  .cluster-samples {
+    grid-template-columns: 1fr;
+  }
+  .sample-text {
+    font-size: 18px;
+  }
+  .card--letterspaced {
+    grid-column: auto;
+    text-align: left;
+  }
+  .card--letterspaced .sample-text {
+    text-align: left;
+    letter-spacing: 0.2em;
+  }
+  .card--script-hero .sample-text {
+    font-size: 24px;
+  }
+  .card--boldfraktur .sample-text {
+    font-size: 22px;
+  }
+  .card--fullwidth .sample-text {
+    font-size: 16px;
+  }
+
+  /* ── Sticky bottom bar (ink+surface controls row + text input) ─────────── */
+
+  .bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: rgba(10, 10, 10, 0.97);
+    border-top: 1px solid #222;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 8px 12px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Combined controls row — ink dots (left half) | divider | surface chips
+   * + skin tones (right half). Replaces the old 3-row layout (ink row,
+   * Paper/Skin mode toggle, scroll button) with everything reachable in
+   * one row and zero extra taps. */
+  .bb-controls-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 32px;
+  }
+
+  .bb-ink-scroll {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 0;
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  }
+  .bb-ink-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bb-ink-dot {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: border-color 150ms, transform 100ms;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .bb-ink-dot.active {
+    border-color: #CCFF00;
+    box-shadow: 0 0 6px rgba(204, 255, 0, 0.4);
+    transform: scale(1.15);
+  }
+
+  .bb-ink-dot:active {
+    transform: scale(0.90);
+  }
+
+  .bb-divider {
+    width: 1px;
+    height: 20px;
+    background: #2a2a2a;
+    flex-shrink: 0;
+    margin: 0 8px;
+  }
+
+  .bb-surface-scroll {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 0;
+    mask-image: linear-gradient(to right, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
+  }
+  .bb-surface-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bb-surface-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #666;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 4px 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 120ms ease, border-color 120ms ease, background 120ms ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  .bb-surface-chip.active {
+    color: #000;
+    background: #CCFF00;
+    border-color: #CCFF00;
+  }
+
+  .bb-surface-chip:active {
+    opacity: 0.8;
+  }
+
+  .bb-skin-tones {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 4px;
+    flex-shrink: 0;
+  }
+
+  .bb-tone-dot {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    padding: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: border-color 120ms ease, transform 80ms ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .bb-tone-dot.active {
+    border-color: #CCFF00;
+    transform: scale(1.1);
+  }
+
+  /* Text input row */
+  .bottom-text-input {
+    width: 100%;
+    height: 44px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px; /* 16px prevents iOS zoom on focus */
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0 14px;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-appearance: none;
+    transition: border-color 150ms;
+  }
+
+  .bottom-text-input:focus {
+    border-color: #CCFF00;
+  }
+
+  /* Floating scroll-to-top — lives outside .bottom-bar (position:fixed of
+   * its own) so the bar's flex flow doesn't have to make room for it. */
+  .scroll-top-float {
+    position: fixed;
+    bottom: 100px;
+    right: 14px;
+    z-index: 199;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(26, 26, 26, 0.92);
+    border: 1px solid #333;
+    color: #888;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: color 150ms, border-color 150ms, opacity 200ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .scroll-top-float:active {
+    color: #CCFF00;
+    border-color: #CCFF00;
+  }
+}
+
+/* Bottom bar is mobile-only — hidden entirely above the 768px breakpoint
+ * so desktop layout is untouched. */
+@media (min-width: 769px) {
+  .bottom-bar {
+    display: none;
+  }
+  .scroll-top-float {
+    display: none !important;
+  }
+}
+
+@media (max-width: 400px) {
+  #style-text-input {
+    font-size: 16px;
+    height: 44px;
+  }
+  .ink-chip {
+    min-width: 68px;
+    padding: 5px 10px;
+  }
+  .style-card .style-card-btns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * CHICANO STUDIO — scoped redesign (Priority 2: card component)
+ *
+ * Everything below is scoped to the chicano font generator page only, via
+ * the data-slug marker that page's config already sets on #style-preview.
+ * No other style page built from this file is affected — :has() support
+ * (Chrome/Edge 105+, Safari 15.4+, Firefox 121+) is effectively universal;
+ * browsers that don't support it just leave chicano on the base styling
+ * above instead of erroring.
+ * ════════════════════════════════════════════════════════════════════════ */
+
+/* Repeated in full on every rule below (no native CSS nesting elsewhere in
+ * this file, and there's no build step to compile it) — keep this in sync
+ * if the marker selector ever changes. */
+
+/* ── Card — registration-mark corner kept, elevation from tokens ───────── */
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background   var(--duration-fast) var(--ease-out),
+    transform    0.15s ease,
+    opacity      0.4s ease;
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card::before,
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card::after {
+  border-color: var(--accent);
+  opacity: 0.6;
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card:hover::before,
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card:hover::after {
+  opacity: 1;
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card:hover {
+  border-color: var(--border-strong);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card-name {
+  color: var(--text-primary);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card-vibe {
+  color: var(--text-muted);
+}
+
+/* ── License badge — moved to footer (Priority 2); hide the per-card one ── */
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-license-badge {
+  display: none;
+}
+
+/* ── Precision sliders — control-dot replaces emoji, thin instrument track */
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .slider-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .control-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .control-dot--remix {
+  background: var(--accent);
+  opacity: 0.7;
+}
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .control-dot--age {
+  background: var(--text-muted);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .slider-track input[type="range"] {
+  height: 2px;
+  background: var(--border-default);
+  border-radius: var(--radius-full);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .slider-track input[type="range"]:hover {
+  background: var(--border-strong);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .slider-val {
+  color: var(--text-muted);
+}
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .slider-val.is-active {
+  color: var(--accent);
+}
+
+/* ── Card action buttons — Export (primary) / Download PNG (secondary) ── */
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card-btns {
+  margin-top: var(--space-1);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-btn {
+  font-family: var(--font-display);
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition:
+    background   var(--duration-fast) var(--ease-out),
+    opacity      var(--duration-fast) var(--ease-out),
+    color        var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-btn--primary {
+  color: var(--text-inverse);
+  background: var(--accent);
+  border: 1px solid transparent;
+}
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-btn--primary:hover {
+  opacity: 0.88;
+  border-color: transparent;
+  background: var(--accent);
+  color: var(--text-inverse);
+}
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-btn--primary:active {
+  opacity: 0.75;
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-btn--secondary {
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-default);
+}
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-btn--secondary:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  background: var(--state-hover-bg);
+}
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-btn--secondary.is-copied {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-ghost);
+}
+
+/* ── Category headers — sticky, quiet ───────────────────────────────────── */
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .cat-header {
+  color: var(--text-muted);
+  border-bottom-color: var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface-page);
+}
+
+/* Sticky only kicks in once the user has scrolled past the first batch of
+ * cards — the very first category header stays in normal flow instead of
+ * sticking immediately under the controls before any scrolling happens. */
+#style-preview[data-slug="chicano-font-generator"] > .cat-header:first-child {
+  position: static;
+}
+
+/* Footer OFL badge — injected once by style-preview.js on the chicano page
+ * only (see buildOflFooterBadge()); styled here so it's chicano-scoped
+ * without a template change. */
+.footer-ofl-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--text-secondary);
+  background: var(--surface-raised);
+  border-radius: var(--radius-sm);
+  padding: 3px 10px;
+  margin-top: 8px;
+}
+
+/* ── Background selector (Priority 3: canvas backgrounds) ────────────────
+ * Markup ships unconditionally in template-style.html (matching how
+ * mode-segmented already works) but is only ever visible on chicano — JS
+ * hides it entirely on any other page (belt-and-suspenders: it's also
+ * fully unstyled outside this chicano-only scope, so there's no flash of
+ * unstyled content before JS runs). */
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .bg-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+/* Mobile: the surface control moves into the bottom bar's bb-surface chips
+ * (see .bb-surface-scroll) — same specificity as the rule above (equal
+ * :has() prefix), declared after it, so this wins on mobile via source
+ * order without needing !important. */
+@media (max-width: 768px) {
+  .style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .bg-selector {
+    display: none;
+  }
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .bg-btn {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .bg-btn:hover {
+  color: var(--text-secondary);
+  border-color: var(--border-default);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .bg-btn.active {
+  color: var(--text-primary);
+  border-color: var(--border-accent);
+  background: var(--accent-ghost);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .skin-tones {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .tone-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color var(--duration-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .tone-dot.active {
+  border-color: var(--accent);
+}
+
+/* ── Card size variation by category ──────────────────────────────────────
+ * Base ratio (8:5) matches the drawing buffer (CHICANO_CANVAS_W/H = 640/400)
+ * exactly, so the common case is a plain uniform scale. Category overrides
+ * intentionally diverge from that ratio — object-fit:contain letterboxes
+ * instead of stretching OR cropping, so the full proof sheet (registration
+ * marks, top/bottom metadata strips) always stays visible; cover was tried
+ * first and cropped the metadata strips clean off on the wider ratios. ── */
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card canvas {
+  aspect-ratio: 8 / 5;
+  object-fit: contain;
+  background: var(--surface-panel);
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card[data-category="Script"] canvas {
+  aspect-ratio: 16 / 7; /* wide — script letterforms are horizontal */
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card[data-category="Blackletter"] canvas {
+  aspect-ratio: 4 / 3; /* squarer — dense angular forms need less width */
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card[data-category="Ornate"] canvas {
+  aspect-ratio: 3 / 2; /* standard — balanced for decorative capitals */
+}
+
+.style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card[data-category="Fine Line"] canvas {
+  aspect-ratio: 16 / 9; /* wide — delicate strokes need breathing room */
+}
+
+/* First card in each category, spanning wider on multi-column layouts. */
+@media (min-width: 1024px) {
+  .style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card--hero {
+    grid-column: span 2;
+  }
+  .style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card.style-card--hero canvas {
+    aspect-ratio: 21 / 9;
+  }
+}
+@media (max-width: 1023px) {
+  .style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card--hero {
+    grid-column: span 1;
+  }
+  .style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card.style-card--hero canvas {
+    aspect-ratio: 16 / 7;
+  }
+}
+
+/* Single mobile column: per-category ratios read as rhythm in a 3-column
+ * grid but as inconsistency stacked in one column — flatten to one ratio.
+ * No !important: matches the (id, 4-class, type) specificity of the
+ * category/hero rules above via the same :has() prefix, and wins on source
+ * order since it's declared after them — see the block comment ~90 lines
+ * up ("Repeated in full on every rule below") for why the prefix is
+ * necessary at all. */
+@media (max-width: 768px) {
+  .style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card[data-category] canvas,
+  .style-preview-section:has(#style-preview[data-slug="chicano-font-generator"]) .style-card.style-card--hero canvas {
+    aspect-ratio: 16 / 8;
+  }
+}
+
+/* ── Article zone (currently chicano-only, via content_file in
+ * pages-config.json — .article-zone/.style-article only ever render on
+ * pages that set content_file, so none of this needs :has() scoping).
+ * Full-width dark panel grounding the article against the tool zone's
+ * tattoo-photo background, with its own editorial type system
+ * (--font-editorial/--font-reading) that must never leak into the tool
+ * zone above it (cards/controls stay on --font-display/--font-mono). ── */
+
+.article-zone {
+  width: 100%;
+  margin-top: var(--space-8);
+  padding: var(--space-8) 0 var(--space-7);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  background: none;
+}
+
+.style-article {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-7);
+  position: relative;
+  font-family: var(--font-reading);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.80;
+  color: #B8B0A4;
+  counter-reset: section-counter;
+
+  /* Subtle text backdrop — lifts text off the photo without hiding it. */
+  background: rgba(8, 6, 4, 0.72);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.related-styles {
+  max-width: 860px;
+  margin: var(--space-5) auto 0;
+  padding: var(--space-4) var(--space-7);
+  background: rgba(8, 6, 4, 0.65);
+  border-radius: 4px;
+}
+
+/* ── H2 headings — Playfair editorial weight ── */
+
+.style-article h2 {
+  counter-increment: section-counter;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: var(--space-2);
+  align-items: end;
+  font-family: var(--font-editorial);
+  font-size: 28px;
+  font-weight: 500;
+  font-style: italic;
+  color: #F5F0E8;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: var(--space-8) 0 var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid #2A2520;
+}
+
+.style-article h2::before {
+  content: "0" counter(section-counter);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  font-style: normal;
+  color: #5A5248;
+  letter-spacing: 0.12em;
+  padding-bottom: 4px;
+}
+
+/* ── Story blocks — narrative, accent-left ── */
+
+.article-story {
+  padding: var(--space-5) 0 var(--space-4);
+  border-top: 1px solid #2A2520;
+  border-bottom: 1px solid #2A2520;
+  margin-bottom: var(--space-6);
+}
+
+.article-story p {
+  font-family: var(--font-editorial);
+  font-size: 19px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.85;
+  color: #E0D8D0;
+  padding-left: var(--space-5);
+  border-left: 2px solid rgba(204,255,0,0.25);
+  margin-bottom: var(--space-4);
+}
+
+.article-story p:last-child {
+  margin-bottom: 0;
+}
+
+/* Closing story block — same DOM class as the opening one (build.py emits
+ * both as plain .article-story), so it's targeted structurally: it's the
+ * last .article-story among .style-article's direct children. */
+.style-article > .article-story:last-of-type {
+  margin-top: var(--space-6);
+  margin-bottom: 0;
+  border-top: 1px solid #2A2520;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* ── Lead paragraph — first p after each H2 ── */
+
+.style-article h2 + p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #D4CCC4;
+  line-height: 1.75;
+  margin-top: var(--space-3);
+}
+
+/* ── Body paragraphs ── */
+
+.style-article p {
+  margin: 0 0 var(--space-4);
+  color: #C0B8B0;
+}
+
+/* ── Strong / bold ── */
+
+.style-article strong {
+  font-weight: 500;
+  color: #D4CCC4;
+}
+
+/* ── Font name chips ── */
+
+code.font-ref {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: #C8C0B8;
+  background: #1A1815;
+  border: 1px solid #2E2A26;
+  border-radius: 3px;
+  padding: 1px 6px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* ── Section dividers (hr) ── */
+
+.style-article hr {
+  border: none;
+  border-top: 1px solid #2A2520;
+  margin: var(--space-6) 0;
+}
+
+/* ── Numbered list — differentiators section ── */
+
+.style-article ol {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 var(--space-5);
+  counter-reset: list-counter;
+}
+
+.style-article ol li {
+  counter-increment: list-counter;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-top: 1px solid #222;
+  align-items: start;
+  color: #B8B0A4;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.style-article ol li:last-child {
+  border-bottom: 1px solid #222;
+}
+
+.style-article ol li::before {
+  content: counter(list-counter);
+  font-family: var(--font-editorial);
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(204,255,0,0.20);
+  line-height: 1;
+  padding-top: 2px;
+}
+
+/* ── Unicode table ── */
+
+.unicode-table {
+  margin: var(--space-4) 0 var(--space-5);
+  border: 1px solid #2A2520;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #111009;
+}
+
+.unicode-cluster-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5A5248;
+  background: #161410;
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid #2A2520;
+}
+
+.unicode-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid #1E1B18;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.unicode-row:last-child { border-bottom: none; }
+
+.unicode-row:hover {
+  background: #171512;
+}
+
+.unicode-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #4A4540;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.unicode-sample {
+  font-family: "Segoe UI Symbol", "Noto Sans Symbols", "Apple Symbols", sans-serif;
+  font-size: 21px;
+  color: #E0D8D0;
+  letter-spacing: 0.01em;
+}
+
+/* ── FAQ items ── */
+
+.faq-item {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid #222;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid #222;
+}
+
+.faq-question {
+  font-family: var(--font-editorial);
+  font-size: 17px;
+  font-weight: 500;
+  font-style: italic;
+  color: #D4CCC4;
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
+}
+
+.faq-answer {
+  font-family: var(--font-reading);
+  font-size: 15px;
+  font-weight: 300;
+  color: #B0A8A0;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Android caveat aside ── */
+
+.article-caveat {
+  display: block;
+  border-left: 2px solid #3A3530;
+  padding-left: var(--space-4);
+  margin: var(--space-4) 0;
+  color: #7A7268;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ── Links in article ── */
+
+.style-article a {
+  color: #C8C0B8;
+  text-decoration: none;
+  border-bottom: 1px solid #3A3530;
+  transition: color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.style-article a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 768px) {
+  .style-article {
+    font-size: 16px;
+    max-width: 100%;
+    margin: 0 var(--space-3);
+    padding: var(--space-5) var(--space-4);
+    padding-bottom: 150px;
+  }
+
+  .related-styles {
+    margin: var(--space-4) var(--space-3) 0;
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .style-article h2 {
+    font-size: 22px;
+    grid-template-columns: 28px 1fr;
+  }
+
+  .style-article h2::before {
+    font-size: 10px;
+  }
+
+  .article-story p {
+    font-size: 17px;
+  }
+
+  .style-article ol li {
+    grid-template-columns: 36px 1fr;
+  }
+
+  .style-article ol li::before {
+    font-size: 26px;
+  }
+
+  .article-zone {
+    margin-top: var(--space-6);
+    padding: var(--space-6) 0 var(--space-5);
+  }
+}

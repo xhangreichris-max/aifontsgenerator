@@ -83,6 +83,44 @@ def generate_faq_html(faqs):
 </details>\n'''
     return html
 
+
+# Optional per-page article sections, rendered only when the matching
+# articles.json key has content — every other page's {{EXTRA_SECTIONS_HTML}}/
+# {{EXTRA_TOC_HTML}} resolve to '' and render byte-identically to before.
+# Order here is render order (both section body and TOC link).
+# (article_json_key, anchor_id, h2_heading_text, toc_short_label)
+EXTRA_SECTIONS = [
+    ("old_english_generator", "old-english-generator", "Old English Text Generator", "Old English"),
+    ("gothic_copy_paste",     "gothic-copy-paste",     "Gothic Font Copy and Paste", "Copy & Paste"),
+    ("gangster_old_english",  "gangster-old-english",  "Gangster Old English Font", "Gangster Style"),
+    ("gothic_tattoo_fonts",   "gothic-tattoo-fonts",   "Old English Tattoo Fonts", "Tattoo Fonts"),
+    ("gothic_numbers",        "gothic-numbers",        "Gothic Font Numbers", "Numbers"),
+    ("medieval_fonts",        "medieval-fonts",        "Medieval Font Generator", "Medieval"),
+]
+
+
+def generate_extra_sections_html(article):
+    html = ""
+    for key, anchor, heading, _label in EXTRA_SECTIONS:
+        body = article.get(key, "")
+        if not body or not body.strip():
+            continue
+        html += f'<h2 id="{anchor}">{heading}</h2>\n<p>{body}</p>\n\n'
+    return html
+
+
+def generate_extra_toc_html(article):
+    # Same source list, same emptiness check as generate_extra_sections_html()
+    # — the TOC can never list a section that didn't render, or omit one that did.
+    html = ""
+    for key, anchor, _heading, label in EXTRA_SECTIONS:
+        body = article.get(key, "")
+        if not body or not body.strip():
+            continue
+        html += f'  <a href="#{anchor}">{label}</a>\n'
+    return html
+
+
 def build_pages():
     all_pages, clusters = load_pages_config()
 
@@ -104,6 +142,8 @@ def build_pages():
         internal_links_html = generate_internal_links_html(page['internal_links'])
         faq_html = generate_faq_html(faqs)
         related_tools_html = generate_related_tools_html(slug, clusters)
+        extra_sections_html = generate_extra_sections_html(article)
+        extra_toc_html = generate_extra_toc_html(article)
 
         html = template
         html = html.replace('{{TITLE}}', page['title'])
@@ -125,6 +165,20 @@ def build_pages():
         html = html.replace('{{FAQ_HTML}}', faq_html)
         html = html.replace('{{INTERNAL_LINKS_HTML}}', internal_links_html)
         html = html.replace('{{RELATED_TOOLS_HTML}}', related_tools_html)
+        # Plain str.replace of just the token would leave the template's own
+        # indentation + newline behind as a stray blank line when the
+        # generated content is empty — remove the whole placeholder line in
+        # that case so a page with no extra sections is byte-identical to
+        # one built before this feature existed.
+        if extra_sections_html:
+            html = html.replace('{{EXTRA_SECTIONS_HTML}}', extra_sections_html.rstrip('\n'))
+        else:
+            html = html.replace('      {{EXTRA_SECTIONS_HTML}}\n', '')
+
+        if extra_toc_html:
+            html = html.replace('{{EXTRA_TOC_HTML}}', extra_toc_html.rstrip('\n'))
+        else:
+            html = html.replace('          {{EXTRA_TOC_HTML}}\n', '')
 
         with open(page['filename'], 'w', encoding='utf-8') as f:
             f.write(html)

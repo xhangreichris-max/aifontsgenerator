@@ -256,6 +256,23 @@
     ]
   },
   {
+    "slug": "freaky-text",
+    "filename": "freaky-text.html",
+    "title": "Freaky Font Generator — f r e a k y Text Styles",
+    "meta_desc": "Free freaky font generator with 23 unique styles. Create f r e a k y spaced text, mocking case, cursive spaced and more. Copy paste for Discord, TikTok and Instagram.",
+    "h1": "Freaky Font Generator",
+    "hero_sub": "f r e a k y text styles for TikTok, Discord and Instagram",
+    "default_text": "freaky",
+    "categories": ["Creative & Mixed Styles", "Freaky Extended"],
+    "keyword": "freaky font generator",
+    "hero_image": "images/heroes/freaky-text.png",
+    "internal_links": [
+      {"text": "Glitch Text Generator", "url": "glitch-text.html"},
+      {"text": "Vaporwave Text Generator", "url": "vaporwave-text.html"},
+      {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"}
+    ]
+  },
+  {
     "type": "letter-page",
     "slug": "different-fonts-a",
     "letter": "A",
@@ -786,7 +803,7 @@
   ],
   "clusters": {
     "dark": ["zalgo-text", "glitch-text", "creepy-text", "gothic-text", "mirror-text"],
-    "social": ["bold-text", "tiny-text", "aesthetic-text", "cursive-text", "vaporwave-text", "strikethrough-text", "upside-down-text", "bubble-text"],
+    "social": ["bold-text", "tiny-text", "aesthetic-text", "cursive-text", "vaporwave-text", "strikethrough-text", "upside-down-text", "bubble-text", "freaky-text"],
     "unicode": ["unicode-text", "runic-text"]
   }
 }

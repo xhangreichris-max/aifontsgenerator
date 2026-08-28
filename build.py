@@ -46,6 +46,7 @@ TOOL_ANCHOR_TEXT = {
     'aesthetic-text':       'Aesthetic Text Generator',
     'vaporwave-text':       'Vaporwave Text Generator',
     'runic-text':           'Runic Text Generator',
+    'freaky-text':          'Freaky Font Generator',
 }
 
 
@@ -96,6 +97,10 @@ EXTRA_SECTIONS = [
     ("gothic_tattoo_fonts",   "gothic-tattoo-fonts",   "Old English Tattoo Fonts", "Tattoo Fonts"),
     ("gothic_numbers",        "gothic-numbers",        "Gothic Font Numbers", "Numbers"),
     ("medieval_fonts",        "medieval-fonts",        "Medieval Font Generator", "Medieval"),
+    ("f_r_e_a_k_y_format",    "f-r-e-a-k-y-format",   "The f r e a k y Spaced Format", "f r e a k y"),
+    ("freaky_copy_paste",     "freaky-copy-paste",     "Freaky Font Copy and Paste", "Copy & Paste"),
+    ("freaky_cursive",        "freaky-cursive",        "Freaky Text in Cursive", "Cursive"),
+    ("freaky_meme",           "freaky-meme",           "Freaky Meme Font", "Meme Font"),
 ]
 
 
@@ -369,6 +374,7 @@ def update_sitemap(letter_pages):
         'gothic-text.html', 'creepy-text.html', 'strikethrough-text.html',
         'unicode-text.html', 'bubble-text.html', 'mirror-text.html',
         'aesthetic-text.html', 'vaporwave-text.html', 'runic-text.html',
+        'freaky-text.html',
     ]
 
     def url_block(loc, priority, changefreq):

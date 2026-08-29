@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <title>Embed a Free Font Generator Widget — AI Fonts Generator</title>
+  <meta name="description" content="Add a free font generator widget to your blog or website with one iframe line. No signup, no tracking, no cost. Customize styles, count and theme.">
+  <link rel="canonical" href="https://aifontsgenerator.com/embed-guide.html">
+  <meta property="og:title" content="Embed a Free Font Generator Widget — AI Fonts Generator">
+  <meta property="og:description" content="Add a free font generator widget to your blog or website with one iframe line. No signup, no tracking, no cost. Customize styles, count and theme.">
+  <meta property="og:url" content="https://aifontsgenerator.com/embed-guide.html">
+  <meta property="og:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Fonts Generator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Embed a Free Font Generator Widget — AI Fonts Generator">
+  <meta name="twitter:description" content="Add a free font generator widget to your blog or website with one iframe line. No signup, no tracking, no cost. Customize styles, count and theme.">
+  <meta name="twitter:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="effects.css">
+
+  <style>
+    .page-hero { text-align: center; padding: 80px 20px 40px; }
+    .page-hero h1 { font-family: 'Oswald', sans-serif; font-size: 44px; color: var(--white); letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+    .page-hero p { font-size: 19px; color: #ccc; max-width: 640px; margin: 0 auto; }
+    .page-content { max-width: 800px; margin: 0 auto 80px; padding: 0 20px; }
+    .page-section { margin-bottom: 55px; }
+    .page-section h2 { font-family: 'Oswald', sans-serif; font-size: 26px; color: var(--accent); letter-spacing: 1px; margin-bottom: 18px; text-transform: uppercase; }
+    .page-section p { font-size: 17px; line-height: 1.8; color: #ccc; margin-bottom: 14px; }
+
+    .embed-demo-frame {
+      width: 100%;
+      height: 400px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      display: block;
+    }
+
+    .code-block-wrap {
+      position: relative;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+    .code-block-wrap pre {
+      margin: 0;
+      padding: 20px 100px 20px 20px;
+      overflow-x: auto;
+      color: #d7ff00;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .code-copy-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      height: 32px;
+      padding: 0 16px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      font-family: 'Oswald', sans-serif;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .code-copy-btn.copied { background: #00c853; color: #fff; }
+
+    .param-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .param-table th, .param-table td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      color: #ccc;
+    }
+    .param-table th {
+      color: var(--accent);
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .param-table code {
+      color: var(--accent);
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 30px; }
+      .code-block-wrap pre { padding: 18px 90px 18px 14px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <h2>AI FONTS</h2>
+      <span>GENERATOR</span>
+    </div>
+    <nav>
+      <a href="index.html">GENERATOR</a>
+      <a href="categories.html">CATEGORIES</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+    <button class="menu-btn">⊕ MENU</button>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>Add a Free Font Generator to Your Website</h1>
+    <p>One iframe line. No signup, no tracking, no cost. Drop it into any blog, CMS, or static page and it just works.</p>
+  </section>
+
+  <div class="page-content">
+
+    <!-- LIVE PREVIEW -->
+    <section class="page-section">
+      <h2>Live Preview</h2>
+      <p>This is the exact widget your visitors will see — try typing something.</p>
+      <iframe class="embed-demo-frame" src="https://aifontsgenerator.com/embed.html" width="100%" height="400" frameborder="0" title="Font Generator by AI Fonts Generator"></iframe>
+    </section>
+
+    <!-- EMBED CODE -->
+    <section class="page-section">
+      <h2>Embed Code</h2>
+      <p>Copy this and paste it anywhere in your page HTML:</p>
+      <div class="code-block-wrap">
+        <pre id="embedCode">&lt;iframe src="https://aifontsgenerator.com/embed.html"
+        width="100%" height="400" frameborder="0"
+        title="Font Generator by AI Fonts Generator"&gt;&lt;/iframe&gt;</pre>
+        <button class="code-copy-btn" id="copyEmbedBtn" type="button">COPY</button>
+      </div>
+      <p>That's it — no script tags, no API keys, no build step. It renders inside the iframe on your domain exactly as shown above.</p>
+    </section>
+
+    <!-- CUSTOMIZATION -->
+    <section class="page-section">
+      <h2>Customization</h2>
+      <p>Add optional URL parameters to the <code style="color:var(--accent);">src</code> to change what the widget shows. Invalid or missing values fall back to the defaults automatically.</p>
+      <table class="param-table">
+        <tr>
+          <th>Parameter</th>
+          <th>Example</th>
+          <th>Effect</th>
+        </tr>
+        <tr>
+          <td><code>style</code></td>
+          <td><code>?style=cursive</code></td>
+          <td>Filters the widget to styles matching a category, name, or tag keyword (e.g. <code>cursive</code>, <code>bold</code>, <code>glitch</code>, <code>gothic</code>).</td>
+        </tr>
+        <tr>
+          <td><code>count</code></td>
+          <td><code>?count=20</code></td>
+          <td>Shows this many styles instead of the default 12. Capped at 30.</td>
+        </tr>
+        <tr>
+          <td><code>theme</code></td>
+          <td><code>?theme=light</code></td>
+          <td>Switches to a light color scheme. Default is dark.</td>
+        </tr>
+      </table>
+      <p style="margin-top:18px;">Example combining all three:</p>
+      <div class="code-block-wrap">
+        <pre>&lt;iframe src="https://aifontsgenerator.com/embed.html?style=bold&amp;count=20&amp;theme=light"
+        width="100%" height="400" frameborder="0"
+        title="Font Generator by AI Fonts Generator"&gt;&lt;/iframe&gt;</pre>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="page-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+<summary>Does it cost anything?
+<p>No. The widget is completely free to embed, with no signup, no API key, and no usage limit.</p>
+</details>
+<details class="faq-item">
+<summary>Does it track visitors?
+<p>No. The widget doesn't load any analytics, cookies, or third-party scripts — just the font conversion engine itself.</p>
+</details>
+<details class="faq-item">
+<summary>Can I remove the attribution link?
+<p>Yes — email chris.shangrei@gmail.com and I'll send you a version without it.</p>
+</details>
+<details class="faq-item">
+<summary>Does it work on mobile?
+<p>Yes. The widget is fully responsive and works in mobile browsers the same way it does on desktop.</p>
+</details>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <h3>AI FONTS GENERATOR</h3>
+      <p style="color:var(--accent);letter-spacing:3px;font-size:12px;margin-top:8px;">EXPRESS YOUR IDENTITY</p>
+    </div>
+    <div class="footer-links">
+      <strong style="margin-bottom:8px;display:block;letter-spacing:2px;font-size:13px;">QUICK LINKS</strong>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-quote">
+      Fonts are the voice of imagination. Make yours louder.
+    </div>
+  </footer>
+
+<script src="hamburger.js"></script>
+<script>
+(function(){
+  var btn = document.getElementById('copyEmbedBtn');
+  var codeEl = document.getElementById('embedCode');
+  if (!btn || !codeEl) return;
+
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  btn.addEventListener('click', function(){
+    var text = codeEl.textContent;
+    function done(){
+      var orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copied'); }, 1200);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text); done(); });
+    } else {
+      fallbackCopy(text);
+      done();
+    }
+  });
+})();
+</script>
+</body>
+</html>

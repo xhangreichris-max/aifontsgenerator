@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<title>Font Generator Widget</title>
+<style>
+:root{
+  --bg:#0f0f0f;
+  --panel:#151515;
+  --line:#242424;
+  --accent:#d7ff00;
+  --text:#f0f0f0;
+  --font:'Oswald','Arial Narrow',Arial,sans-serif;
+}
+body[data-theme="light"]{
+  --bg:#f7f7f5;
+  --panel:#ffffff;
+  --line:#e2e2e2;
+  --text:#161616;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+#widget{display:flex;flex-direction:column;flex:1;min-height:0;}
+.widget-input-row{
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+  background:var(--panel);
+  flex-shrink:0;
+}
+.widget-input-row input{
+  width:100%;
+  height:34px;
+  padding:0 12px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  color:var(--text);
+  font-family:var(--font);
+  font-size:14px;
+  outline:none;
+  border-radius:3px;
+}
+.widget-input-row input:focus{border-color:var(--accent);}
+.widget-list{flex:1;min-height:0;overflow-y:auto;}
+.w-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+}
+.w-sample{
+  flex:1;
+  min-width:0;
+  font-size:16px;
+  line-height:1.4;
+  word-break:break-word;
+  white-space:pre-wrap;
+}
+.w-copy{
+  flex-shrink:0;
+  height:26px;
+  padding:0 10px;
+  background:var(--accent);
+  color:#000;
+  border:none;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1px;
+  font-family:var(--font);
+  cursor:pointer;
+  border-radius:3px;
+  white-space:nowrap;
+}
+.w-copy.copied{background:#00c853;color:#fff;}
+.widget-fallback{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:20px;
+  text-align:center;
+}
+.widget-fallback[hidden]{display:none;}
+.widget-fallback p{font-size:14px;color:var(--text);}
+.widget-fallback a{color:var(--accent);font-weight:700;text-decoration:none;font-size:13px;}
+.widget-fallback a:hover{text-decoration:underline;}
+.widget-footer{
+  flex-shrink:0;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--panel);
+  border-top:1px solid var(--line);
+  font-size:11px;
+  letter-spacing:0.5px;
+}
+.widget-footer a{color:var(--accent);text-decoration:none;}
+.widget-footer a:hover{text-decoration:underline;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:var(--accent);}
+</style>
+</head>
+<body data-theme="dark">
+  <div id="widget">
+    <div class="widget-input-row">
+      <input id="wInput" type="text" placeholder="Type your text..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    </div>
+    <div id="wList" class="widget-list"></div>
+    <div id="wFallback" class="widget-fallback" hidden>
+      <p>Font styles are temporarily unavailable.</p>
+      <a href="https://aifontsgenerator.com/" target="_blank" rel="noopener">Visit AI Fonts Generator &rarr;</a>
+    </div>
+  </div>
+  <footer class="widget-footer">
+    <a href="https://aifontsgenerator.com/" target="_blank" rel="noopener">Powered by AI Fonts Generator</a>
+  </footer>
+
+  <script src="fonts-core.js"></script>
+  <script>
+  (function(){
+    var DEFAULT_NAMES = ['Bold','Cursive','Fraktur','Double Struck','Monospace','Full Width','Circled','Strikethrough','Super/Subscript Mix','Vaporwave','Skull & Stars','Heart Wings'];
+    var DEFAULT_COUNT = 12, MAX_COUNT = 30, DEFAULT_TEXT = 'fancy text';
+    var params = new URLSearchParams(location.search);
+
+    document.body.setAttribute('data-theme', params.get('theme') === 'light' ? 'light' : 'dark');
+
+    var listEl = document.getElementById('wList');
+    var inputEl = document.getElementById('wInput');
+    var fallbackEl = document.getElementById('wFallback');
+
+    var allStyles = Array.isArray(window.styles) ? window.styles : [];
+    if (!allStyles.length) {
+      fallbackEl.hidden = false;
+      listEl.hidden = true;
+      inputEl.hidden = true;
+      return;
+    }
+
+    // Some styles (e.g. the makeRemixStyle-built REMIX_STYLES) silently
+    // return their input unchanged on unauthorized hosts. Never surface
+    // a row that would render as plain unstyled text.
+    var CANARY = 'fancy text';
+    function isStyleActive(style){
+      try {
+        var out = typeof style.transform === 'function'
+          ? style.transform(CANARY)
+          : (window.applyMap ? window.applyMap(CANARY, style.map) : CANARY);
+        return typeof out === 'string' && out !== CANARY;
+      } catch (e) {
+        return false;
+      }
+    }
+    var usableStyles = allStyles.filter(isStyleActive);
+    if (!usableStyles.length) {
+      fallbackEl.hidden = false;
+      listEl.hidden = true;
+      inputEl.hidden = true;
+      return;
+    }
+
+    function pickStyles(){
+      var count = parseInt(params.get('count'), 10);
+      if (!isFinite(count) || count < 1) count = DEFAULT_COUNT;
+      count = Math.min(count, MAX_COUNT);
+
+      var filter = (params.get('style') || '').trim().toLowerCase();
+      if (filter) {
+        var matched = usableStyles.filter(function(s){
+          var hay = ((s.category || '') + ' ' + (s.name || '') + ' ' + (s.tags || []).join(' ')).toLowerCase();
+          return hay.indexOf(filter) !== -1;
+        });
+        if (matched.length) return matched.slice(0, count);
+      }
+
+      var curated = [];
+      DEFAULT_NAMES.forEach(function(n){
+        var found = usableStyles.find(function(s){ return (s.name || '').toLowerCase() === n.toLowerCase(); });
+        if (found) curated.push(found);
+      });
+      if (count > curated.length) {
+        for (var i = 0; i < usableStyles.length && curated.length < count; i++) {
+          if (curated.indexOf(usableStyles[i]) === -1) curated.push(usableStyles[i]);
+        }
+      }
+      return curated.slice(0, count);
+    }
+
+    var activeStyles = pickStyles();
+    if (!activeStyles.length) {
+      fallbackEl.hidden = false;
+      listEl.hidden = true;
+      inputEl.hidden = true;
+      return;
+    }
+
+    function fallbackCopy(text, cb){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try { document.execCommand('copy'); cb(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    function copyText(text, btn){
+      var orig = btn.textContent;
+      function done(){
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copied'); }, 1200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+      } else {
+        fallbackCopy(text, done);
+      }
+    }
+
+    function render(text){
+      var value = text.trim() ? text : DEFAULT_TEXT;
+      var frag = document.createDocumentFragment();
+      activeStyles.forEach(function(style){
+        var out = typeof style.transform === 'function'
+          ? style.transform(value)
+          : (window.applyMap ? window.applyMap(value, style.map) : value);
+        var row = document.createElement('div');
+        row.className = 'w-row';
+        var sample = document.createElement('span');
+        sample.className = 'w-sample';
+        sample.textContent = out;
+        var btn = document.createElement('button');
+        btn.className = 'w-copy';
+        btn.type = 'button';
+        btn.textContent = 'COPY';
+        btn.addEventListener('click', function(){ copyText(out, btn); });
+        row.appendChild(sample);
+        row.appendChild(btn);
+        frag.appendChild(row);
+      });
+      listEl.innerHTML = '';
+      listEl.appendChild(frag);
+    }
+
+    var debounceTimer;
+    inputEl.addEventListener('input', function(){
+      clearTimeout(debounceTimer);
+      var val = inputEl.value;
+      debounceTimer = setTimeout(function(){ render(val); }, 150);
+    });
+
+    render('');
+  })();
+  </script>
+</body>
+</html>

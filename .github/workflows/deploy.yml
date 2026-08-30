@@ -72,6 +72,8 @@ jobs:
           # Reusable component assets (CSS/JS) + style-page subfolders
           cp -r assets dist/ 2>/dev/null || true
           cp -r chicano-font-generator dist/ 2>/dev/null || true
+          # Static JSON API
+          cp -r api dist/ 2>/dev/null || true
           echo "=== dist/ contents ==="
           ls -la dist/
 

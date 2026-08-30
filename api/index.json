@@ -1,0 +1,11 @@
+{
+  "api": "AI Fonts Generator",
+  "version": "1.0.0",
+  "endpoints": {
+    "styles": "https://aifontsgenerator.com/api/styles.json",
+    "docs": "https://aifontsgenerator.com/api-docs.html"
+  },
+  "license": "Free for non-commercial use",
+  "contact": "chris.shangrei@gmail.com",
+  "source": "https://aifontsgenerator.com"
+}

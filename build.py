@@ -401,6 +401,7 @@ def update_sitemap(letter_pages):
 
     blocks.append(url_block(f'{base}/about.html', '0.5', 'yearly'))
     blocks.append(url_block(f'{base}/embed-guide.html', '0.6', 'monthly'))
+    blocks.append(url_block(f'{base}/api-docs.html', '0.5', 'monthly'))
     blocks.append(url_block(f'{base}/privacy-policy.html', '0.3', 'yearly'))
     blocks.append(url_block(f'{base}/contact.html', '0.3', 'yearly'))
 

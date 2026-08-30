@@ -1,0 +1,2520 @@
+{
+  "name": "AI Fonts Generator API",
+  "description": "Free Unicode font style data. 168+ text transformation styles for Instagram, Discord, gaming names and social media.",
+  "version": "1.0.0",
+  "docs": "https://aifontsgenerator.com/api-docs.html",
+  "source": "https://aifontsgenerator.com",
+  "total_styles": 410,
+  "categories": [
+    "Aesthetic Extended",
+    "Algorithmic & Combining Marks",
+    "Asian",
+    "Attitude",
+    "Beautiful",
+    "Bold",
+    "Bold Extended",
+    "Boxed",
+    "Bubble Extended",
+    "Classic Styles",
+    "Complex / Glitched",
+    "Creative & Mixed Styles",
+    "Creepy Extended",
+    "Crown",
+    "Cursive Extended",
+    "Cute",
+    "Exotic & International Styles",
+    "Featured Styles",
+    "Flip & Mirror",
+    "Flip Extended",
+    "Flourish Decorated",
+    "Freaky Extended",
+    "Glitch Extended",
+    "Gothic Extended",
+    "Gun",
+    "Heart",
+    "Letter Extended",
+    "Lines",
+    "Mirror Extended",
+    "Mood",
+    "Runic Extended",
+    "Russian",
+    "Squiggle",
+    "Star",
+    "Strikethrough Extended",
+    "Symbol–Alphabet Fusion",
+    "Tiny Extended",
+    "Ugly",
+    "Vaporwave Extended",
+    "Zalgo Extended",
+    "aura-halo",
+    "boxy-mono-tight",
+    "edge-glint",
+    "microcaps-hybrid",
+    "shadow-underline",
+    "squared-enclose",
+    "stitched-thin",
+    "wire-doublestruck"
+  ],
+  "styles": [
+    {
+      "name": "AK Frame",
+      "category": "Gun",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Abyss Crawler",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Abyss Crown",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Alien",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "ꍩꈼ꒒꒒ꂦ"
+    },
+    {
+      "name": "Altar Text",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ancient Glyphs",
+      "category": "Featured Styles",
+      "example_input": "Hello",
+      "example_output": "ꛅ𖤟ꚳꚳ𖣠"
+    },
+    {
+      "name": "Ancient Oracle — Phoenician Sigil",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ancient Seal",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Angry Kaomoji",
+      "category": "Mood",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Anti-Gravity",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Apex Strike",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Arcade Flash",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Arcane Spiral — Chaos Sigil",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Arcane Tide",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Astral Rune — Zodiac Seal",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Atom Script",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Aura Halo",
+      "category": "aura-halo",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Aurora Script",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Backflip",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Beast Mode",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Berserker",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Binary Ghost",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Black Mark",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Black Vellum",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Blood Oath",
+      "category": "Attitude",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Blood Rune",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Blood Scrawl",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Blossom",
+      "category": "Beautiful",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Blossom Pen",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Bold",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "𝗛𝗲𝗹𝗹𝗼"
+    },
+    {
+      "name": "Bold Italic",
+      "category": "Bold",
+      "example_input": "Hello",
+      "example_output": "𝑯𝒆𝒍𝒍𝒐"
+    },
+    {
+      "name": "Bold Script",
+      "category": "Bold",
+      "example_input": "Hello",
+      "example_output": "𝓗𝓮𝓵𝓵𝓸"
+    },
+    {
+      "name": "Bone Script",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Box-Mono Tight",
+      "category": "boxy-mono-tight",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Bracket Mix",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "🅷𝘌ㄥㄥօ"
+    },
+    {
+      "name": "Bubble Cute",
+      "category": "Cute",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Bubble Pop",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Bullet Trail",
+      "category": "Gun",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Bunny Soft",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Burning Sigil",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Butterfly",
+      "category": "Beautiful",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "CJK Radicals",
+      "category": "Featured Styles",
+      "example_input": "Hello",
+      "example_output": "ぜ乲乳乳ロ"
+    },
+    {
+      "name": "CJK Strike",
+      "category": "Asian",
+      "example_input": "Hello",
+      "example_output": "卄乇乚乚ㄖ"
+    },
+    {
+      "name": "Cafe Script",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Candy Pop",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cassette",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cathedral Script",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Censor Bar",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Chaos",
+      "category": "Ugly",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Chaos Bind",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Chrome Dream",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cipher Tiny",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Circled",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "Ⓗⓔⓛⓛⓞ"
+    },
+    {
+      "name": "Circuit Break",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Classified",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cloister Ink",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cloud Nine",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Colossus",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Combat",
+      "category": "Gun",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Compact Script",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cool",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "Ḩ̵̂E̵͎̕L̴̮̿L̴̮̿Ó̸̜"
+    },
+    {
+      "name": "Cool Kaomoji",
+      "category": "Mood",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Corner Frame",
+      "category": "Boxed",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Corrupt Feed",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Corrupt Log",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Corrupted Glitch",
+      "category": "Algorithmic & Combining Marks",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cosmic Bloom",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cosmic Drift",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cottagecore",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cross Hatch",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Crown Frame",
+      "category": "Crown",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Crown Italic",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Crown of Ages — Time Relic",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Crypt Text",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Crystal Clear",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Crystal Script",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cupid",
+      "category": "Heart",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Curly Bold",
+      "category": "Squiggle",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cursed Rune",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cursed Script",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "𝘏𝐄ⓛⓛₒ"
+    },
+    {
+      "name": "Cursed Whisper",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cursive",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "ℋℯ𝓁𝓁ℴ"
+    },
+    {
+      "name": "Cyberpunk",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cyborg Construct",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Cyrillic Strike",
+      "category": "Russian",
+      "example_input": "Hello",
+      "example_output": "Нэгго"
+    },
+    {
+      "name": "Dark Academia",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dark Codex",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dark Fraktur",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dark Matter",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Data Rot",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Death March",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Decay Protocol",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Decor",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "ⱧɆⱠⱠØ"
+    },
+    {
+      "name": "Delete Script",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Demon Script",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Demonic Script",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dewdrop",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Digital Decay",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "H乇ℓℓට"
+    },
+    {
+      "name": "Double Overline",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Double Strikethrough",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Double Struck",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "ℍ𝕖𝕝𝕝𝕠"
+    },
+    {
+      "name": "Double Underline",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Down Under",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dragon Fist",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dragon Rune — Ember Fang",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dread Sigil",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dream Weaver",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Druid Rune",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Duality",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dungeon Script",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Dust Script",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Eastern Bold",
+      "category": "Asian",
+      "example_input": "Hello",
+      "example_output": "Ｈｅｌｌｏ"
+    },
+    {
+      "name": "Echo Script",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Eclectic Mix",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Edge Glint",
+      "category": "edge-glint",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Elder Mark",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Eldritch Mark",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Elegant Glitch",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "░H░𝘌ⓛⓛ𝓞"
+    },
+    {
+      "name": "Elegant Serif",
+      "category": "Beautiful",
+      "example_input": "Hello",
+      "example_output": "𝐻𝑒𝑙𝑙𝑜"
+    },
+    {
+      "name": "Ember Italic",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ember Strike",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Emperor",
+      "category": "Crown",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Encased",
+      "category": "Algorithmic & Combining Marks",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Error Line",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Error State",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ethereal Soft",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ethereal Sparkles",
+      "category": "Algorithmic & Combining Marks",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Fairy Light",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Filled Box",
+      "category": "Boxed",
+      "example_input": "Hello",
+      "example_output": "🅗🅔🅛🅛🅞"
+    },
+    {
+      "name": "Fine Print",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Fire Brackets",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Flip Chaos",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Flip Frame",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Flip Upside Down",
+      "category": "Flip & Mirror",
+      "example_input": "Hello",
+      "example_output": "Hǝllo"
+    },
+    {
+      "name": "Floral Script",
+      "category": "Beautiful",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Fluffy",
+      "category": "Cute",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Fluffy Cloud",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Fortress",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Fraktur",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "ℌ𝔢𝔩𝔩𝔬"
+    },
+    {
+      "name": "Freaky Arrow Chain",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Bold Spaced",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Bracket",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Chaos Case",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Chaos Mark",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Cursive Spaced",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Dot Split",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Expand",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Heart",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Mocking",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Mono Spaced",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Pipe Split",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Slash",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Spaced",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Spaced Caps",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Sparkle",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Star Frame",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Static",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Stutter",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Thin Space",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Underscore Link",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Vowel Drag",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Freaky Wide Gap",
+      "category": "Freaky Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Frost Bite",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Frost Italic",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Frost Rune",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Frozen Zodiac — Ice Rune",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Full Width",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "Ｈｅｌｌｏ"
+    },
+    {
+      "name": "Futhark Storm",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Galaxy Script",
+      "category": "Star",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Gargoyle Text",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ghost Line",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ghost Pulse",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ghost Signal",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Glass Script",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Glitch Hop",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "H\\u0336𝙀LL𝙾"
+    },
+    {
+      "name": "Gloss Script",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Golden Pen",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Grain Script",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Grave Script",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Gravity Flip",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Happy Kaomoji",
+      "category": "Mood",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Haunted Glyph",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Haunted Ink",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Heart Script",
+      "category": "Heart",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Heart Wings",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Heavy Frame",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Hell Overflow",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Hellenic Code",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": "𝛌𝛆𝛊𝛊𝛉"
+    },
+    {
+      "name": "Hex Script",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Hieroglyphic Mix",
+      "category": "Featured Styles",
+      "example_input": "Hello",
+      "example_output": "ꃙᗴᒫᒫꇩ"
+    },
+    {
+      "name": "Hollow Eye",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Hologram",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Honey Script",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Hotline",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "IPA Rage",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Infected Core",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Infernal Sigil — Hell Rune",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ink Flow",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Inverse Script",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Invert Bold",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Iron Fist",
+      "category": "Attitude",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Iron Howl",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Iron Letter",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Iron Throne",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Italic",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "𝘏𝘦𝘭𝘭𝘰"
+    },
+    {
+      "name": "Jade Lotus — Mahjong Bloom",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Kawaii Small",
+      "category": "Cute",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Kernel Panic",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "King Bold",
+      "category": "Crown",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Kitten Script",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Knight Script",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Kool",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "ǶƐꝈꝈට"
+    },
+    {
+      "name": "Laser Grid",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Lo-fi Dream",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Longship",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Love Bold",
+      "category": "Heart",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Lunar Bloom",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Lunar Ink",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Mead Hall",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Medieval",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "𝕳𝖊𝖑𝖑𝖔"
+    },
+    {
+      "name": "Miami Vice",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Micro Bold",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Microcaps Hybrid",
+      "category": "microcaps-hybrid",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Midnight Bloom",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Midnight Quill",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Midnight Script",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Midnight Terror",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Mini Fraktur",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Mirage",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Mirror Reverse",
+      "category": "Flip & Mirror",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Mochi Pop",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Monastery Ink",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Monospace",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "𝙷𝚎𝚕𝚕𝚘"
+    },
+    {
+      "name": "Moss Script",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Mystic Crown — Celestial Fang",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Nano Script",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Necro Warden",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Necrotic Sigil",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Neon",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "ℏḙℓℓ✺"
+    },
+    {
+      "name": "Neon Grid",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Neon Mono",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ninja",
+      "category": "Asian",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Nova",
+      "category": "Star",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Nova Blast",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Null Byte",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Null Script",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Obscura Flame — Tifinagh Ember",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Obsidian Codex",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Obsidian Flame",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Obsidian Italic",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Odin Mark",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Omega Bold",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ornate Emblem",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Outrun",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Overline",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Overruled",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Palm Drive",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Paradox",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Parallel",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Parchment",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Pastel Dream",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Pastel Hearts",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Pearl Script",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Petal Script",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Phantom Lotus — Spirit Petal",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Phantom Scratch",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Phantom Wire",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Phase Shift",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Pixel Death",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Pixel Tiny",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Plague Script",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Portal Shift",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Prism Text",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Quantum Flip",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Quantum Spell",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Quiet Bold",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Quill Strike",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Radar Lock",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Raid Bold",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Rainbow Puff",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Raven Quill",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Red Army",
+      "category": "Russian",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Redacted Bold",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Reflex Bold",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Retro Pulse",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Reverse Flux",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Reverse Order",
+      "category": "Flip & Mirror",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Revoke",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Revolt Script",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Rift Script",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Rogue Alphabet",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": "Ħěłłø"
+    },
+    {
+      "name": "Rose Quill",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Rose Script",
+      "category": "Cute",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Royal Gambit — Chess Fang",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Royal Glyph",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Royal Mix",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "Ή𝙴𝙻𝙻O"
+    },
+    {
+      "name": "Royal Script",
+      "category": "Crown",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Rune Stone",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Sacred Bloom — Lotus Mark",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Sad Kaomoji",
+      "category": "Mood",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Sakura Bubble",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Sans Bold",
+      "category": "Bold",
+      "example_input": "Hello",
+      "example_output": "𝙃𝙚𝙡𝙡𝙤"
+    },
+    {
+      "name": "Scratch Out",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Seed Script",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Seidr Script",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Shadow Bold",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Shadow Circuit",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Shadow Copy",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Shadow Rot",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Shadow Tear",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Shadow Underline",
+      "category": "shadow-underline",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Siege Bold",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Siege Tower",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Signal Lost",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Signature",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": "𐌂དᏵᏵᏖ"
+    },
+    {
+      "name": "Silk Flow",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Skald Script",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Skull & Stars",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Slash Through",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Slavic Mix",
+      "category": "Russian",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Slavic Strike",
+      "category": "Attitude",
+      "example_input": "Hello",
+      "example_output": "Ƕɛƚƚɵ"
+    },
+    {
+      "name": "Sniper",
+      "category": "Gun",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Soft Glow",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Solar Relic — Old Italic Flame",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Solar Sigil",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Soul Key",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Soul Shatter",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Soviet Bold",
+      "category": "Russian",
+      "example_input": "Hello",
+      "example_output": "Ησλλθ"
+    },
+    {
+      "name": "Sparkle Cute",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Sparkle Throw",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Speck Script",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Spider Vein",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Spiral",
+      "category": "Squiggle",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Squared Caps",
+      "category": "Boxed",
+      "example_input": "Hello",
+      "example_output": "🄷🄴🄻🄻🄾"
+    },
+    {
+      "name": "Squared Enclosure",
+      "category": "squared-enclose",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Star Frame",
+      "category": "Star",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Star Puff",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Stardust",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Stargazer",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Starlit Ice",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Starveil Echo — Cosmic Song",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Static Noise",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Steel Frame",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Stellar Bold",
+      "category": "Star",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Stitched Thin",
+      "category": "stitched-thin",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Storm Script",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Strike Bold",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Strikethrough",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Sugar Rush",
+      "category": "Bubble Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Sunset Strip",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Super/Subscript Mix",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Sweet Italic",
+      "category": "Cute",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Symbolic Hearts",
+      "category": "Flourish Decorated",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Synthwave",
+      "category": "Vaporwave Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Templar Bold",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Thor Script",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Thorned",
+      "category": "Attitude",
+      "example_input": "Hello",
+      "example_output": "Ħɇłłø"
+    },
+    {
+      "name": "Thorned Script",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Throne of Ash — Ember Crown",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Thunder Bold",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Thunder Crest",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Tilde Wave",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Titan Bold",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Tokyo Drift",
+      "category": "Asian",
+      "example_input": "Hello",
+      "example_output": "ハヨレレの"
+    },
+    {
+      "name": "Topsy Turvy",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Toxic Pulse",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Trace Script",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Twilight Mirror — Gothic Veil",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Twin Flame",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ulfhednar",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Ultra Bold",
+      "category": "Bold",
+      "example_input": "Hello",
+      "example_output": "𝗛𝗲𝗹𝗹𝗼"
+    },
+    {
+      "name": "Underline Bold",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Underline Dots",
+      "category": "Lines",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Unstable",
+      "category": "Ugly",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Upend Script",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Upside Rune",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Valentine",
+      "category": "Heart",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Valhalla",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Vaporwave",
+      "category": "Creative & Mixed Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Veil Script",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Velvet Dusk",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Velvet Script",
+      "category": "Cursive Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Venin Crown — Alchemical Sigil",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Venom Halo — Toxic Glyph",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Viking Rune",
+      "category": "Runic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Violet Dusk",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Virus Core",
+      "category": "Glitch Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Void Fraktur",
+      "category": "Letter Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Void Mirror",
+      "category": "Mirror Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Void Out",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Void Pulse",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Void Relic — Black Star",
+      "category": "Symbol–Alphabet Fusion",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Void Scream",
+      "category": "Zalgo Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Voltage Cage",
+      "category": "Exotic & International Styles",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "War Cry",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Warlord",
+      "category": "Bold Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Warzone",
+      "category": "Attitude",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Wave Mark",
+      "category": "Squiggle",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Whisper Text",
+      "category": "Tiny Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Wierd",
+      "category": "Complex / Glitched",
+      "example_input": "Hello",
+      "example_output": "ℌ𝔈𒁇𒁇𝔒"
+    },
+    {
+      "name": "Wireframe Double",
+      "category": "wire-doublestruck",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Witchy Aesthetic",
+      "category": "Aesthetic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Wormhole",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Wraith Mark",
+      "category": "Creepy Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Wyvern Script",
+      "category": "Gothic Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "X Factor",
+      "category": "Strikethrough Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Zalgo Heavy",
+      "category": "Ugly",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Zalgo Light",
+      "category": "Ugly",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Zero-G",
+      "category": "Flip Extended",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Zigzag",
+      "category": "Squiggle",
+      "example_input": "Hello",
+      "example_output": null
+    }
+  ]
+}

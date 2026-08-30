@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <title>Free Unicode Font API — AI Fonts Generator</title>
+  <meta name="description" content="A free, static JSON API listing 400+ Unicode text styles with examples. No auth, no rate limits, no cost. Built for bots, extensions, and apps.">
+  <link rel="canonical" href="https://aifontsgenerator.com/api-docs.html">
+  <meta property="og:title" content="Free Unicode Font API — AI Fonts Generator">
+  <meta property="og:description" content="A free, static JSON API listing 400+ Unicode text styles with examples. No auth, no rate limits, no cost. Built for bots, extensions, and apps.">
+  <meta property="og:url" content="https://aifontsgenerator.com/api-docs.html">
+  <meta property="og:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Fonts Generator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Unicode Font API — AI Fonts Generator">
+  <meta name="twitter:description" content="A free, static JSON API listing 400+ Unicode text styles with examples. No auth, no rate limits, no cost. Built for bots, extensions, and apps.">
+  <meta name="twitter:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="effects.css">
+
+  <style>
+    .page-hero { text-align: center; padding: 80px 20px 40px; }
+    .page-hero h1 { font-family: 'Oswald', sans-serif; font-size: 42px; color: var(--white); letter-spacing: 1px; margin-bottom: 16px; text-transform: uppercase; }
+    .page-hero p { font-size: 19px; color: #ccc; max-width: 680px; margin: 0 auto; }
+    .page-content { max-width: 820px; margin: 0 auto 80px; padding: 0 20px; }
+    .page-section { margin-bottom: 55px; }
+    .page-section h2 { font-family: 'Oswald', sans-serif; font-size: 26px; color: var(--accent); letter-spacing: 1px; margin-bottom: 18px; text-transform: uppercase; }
+    .page-section p { font-size: 17px; line-height: 1.8; color: #ccc; margin-bottom: 14px; }
+
+    .base-url-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 18px 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      color: var(--accent);
+      word-break: break-word;
+    }
+
+    .endpoint-table, .usecase-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .endpoint-table th, .endpoint-table td,
+    .usecase-table th, .usecase-table td {
+      text-align: left;
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      color: #ccc;
+      vertical-align: top;
+    }
+    .endpoint-table th, .usecase-table th {
+      color: var(--accent);
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .endpoint-table code, .usecase-table code {
+      color: var(--accent);
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+    .method-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-right: 8px;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .code-block-wrap {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+    .code-block-wrap pre {
+      margin: 0;
+      padding: 20px;
+      overflow-x: auto;
+      color: #d7ff00;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre;
+    }
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .use-case-pill {
+      background: var(--panel2);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 18px;
+      font-size: 15px;
+      color: var(--white);
+      text-align: center;
+      transition: 0.3s;
+    }
+    .use-case-pill:hover { border-color: var(--accent); }
+
+    .license-note {
+      background: var(--panel);
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+      padding: 18px 22px;
+      font-size: 15px;
+      color: #ccc;
+      line-height: 1.7;
+    }
+    .license-note a { color: var(--accent); text-decoration: none; }
+    .license-note a:hover { text-decoration: underline; }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 28px; }
+      .use-case-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .use-case-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <h2>AI FONTS</h2>
+      <span>GENERATOR</span>
+    </div>
+    <nav>
+      <a href="index.html">GENERATOR</a>
+      <a href="categories.html">CATEGORIES</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+    <button class="menu-btn">⊕ MENU</button>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>AI Fonts Generator — Free Unicode Font API</h1>
+    <p>A free, static JSON API. No auth, no rate limits, no cost. Just fetch a JSON file and read the data.</p>
+  </section>
+
+  <div class="page-content">
+
+    <!-- BASE URL -->
+    <section class="page-section">
+      <h2>Base URL</h2>
+      <div class="base-url-box">https://aifontsgenerator.com/api/</div>
+    </section>
+
+    <!-- ENDPOINTS -->
+    <section class="page-section">
+      <h2>Endpoints</h2>
+      <table class="endpoint-table">
+        <tr>
+          <th>Endpoint</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><span class="method-badge">GET</span><code>/api/styles.json</code></td>
+          <td>Returns every available text style with its name, category, and a rendered example.</td>
+        </tr>
+        <tr>
+          <td><span class="method-badge">GET</span><code>/api/index.json</code></td>
+          <td>API discovery/metadata — endpoint list, license, and contact info.</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- RESPONSE FORMAT -->
+    <section class="page-section">
+      <h2>Response Format</h2>
+      <p><code style="color:var(--accent);">GET /api/styles.json</code> returns:</p>
+      <div class="code-block-wrap">
+        <pre>{
+  "name": "AI Fonts Generator API",
+  "description": "Free Unicode font style data. 168+ text transformation styles for Instagram, Discord, gaming names and social media.",
+  "version": "1.0.0",
+  "docs": "https://aifontsgenerator.com/api-docs.html",
+  "source": "https://aifontsgenerator.com",
+  "total_styles": 410,
+  "categories": ["Bold", "Classic Styles", "Cursive Extended", "..."],
+  "styles": [
+    {
+      "name": "Bold",
+      "category": "Classic Styles",
+      "example_input": "Hello",
+      "example_output": "𝗛𝗲𝗹𝗹𝗼"
+    }
+  ]
+}</pre>
+      </div>
+      <p>Styles built from a procedural transform (glitch effects, randomized decoration, etc.) instead of a fixed character map return <code style="color:var(--accent);">example_output: null</code> — the style itself still works fine in the generator, it just can't be reduced to one static example.</p>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="page-section">
+      <h2>Use Cases</h2>
+      <div class="use-case-grid">
+        <div class="use-case-pill">🤖 Discord bots</div>
+        <div class="use-case-pill">🧩 Browser extensions</div>
+        <div class="use-case-pill">📝 Notion widgets</div>
+        <div class="use-case-pill">📱 Mobile apps</div>
+        <div class="use-case-pill">⚙️ Text automation</div>
+      </div>
+    </section>
+
+    <!-- RATE LIMITS -->
+    <section class="page-section">
+      <h2>Rate Limits</h2>
+      <p>None. These are static JSON files served over GitHub Pages' CDN — fetch them as often as you like.</p>
+    </section>
+
+    <!-- LICENSE -->
+    <section class="page-section">
+      <h2>License</h2>
+      <div class="license-note">
+        Free for non-commercial use. For commercial use, email <a href="mailto:chris.shangrei@gmail.com">chris.shangrei@gmail.com</a> first.
+      </div>
+    </section>
+
+    <a class="back-link" href="https://aifontsgenerator.com/">&larr; Back to AI Fonts Generator</a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <h3>AI FONTS GENERATOR</h3>
+      <p style="color:var(--accent);letter-spacing:3px;font-size:12px;margin-top:8px;">EXPRESS YOUR IDENTITY</p>
+    </div>
+    <div class="footer-links">
+      <strong style="margin-bottom:8px;display:block;letter-spacing:2px;font-size:13px;">QUICK LINKS</strong>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-quote">
+      Fonts are the voice of imagination. Make yours louder.
+    </div>
+  </footer>
+
+<script src="hamburger.js"></script>
+</body>
+</html>

@@ -101,6 +101,11 @@ EXTRA_SECTIONS = [
     ("freaky_copy_paste",     "freaky-copy-paste",     "Freaky Font Copy and Paste", "Copy & Paste"),
     ("freaky_cursive",        "freaky-cursive",        "Freaky Text in Cursive", "Cursive"),
     ("freaky_meme",           "freaky-meme",           "Freaky Meme Font", "Meme Font"),
+    ("scary_text_generator",  "scary-text-generator",  "Scary Text Generator", "Scary Text"),
+    ("halloween_text",        "halloween-text",        "Halloween Text and Copypasta", "Halloween"),
+    ("horror_demon_fonts",    "horror-demon-fonts",    "Horror and Demon Font Styles", "Horror Fonts"),
+    ("creepy_copy_paste",     "creepy-copy-paste",     "Creepy Text Copy and Paste", "Copy & Paste"),
+    ("creepy_for_roblox",     "creepy-for-roblox",     "Creepy Text for Roblox", "Roblox"),
 ]
 
 

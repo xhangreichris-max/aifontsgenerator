@@ -74,15 +74,15 @@ The heavier sibling of the same tradition is gangster lettering.
 
 ## Gangster chicano lettering
 
-What reads as gangster is mostly weight and angle. Stroke mass increases, terminals sharpen, counters tighten, and the stress axis tips more aggressively. The same underlying construction that produces chicano script simply gets loaded with more ink and less air.
+What reads as gangster is mostly weight and angle. Stroke mass increases, terminals sharpen, counters tighten, and the stress axis tips more aggressively. The same underlying construction that produces chicano script simply gets loaded with more ink and less air. Counter size drops so the open spaces inside letters shrink. Terminals lose their soft exits and end in hard points or abrupt cuts. The stress axis rotates further off vertical. X-height stays relatively high against the ascenders, which packs the mass into a denser block rather than letting it stretch tall and thin.
 
-The look formed on the West Coast. Lowrider car clubs lettered plaques and shop windows. Prison artists drew on handkerchiefs and envelopes with whatever ballpoint the commissary stocked. By the nineties the same letterforms appeared on West Coast hip hop album covers. The history is continuous lettering practice across those surfaces, not a costume.
+The look formed on the West Coast. Lowrider car clubs lettered plaques and shop windows. Prison artists drew on handkerchiefs and envelopes with whatever ballpoint the commissary stocked. By the nineties the same letterforms appeared on West Coast hip hop album covers. The history is continuous lettering practice across those surfaces, not a costume. Plaque conventions carried over directly: heavy black fills, tight negative space, and letterforms that sit as solid units rather than open calligraphy. Record sleeves kept the same stacked density and sharp terminals so the type still read at arm's length on a store rack.
 
-Today the style shows up as tattoo reference sheets, streetwear and merch graphics, album and mixtape covers, and social media banners. It signals density and presence more than decoration.
+Today the style shows up as tattoo reference sheets, streetwear and merch graphics, album and mixtape covers, and social media banners. It signals density and presence more than decoration. On dark fabric the mass holds. Fine-line script vanishes against black cotton or fleece once the ink sits under a layer of dye or print, but the heavier gangster forms keep their edges and still register as letters.
 
-Inside the generator the blackletter category carries the weight best. Classic black ink sits heaviest on the page. Black velvet backgrounds make the forms pop without competing detail. Export resolution is fixed at 1280 by 800, which is enough for most digital layouts and print mockups.
+Inside the generator the blackletter category carries the weight best. Select classic black ink so the stroke sits at maximum density. Set the background to black velvet. Keep remix at zero. Any added ornament starts to chew into the mass and softens the terminals that define the look. Export comes out at 1280 by 800, which is enough for most digital layouts and print mockups.
 
-Heavy letterforms close up at small sizes. Counters fill, terminals merge, and the word becomes a dark mass instead of readable type. The style works for headers, large artwork, and tattoo pieces that stay well above two inches. It fails for body text or any setting that demands legibility under pressure.
+Heavy letterforms close up at small sizes. Counters fill, terminals merge, and the word becomes a dark mass instead of readable type. On skin the breakdown starts once the letter height drops under roughly two inches. At that scale the reduced counters fill with ink or scar tissue and the sharp terminals blur together. The style works for headers, large artwork, and tattoo pieces that stay well above two inches. It fails for body text or any setting that demands legibility under pressure.
 
 ## Chicano text styles you can copy and paste
 

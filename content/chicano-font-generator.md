@@ -60,15 +60,27 @@ Skin tone belongs in the same conversation. Black ink reads differently on light
 
 The exported PNG carries the font name, the ink color, the remix and age percentages, and the seed in the metadata strip. An artist who opens that file knows what they are looking at without you having to explain it.
 
+## Chicano Script Fonts
+
+Chicano script inherited its shape from further back than any tattoo shop or car show. The thick-to-thin transition in every stroke comes from Spencerian and copperplate penmanship, nineteenth-century business-hand styles written with a flexible pointed nib. Press into the downstroke and the nib splits open, laying down a fuller line; ease off on the upstroke and it closes to a hairline. That mechanical fact, pressure changing line width, is the entire visual logic of the style, inherited whole before anyone applied it to skin.
+
+Move that logic onto a tattoo machine and the tool changes but the rule holds. A single needle can't vary width the way a flexible nib does, so the transition gets faked through speed and angle instead, slowing into curves to lay a fuller line, moving faster through connectors to keep them thin. That is why chicano script still reads as handwriting even though nothing about the equipment behind it works like a pen.
+
+That inherited-but-adapted relationship is also what separates chicano script from ordinary cursive or wedding calligraphy. A bridal script keeps the penmanship rulebook intact: even rhythm, restrained flourish, a hand designed for paper and meant to stay there. This style keeps only the parts of that rulebook that survive translation to skin and exaggerates them, longer entry strokes, taller ascenders, loops built to hold their shape at a glance and stay legible a decade out, since the letters have to work at speed and under wear, not sit still under glass.
+
+That same logic decides which names suit script at all. Longer names and ones built from soft, rounded letters ride a connected hand well. Names built from hard, angular letters, or a single word meant to read as one block, tend to lock up in a connected script and belong in blackletter instead. For a heavier variant of this same tradition, the gangster chicano lettering section below covers what happens when that weight gets pushed further.
+
 ## Gangster chicano lettering
 
-People searching for gangster chicano lettering are describing a look. What they want is weight: bold, high contrast letters with attitude, the kind that read from across a parking lot.
+People searching for gangster chicano lettering are usually describing a specific look rather than a font family: more weight, sharper terminals, angles pushed harder than standard chicano script uses. Where script relies on the give and pull of a flexible line, thick where it curves, thin at the connectors, gangster lettering flattens that variation into something closer to a block. The terminals stop tapering to a point and cut off square instead, and the overall angle leans more upright or backslanted than the relaxed forward lean of a script hand.
 
-The reference points are specific. West Coast hip hop album art through the nineties. Murals in Boyle Heights. Car club plaques and custom shop decals.
+The look has real roots, worth naming plainly rather than glossing over. West Coast lowrider culture produced heavy, high-contrast lettering for club plaques and window decals that needed to read from a car length away. Prison correspondence pushed in a similar direction from a different constraint: paños drawn in ballpoint on cotton favored dense, blocky forms because a single pen line reads clearer at weight than it does faking a taper. Boyle Heights mural work absorbed both influences over decades. None of that is a costume to try on for a weekend — it is a documented visual history, and previewing a font in that tradition is a different thing from claiming the tradition itself.
 
-Three things on this page serve it. Blackletter supplies the density, particularly Unifraktur and Grenze Gotisch. Ultra Bold and Full Width in the unicode section carry the same heaviness into copy paste text. Classic Black ink with Artist Remix left at zero keeps the letterforms clean and solid, since the remix marks add ornament that eats into the mass.
+In practice, people reach for this look for tattoo reference ahead of a consultation, for streetwear and merch logos that need to hit hard at thumbnail size, for mixtape and album art competing against a busy layout, and for social banners and channel art where a name has to read at a glance with no time to study it.
 
-Set it on Black Velvet if you want the look those decals have on a dark car.
+To get it on this page: start from Blackletter, where Unifraktur and Grenze Gotisch carry the most density of the five. Leave Artist Remix at zero, since the remix marks are ornamental and eat into the mass that makes this look work. Classic Black ink keeps the letterforms solid, and Black Velvet as the background gives it the look of a decal set against a dark car panel. For the same weight as text you can paste rather than an image, Ultra Bold and Full Width in the unicode section below carry it into a bio or caption. Download PNG exports at 1280x800, double the on-page canvas resolution, enough to hold up as a standalone logo file or survive getting scaled down.
+
+Weight is also the tradeoff. The density that makes gangster chicano lettering read clean on a poster or a forearm can close up entirely at small sizes, the counters inside letters like a lowercase e or a fill in, and the word turns into a dark smear instead of readable type. It works best for headers, single words, and artwork meant to be seen at size, not for anything meant to run as body text.
 
 ## Chicano text styles you can copy and paste
 

@@ -46,6 +46,8 @@ Licensing is simple here. Every webfont on this page is OFL licensed, which perm
 
 **Fine line** is thin strokes and minimal shading, the single needle look that dominates modern LA chicano work. Small wrist pieces, collarbone script, anything that has to stay legible at two inches wide. Crimson Italic, Sacramento, Tangerine, and Zeyada live here. Tangerine is the thinnest of them, which makes it the one to test hardest with the age slider, because hairlines are the first thing to go.
 
+Some letters in the chicano alphabet carry more flourish than others. S, R, G and M hold natural curves and open counters, which gives the entry and exit strokes room to run. I, L and T stay plain because the line has nowhere left to travel. People search for single chicano letters more often than full words. An initial can anchor a larger piece, or someone simply wants to see how one letter of a name will sit before locking in the rest. Typing a single character into the generator produces the same rendering as a full name, so the one-letter preview is enough.
+
 ## Chicano tattoo font generator
 
 A font that looks sharp on a screen is not the same object as a design that holds up on skin. Screens are flat, backlit, and permanent at 100% zoom. Skin moves and stretches, and it pushes ink sideways by close to a millimeter in every direction over a decade. Hairline strokes that look precise on a monitor can close up and go soft.

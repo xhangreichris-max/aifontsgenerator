@@ -60,6 +60,8 @@ jobs:
           mkdir -p dist
           # HTML (freshly built above)
           cp *.html dist/ 2>/dev/null || true
+          # Build templates are source files, not pages — keep them off the live site
+          rm -f dist/template.html dist/template-letter.html dist/template-style.html
           # Stylesheets
           cp *.css  dist/ 2>/dev/null || true
           # JavaScript (source — will be minified in next step)

@@ -401,6 +401,8 @@ def update_sitemap(letter_pages):
     for f in subpage_files:
         blocks.append(url_block(f'{base}/{f}', '0.8', 'monthly'))
 
+    blocks.append(url_block(f'{base}/chicano-font-generator/', '0.8', 'monthly'))
+
     for lp in sorted(letter_pages, key=lambda p: p['letter']):
         blocks.append(url_block(f'{base}/{lp["filename"]}', '0.7', 'monthly'))
 

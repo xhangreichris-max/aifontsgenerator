@@ -211,7 +211,7 @@ LETTER_STYLES = [
     ('Cursive Light',    {'A':'𝒜','B':'ℬ','C':'𝒞','D':'𝒟','E':'ℰ','F':'ℱ','G':'𝒢','H':'ℋ','I':'ℐ','J':'𝒥','K':'𝒦','L':'ℒ','M':'ℳ','N':'𝒩','O':'𝒪','P':'𝒫','Q':'𝒬','R':'ℛ','S':'𝒮','T':'𝒯','U':'𝒰','V':'𝒱','W':'𝒲','X':'𝒳','Y':'𝒴','Z':'𝒵'}),
     # Cursive Bold: clean sequential offsets from U+1D4D0, no exceptions.
     ('Cursive Bold',     {'A':'𝓐','B':'𝓑','C':'𝓒','D':'𝓓','E':'𝓔','F':'𝓕','G':'𝓖','H':'𝓗','I':'𝓘','J':'𝓙','K':'𝓚','L':'𝓛','M':'𝓜','N':'𝓝','O':'𝓞','P':'𝓟','Q':'𝓠','R':'𝓡','S':'𝓢','T':'𝓣','U':'𝓤','V':'𝓥','W':'𝓦','X':'𝓧','Y':'𝓨','Z':'𝓩'}),
-    ('Gothic',           {'A':'𝔄','B':'𝔅','C':'ℭ','D':'𝔇','E':'𝔈','F':'𝔉','G':'𝔊','H':'ℌ','I':'ℑ','J':'𝔍','K':'𝔎','L':'𝔏','M':'𝔐','N':'𝔑','O':'𝒪','P':'𝔓','Q':'𝔔','R':'ℜ','S':'𝔖','T':'𝔗','U':'𝔘','V':'𝔙','W':'𝔚','X':'𝔛','Y':'𝔜','Z':'ℨ'}),
+    ('Gothic',           {'A':'𝔄','B':'𝔅','C':'ℭ','D':'𝔇','E':'𝔈','F':'𝔉','G':'𝔊','H':'ℌ','I':'ℑ','J':'𝔍','K':'𝔎','L':'𝔏','M':'𝔐','N':'𝔑','O':'𝔒','P':'𝔓','Q':'𝔔','R':'ℜ','S':'𝔖','T':'𝔗','U':'𝔘','V':'𝔙','W':'𝔚','X':'𝔛','Y':'𝔜','Z':'ℨ'}),
     ('Double-Struck',    {'A':'𝔸','B':'𝔹','C':'ℂ','D':'𝔻','E':'𝔼','F':'𝔽','G':'𝔾','H':'ℍ','I':'𝕀','J':'𝕁','K':'𝕂','L':'𝕃','M':'𝕄','N':'ℕ','O':'𝕆','P':'ℙ','Q':'ℚ','R':'ℝ','S':'𝕊','T':'𝕋','U':'𝕌','V':'𝕍','W':'𝕎','X':'𝕏','Y':'𝕐','Z':'ℤ'}),
     ('Bold Gothic',      {'A':'𝕬','B':'𝕭','C':'𝕮','D':'𝕯','E':'𝕰','F':'𝕱','G':'𝕲','H':'𝕳','I':'𝕴','J':'𝕵','K':'𝕶','L':'𝕷','M':'𝕸','N':'𝕹','O':'𝕺','P':'𝕻','Q':'𝕼','R':'𝕽','S':'𝕾','T':'𝕿','U':'𝖀','V':'𝖁','W':'𝖂','X':'𝖃','Y':'𝖄','Z':'𝖅'}),
     ('Sans-Serif',       {'A':'𝖠','B':'𝖡','C':'𝖢','D':'𝖣','E':'𝖤','F':'𝖥','G':'𝖦','H':'𝖧','I':'𝖨','J':'𝖩','K':'𝖪','L':'𝖫','M':'𝖬','N':'𝖭','O':'𝖮','P':'𝖯','Q':'𝖰','R':'𝖱','S':'𝖲','T':'𝖳','U':'𝖴','V':'𝖵','W':'𝖶','X':'𝖷','Y':'𝖸','Z':'𝖹'}),
@@ -223,34 +223,35 @@ LETTER_STYLES = [
     ('Circled',          {'A':'Ⓐ','B':'Ⓑ','C':'Ⓒ','D':'Ⓓ','E':'Ⓔ','F':'Ⓕ','G':'Ⓖ','H':'Ⓗ','I':'Ⓘ','J':'Ⓙ','K':'Ⓚ','L':'Ⓛ','M':'Ⓜ','N':'Ⓝ','O':'Ⓞ','P':'Ⓟ','Q':'Ⓠ','R':'Ⓡ','S':'Ⓢ','T':'Ⓣ','U':'Ⓤ','V':'Ⓥ','W':'Ⓦ','X':'Ⓧ','Y':'Ⓨ','Z':'Ⓩ'}),
 ]
 
-# Per-letter details injected into FAQ answer 3 for genuine variation
+# Per-letter answer to FAQ 3, based only on what the letter's grid shows:
+# readability, and which rows are borrowed Letterlike Symbols characters.
 LETTER_DETAILS = {
-    'A': ('Cursive Bold and Bold styles', 'A starts more usernames than any other letter and the Cursive Light 𝒜 and Cursive Bold 𝓐 are especially popular for aesthetic Instagram bios'),
-    'B': ('bold and gothic styles', 'B in bold Unicode stands out strongly in gaming kill feeds and the gothic 𝔅 is a favourite for metal-themed Discord servers'),
-    'C': ('script and cursive styles', 'C has a naturally curved shape that looks particularly elegant in script — the light cursive 𝒞 is one of the cleaner single-letter Unicode forms'),
-    'D': ('double-struck and bold styles', 'D in double-struck (𝔻) has a clean mathematical appearance that works well for tech and gaming handles'),
-    'E': ('script and italic styles', 'E is one of the most common letters in English usernames and the script ℰ gives it an instantly recognisable elegant form'),
-    'F': ('gothic and bold styles', 'F in gothic (𝔉) and the script ℱ are among the most visually distinctive single-letter Unicode forms available'),
-    'G': ('gothic and sans-serif styles', 'G in gothic style (𝔊) is popular in metal and gaming communities — the angular form reads as aggressive and deliberate'),
-    'H': ('bold and sans-serif styles', 'H has a naturally symmetrical structure that reads well in bold sans-serif at any size, making it popular for gaming names and initials'),
-    'I': ('script and italic styles', 'I in cursive (ℐ) has a single elegant stroke that is far more distinctive than the plain capital — it is commonly used in artistic usernames'),
-    'J': ('bold script and cursive styles', 'J in cursive has a distinctive descending loop that makes it stand out in display contexts — the bold script 𝓙 is the most recognisable form'),
-    'K': ('gothic and bold styles', 'K is one of the most popular starting letters for gaming names — Kira, Killer, King — and the gothic 𝔎 and bold 𝐊 both read as powerful'),
-    'L': ('script and double-struck styles', 'the script ℒ is one of the most elegant single-letter Unicode symbols and is widely used in creative display names and artistic initials'),
-    'M': ('script and bold styles', 'the script ℳ is the mathematical symbol for script M and one of the most recognised decorative Unicode letters — it appears frequently in brand initials and stylised usernames'),
-    'N': ('double-struck and gothic styles', 'the double-struck ℕ is the mathematical symbol for natural numbers, giving it a scholarly look that stands out in intellectual or tech-themed usernames'),
-    'O': ('circled and double-struck styles', 'O in circled style (Ⓞ) creates a distinctive bubble effect, while the double-struck 𝕆 is cleaner for minimal display name use'),
-    'P': ('gothic and double-struck styles', 'the double-struck ℙ is the mathematical symbol for prime numbers — a subtle detail that appeals to maths and tech communities'),
-    'Q': ('bold and gothic styles', 'Q is rare as a starting letter for usernames, which means a stylised Q stands out immediately — the bold 𝐐 and gothic 𝔔 both make strong visual statements'),
-    'R': ('gothic and double-struck styles', 'the double-struck ℝ is the mathematical symbol for real numbers, and the gothic ℜ is the symbol for the real part of a complex number — both are recognisable to tech and science audiences'),
-    'S': ('bold script and cursive styles', 'S in cursive and script styles has a flowing, symmetrical appearance that is extremely popular for aesthetic usernames and personalised initials'),
-    'T': ('bold and sans-serif styles', 'T has clean geometric lines that work especially well in sans-serif bold — it is one of the most-used letters in gaming tags and streamer aliases'),
-    'U': ('bold and cursive styles', 'U appears in popular username themes like Ultra, Unknown, and Unicorn — the bold 𝐔 is clean and readable while the cursive 𝒰 has an elegant sweeping form'),
-    'V': ('bold italic and gothic styles', 'V is strongly associated with Victory in gaming culture — the bold italic 𝑽 and gothic 𝔙 both carry that aggressive, winning energy'),
-    'W': ('fullwidth and bold styles', 'W is the widest capital letter in the Roman alphabet — the fullwidth Ｗ makes it even more imposing and is popular for display names where visual weight matters'),
-    'X': ('bold and gothic styles', 'X is the go-to letter for edgy gaming usernames and brand marks — the gothic 𝔛 and double-struck 𝕏 are particularly popular, with the latter recognisable as the former Twitter symbol'),
-    'Y': ('bold script and cursive styles', 'Y in cursive has a distinctive descending tail that looks elegant in display names — the bold script 𝓨 is especially popular for personalised initials'),
-    'Z': ('gothic and double-struck styles', 'Z in double-struck (ℤ) is the mathematical symbol for integers, and in gothic (ℨ) it is one of the most visually striking single-letter Unicode forms — popular for edgy usernames like Zoro, Zero, and Zeus'),
+    'A': "Sans Bold 𝗔 and Bold 𝐀 keep A's familiar shape clearest at small sizes, and because no row here borrows, any of them will sit evenly beside the rest of a name written in the same style.",
+    'B': "At small sizes, Bold 𝐁 is the clearest B on the page, and since only the Cursive Light row borrows, it mixes cleanly with the rest of a name.",
+    'C': "Monospace 𝙲 holds the open curve of C steady at any size, and it comes from a regular alphabet, unlike the Gothic and Double-Struck rows.",
+    'D': "Sans-Serif 𝖣 and Bold 𝐃 read most like the D people expect, and since nothing in this grid is borrowed, the blackletter and double-struck rows are just as consistent if you want more character.",
+    'E': "For a crisp E at small sizes, try Sans Bold 𝗘; if you want script instead, Cursive Bold 𝓔 is the version that is not borrowed.",
+    'F': "Monospace 𝙵 stays clear in short tags, and for a script look, Cursive Bold 𝓕 avoids the one borrowed row.",
+    'G': "Sans Bold 𝗚 keeps the bar of the G easy to see, and with every capital row here unborrowed, the decorative Bold Gothic 𝕲 is an equally consistent pick.",
+    'H': "The two posts and crossbar of Sans Bold 𝗛 survive small sizes well, and Cursive Bold 𝓗 is the script choice with no borrowed capital.",
+    'I': "Because a lone I can resemble a lowercase l or the number 1, the Bold 𝐈 and Monospace 𝙸 rows, with their small serifs, read most clearly, and neither is borrowed.",
+    'J': "Bold 𝐉 holds a short hook that reads as J rather than I at small sizes, and every J here sits in a regular alphabet.",
+    'K': "Sans-Serif 𝖪 and Double-Struck 𝕂 both stay readable at small sizes, and since every row here is unborrowed, either one mixes freely with other styles in the same name.",
+    'L': "Sans-Serif 𝖫 has the sharpest, most readable corner, and for script, Cursive Bold 𝓛 stays inside a single alphabet.",
+    'M': "Sans Bold 𝗠 holds the peaks of M clearly at small sizes, and the Double-Struck 𝕄 is an unborrowed option with a more technical look.",
+    'N': "Sans Bold 𝗡 reads most clearly at small sizes, and Cursive Bold 𝓝 gives a decorative N without borrowing; only the Double-Struck row uses a stand-in.",
+    'O': "Next to the digit 0, a plain O can be hard to tell apart, so the Cursive Bold 𝓞 and Bold Italic 𝑶 rows are clearer choices, and every capital O in this grid is unborrowed.",
+    'P': "Sans Bold 𝗣 keeps the bowl open and clear at small sizes, and Bold 𝐏 works just as well; every row except Double-Struck is unborrowed.",
+    'Q': "Bold 𝐐 has a tail solid enough to tell Q from O at a glance, and it comes from a regular alphabet.",
+    'R': "Monospace 𝚁 keeps the leg straight and readable, and unlike three of the decorative rows, it is not borrowed.",
+    'S': "Bold 𝐒 and Monospace 𝚂 stay legible at small sizes, and with no borrowed rows in this grid, any style you pick keeps a name consistent.",
+    'T': "Monospace 𝚃 and Sans-Serif 𝖳 keep the crossbar plain and easy to read, and there is no stand-in anywhere in the T grid.",
+    'U': "Bold 𝐔 and Sans-Serif 𝖴 are easy to read at small sizes, and since no row is borrowed, they mix cleanly with other styles in the same name.",
+    'V': "With both strokes straight and even, Sans Bold 𝗩 is the cleanest V at small sizes, and none of the V's in this grid is borrowed.",
+    'W': "Bold 𝐖 spaces the four strokes so they stay readable without crowding a name, and no W here is borrowed.",
+    'X': "Bold 𝐗 and Double-Struck 𝕏 read clearly at small sizes, and every row in this grid is unborrowed, so either one sits evenly in a name.",
+    'Y': "The fork of Sans Bold 𝗬 stays clear even at small sizes, and it sits in a regular, unbroken alphabet.",
+    'Z': "Sans Bold 𝗭 keeps the diagonal crisp, and unlike the two borrowed rows, it comes from a regular alphabet.",
 }
 
 
@@ -269,7 +270,7 @@ def generate_letter_grid_html(letter):
 
 
 def generate_letter_faq_html(letter):
-    popular, note = LETTER_DETAILS[letter]
+    best_style = LETTER_DETAILS[letter]
     return f'''<details class="faq-item">
 <summary>How do I copy and paste the letter {letter} in fancy fonts?
 <p>Click any character in the grid above — it copies to your clipboard instantly. Each Unicode {letter} shown is a real text character, not an image, so it pastes directly into Instagram bios, Discord nicknames, TikTok display names, and gaming name fields without any font installation on either end. The live generator below also lets you type full words or names and copy complete styled text.</p>
@@ -279,9 +280,26 @@ def generate_letter_faq_html(letter):
 <p>Yes. Every character in the grid uses standard Unicode, which both Instagram and Discord render correctly. Bold, italic, script, gothic, and double-struck {letter} all paste cleanly into bios, display names, and server nicknames. If a specific character shows as a box on a particular platform, switch to a bold or sans-serif variant — those have the widest compatibility across devices and client versions.</p>
 </details>
 <details class="faq-item">
-<summary>What\'s the most popular font style for the letter {letter}?
-<p>The {popular} tend to get the most use for {letter}. {note}. The best choice depends on context — bold and sans-serif variants are easiest to read at the small sizes games use for player names, while script and gothic styles have more visual impact in profile display contexts.</p>
+<summary>Which font style works best for the letter {letter}?
+<p>{best_style}</p>
 </details>'''
+
+
+def generate_letter_notes_html(letter, notes):
+    # Paragraphs are separated by blank lines in pages-config.json; an empty
+    # field renders nothing so pages without notes get no empty heading.
+    paragraphs = [p.strip() for p in notes.split('\n\n') if p.strip()]
+    if not paragraphs:
+        return ''
+    body = '\n'.join(f'      <p>{html_module.escape(p, quote=False)}</p>' for p in paragraphs)
+    return (f'\n      <h2 id="about-letter">About the Letter {letter}</h2>\n'
+            f'{body}\n')
+
+
+def generate_letter_notes_toc(notes):
+    if not notes.strip():
+        return ''
+    return '\n          <a href="#about-letter">About the Letter</a>'
 
 
 def generate_az_grid_html(current_letter):
@@ -343,6 +361,9 @@ def build_letter_pages():
         internal_links_html = generate_internal_links_html(page['internal_links'])
         az_grid_html = generate_az_grid_html(letter)
         prev_next_html = generate_prev_next_letter_html(letter)
+        letter_notes = page.get('letter_notes', '')
+        letter_notes_html = generate_letter_notes_html(letter, letter_notes)
+        letter_notes_toc = generate_letter_notes_toc(letter_notes)
 
         output = template
         output = output.replace('{{TITLE}}', page['title'])
@@ -356,6 +377,8 @@ def build_letter_pages():
         output = output.replace('{{LETTER}}', letter)
         output = output.replace('{{LETTER_LOWER}}', letter.lower())
         output = output.replace('{{LETTER_GRID}}', letter_grid_html)
+        output = output.replace('{{LETTER_NOTES_HTML}}', letter_notes_html)
+        output = output.replace('{{LETTER_NOTES_TOC}}', letter_notes_toc)
         output = output.replace('{{FAQ_HTML}}', faq_html)
         output = output.replace('{{INTERNAL_LINKS_HTML}}', internal_links_html)
         output = output.replace('{{AZ_GRID}}', az_grid_html)
@@ -469,7 +492,7 @@ def _weave(text, seq):
 
 SU = {'A':'𝓐','B':'𝓑','C':'𝓒','D':'𝓓','E':'𝓔','F':'𝓕','G':'𝓖','H':'𝓗','I':'𝓘','J':'𝓙','K':'𝓚','L':'𝓛','M':'𝓜','N':'𝓝','O':'𝓞','P':'𝓟','Q':'𝓠','R':'𝓡','S':'𝓢','T':'𝓣','U':'𝓤','V':'𝓥','W':'𝓦','X':'𝓧','Y':'𝓨','Z':'𝓩'}
 SL = {'a':'𝓪','b':'𝓫','c':'𝓬','d':'𝓭','e':'𝓮','f':'𝓯','g':'𝓰','h':'𝓱','i':'𝓲','j':'𝓳','k':'𝓴','l':'𝓵','m':'𝓶','n':'𝓷','o':'𝓸','p':'𝓹','q':'𝓺','r':'𝓻','s':'𝓼','t':'𝓽','u':'𝓾','v':'𝓿','w':'𝔀','x':'𝔁','y':'𝔂','z':'𝔃'}
-FU = {'A':'𝔄','B':'𝔅','C':'ℭ','D':'𝔇','E':'𝔈','F':'𝔉','G':'𝔊','H':'ℌ','I':'ℑ','J':'𝔍','K':'𝔎','L':'𝔏','M':'𝔐','N':'𝔑','O':'𝒪','P':'𝔓','Q':'𝔔','R':'ℜ','S':'𝔖','T':'𝔗','U':'𝔘','V':'𝔙','W':'𝔚','X':'𝔛','Y':'𝔜','Z':'ℨ'}
+FU = {'A':'𝔄','B':'𝔅','C':'ℭ','D':'𝔇','E':'𝔈','F':'𝔉','G':'𝔊','H':'ℌ','I':'ℑ','J':'𝔍','K':'𝔎','L':'𝔏','M':'𝔐','N':'𝔑','O':'𝔒','P':'𝔓','Q':'𝔔','R':'ℜ','S':'𝔖','T':'𝔗','U':'𝔘','V':'𝔙','W':'𝔚','X':'𝔛','Y':'𝔜','Z':'ℨ'}
 FL = {'a':'𝔞','b':'𝔟','c':'𝔠','d':'𝔡','e':'𝔢','f':'𝔣','g':'𝔤','h':'𝔥','i':'𝔦','j':'𝔧','k':'𝔨','l':'𝔩','m':'𝔪','n':'𝔫','o':'𝔬','p':'𝔭','q':'𝔮','r':'𝔯','s':'𝔰','t':'𝔱','u':'𝔲','v':'𝔳','w':'𝔴','x':'𝔵','y':'𝔶','z':'𝔷'}
 DU = {'A':'𝔸','B':'𝔹','C':'ℂ','D':'𝔻','E':'𝔼','F':'𝔽','G':'𝔾','H':'ℍ','I':'𝕀','J':'𝕁','K':'𝕂','L':'𝕃','M':'𝕄','N':'ℕ','O':'𝕆','P':'ℙ','Q':'ℚ','R':'ℝ','S':'𝕊','T':'𝕋','U':'𝕌','V':'𝕍','W':'𝕎','X':'𝕏','Y':'𝕐','Z':'ℤ'}
 DL = {'a':'𝕒','b':'𝕓','c':'𝕔','d':'𝕕','e':'𝕖','f':'𝕗','g':'𝕘','h':'𝕙','i':'𝕚','j':'𝕛','k':'𝕜','l':'𝕝','m':'𝕞','n':'𝕟','o':'𝕠','p':'𝕡','q':'𝕢','r':'𝕣','s':'𝕤','t':'𝕥','u':'𝕦','v':'𝕧','w':'𝕨','x':'𝕩','y':'𝕪','z':'𝕫'}
@@ -754,7 +777,7 @@ STYLE_TRANSFORMS = {
     # ── Remix styles (20 original) ────────────────────────────────────────────
     'Quantum Spell':  _mk_remix(SU, SL, {'W':'𝔚','w':'𝔀','X':'𝔛','x':'𝔁','Y':'𝔜','y':'𝔂','Z':'ℨ','z':'𝔃','O':'𝓞','o':'𝓸'}, '⟁', '⟁', ['⌬','◬','⟡']),
     'Starlit Ice':    _mk_remix(SU, SL, {'A':'Ａ','E':'Ｅ','I':'Ｉ','O':'Ｏ','U':'Ｕ','a':'ａ','e':'ｅ','i':'ｉ','o':'ｏ','u':'ｕ'}, '❄︎', '❄︎', ['☾','✦','❆']),
-    'Blood Rune':     _mk_remix(FU, FL, {'O':'𝒪','o':'𝔬'}, '𖤐', '𖤐', ['☨','✠','†']),
+    'Blood Rune':     _mk_remix(FU, FL, {'O':'𝔒','o':'𝔬'}, '𖤐', '𖤐', ['☨','✠','†']),
     'Ember Strike':   _mk_remix(DU, SL, {'X':'𝔛','x':'𝔁','V':'𝓥'}, '🔥', '🔥', ['✦','⚑','⚡']),
     'Toxic Pulse':    _mk_remix(MU, ML, {'O':'Ø','o':'ø','E':'Ξ','e':'ξ','A':'Δ','a':'Δ','Y':'¥','y':'ყ'}, '☣︎', '☣︎', ['⌁','⌬','⎔']),
     'Toxin Pulse':    _mk_remix(MU, ML, {'O':'Ø','o':'ø','E':'Ξ','e':'ξ','A':'Δ','a':'Δ','Y':'¥','y':'ყ'}, '☣︎', '☣︎', ['⌁','⌬','⎔']),
@@ -771,7 +794,7 @@ STYLE_TRANSFORMS = {
     'Ghost Pulse':    _mk_remix(MU, SL, {'O':'Ø','o':'ø'}, '👁', '👁', ['▫','▪','◦']),
     'Thunder Crest':  _mk_remix(DU, DL, {'O':'𝕆','o':'𝕠','S':'𝕊','s':'𝕤'}, '⚡', '⚡', ['✦','⯈','➤']),
     'Dream Weaver':   _mk_remix(SU, SL, {}, '✿', '✿', ['🫧','⋆','❀']),
-    'Obsidian Flame': _mk_remix(FU, FL, {'O':'𝒪','o':'𝔬'}, '⛧', '⛧', ['✟','❖','☗']),
+    'Obsidian Flame': _mk_remix(FU, FL, {'O':'𝔒','o':'𝔬'}, '⛧', '⛧', ['✟','❖','☗']),
     'Soul Key':       _mk_remix(SU, SL, {'G':'𝓖','g':'𝓰','K':'𝓚','k':'𝓴'}, '☽', '☽', ['⚷','⌘','✧']),
     # ── Symbol Fusion styles (20) ─────────────────────────────────────────────
     'Astral Rune — Zodiac Seal':       _mk_remix(DU, SL, {'O':'⊙','o':'⊙','S':'Ϟ','s':'ϟ'}, '♐', '♌', ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓']),

@@ -284,6 +284,7 @@
     "default_text": "A",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "a in different fonts",
+    "letter_notes": "Long before it led the alphabet, A was a Phoenician letter called aleph, a consonant sign often linked to the picture of an ox's head. Greek speakers borrowed it, used it for a vowel and called it alpha, and that vowel sound is the one Latin A kept.\n\nOn this page, A has an unusually tidy set. The Bold 𝐀 sits at U+1D400, the very first slot in Unicode's block of styled math letters, and every other styled alphabet in that block is laid out after it. The script and gothic A both have proper places of their own as well, so nothing in the grid is a stand-in, unlike letters such as H or R.\n\nThat leaves you free to mix rows on looks alone. Two forms the grid skips can be copied straight from this paragraph: the small capital ᴀ, a capital shape drawn at lowercase height, and 🅐, a filled, negative version of the Circled Ⓐ.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
@@ -302,6 +303,7 @@
     "default_text": "B",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "b in different fonts",
+    "letter_notes": "Compare the two cursive rows above and you are looking at two different corners of Unicode. Cursive Bold 𝓑 sits in its normal place, but the light script alphabet has no B of its own, so the Cursive Light row borrows ℬ from an older batch of letter symbols. If ℬ ever looks out of step with the rest of a script name on your phone, switching the whole name to Cursive Bold keeps every letter in one alphabet.\n\nThe letter itself started as the Phoenician bēt, whose name is usually explained as meaning \"house\", and passed through Greek and Etruscan into Latin. Greek called it beta, and that name lives on inside the word alphabet, which joins alpha and beta. Unicode also has a small capital ʙ, a capital B drawn at lowercase height. It is not in the grid, but you can copy it from this sentence for a name written in small caps.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
@@ -320,6 +322,7 @@
     "default_text": "C",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "c in different fonts",
+    "letter_notes": "Two of the C's in this grid are borrowed characters: the Gothic ℭ and the Double-Struck ℂ. They paste as ordinary text, so in a name they behave like any other letter, while the light script 𝒞 and the Cursive Bold 𝓒 sit in their usual places. If you are styling a whole name in gothic or double-struck, those two are simply the C's that come along with it.\n\nC has a more tangled history than most letters. It comes from the Greek gamma, which reached the Romans through the Etruscans, and early Latin used C for both the hard k sound and the g sound. That double duty is why Latin later needed a separate letter for g. English still asks C to do two jobs, hard in cat and soft in city, so a styled C at the start of a name can be read either way. If the sound matters to your name, a plain, readable C helps people say it the way you intend.",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
       {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
@@ -338,6 +341,7 @@
     "default_text": "D",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "d in different fonts",
+    "letter_notes": "ⅅ is a D you will not find in the grid above. Its official Unicode name is DOUBLE-STRUCK ITALIC CAPITAL D, and it sits apart from the regular math alphabets together with a lowercase partner, ⅆ. The grid sticks to the upright Double-Struck 𝔻, but both of these slanted versions copy and paste like any other character, so you can lift them straight from this paragraph.\n\nThe letter goes back to the Phoenician dalet, whose name is usually explained as meaning \"door\". Greek turned it into delta, written as the triangle Δ, and it reached Latin as the D used today.\n\nNone of the D's in the grid is a stand-in. That makes D an easy letter to restyle later: you can move a name from Bold to Gothic or Double-Struck without any one letter coming from a different part of Unicode. If you want the double-struck look with a slant, ⅅ is the piece to reach for, and it sits naturally beside an upright 𝔻 in a pair of initials.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Unicode Text Converter", "url": "unicode-text.html"},
@@ -356,6 +360,7 @@
     "default_text": "E",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "e in different fonts",
+    "letter_notes": "Type a lowercase e into the generator and look at the Cursive style: the e it produces is ℯ. The math alphabet skips a script small e, so the generator reaches for this separate character instead. In a bio or display name it pastes like any other letter, so there is nothing you need to do differently.\n\nThe capital has the same story. The Cursive Light row shows ℰ, another borrowed character, while the bolder 𝓔 right next to it is a regular member of its alphabet. There is also ⅇ, a double-struck italic small e that the grid leaves out; copy it from this sentence if you want a slanted double-struck letter to go with your name.\n\nHistorically, E descends from the Phoenician letter he, which Greek reused for the vowel epsilon before the letter reached Latin. Its three arms make it easy to spot even in the heavier rows above, such as the Bold Gothic 𝕰, where most letters change shape far more.",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
       {"text": "Bold Text Generator", "url": "bold-text.html"},
@@ -374,6 +379,7 @@
     "default_text": "F",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "f in different fonts",
+    "letter_notes": "F comes from a letter that Greek eventually dropped. Its ancestor is the Phoenician waw, which early Greek used as digamma, written Ϝ, a letter that looks a lot like F and later fell out of the standard Greek alphabet. Latin kept the shape and gave it the f sound it still has. The same Phoenician waw is also the ancestor of U, V, W and Y, which makes F a distant cousin of several letters near the end of the alphabet.\n\nIn the grid, the Cursive Light row is the one to look at. The ℱ you see there is a stand-in from Unicode's letterlike symbols, because the light script alphabet has no capital F. The Cursive Bold 𝓕 underneath it does not need to borrow at all. Both paste as plain text, but if you are spelling a whole name in light script, ℱ is the one letter in that name coming from a different part of Unicode.",
     "internal_links": [
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
       {"text": "Glitch Text Generator", "url": "glitch-text.html"},
@@ -392,6 +398,7 @@
     "default_text": "G",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "g in different fonts",
+    "letter_notes": "In the Cursive style of the generator above, a lowercase g comes out as ℊ. Unicode left the script small g spot empty in its math alphabet and uses ℊ in its place, so that is what the generator outputs. It pastes and displays as a curly g, so it works anywhere the rest of a cursive name does. The capitals in the grid have no such gaps: script 𝒢 and gothic 𝔊 both sit in their usual places, and so does every other capital G on this page.\n\nG is one of the few letters the Romans created themselves. Early Latin wrote both the k sound and the g sound with C, so a short stroke was added to C to make a separate letter for g. That shared origin is still easy to see if you put the Bold 𝐂 and Bold 𝐆 side by side; the only real difference is the little bar. Small capital fans can also copy ɢ from this sentence.",
     "internal_links": [
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
       {"text": "Bold Text Generator", "url": "bold-text.html"},
@@ -410,6 +417,7 @@
     "default_text": "H",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "h in different fonts",
+    "letter_notes": "Look at the Cursive Light ℋ and the Gothic ℌ in the grid above: both are borrowed. Their alphabets have empty spaces where an H should be, so these two come from an older set of symbols instead. The Double-Struck row does the same thing with ℍ. Counting the lowercase h below, H has more of these gaps than any other letter.\n\nThe lowercase gap only shows up when you type a small h into the generator at the top of the page. The Elegant Serif style turns it into ℎ, and that character's official Unicode name is PLANCK CONSTANT, a physics symbol filling in for an italic h. Pasted into a bio, it simply reads as a slanted h.\n\nFor a gothic name with no borrowed letters, use the Bold Gothic row. 𝕳 and the rest of the bold gothic alphabet come from one unbroken run in Unicode, while the lighter Gothic style mixes ℌ in with the others.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Unicode Text Converter", "url": "unicode-text.html"},
@@ -428,6 +436,7 @@
     "default_text": "I",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "i in different fonts",
+    "letter_notes": "What do the Cursive Light ℐ and the Gothic ℑ above have in common? Both are stand-ins from Unicode's letterlike symbols, filling spots their own alphabets leave empty. They paste as normal text, and the bold versions of both styles, 𝓘 and 𝕴, are regular members of their sets.\n\nOne lookalike is worth avoiding in a name. ℹ is officially named INFORMATION SOURCE, and although Unicode treats it as a styled form of the letter i, its name tells you what it was meant for, so readers may take it for an info sign rather than a letter. For a plain styled i, stick to the rows in the grid or the generator output. A safer extra is ⅈ, a double-struck italic small i, free to copy from this sentence.\n\nI comes from the Phoenician yodh and the Greek iota. Latin used I for both the vowel and a y-like consonant, and that second job is where the letter J later grew from.",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
       {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
@@ -446,6 +455,7 @@
     "default_text": "J",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "j in different fonts",
+    "letter_notes": "J started life as a variation of I. Latin used I for both a vowel and a y-like consonant, and writers later gave that consonant its own form with a curved tail. Over time the tailed version became a separate letter, which makes J one of the newest additions to the alphabet, alongside U and W. The family link still shows in the Bold rows, where 𝐈 and 𝐉 differ mainly by that tail.\n\nNone of the J's in the grid is borrowed, from the swooping Cursive Bold 𝓙 to the plain Monospace 𝙹, so you can switch styles freely. The tail is the part that changes most from row to row: the script versions stretch it into a long loop, while the sans-serif rows keep it short. One extra is worth knowing about: ⅉ, a double-struck italic small j. It is not in the grid, but you can copy it from here, and it pairs neatly with the Double-Struck 𝕁 if you want matching initials with a slanted second letter.",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
       {"text": "Bold Text Generator", "url": "bold-text.html"},
@@ -464,6 +474,7 @@
     "default_text": "K",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "k in different fonts",
+    "letter_notes": "If K leads your gamer tag, pick a row by how much it changes the letter. The Bold 𝐊 and Sans Bold 𝗞 keep the familiar shape and simply thicken it, while the Gothic 𝔎 turns it into blackletter that some readers may need a second look to recognise. Between those two extremes, the italic rows add a lean without changing the strokes.\n\nK comes from the Phoenician kaph and the Greek kappa. Latin rarely used it, because C already covered the same hard sound, and that habit is still visible in English, where cat and kit begin with the same sound but different letters.\n\nNothing in K's grid is borrowed, so mixing rows is purely a matter of taste. The Monospace 𝙺 gives each letter the same width, which suits tags meant to look like code. The Fullwidth Ｋ takes up a wide cell, so a short name written in fullwidth letters looks spaced out next to ordinary text.",
     "internal_links": [
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
       {"text": "Bold Text Generator", "url": "bold-text.html"},
@@ -482,6 +493,7 @@
     "default_text": "L",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "l in different fonts",
+    "letter_notes": "ℓ, the looped lowercase l, is worth knowing even though the grid shows only capitals. Its official name is SCRIPT SMALL L, and it is one of Unicode's older letter symbols rather than part of the math alphabets. In a name, that loop makes a lowercase l hard to confuse with a capital I or the number 1. The capital has a quirk of its own: the light script alphabet has no L of its own, so the Cursive Light row uses ℒ, while Cursive Bold 𝓛 is a regular member of its set.\n\nL descends from the Phoenician lamed and the Greek lambda, Λ, and reached Latin as the right-angled L used today. Unicode keeps a few unusual relatives of it too. Besides the small capital ʟ, there are versions with a stroke, ᴌ, and with a belt, 𝼄, all of which you can copy from this paragraph if you want an L that few other names will have.",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
       {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
@@ -500,6 +512,7 @@
     "default_text": "M",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "m in different fonts",
+    "letter_notes": "Pick the Sans-Serif 𝖬 or the Monospace 𝙼 if you want M to stay compact. M is a wide letter with a lot of strokes, so the style you choose changes the weight of a name quickly. For something heavier, the Bold Gothic 𝕸 turns the peaks into dense blackletter, which works better as a single initial than in a long word, where it can crowd the letters around it.\n\nIn the grid, the Cursive Light ℳ is borrowed. It pastes like a normal letter, and the Cursive Bold 𝓜 beside it is not borrowed, so a whole name in bold script stays in one alphabet.\n\nM goes back to the Phoenician mem, often explained as a picture of water, and reached Latin through the Greek mu. Its run of peaks has survived the whole journey, which is part of why M stays easy to recognise even in heavily styled text, from the looping script rows to the angular blackletter ones.",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
       {"text": "Bold Text Generator", "url": "bold-text.html"},
@@ -518,6 +531,7 @@
     "default_text": "N",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "n in different fonts",
+    "letter_notes": "ℕ is the one borrowed N on this page, and it belongs to the double-struck set. Placed next to other double-struck letters it carries the same doubled strokes, so it fits the set in a name, and pasted into a bio it behaves like plain text. If you would rather avoid stand-ins entirely, the Bold 𝐍 and Gothic 𝔑 rows are unborrowed, as is every other N here.\n\nN comes from the Phoenician nun, which Greek turned into nu and Latin kept as N. The diagonal stroke is the part to watch when choosing a style. In the slanted rows, Sans Italic 𝘕 and Sans Bold Italic 𝙉, the whole letter leans and the diagonal gets steeper. In Monospace 𝙽 it is squeezed into the same width as every other letter, which keeps a tag neat and even. The Fullwidth Ｎ goes the other way, spreading the letter across a wide cell so a short name looks deliberately spaced out next to ordinary text.",
     "internal_links": [
       {"text": "Unicode Text Converter", "url": "unicode-text.html"},
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
@@ -536,6 +550,7 @@
     "default_text": "O",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "o in different fonts",
+    "letter_notes": "Because O is already a circle, the Circled Ⓞ turns it into a ring inside a ring, which can look striking as a single initial. For a solid look, 🅞 is the filled, negative version of that circle; you can copy it from this paragraph. The blackletter rows, 𝔒 and 𝕺, change the shape most, trading the round outline for angular strokes.\n\nThere is one borrowed character in O's set, and you will only meet it if you type a lowercase o into the Cursive style of the generator. The math alphabet skips a script small o, so the generator uses ℴ there. It pastes as a normal letter and looks at home among the other cursive characters.\n\nO has been a simple ring since the Phoenician letter ayin, usually explained as a picture of an eye. Ayin was a consonant, and Greek speakers used its shape for a vowel instead, calling it omicron, before it passed into Latin as O.",
     "internal_links": [
       {"text": "Bubble Text Generator", "url": "bubble-text.html"},
       {"text": "Bold Text Generator", "url": "bold-text.html"},
@@ -554,6 +569,7 @@
     "default_text": "P",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "p in different fonts",
+    "letter_notes": "ℙ in the Double-Struck row is a borrowed letter, and it is the only P in the grid that is. The script 𝒫 and gothic 𝔓 sit in their usual places, and so do the bold versions of each. In a name, ℙ still shows the doubled stroke you would expect, so it sits comfortably beside other double-struck capitals.\n\nP has a confusing family tree for anyone who knows the Greek alphabet. It comes from the Phoenician pe and the Greek pi, Π, but the Greek letter shaped like P is rho, which is the ancestor of R. So a Greek reader sees a P-shape and thinks of an R sound. In the grid, the Monospace 𝙿 and Sans-Serif 𝖯 keep the bowl clean and simple, while the Bold Gothic 𝕻 is far more ornate. The Circled Ⓟ is another option, closing the letter inside a ring so it works as a small badge at the start of a name.",
     "internal_links": [
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
       {"text": "Unicode Text Converter", "url": "unicode-text.html"},
@@ -572,6 +588,7 @@
     "default_text": "Q",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "q in different fonts",
+    "letter_notes": "If your name starts with Q, look at how each row handles the tail, since that small stroke is the only thing separating Q from O. In the Circled Ⓠ and the Monospace 𝚀 it stays easy to spot, while the ornate Bold Gothic 𝕼 can be harder to read at small sizes.\n\nThe Double-Struck row is the one place where Q borrows. Unicode left that spot empty in its double-struck alphabet, so the ℚ you see there comes from elsewhere. It still pastes as text and carries the doubled strokes, so it sits alongside other double-struck letters in a name without any trouble.\n\nQ descends from the Phoenician qoph. Greek used it as koppa for a while and then dropped it, but Latin kept Q and paired it with U, a habit English still follows in words like queen and quest. Unicode even has a small capital ꞯ, ready to copy here if you are writing a name in small caps and want the Q to match.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
@@ -590,6 +607,7 @@
     "default_text": "R",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "r in different fonts",
+    "letter_notes": "How many of the R's on this page are borrowed? Three. The Cursive Light ℛ and the Gothic ℜ both come from an older set of symbols, and so does ℝ in the Double-Struck row, because those three alphabets leave R's slot empty. Only H matches R for borrowed capitals in the grid.\n\nIf you want an R with no stand-ins at all, the bold styles are the way to go. Cursive Bold 𝓡 and Bold Gothic 𝕽 both come from alphabets that have no gaps for R, so a whole name written in either style stays in one consistent set.\n\nR grew out of the Phoenician resh and the Greek rho, which is written like a P. Latin added a slanted leg to tell it apart from P, and that leg is what most of the rows above restyle. Unicode also has a small capital ʀ and a rarer version with a right leg, ꭆ, both of which you can copy from this paragraph.",
     "internal_links": [
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
       {"text": "Unicode Text Converter", "url": "unicode-text.html"},
@@ -608,6 +626,7 @@
     "default_text": "S",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "s in different fonts",
+    "letter_notes": "S comes from the Phoenician shin, which Greek turned into sigma, written Σ. By the time it reached Latin it had become the curved S used today. Greek still has a second form of sigma for the end of a word, ς, a reminder that the letter has always changed shape depending on where it sits.\n\nNone of the S characters on this page is borrowed. That leaves the choice to looks, and S changes more than most letters between styles. The script rows, Cursive Light 𝒮 and Cursive Bold 𝓢, turn the curve into a long flourish, while the two blackletter rows, 𝔖 and 𝕾, break it into angular strokes that can look quite different from a plain S. The Sans-Serif 𝖲 and Sans Bold 𝗦 sit in the middle, keeping the familiar curve with no decoration, and the Monospace 𝚂 squeezes that curve into a fixed width. If a name already has a lot of curves, a sans-serif S keeps it readable.",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
       {"text": "Aesthetic Text Generator", "url": "aesthetic-text.html"},
@@ -626,6 +645,7 @@
     "default_text": "T",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "t in different fonts",
+    "letter_notes": "Set the Bold 𝐓 beside the Sans Bold 𝗧 and the difference is all in the ends: one has small serifs, the other is clean. T is a simple letter, so details like that, or the doubled stem in the Double-Struck 𝕋, carry most of the style. You can mix rows freely, since there are no borrowed stand-ins anywhere in this grid. The blackletter pair, 𝔗 and 𝕿, change the shape the most and can look quite unlike a T at small sizes, so they work best as a single initial. The Circled Ⓣ is the simplest badge version of all.\n\nT comes from the Phoenician taw, the last letter of that alphabet. Greek kept it as tau, and Latin as T. Greek then added new letters after tau, and one of them, upsilon, is the ancestor of several letters that follow T in our alphabet today, including V and Y. In that sense, T marks where the original Phoenician alphabet ended.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Unicode Text Converter", "url": "unicode-text.html"},
@@ -644,6 +664,7 @@
     "default_text": "U",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "u in different fonts",
+    "letter_notes": "For most of the history of Latin, U did not exist as a separate letter. The Romans wrote V for both the vowel u and a consonant sound, and the rounded U only later became a letter of its own. That is why U and V still sit side by side in the alphabet.\n\nU borrows nothing on this page. The rounded bottom is what separates it from V, and the decorative rows treat that curve differently. In the Cursive Light 𝒰 it becomes a sweeping loop, and in the Bold Gothic 𝖀 it turns into a blackletter shape that some readers may not recognise straight away.\n\nFor short tags, choose a row where the round base stays obvious. The Sans Bold 𝗨 and Monospace 𝚄 keep U unmistakable, and the Double-Struck 𝕌 adds a doubled stroke without hiding the curve. If you want a small-caps look, the small capital ᴜ can be copied from this sentence.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
@@ -662,6 +683,7 @@
     "default_text": "V",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "v in different fonts",
+    "letter_notes": "𝕍, the double-struck V, shows how much a single extra line can change a simple letter: the doubled stroke is all that sets it apart from a plain V. V has no borrowed characters anywhere on this page, so every row is a regular member of its alphabet. The pointed base is the part to watch. In the italic rows it tilts, and in the Bold Gothic 𝖁 the whole letter turns into blackletter that looks noticeably different from the V most people type.\n\nV is the Latin form of a letter that came from the Greek upsilon. Latin used it for both the u vowel and a w-like consonant, and U and W both grew out of it later, which is why the three letters still sit together in the alphabet.\n\nIf you want a lowercase-height V for a small-caps name, Unicode has ᴠ, which you can copy straight from this sentence. It pairs well with other small capitals.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
@@ -680,6 +702,7 @@
     "default_text": "W",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "w in different fonts",
+    "letter_notes": "W says its own origin out loud: in English its name is \"double u\", and it began as two V or U shapes written side by side. It is one of the youngest letters in the Latin alphabet, added long after the Romans to write a sound that Latin did not have but the Germanic languages needed.\n\nBecause W is two letters fused together, the decorative rows can get busy. The blackletter 𝔚 and 𝖂 pack a lot of strokes into one character, which looks dramatic as an initial but can crowd a longer name. The Sans-Serif 𝖶 and Monospace 𝚆 keep it clean, and the Fullwidth Ｗ sits in a wide cell, so it puts extra space around a short name. Nothing in the W grid is borrowed, so you can mix rows freely. The script rows, 𝒲 and 𝓦, turn the four strokes into a looping shape that suits an elegant display name, and the Circled Ⓦ fits all four strokes inside a ring.",
     "internal_links": [
       {"text": "Bold Text Generator", "url": "bold-text.html"},
       {"text": "Vaporwave Text Generator", "url": "vaporwave-text.html"},
@@ -698,6 +721,7 @@
     "default_text": "X",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "x in different fonts",
+    "letter_notes": "Unicode has a small capital form for every other letter of the alphabet, but there is no small capital X. If you are building a name in small caps, X is the one gap to plan around: a regular lowercase x usually sits at the same height and is the simplest swap.\n\nLatin took X from the Greek alphabet and used it for the ks sound, which is still its job in words like box and six. It is one of the few letters that spells two sounds at once.\n\nNo X in the grid is borrowed. Because the letter is symmetrical, the slanted rows change it more than you might expect: Italic 𝑋 and Sans Italic 𝘟 tilt both strokes, so the crossing point shifts. The Gothic 𝔛 and Bold Gothic 𝖃 turn the simple cross into a much more ornate blackletter shape. For a sharp, minimal X, the Sans Bold 𝗫 and Monospace 𝚇 keep the two strokes straight and even.",
     "internal_links": [
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
       {"text": "Glitch Text Generator", "url": "glitch-text.html"},
@@ -716,6 +740,7 @@
     "default_text": "Y",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "y in different fonts",
+    "letter_notes": "Why do French speakers call Y \"i grec\", and Spanish speakers \"i griega\", the Greek i? The Romans borrowed the letter from the Greek upsilon so they could spell words taken from Greek, and that origin stuck in the name in both languages.\n\nNothing on this page is borrowed for Y. The tail is what changes most between styles. The script rows, Cursive Light 𝒴 and Cursive Bold 𝓨, give it a long sweep below the line, while the Monospace 𝚈 and Sans-Serif 𝖸 keep the arms short and even, and the Fullwidth Ｙ gives the fork extra room. The Gothic 𝔜 and Bold Gothic 𝖄 are the least like a plain Y, so they work better as a single initial than inside a long name. Unicode also has a small capital ʏ, which you can take straight from this paragraph if your name uses small caps. Pair it with other small capitals rather than full-size letters so the line stays even.",
     "internal_links": [
       {"text": "Cursive Text Generator", "url": "cursive-text.html"},
       {"text": "Bold Text Generator", "url": "bold-text.html"},
@@ -734,6 +759,7 @@
     "default_text": "Z",
     "categories": ["Classic Styles", "Bold", "Beautiful", "Featured Styles", "Letter Extended"],
     "keyword": "z in different fonts",
+    "letter_notes": "ℨ and ℤ, in the Gothic and Double-Struck rows, are both borrowed. They paste as ordinary text, so a name ending in Z works the same way in either style. The script rows, Cursive Light 𝒵 and Cursive Bold 𝓩, need no stand-ins, and neither does the Bold Gothic 𝖅, which means a heavy blackletter Z stays in one consistent alphabet with the rest of a name. Bold 𝐙 and the italic rows also come straight from their own alphabets.\n\nZ sits at the end of the alphabet because the Romans added it late. They borrowed it from the Greek zeta, which itself came from the Phoenician zayin, mainly so they could spell words taken from Greek, and placed it after the letters they already had. That late arrival explains its position, even though zeta sat much earlier in the Greek alphabet. Today Z is the final letter in English, and the last stop on this A to Z list.",
     "internal_links": [
       {"text": "Gothic Text Generator", "url": "gothic-text.html"},
       {"text": "Glitch Text Generator", "url": "glitch-text.html"},

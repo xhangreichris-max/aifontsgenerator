@@ -58,6 +58,50 @@ function applyMap(text, map) {
   return out.normalize('NFC');
 }
 
+// Upside-down characters: each value is what the key looks like turned 180°.
+// Braces are written as \u007B / \u007D so generate_api.py's map parser
+// (which reads maps without nested braces) can still see this object.
+const FLIP_UPSIDE_MAP = {
+  'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ',
+  'i': 'ı', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ', 'n': 'u', 'o': 'o', 'p': 'd',
+  'q': 'b', 'r': 'ɹ', 's': 's', 't': 'ʇ', 'u': 'n', 'v': 'ʌ', 'w': 'ʍ', 'x': 'x',
+  'y': 'ʎ', 'z': 'z',
+  'A': '∀', 'B': '𐐒', 'C': 'Ɔ', 'D': 'ᗡ', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': 'פ', 'H': 'H',
+  'I': 'I', 'J': 'ɾ', 'K': 'ʞ', 'L': '˥', 'M': 'W', 'N': 'N', 'O': 'O', 'P': 'Ԁ',
+  'Q': 'Q', 'R': 'ᴚ', 'S': 'S', 'T': '┴', 'U': '∩', 'V': 'Λ', 'W': 'M', 'X': 'X',
+  'Y': '⅄', 'Z': 'Z',
+  '1': 'Ɩ', '2': '↊', '3': '↋', '4': 'ㄣ', '5': 'ϛ', '6': '9', '7': 'ㄥ', '8': '8',
+  '9': '6', '0': '0',
+  '!': '¡', '?': '¿', '.': '˙', ',': "'", "'": ',', '"': '„', '_': '‾', '&': '⅋',
+  ';': '؛', '(': ')', ')': '(', '[': ']', ']': '[', '\u007B': '\u007D', '\u007D': '\u007B',
+  '<': '>', '>': '<'
+};
+
+// Turn one grapheme, keeping any combining marks attached: 'é' turns its base
+// letter and carries the accent along instead of passing through untouched.
+function turnGrapheme(g) {
+  if (FLIP_UPSIDE_MAP[g] !== undefined) return FLIP_UPSIDE_MAP[g];
+  const [base, ...marks] = Array.from(g.normalize('NFD'));
+  const turned = FLIP_UPSIDE_MAP[base];
+  return turned === undefined ? g : turned + marks.join('');
+}
+
+// Turned letters in reading order (no reversal): "hello" → "ɥǝllo".
+function turnLetters(text) {
+  if (!text) return text;
+  return toGraphemes(text).map(turnGrapheme).join('').normalize('NFC');
+}
+
+// True 180° rotation: turn every grapheme, reverse each line, and reverse the
+// line order, so the whole block reads correctly when the screen is flipped.
+function flipUpsideDown(text) {
+  if (!text) return text;
+  return text.split(/\r?\n/).reverse()
+    .map(line => toGraphemes(line).map(turnGrapheme).reverse().join(''))
+    .join('\n')
+    .normalize('NFC');
+}
+
 // Apply combining marks **only** on letters/digits; leave emojis intact.
 function applyCombining(text, marks, min = 1, max = 2) {
   const parts = toGraphemes(text || '');
@@ -128,17 +172,20 @@ function makeRemixStyle({
   bases = { upper:'SCRIPT', lower:'SCRIPT' },
   overrides = {},
   palette = [],
-  micro = {}
+  micro = {},
+  baseTransform = null
 }) {
-  const map = composeMap({ upperBase: bases.upper, lowerBase: bases.lower, overrides });
+  // A baseTransform (e.g. flipUpsideDown) replaces the alphabet bases; the
+  // overrides then apply to its output, and the decoration steps run as usual.
+  const map = baseTransform ? null : composeMap({ upperBase: bases.upper, lowerBase: bases.lower, overrides });
   return {
-    name, category, map,
+    name, category, ...(map ? { map } : {}),
     transform(text) {
       if (!text) return text;
       if (!_ga) return text;
 
       // 1) Base mapping
-      let core = applyMap(text, map);
+      let core = baseTransform ? applyMap(baseTransform(text), overrides) : applyMap(text, map);
 
       // 2) Micro tweaks only on letters/digits
       const grams = toGraphemes(core).map(ch => {
@@ -159,7 +206,9 @@ function makeRemixStyle({
       // 3) Tasteful symbol insertion
       if (micro.allowSymbol !== false && (micro.symbolChance ?? 0.6) > Math.random() && Array.isArray(palette) && palette.length) {
         const sym = palette[Math.floor(Math.random() * palette.length)];
-        const byWord = core.split(/\b/);
+        // Flipped text mixes ASCII and non-ASCII letters, so \b would split
+        // inside words; split it on whitespace instead.
+        const byWord = baseTransform ? core.split(/(\s+)/) : core.split(/\b/);
         if (byWord.length > 2) {
           byWord.splice(Math.floor(byWord.length / 2), 0, thinSpace(sym));
           core = byWord.join('');
@@ -1368,16 +1417,16 @@ const EXTRA_STYLES = [
     {
         name: 'Flip Upside Down',
         category: 'Flip & Mirror',
-        map: {
-            'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ',
-            'i': 'ı', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ', 'n': 'u', 'o': 'o', 'p': 'd',
-            'q': 'b', 'r': 'ɹ', 's': 's', 't': 'ʇ', 'u': 'n', 'v': 'ʌ', 'w': 'ʍ', 'x': 'x',
-            'y': 'ʎ', 'z': 'z',
-            'A': '∀', 'B': '𐐒', 'C': 'Ɔ', 'D': 'ᗡ', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': 'פ', 'H': 'H',
-            'I': 'I', 'J': 'ɾ', 'K': 'ʞ', 'L': '˥', 'M': 'W', 'N': 'N', 'O': 'O', 'P': 'Ԁ',
-            'Q': 'Q', 'R': 'ᴚ', 'S': 'S', 'T': '┴', 'U': '∩', 'V': 'Λ', 'W': 'M', 'X': 'X',
-            'Y': '⅄', 'Z': 'Z'
-        },
+        map: FLIP_UPSIDE_MAP,
+        reverse: true,
+        transform: text => flipUpsideDown(text),
+        tags: ['flip', 'fun', 'readable', 'safe']
+    },
+    {
+        name: 'Turned Letters',
+        category: 'Flip Variants',
+        map: FLIP_UPSIDE_MAP,
+        transform: text => turnLetters(text),
         tags: ['flip', 'fun', 'readable', 'safe']
     },
     {

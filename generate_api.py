@@ -46,6 +46,7 @@ PACK_RE = re.compile(r"\bpack\s*:\s*" + STR)
 MAP_INLINE_RE = re.compile(r"\bmap\s*:\s*\{([^{}]*)\}")
 MAP_IDENT_RE = re.compile(r"\bmap\s*:\s*([A-Za-z_$][\w$]*)\b")
 CONST_MAP_RE = re.compile(r"\bconst\s+([A-Za-z_$][\w$]*)\s*=\s*\{([^{}]*)\}\s*;")
+REVERSE_RE = re.compile(r"\breverse\s*:\s*true\b")
 PAIR_RE = re.compile(r"""(['"])((?:\\.|(?!\1).)+)\1\s*:\s*(['"])((?:\\.|(?!\3).)*)\3""")
 
 # Factory functions whose category comes from a default parameter, e.g.
@@ -142,6 +143,10 @@ def extract_styles_from_file(path):
                 char_map = const_maps[ident_m.group(1)]
         if char_map:
             example_output = apply_char_map(EXAMPLE_INPUT, char_map)
+            # Styles flagged reverse: true (true upside-down text) also reverse
+            # character order after mapping, e.g. "Hello" -> "ollǝH".
+            if REVERSE_RE.search(chunk):
+                example_output = example_output[::-1]
 
         results.append({"name": name, "category": category, "example_output": example_output})
 

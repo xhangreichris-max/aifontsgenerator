@@ -606,6 +606,25 @@ def _stitched_thin(text):
 def _reverse_order(text):
     return text[::-1]
 
+def _load_flip_upside_map():
+    """Read FLIP_UPSIDE_MAP from fonts-core.js so the homepage preview of the
+    upside-down styles always matches the live generator."""
+    with open('fonts-core.js', 'r', encoding='utf-8') as f:
+        src = f.read()
+    body = re.search(r'const FLIP_UPSIDE_MAP = \{(.*?)\};', src, re.S).group(1)
+    pairs = re.findall(r"""(['"])((?:\\.|(?!\1).)+)\1\s*:\s*(['"])((?:\\.|(?!\3).)*)\3""", body)
+    unescape = lambda s: re.sub(r'\\u([0-9A-Fa-f]{4})', lambda m: chr(int(m.group(1), 16)), s)
+    return {unescape(k): unescape(v) for _, k, _, v in pairs}
+
+_FLIP_UPSIDE_MAP = _load_flip_upside_map()
+
+def _turn_letters(text):
+    return ''.join(_FLIP_UPSIDE_MAP.get(ch, ch) for ch in text)
+
+def _flip_upside_down(text):
+    # Same as flipUpsideDown() in fonts-core.js: turn, reverse each line, reverse line order.
+    return '\n'.join(_turn_letters(line)[::-1] for line in reversed(text.split('\n')))
+
 def _heavy_frame(text):
     n = len(text)
     return f'╔═{"═" * n}═╗\n║  {text}  ║\n╚═{"═" * n}═╝'
@@ -688,7 +707,7 @@ SAMPLE_WORDS = {
     'King Bold':'King Name','Emperor':'King Name',
     'Sweet Italic':'Kawaii Name','Fluffy':'Kawaii Name',
     'Bubble Cute':'Kawaii Name','Kawaii Small':'Kawaii Name','Rose Script':'Kawaii Name',
-    'Flip Upside Down':'Flip Text','Mirror Reverse':'Flip Text','Reverse Order':'Flip Text',
+    'Flip Upside Down':'Flip Text','Turned Letters':'Flip Text','Mirror Reverse':'Flip Text','Reverse Order':'Flip Text',
     'Bullet Trail':'Sniper','Sniper':'Sniper','AK Frame':'Sniper','Combat':'Sniper',
     'Heart Script':'Love Name','Love Bold':'Love Name',
     'Cupid':'Love Name','Valentine':'Love Name',
@@ -877,7 +896,8 @@ STYLE_TRANSFORMS = {
     'King Bold':    lambda t: '⎝⎝✧KING✧⎠⎠ ' + _am(t, {'A':'𝕬','B':'𝕭','C':'𝕮','D':'𝕯','E':'𝕰','F':'𝕱','G':'𝕲','H':'𝕳','I':'𝕴','J':'𝕵','K':'𝕶','L':'𝕷','M':'𝕸','N':'𝕹','O':'𝕺','P':'𝕻','Q':'𝕼','R':'𝕽','S':'𝕾','T':'𝕿','U':'𝖀','V':'𝖁','W':'𝖂','X':'𝖃','Y':'𝖄','Z':'𝖅','a':'𝖆','b':'𝖇','c':'𝖈','d':'𝖉','e':'𝖊','f':'𝖋','g':'𝖌','h':'𝖍','i':'𝖎','j':'𝖏','k':'𝖐','l':'𝖑','m':'𝖒','n':'𝖓','o':'𝖔','p':'𝖕','q':'𝖖','r':'𝖗','s':'𝖘','t':'𝖙','u':'𝖚','v':'𝖛','w':'𝖜','x':'𝖝','y':'𝖞','z':'𝖟'}) + ' ⎝⎝✧KING✧⎠⎠',
     'Emperor':      lambda t: '◥꧁ད ' + t + ' ཌ꧂◤',
     # ── Flip & Mirror ─────────────────────────────────────────────────────────
-    'Flip Upside Down': lambda t: _am(t, {'a':'ɐ','b':'q','c':'ɔ','d':'p','e':'ǝ','f':'ɟ','g':'ƃ','h':'ɥ','i':'ı','j':'ɾ','k':'ʞ','l':'l','m':'ɯ','n':'u','o':'o','p':'d','q':'b','r':'ɹ','s':'s','t':'ʇ','u':'n','v':'ʌ','w':'ʍ','x':'x','y':'ʎ','z':'z','A':'∀','B':'𐐒','C':'Ɔ','D':'ᗡ','E':'Ǝ','F':'Ⅎ','G':'פ','H':'H','I':'I','J':'ɾ','K':'ʞ','L':'˥','M':'W','N':'N','O':'O','P':'Ԁ','Q':'Q','R':'ᴚ','S':'S','T':'┴','U':'∩','V':'Λ','W':'M','X':'X','Y':'⅄','Z':'Z'}),
+    'Flip Upside Down': _flip_upside_down,
+    'Turned Letters': _turn_letters,
     'Mirror Reverse': lambda t: _am(t, {'a':'ɒ','b':'d','c':'ɔ','d':'b','e':'ɘ','f':'ʇ','g':'ϱ','h':'ʜ','i':'i','j':'į','k':'ʞ','l':'l','m':'m','n':'n','o':'o','p':'q','q':'p','r':'ɿ','s':'ƨ','t':'ƚ','u':'u','v':'v','w':'w','x':'x','y':'y','z':'ƹ','A':'A','B':'ᗺ','C':'Ɔ','D':'ᗡ','E':'Ǝ','F':'ꟻ','G':'Ꮁ','H':'H','I':'I','J':'Ⴑ','K':'ꓘ','L':'⅃','M':'M','N':'И','O':'O','P':'ꟼ','Q':'Ϙ','R':'Я','S':'Ƨ','T':'T','U':'U','V':'V','W':'W','X':'X','Y':'Y','Z':'Ƹ'}),
     'Reverse Order': _reverse_order,
     # ── Squiggle / Wave ───────────────────────────────────────────────────────

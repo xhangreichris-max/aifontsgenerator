@@ -94,7 +94,7 @@
     "hero_sub": "Flip your text upside down for any platform",
     "hero_image": "images/heroes/upside-down-text.png",
     "default_text": "Flip This",
-    "categories": ["Flip & Mirror", "Flip Extended"],
+    "categories": ["Flip & Mirror", "Flip Extended", "Flip Variants"],
     "keyword": "upside down text generator",
     "internal_links": [
       {"text": "Mirror Text Generator", "url": "mirror-text.html"},

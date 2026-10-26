@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "docs": "https://aifontsgenerator.com/api-docs.html",
   "source": "https://aifontsgenerator.com",
-  "total_styles": 410,
+  "total_styles": 411,
   "categories": [
     "Aesthetic Extended",
     "Algorithmic & Combining Marks",
@@ -26,6 +26,7 @@
     "Featured Styles",
     "Flip & Mirror",
     "Flip Extended",
+    "Flip Variants",
     "Flourish Decorated",
     "Freaky Extended",
     "Glitch Extended",
@@ -858,7 +859,7 @@
       "name": "Flip Upside Down",
       "category": "Flip & Mirror",
       "example_input": "Hello",
-      "example_output": "Hǝllo"
+      "example_output": "ollǝH"
     },
     {
       "name": "Floral Script",
@@ -1245,13 +1246,13 @@
       "example_output": null
     },
     {
-      "name": "Inverse Script",
+      "name": "Inverse Arrows",
       "category": "Flip Extended",
       "example_input": "Hello",
       "example_output": null
     },
     {
-      "name": "Invert Bold",
+      "name": "Invert Frame",
       "category": "Flip Extended",
       "example_input": "Hello",
       "example_output": null
@@ -1785,7 +1786,7 @@
       "example_output": null
     },
     {
-      "name": "Revolt Script",
+      "name": "Revolt",
       "category": "Flip Extended",
       "example_input": "Hello",
       "example_output": null
@@ -1835,6 +1836,12 @@
     {
       "name": "Royal Script",
       "category": "Crown",
+      "example_input": "Hello",
+      "example_output": null
+    },
+    {
+      "name": "Rune Flip",
+      "category": "Flip Extended",
       "example_input": "Hello",
       "example_output": null
     },
@@ -2259,6 +2266,12 @@
       "example_output": null
     },
     {
+      "name": "Turned Letters",
+      "category": "Flip Variants",
+      "example_input": "Hello",
+      "example_output": "Hǝllo"
+    },
+    {
       "name": "Twilight Mirror — Gothic Veil",
       "category": "Symbol–Alphabet Fusion",
       "example_input": "Hello",
@@ -2301,13 +2314,7 @@
       "example_output": null
     },
     {
-      "name": "Upend Script",
-      "category": "Flip Extended",
-      "example_input": "Hello",
-      "example_output": null
-    },
-    {
-      "name": "Upside Rune",
+      "name": "Upend Bars",
       "category": "Flip Extended",
       "example_input": "Hello",
       "example_output": null

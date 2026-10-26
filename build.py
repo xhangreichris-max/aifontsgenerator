@@ -426,6 +426,13 @@ def update_sitemap(letter_pages):
 
     blocks.append(url_block(f'{base}/chicano-font-generator/', '0.8', 'monthly'))
 
+    guide_articles = [a for a in load_guides_config().get('articles', [])
+                      if os.path.exists(a['content_file'])]
+    if guide_articles:
+        blocks.append(url_block(f'{base}/guides/', '0.7', 'monthly'))
+        for a in guide_articles:
+            blocks.append(url_block(f'{base}/guides/{a["slug"]}.html', '0.7', 'monthly'))
+
     for lp in sorted(letter_pages, key=lambda p: p['letter']):
         blocks.append(url_block(f'{base}/{lp["filename"]}', '0.7', 'monthly'))
 
@@ -1455,8 +1462,181 @@ def build_style_pages():
     print(f"\nDone. {len(style_pages)} style pages generated.")
 
 
+# ── Guide pages ───────────────────────────────────────────────────────────────
+
+# Published dates live here, not in pages-config.json: the first CI build that
+# ships a guide records that day (the workflow commits this file back), and
+# every later build reuses it. Local builds preview with today's date and
+# record nothing, so a guide's date is always its real deploy date.
+GUIDE_DATES_FILE = 'content/guides/published.json'
+AUTHOR_NAME = 'Christopher Shangrei'
+PUBLISHER_NAME = 'Chrismark Studio'
+
+
+def load_guides_config():
+    with open('pages-config.json', 'r', encoding='utf-8') as f:
+        return json.load(f).get('guides', {})
+
+
+def resolve_guide_dates(articles):
+    try:
+        with open(GUIDE_DATES_FILE, 'r', encoding='utf-8') as f:
+            dates = json.load(f)
+    except FileNotFoundError:
+        dates = {}
+    today = date.today().isoformat()
+    in_ci = os.environ.get('GITHUB_ACTIONS') == 'true'
+    changed = False
+    for article in articles:
+        if article['slug'] not in dates and in_ci:
+            dates[article['slug']] = today
+            changed = True
+    if changed:
+        with open(GUIDE_DATES_FILE, 'w', encoding='utf-8') as f:
+            json.dump(dates, f, indent=2)
+            f.write('\n')
+    return {a['slug']: dates.get(a['slug'], today) for a in articles}
+
+
+def human_date(iso):
+    d = date.fromisoformat(iso)
+    return f"{d.day} {d.strftime('%B %Y')}"
+
+
+def visible_word_count(fragment):
+    text = re.sub(r'<[^>]+>', ' ', fragment)
+    return len([w for w in text.split() if re.search(r'[A-Za-z0-9]', w)])
+
+
+def guide_breadcrumb_json(items):
+    return json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": name, "item": url}
+            for i, (name, url) in enumerate(items)
+        ],
+    }, ensure_ascii=False, indent=2)
+
+
+def render_guide_page(template, *, title, meta_desc, canonical, og_type, h1,
+                      byline_html, breadcrumb, content_html, schemas):
+    crumbs_html = ' › '.join(
+        f'<a href="{href}">{html_module.escape(name)}</a>' if href else html_module.escape(name)
+        for name, href, _ in breadcrumb
+    )
+    schema_html = '\n'.join(
+        f'  <script type="application/ld+json">\n{s}\n  </script>' for s in schemas
+    )
+    page = template
+    page = page.replace('{{TITLE}}', html_module.escape(title, quote=True))
+    page = page.replace('{{META_DESC}}', html_module.escape(meta_desc, quote=True))
+    page = page.replace('{{CANONICAL}}', canonical)
+    page = page.replace('{{OG_TYPE}}', og_type)
+    page = page.replace('{{SCHEMA_LD_JSON}}', schema_html)
+    page = page.replace('{{BREADCRUMB_HTML}}', crumbs_html)
+    page = page.replace('{{H1}}', html_module.escape(h1))
+    page = page.replace('{{BYLINE_HTML}}', byline_html)
+    page = page.replace('{{CONTENT_HTML}}', content_html)
+    return page
+
+
+def build_guide_pages():
+    guides = load_guides_config()
+    articles = [a for a in guides.get('articles', []) if os.path.exists(a['content_file'])]
+    if not articles:
+        print("No guides with content found — skipping guide pages.")
+        return
+
+    with open('template-guide.html', 'r', encoding='utf-8') as f:
+        template = f.read()
+
+    os.makedirs('guides', exist_ok=True)
+    published = resolve_guide_dates(articles)
+    hub = guides['hub']
+    hub_url = f'{BASE_URL}/guides/'
+    cards = []
+
+    for article in articles:
+        with open(article['content_file'], 'r', encoding='utf-8') as f:
+            content_html = f.read().strip()
+        url = f'{hub_url}{article["slug"]}.html'
+        pub = published[article['slug']]
+        modified = article.get('date_modified', pub)
+        minutes = max(1, round(visible_word_count(content_html) / 200))
+
+        dates_html = f'Published <time datetime="{pub}">{human_date(pub)}</time>'
+        if modified > pub:
+            dates_html += f' · Updated <time datetime="{modified}">{human_date(modified)}</time>'
+        byline_html = (
+            f'    <p class="guide-byline">By <a href="../about.html">{AUTHOR_NAME}</a>, '
+            f'{PUBLISHER_NAME} · {dates_html} · {minutes} min read</p>'
+        )
+        article_schema = json.dumps({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": article['h1'],
+            "description": article['meta_desc'],
+            "author": {"@type": "Person", "name": AUTHOR_NAME, "url": f"{BASE_URL}/about.html"},
+            "publisher": {"@type": "Organization", "name": PUBLISHER_NAME, "url": f"{BASE_URL}/"},
+            "datePublished": pub,
+            "dateModified": modified,
+            "mainEntityOfPage": url,
+            "image": f"{BASE_URL}/images/og-image.png",
+            "inLanguage": "en",
+        }, ensure_ascii=False, indent=2)
+        breadcrumb = [('Home', '../index.html', f'{BASE_URL}/'),
+                      ('Guides', '../guides/', hub_url),
+                      (article['h1'], None, url)]
+
+        page = render_guide_page(
+            template, title=article['title'], meta_desc=article['meta_desc'],
+            canonical=url, og_type='article', h1=article['h1'],
+            byline_html=byline_html, breadcrumb=breadcrumb, content_html=content_html,
+            schemas=[article_schema, guide_breadcrumb_json([(n, u) for n, _, u in breadcrumb])],
+        )
+        out_path = f'guides/{article["slug"]}.html'
+        with open(out_path, 'w', encoding='utf-8') as f:
+            f.write(page)
+        print(f"Built: {out_path}")
+
+        cards.append(
+            f'    <a class="guide-card" href="{article["slug"]}.html">\n'
+            f'      <h2>{html_module.escape(article["h1"])}</h2>\n'
+            f'      <p>{html_module.escape(article["summary"])}</p>\n'
+            f'      <p class="guide-meta">{human_date(pub)} · {minutes} min read</p>\n'
+            f'    </a>'
+        )
+
+    hub_content = (
+        f'    <p>{html_module.escape(hub["intro"])}</p>\n'
+        f'    <div class="guide-cards">\n' + '\n'.join(cards) + '\n    </div>'
+    )
+    hub_schema = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": hub['h1'],
+        "description": hub['meta_desc'],
+        "url": hub_url,
+        "hasPart": [{"@type": "Article", "headline": a['h1'],
+                     "url": f'{hub_url}{a["slug"]}.html'} for a in articles],
+    }, ensure_ascii=False, indent=2)
+    hub_breadcrumb = [('Home', '../index.html', f'{BASE_URL}/'), ('Guides', None, hub_url)]
+    page = render_guide_page(
+        template, title=hub['title'], meta_desc=hub['meta_desc'], canonical=hub_url,
+        og_type='website', h1=hub['h1'], byline_html='', breadcrumb=hub_breadcrumb,
+        content_html=hub_content,
+        schemas=[hub_schema, guide_breadcrumb_json([(n, u) for n, _, u in hub_breadcrumb])],
+    )
+    with open('guides/index.html', 'w', encoding='utf-8') as f:
+        f.write(page)
+    print("Built: guides/index.html")
+    print(f"\nDone. {len(articles)} guide(s) plus hub generated.")
+
+
 if __name__ == '__main__':
     build_pages()
     build_letter_pages()
     build_style_pages()
+    build_guide_pages()
     generate_homepage_previews()

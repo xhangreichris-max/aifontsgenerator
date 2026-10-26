@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../images/favicon/site.webmanifest">
+  <title>Fancy Text Guides: Unicode, Boxes and Accessibility | AI Fonts Generator</title>
+  <meta name="description" content="Plain-English guides to fancy text: why it turns into boxes, how Unicode fancy fonts work, and how to use them without shutting anyone out.">
+  <link rel="canonical" href="https://aifontsgenerator.com/guides/">
+  <meta property="og:title" content="Fancy Text Guides: Unicode, Boxes and Accessibility | AI Fonts Generator">
+  <meta property="og:description" content="Plain-English guides to fancy text: why it turns into boxes, how Unicode fancy fonts work, and how to use them without shutting anyone out.">
+  <meta property="og:url" content="https://aifontsgenerator.com/guides/">
+  <meta property="og:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Fonts Generator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fancy Text Guides: Unicode, Boxes and Accessibility | AI Fonts Generator">
+  <meta name="twitter:description" content="Plain-English guides to fancy text: why it turns into boxes, how Unicode fancy fonts work, and how to use them without shutting anyone out.">
+  <meta name="twitter:image" content="https://aifontsgenerator.com/images/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../mobile.css">
+  <link rel="stylesheet" href="../effects.css">
+
+  <style>
+    .guide-crumbs { max-width: 760px; margin: 40px auto 0; padding: 0 20px; font-size: 14px; color: #888; }
+    .guide-crumbs a { color: #aaa; text-decoration: none; }
+    .guide-crumbs a:hover { color: var(--accent); }
+    .guide-hero { max-width: 760px; margin: 0 auto; padding: 24px 20px 32px; }
+    .guide-hero h1 { font-family: 'Oswald', sans-serif; font-size: 44px; line-height: 1.15; color: var(--white); letter-spacing: 1px; margin-bottom: 18px; }
+    .guide-byline { font-size: 15px; color: #999; }
+    .guide-byline a { color: #ccc; }
+    .guide-body { max-width: 760px; margin: 0 auto 80px; padding: 8px 32px 24px; background: rgba(10, 10, 10, 0.94); border: 1px solid var(--line); border-radius: 4px; }
+    .guide-body h2 { font-family: 'Oswald', sans-serif; font-size: 28px; color: var(--accent); letter-spacing: 1px; margin: 40px 0 14px; }
+    .guide-body p, .guide-body li { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 18px; line-height: 1.75; color: #ddd; }
+    .guide-body p { margin-bottom: 18px; }
+    .guide-body ul, .guide-body ol { margin: 0 0 18px 22px; }
+    .guide-body table { width: 100%; border-collapse: collapse; margin: 6px 0 22px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+    .guide-body th, .guide-body td { border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: left; font-size: 16px; color: #ddd; }
+    .guide-body th { color: var(--accent); font-weight: 600; }
+    .guide-body td:first-child { font-size: 22px; color: var(--white); }
+    .guide-body li { margin-bottom: 10px; }
+    .guide-body a { color: var(--accent); }
+    .guide-body .big-chars { font-size: 22px; letter-spacing: 2px; color: var(--white); line-height: 1; }
+    .guide-cards { display: grid; gap: 20px; }
+    .guide-card { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 26px 28px; text-decoration: none; transition: 0.3s; }
+    .guide-card:hover { border-color: var(--accent); }
+    .guide-card h2 { margin: 0 0 10px; font-size: 24px; color: var(--white); }
+    .guide-card p { font-size: 16px; color: #aaa; margin: 0 0 12px; }
+    .guide-card .guide-meta { font-size: 14px; color: #777; margin: 0; }
+    @media (max-width: 768px) {
+      .guide-hero h1 { font-size: 34px; }
+      .guide-body { padding: 4px 18px 16px; }
+      .guide-body p, .guide-body li { font-size: 17px; }
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXF5XFXH22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CXF5XFXH22');
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Guides",
+  "description": "Plain-English guides to fancy text: why it turns into boxes, how Unicode fancy fonts work, and how to use them without shutting anyone out.",
+  "url": "https://aifontsgenerator.com/guides/",
+  "hasPart": [
+    {
+      "@type": "Article",
+      "headline": "Why Fancy Text Shows as Boxes (□) on Some Phones",
+      "url": "https://aifontsgenerator.com/guides/fancy-text-boxes.html"
+    },
+    {
+      "@type": "Article",
+      "headline": "How Unicode Fancy Fonts Actually Work",
+      "url": "https://aifontsgenerator.com/guides/how-unicode-fancy-fonts-work.html"
+    },
+    {
+      "@type": "Article",
+      "headline": "Fancy Fonts and Screen Readers: What People Actually Hear",
+      "url": "https://aifontsgenerator.com/guides/fancy-fonts-screen-readers.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aifontsgenerator.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://aifontsgenerator.com/guides/"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <h2>AI FONTS</h2>
+      <span>GENERATOR</span>
+    </div>
+    <nav>
+      <a href="../index.html">GENERATOR</a>
+      <a href="../categories.html">CATEGORIES</a>
+      <a class="active" href="../guides/">GUIDES</a>
+      <a href="../about.html">ABOUT</a>
+      <a href="../contact.html">CONTACT</a>
+    </nav>
+    <button class="menu-btn">⊕ MENU</button>
+  </header>
+
+  <div class="guide-crumbs" role="navigation" aria-label="Breadcrumb"><a href="../index.html">Home</a> › Guides</div>
+
+  <section class="guide-hero">
+    <h1>Guides</h1>
+
+  </section>
+
+  <main class="guide-body">
+    <p>Fancy text looks simple: copy, paste, done. But there&#x27;s a lot going on underneath, and it explains why your name sometimes turns into boxes or sounds strange to some people. These guides cover how fancy text works, why it sometimes breaks, and how to use it so everyone can still read your name.</p>
+    <div class="guide-cards">
+    <a class="guide-card" href="fancy-text-boxes.html">
+      <h2>Why Fancy Text Shows as Boxes (□) on Some Phones</h2>
+      <p>What the empty boxes mean, why newer characters and stacked marks break more often, and simple ways to keep your styled name readable.</p>
+      <p class="guide-meta">26 October 2026 · 6 min read</p>
+    </a>
+    <a class="guide-card" href="how-unicode-fancy-fonts-work.html">
+      <h2>How Unicode Fancy Fonts Actually Work</h2>
+      <p>Why fancy text is really letter-swapping, where the styled alphabets come from, and how it affects search and name length limits.</p>
+      <p class="guide-meta">26 October 2026 · 5 min read</p>
+    </a>
+    <a class="guide-card" href="fancy-fonts-screen-readers.html">
+      <h2>Fancy Fonts and Screen Readers: What People Actually Hear</h2>
+      <p>What screen reader users can hear when your name is in fancy text, and how to keep your style without leaving anyone out.</p>
+      <p class="guide-meta">26 October 2026 · 5 min read</p>
+    </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <h3>AI FONTS GENERATOR</h3>
+      <p style="color:var(--accent);letter-spacing:3px;font-size:12px;margin-top:8px;">EXPRESS YOUR IDENTITY</p>
+    </div>
+    <div class="footer-links">
+      <strong style="margin-bottom:8px;display:block;letter-spacing:2px;font-size:13px;">QUICK LINKS</strong>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../about.html">About Us</a>
+      <a href="../guides/">Guides</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../embed-guide.html">Embed Widget</a>
+      <a href="../api-docs.html">API</a>
+    </div>
+    <div class="footer-quote">
+      Fonts are the voice of imagination. Make yours louder.
+    </div>
+    <div class="footer-badge">
+      <a href="https://www.toolpilot.ai"
+         target="_blank"
+         rel="noopener">
+        <img src="../images/toolpilot-badge.png"
+             alt="Featured on ToolPilot AI"
+             width="120"
+             height="40"
+             loading="lazy">
+      </a>
+    </div>
+  </footer>
+<script src="../hamburger.js"></script>
+</body>
+</html>

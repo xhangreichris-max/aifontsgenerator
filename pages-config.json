@@ -831,5 +831,39 @@
     "dark": ["zalgo-text", "glitch-text", "creepy-text", "gothic-text", "mirror-text"],
     "social": ["bold-text", "tiny-text", "aesthetic-text", "cursive-text", "vaporwave-text", "strikethrough-text", "upside-down-text", "bubble-text", "freaky-text"],
     "unicode": ["unicode-text", "runic-text"]
+  },
+  "guides": {
+    "hub": {
+      "title": "Fancy Text Guides: Unicode, Boxes and Accessibility | AI Fonts Generator",
+      "meta_desc": "Plain-English guides to fancy text: why it turns into boxes, how Unicode fancy fonts work, and how to use them without shutting anyone out.",
+      "h1": "Guides",
+      "intro": "Fancy text looks simple: copy, paste, done. But there's a lot going on underneath, and it explains why your name sometimes turns into boxes or sounds strange to some people. These guides cover how fancy text works, why it sometimes breaks, and how to use it so everyone can still read your name."
+    },
+    "articles": [
+      {
+        "slug": "fancy-text-boxes",
+        "title": "Why Fancy Text Shows as Boxes (□) on Some Phones | AI Fonts Generator",
+        "h1": "Why Fancy Text Shows as Boxes (□) on Some Phones",
+        "meta_desc": "Fancy text turning into empty boxes? Here's what the boxes mean, why some styles break more than others, and how to keep your name readable on any phone.",
+        "summary": "What the empty boxes mean, why newer characters and stacked marks break more often, and simple ways to keep your styled name readable.",
+        "content_file": "content/guides/fancy-text-boxes.html"
+      },
+      {
+        "slug": "how-unicode-fancy-fonts-work",
+        "title": "How Unicode Fancy Fonts Actually Work | AI Fonts Generator",
+        "h1": "How Unicode Fancy Fonts Actually Work",
+        "meta_desc": "Fancy fonts aren't fonts at all. Learn how generators swap your letters for Unicode characters, why some letters are borrowed, and why styled names can break search and length limits.",
+        "summary": "Why fancy text is really letter-swapping, where the styled alphabets come from, and how it affects search and name length limits.",
+        "content_file": "content/guides/how-unicode-fancy-fonts-work.html"
+      },
+      {
+        "slug": "fancy-fonts-screen-readers",
+        "title": "Fancy Fonts and Screen Readers: What People Actually Hear | AI Fonts Generator",
+        "h1": "Fancy Fonts and Screen Readers: What People Actually Hear",
+        "meta_desc": "A font generator on when not to use fancy text. How screen readers handle styled letters, which styles are hardest to hear, and simple ways to keep your profile accessible.",
+        "summary": "What screen reader users can hear when your name is in fancy text, and how to keep your style without leaving anyone out.",
+        "content_file": "content/guides/fancy-fonts-screen-readers.html"
+      }
+    ]
   }
 }

@@ -116,6 +116,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aifontsgenerator.com/guides/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aifontsgenerator.com/guides/fancy-text-boxes.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aifontsgenerator.com/guides/how-unicode-fancy-fonts-work.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aifontsgenerator.com/guides/fancy-fonts-screen-readers.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aifontsgenerator.com/different-fonts-a.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,0 +1,44 @@
+    <p>You copy a name like <span class="big-chars">𝐒𝐡𝐚𝐝𝐨𝐰</span> from a generator, paste it into your bio, and it looks perfect. Then a friend sends you a screenshot. On their phone, your name is a row of empty boxes: <span class="big-chars">□□□□□□</span></p>
+    <p>Nothing went wrong when you copied it. The boxes come from the phone doing the showing, not from your text. Once you know why it happens, it's easy to keep your name readable for more people.</p>
+
+    <h2>What the box actually means</h2>
+    <p>Every bit of text on a screen is drawn by a font. A font is basically a set of drawings, one for each character it knows about. When your phone needs to show a character, it looks for a font with a drawing for it.</p>
+    <p>Most of the time it finds one. Phones don't rely on a single font. If the main font is missing a character, the phone quietly tries other fonts it has installed. This backup step is called font fallback.</p>
+    <p>If none of those fonts has a drawing for the character, the phone gives up and shows a placeholder, usually an empty box. People who design fonts call these boxes "tofu", because they look like little white blocks of it.</p>
+    <p>Here's the part that matters: the box is only a drawing problem. The character underneath hasn't changed. Copy that same text onto a device that does have the right font, and it shows up normally.</p>
+
+    <h2>Fancy letters are different characters</h2>
+    <p>It's easy to assume a generator makes your text bold the same way a word processor does. It doesn't. In a document, bold is formatting. The letter stays a normal H, and the app just draws it thicker. When you copy plain text into a bio, that kind of formatting doesn't come with it.</p>
+    <p>A fancy-text generator does something else. It swaps each of your letters for a different character. <span class="big-chars">𝐇</span> isn't a bold H. It's a separate character with its own official name: MATHEMATICAL BOLD CAPITAL H. On our <a href="../different-fonts-k.html">K in different fonts</a> page, 13 of the 15 rows come from a part of Unicode called Mathematical Alphanumeric Symbols, which holds whole alphabets of bold, italic, script and gothic letters.</p>
+    <p>That's why fancy text survives being pasted into a bio. It's also why boxes can happen. Your friend's phone isn't being asked to draw a thicker H. It's being asked to draw a completely different character, and it needs a font that includes that character.</p>
+
+    <h2>Why some styles break more than others</h2>
+    <p>Unicode, the standard that gives every character its number and name, didn't arrive all at once. New characters get added in new versions, and fonts have to be updated before they can draw them. A phone with older fonts can simply be missing characters that were added later.</p>
+    <p>The good news is that the characters behind the most common fancy styles have been around for a long time. Bold and italic letters like <span class="big-chars">𝐀</span>, script letters like <span class="big-chars">ℋ</span>, circled letters like <span class="big-chars">Ⓐ</span> and upside-down letters like <span class="big-chars">ɐ</span> were all already in Unicode back in version 3.2.</p>
+    <p>Some other characters arrived in later versions. The filled circle letter <span class="big-chars">🅐</span> and the small capital <span class="big-chars">ᴀ</span> weren't in version 3.2, and neither were the small capital Q, <span class="big-chars">ꞯ</span>, or the belted L, <span class="big-chars">𝼄</span>. You can copy 🅐 and ᴀ from our <a href="../different-fonts-a.html">A in different fonts</a> page, and 𝼄 from the <a href="../different-fonts-l.html">L page</a>.</p>
+    <p>Characters added more recently are missing from more older fonts. So they're the ones most likely to turn into boxes on someone else's screen. They aren't broken. Fewer devices just know how to draw them yet.</p>
+
+    <h2>Stacked marks and messy text</h2>
+    <p>Some styles don't swap your letters at all. Instead, they add marks on top of normal ones. Unicode has a whole group of these, called combining marks. A combining mark doesn't stand on its own. It attaches to the character just before it.</p>
+    <p>The <a href="../strikethrough-text.html">strikethrough styles</a> on this site work this way. The line through each letter comes from a mark called COMBINING LONG STROKE OVERLAY, added after each letter and number. The glitchy, cursed look of <a href="../zalgo-text.html">zalgo text</a> uses the same trick, just turned up. It piles lots of combining marks onto each letter.</p>
+    <p>A mark or two per letter is usually fine. Big stacks are where it gets messy. When a phone tries to draw a huge pile of marks on one letter, they can spill into the lines above and below, cover other text, or get cut off at the edge of the space they're shown in. That isn't a box, but it's the same kind of problem: how it looks depends on how the viewer's device draws it.</p>
+
+    <h2>It depends on the reader's phone, not yours</h2>
+    <p>This is the bit that catches people out. When you check your bio, you're looking at it through your own phone's fonts. Everyone else sees it through theirs.</p>
+    <p>So "it looks fine for me" doesn't tell you much. Your phone might draw every character in your name, while an older phone or a computer is missing one or two of them. Your name is exactly the same in both places. Only the fonts doing the drawing are different.</p>
+    <p>It works the other way too. If you see boxes in someone else's name, their name probably isn't broken. Your device just doesn't have a drawing for one of their characters.</p>
+
+    <h2>How to avoid boxes</h2>
+    <p>You don't have to give up fancy text. A few habits keep it readable for more people.</p>
+    <ul>
+      <li><strong>Use the long-established styles for the important part.</strong> The core bold, italic and script alphabets were almost all in Unicode by version 3.2. One of the few exceptions is the script small l, 𝓁, which came later.</li>
+      <li><strong>Save newer characters for small touches.</strong> Use something like 🅐 or ᴀ as decoration, not for your whole name. If one of them turns into a box, the rest of your name still reads.</li>
+      <li><strong>Go easy on stacked marks.</strong> A light zalgo or strikethrough effect has fewer marks to spill over than a heavy one.</li>
+      <li><strong>Check on a second device.</strong> Ask a friend with a different phone to look, or open your profile on a computer. It takes a minute, and it's the only way to see what other people see.</li>
+      <li><strong>Keep a plain version nearby.</strong> If your display name is styled, writing your name in plain letters somewhere in your bio means people can still read it if the fancy part fails.</li>
+    </ul>
+
+    <h2>If you're the one seeing boxes</h2>
+    <p>If other people's names keep showing up as boxes on your screen, the fix is usually on your side. Updating your phone's system software, or the app you're using, can add newer fonts. That lets your device draw characters it couldn't before. It won't cover every character, but it's the first thing to try.</p>
+    <p>And if a name still won't show properly after that, don't worry about it. The name isn't broken, and neither is your phone. It's just using a character your fonts don't include yet.</p>
+    <p>Want to try a few styles and see how they hold up? Head to the <a href="../index.html">font generator</a>, or straight to the <a href="../bold-text.html">bold text</a> or <a href="../cursive-text.html">cursive text</a> generator, paste your name in, and check the results on a second screen before you commit.</p>

@@ -50,7 +50,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add *.html chicano-font-generator/
+          git add *.html chicano-font-generator/ guides/ content/guides/published.json
           git diff --staged --quiet || git commit -m "Build: auto-generate sub-pages [skip ci]"
           git push
 
@@ -61,7 +61,7 @@ jobs:
           # HTML (freshly built above)
           cp *.html dist/ 2>/dev/null || true
           # Build templates are source files, not pages — keep them off the live site
-          rm -f dist/template.html dist/template-letter.html dist/template-style.html
+          rm -f dist/template.html dist/template-letter.html dist/template-style.html dist/template-guide.html
           # Stylesheets
           cp *.css  dist/ 2>/dev/null || true
           # JavaScript (source — will be minified in next step)
@@ -74,6 +74,8 @@ jobs:
           # Reusable component assets (CSS/JS) + style-page subfolders
           cp -r assets dist/ 2>/dev/null || true
           cp -r chicano-font-generator dist/ 2>/dev/null || true
+          # Guides hub + articles (built into guides/ by build.py)
+          cp -r guides dist/ 2>/dev/null || true
           # Static JSON API
           cp -r api dist/ 2>/dev/null || true
           echo "=== dist/ contents ==="

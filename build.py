@@ -253,7 +253,7 @@ def build_pages():
         html = html.replace('{{CATEGORIES}}', categories_str)
         html = html.replace('{{FILENAME}}', page['filename'])
         html = html.replace('{{SLUG}}', page['slug'])
-        html = html.replace('{{HERO_IMAGE}}', page.get('hero_image', 'images/article-hero.png'))
+        html = html.replace('{{HERO_IMAGE}}', page.get('hero_image', 'images/article-hero.webp'))
         html = html.replace('{{WHAT_IS}}', article.get('what_is', ''))
         html = html.replace('{{HOW_TO_USE}}', article.get('how_to_use', ''))
         html = html.replace('{{FOR_INSTAGRAM}}', article.get('for_instagram', ''))
@@ -1535,7 +1535,7 @@ def build_style_pages():
         # og:image defaults to the site-wide generic image so every style
         # page keeps working without a config change; a page that sets
         # og_image (currently just chicano) gets its own social preview.
-        og_image = BASE_URL + page['og_image'] if page.get('og_image') else f'{BASE_URL}/images/og-image.png'
+        og_image = BASE_URL + page['og_image'] if page.get('og_image') else f'{BASE_URL}/images/og-image.jpg'
         og_title = page.get('og_title', page['title'])
         og_description = page.get('og_description', page['meta_desc'])
         og_image_alt = page.get('og_image_alt', og_title)
@@ -1691,7 +1691,7 @@ def build_guide_pages():
             "datePublished": pub,
             "dateModified": modified,
             "mainEntityOfPage": url,
-            "image": f"{BASE_URL}/images/og-image.png",
+            "image": f"{BASE_URL}/images/og-image.jpg",
             "inLanguage": "en",
         }, ensure_ascii=False, indent=2)
         breadcrumb = [('Home', '../index.html', f'{BASE_URL}/'),

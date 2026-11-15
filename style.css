@@ -1,7 +1,7 @@
 
 body {
   background-color: #1a1410;
-  background-image: url('images/bg-pattern.png');
+  background-image: url('images/bg-pattern.webp');
   background-size: 600px 600px;
   background-repeat: repeat;
   background-attachment: scroll;
@@ -3409,7 +3409,7 @@ body::after {
 
 /* ==========================================
    CATEGORY HEADER — PINNED FLASH SHEET
-   Matches aged paper sheets in bg-pattern.png
+   Matches aged paper sheets in bg-pattern.webp
 ========================================== */
 
 .card-header {
@@ -4891,7 +4891,7 @@ footer {
 .battle-card-bg {
   position: absolute;
   inset: 0;
-  background-image: url('images/bg-notebook.png');
+  background-image: url('images/bg-notebook.webp');
   background-size: cover;
   background-position: center;
   filter: brightness(0.22) sepia(0.3);

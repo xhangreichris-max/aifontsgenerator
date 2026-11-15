@@ -106,16 +106,69 @@ EXTRA_SECTIONS = [
     ("horror_demon_fonts",    "horror-demon-fonts",    "Horror and Demon Font Styles", "Horror Fonts"),
     ("creepy_copy_paste",     "creepy-copy-paste",     "Creepy Text Copy and Paste", "Copy & Paste"),
     ("creepy_for_roblox",     "creepy-for-roblox",     "Creepy Text for Roblox", "Roblox"),
+    ("gothic_calligraphy",    "gothic-calligraphy",    "Gothic Calligraphy Generator", "Calligraphy"),
+    ("upside_down_letters",   "upside-down-letters",   "Upside Down Letters A–Z", "Letters A–Z"),
+    ("upside_down_numbers",   "upside-down-numbers",   "Upside Down Numbers and Symbols", "Numbers & Symbols"),
 ]
+
+
+def _section_body_present(body):
+    # A body is either one paragraph (str) or several (list of str).
+    if isinstance(body, list):
+        return any(p and p.strip() for p in body)
+    return bool(body and body.strip())
+
+
+def _flip_table_html(pairs, head):
+    """Two (character, turned) pairs per row, so the table stays narrow on phones."""
+    esc = html_module.escape
+    rows = ''
+    for i in range(0, len(pairs), 2):
+        cells = ''
+        for ch, turned in pairs[i:i + 2]:
+            cells += f'<td>{esc(ch)}</td><td class="flip-out">{esc(turned)}</td>'
+        if len(pairs[i:i + 2]) == 1:
+            cells += '<td></td><td></td>'
+        rows += f'<tr>{cells}</tr>\n'
+    th = ''.join(f'<th>{h}</th>' for h in head)
+    return (f'<div class="flip-table-wrap"><table class="flip-table">\n'
+            f'<thead><tr>{th}</tr></thead>\n<tbody>\n{rows}</tbody>\n</table></div>')
+
+
+def _upside_down_letters_table():
+    # Built from FLIP_UPSIDE_MAP in fonts-core.js, so it always matches the tool.
+    pairs = []
+    for lower in 'abcdefghijklmnopqrstuvwxyz':
+        upper = lower.upper()
+        pairs += [(lower, _FLIP_UPSIDE_MAP.get(lower, lower)), (upper, _FLIP_UPSIDE_MAP.get(upper, upper))]
+    return _flip_table_html(pairs, ['Letter', 'Upside down', 'Capital', 'Upside down'])
+
+
+def _upside_down_numbers_table():
+    digits = [(d, _FLIP_UPSIDE_MAP[d]) for d in '0123456789' if d in _FLIP_UPSIDE_MAP]
+    symbols = [(k, v) for k, v in _FLIP_UPSIDE_MAP.items() if not k.isalnum()]
+    return _flip_table_html(digits + symbols, ['Character', 'Upside down', 'Character', 'Upside down'])
+
+
+# Extra sections that get a generated table after their text.
+EXTRA_SECTION_TABLES = {
+    "upside_down_letters": _upside_down_letters_table,
+    "upside_down_numbers": _upside_down_numbers_table,
+}
 
 
 def generate_extra_sections_html(article):
     html = ""
     for key, anchor, heading, _label in EXTRA_SECTIONS:
         body = article.get(key, "")
-        if not body or not body.strip():
+        if not _section_body_present(body):
             continue
-        html += f'<h2 id="{anchor}">{heading}</h2>\n<p>{body}</p>\n\n'
+        paragraphs = body if isinstance(body, list) else [body]
+        html += f'<h2 id="{anchor}">{heading}</h2>\n'
+        html += ''.join(f'<p>{p}</p>\n' for p in paragraphs if p.strip())
+        if key in EXTRA_SECTION_TABLES:
+            html += EXTRA_SECTION_TABLES[key]() + '\n'
+        html += '\n'
     return html
 
 
@@ -124,11 +177,45 @@ def generate_extra_toc_html(article):
     # — the TOC can never list a section that didn't render, or omit one that did.
     html = ""
     for key, anchor, _heading, label in EXTRA_SECTIONS:
-        body = article.get(key, "")
-        if not body or not body.strip():
+        if not _section_body_present(article.get(key, "")):
             continue
         html += f'  <a href="#{anchor}">{label}</a>\n'
     return html
+
+
+def indefinite_article(name):
+    """'a' or 'an' for a name, by sound: 'an Upside Down…' but 'a Unicode…'."""
+    word = name.strip().lower()
+    if word.startswith(('uni', 'use', 'usu', 'eu', 'one')):
+        return 'a'
+    return 'an' if word[:1] in 'aeiou' else 'a'
+
+
+def generate_tool_schema_html(page):
+    """WebApplication + BreadcrumbList JSON-LD for a tool page (no ratings or reviews)."""
+    url = f"{BASE_URL}/{page['filename']}"
+    app = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": page['h1'],
+        "url": url,
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "publisher": {"@type": "Organization", "name": "Chrismark Studio", "url": f"{BASE_URL}/"},
+    }
+    crumbs = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{BASE_URL}/"},
+            {"@type": "ListItem", "position": 2, "name": page['h1'], "item": url},
+        ],
+    }
+    return '\n'.join(
+        f'  <script type="application/ld+json">\n{json.dumps(block, indent=2, ensure_ascii=False)}\n  </script>'
+        for block in (app, crumbs))
 
 
 def build_pages():
@@ -158,6 +245,8 @@ def build_pages():
         html = template
         html = html.replace('{{TITLE}}', page['title'])
         html = html.replace('{{META_DESC}}', page['meta_desc'])
+        html = html.replace('{{SCHEMA_JSONLD}}', generate_tool_schema_html(page))
+        html = html.replace('{{H1_ARTICLE}}', indefinite_article(page['h1']))
         html = html.replace('{{H1}}', page['h1'])
         html = html.replace('{{HERO_SUB}}', page['hero_sub'])
         html = html.replace('{{DEFAULT_TEXT}}', page['default_text'])

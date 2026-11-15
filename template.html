@@ -23,6 +23,7 @@
   <meta name="twitter:title" content="{{TITLE}}">
   <meta name="twitter:description" content="{{META_DESC}}">
   <meta name="twitter:image" content="https://aifontsgenerator.com/images/og-image.png">
+{{SCHEMA_JSONLD}}
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -136,7 +137,7 @@
       <h1 id="article-h1">{{H1}} — Free Unicode Fonts</h1>
       <p class="article-intro">{{HERO_SUB}}. Type your text above, scroll through the styles, and click to copy. No download needed.</p>
 
-      <h2 id="what-is">What Is a {{H1}}?</h2>
+      <h2 id="what-is">What Is {{H1_ARTICLE}} {{H1}}?</h2>
       <p>{{WHAT_IS}}</p>
 
       <h2 id="how-to-use">How to Use This {{H1}}</h2>
@@ -207,7 +208,7 @@
 <script src="fonts-{{SLUG}}.js" defer></script>
 <link rel="preload" href="fonts-extra.js" as="script">
 <script src="apps.js" defer></script>
-<script src="hamburger.js"></script>
+<script src="hamburger.js" defer></script>
 
 <div class="mobile-bottom-bar" id="mobileBottomBar">
   <div class="mobile-input-wrap">

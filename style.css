@@ -5065,3 +5065,33 @@ footer {
   transition: opacity 0.2s;
 }
 .footer-badge:hover { opacity: 1; }
+
+/* Character tables in tool-page articles (e.g. upside-down letters A–Z) */
+.article-body .flip-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 28px;
+}
+.article-body .flip-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+.article-body .flip-table th,
+.article-body .flip-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  text-align: left;
+  font-size: 16px;
+  color: rgba(245,240,232,0.65);
+}
+.article-body .flip-table th {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.article-body .flip-table td.flip-out {
+  font-size: 20px;
+  color: #f5f0e8;
+}

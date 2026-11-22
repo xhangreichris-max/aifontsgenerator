@@ -871,6 +871,14 @@
         "meta_desc": "Chicano lettering explained: the history of cholo writing, Old English vs cholo script, how the alphabet works, and what to know before a lettering tattoo.",
         "summary": "Where cholo writing came from, how Old English and cholo script differ, and what to sort out before a chicano lettering tattoo.",
         "content_file": "content/guides/chicano-lettering-styles.html"
+      },
+      {
+        "slug": "discord-name-fonts",
+        "title": "Discord Name Fonts: Usernames, Display Names & Nicknames",
+        "h1": "Discord Name Fonts: Usernames, Display Names & Nicknames",
+        "meta_desc": "Which Discord name fonts work in usernames, display names and nicknames, which fancy styles risk boxes, and how to bold, italic and underline on Discord.",
+        "summary": "What each Discord name field allows, which fancy styles are least likely to show as boxes, and Markdown bold vs pasted bold.",
+        "content_file": "content/guides/discord-name-fonts.html"
       }
     ]
   }

@@ -1,0 +1,93 @@
+    <p><strong>Quick answer:</strong> fancy fonts work in your Discord display name and in server nicknames, but not in your username. Discord limits usernames to plain lowercase letters, numbers, underscores and periods. To make a chat message bold, italic or underlined, use Discord's built-in Markdown, like <code>**bold**</code>, instead of pasted Unicode letters.</p>
+    <p>Below you'll find what each name field accepts, which styled alphabets are least likely to turn into boxes, and how to keep your name easy for friends to find.</p>
+
+    <h2>Username vs Display Name vs Server Nickname</h2>
+    <p>Discord gives you three names, and each follows its own rules. This is what Discord's help center and developer docs say about them.</p>
+    <table>
+      <thead><tr><th>Name</th><th>What it's for</th><th>Length</th><th>Fancy fonts?</th></tr></thead>
+      <tbody>
+        <tr><td>Username</td><td>Your unique ID, used for friend requests</td><td>2 to 32 characters</td><td>No. Only a to z, 0 to 9, underscore and period, forced to lowercase, with no two periods in a row</td></tr>
+        <tr><td>Display name</td><td>How you appear across Discord when no nickname is set</td><td>1 to 32 characters</td><td>Yes. Special characters, spaces, emoji and non-Latin letters are allowed</td></tr>
+        <tr><td>Server nickname</td><td>Your name inside one server</td><td>1 to 32 characters</td><td>Yes. Most Unicode characters, though Discord limits some zero-width and non-rendering ones</td></tr>
+      </tbody>
+    </table>
+    <p>A few more rules from the same pages. Every name has to follow Discord's Community Guidelines, so names that impersonate Discord staff or attack people are not allowed. Inside a server, your nickname replaces your display name. Everywhere else, your display name replaces your username. Anyone can still open your profile and see your real username, whatever nickname you choose.</p>
+    <p>Those pages don't explain how styled characters count toward the 32 limit. If Discord refuses a long styled name or trims it, check Discord's current rules.</p>
+
+    <h2>Which Fancy Styles Are Safest for a Display Name</h2>
+    <p>A styled name only works if the reader's device has a font that can draw those characters. When it doesn't, they see empty boxes, and our <a href="fancy-text-boxes.html">guide to the boxes problem</a> covers why that happens.</p>
+    <p>To compare styles, we ran the word Shadow through eight styles from this site and did a glyph coverage check of nine free fonts: Noto Sans, Noto Serif, Noto Sans Mono, Noto Sans Math, Noto Sans Symbols, Noto Sans Symbols 2, DejaVu Sans, DejaVu Serif and DejaVu Sans Mono. For every character, we looked for a matching glyph in each font file. This doesn't tell you which fonts Discord uses, and it covers free font files only, not the system fonts your phone or computer actually ships with. It shows how widely each set of characters is covered in those files.</p>
+    <p>The coverage column means this. <strong>Wide</strong>: every character is in at least one everyday text font from that list (the three Noto Sans, Serif and Mono fonts and the three DejaVu fonts). <strong>Needs a math font</strong>: only Noto Sans Math had every character.</p>
+    <table>
+      <thead><tr><th>Sample</th><th>Style</th><th>Fonts with every character</th><th>Coverage</th></tr></thead>
+      <tbody>
+        <tr><td>𝗦𝗵𝗮𝗱𝗼𝘄</td><td>Bold</td><td>Noto Sans Math only</td><td>Needs a math font</td></tr>
+        <tr><td>𝓢𝓱𝓪𝓭𝓸𝔀</td><td>Cursive Bold</td><td>Noto Sans Math only</td><td>Needs a math font</td></tr>
+        <tr><td>𝔖𝔥𝔞𝔡𝔬𝔴</td><td>Gothic</td><td>Noto Sans Math only</td><td>Needs a math font</td></tr>
+        <tr><td>𝕾𝖍𝖆𝖉𝖔𝖜</td><td>Medieval</td><td>Noto Sans Math only</td><td>Needs a math font</td></tr>
+        <tr><td>𝕊𝕙𝕒𝕕𝕠𝕨</td><td>Double Struck</td><td>Noto Sans Math, DejaVu Sans, DejaVu Serif</td><td>Wide</td></tr>
+        <tr><td>ˢʰᵃᵈᵒʷ</td><td>Tiny</td><td>All six everyday fonts</td><td>Wide</td></tr>
+        <tr><td>ʍopɐɥS</td><td>Upside Down</td><td>All six everyday fonts</td><td>Wide</td></tr>
+        <tr><td>Šh̊̃̌â̂̐d̆ŏ̋́w̎̎̈</td><td>Zalgo Light</td><td>Letters: five everyday fonts. Marks: all six</td><td>Wide</td></tr>
+      </tbody>
+    </table>
+    <p>The pattern is clear. Bold, cursive bold, gothic and medieval letters all come from Unicode's math alphabets, and in this check only the math font had them. Those math alphabets are not new: they have been in Unicode since at least version 3.2, so a missing glyph points to the font, not the standard. Double struck did better because both DejaVu Sans and DejaVu Serif include those letters. The tiny, upside down and Zalgo styles use phonetic letters, modifier letters and accent marks, and every everyday font had those.</p>
+    <p>Wide coverage on this check doesn't automatically make a style a good name. Our upside down style has no flipped capital S, so that letter stays plain. The tiny style wraps the word in small ₊˚ʚ decorations, which use up characters. Zalgo Light turned the six letters of Shadow into 10 to 19 code points across 20 runs, so depending on how Discord counts them, a longer name could reach the 32 limit fast.</p>
+
+    <h2>How to Change Your Display Name and Server Nickname</h2>
+    <p>These steps come from Discord's help center. Menu names may change as the app updates.</p>
+    <p><strong>Display name, on desktop or in a browser:</strong></p>
+    <ol>
+      <li>Open User Settings.</li>
+      <li>Go to My Account, then Profiles.</li>
+      <li>Type your new display name and save.</li>
+    </ol>
+    <p><strong>Server nickname:</strong></p>
+    <ol>
+      <li>In the server, right-click your own name in the member list, or on one of your recent messages.</li>
+      <li>Choose Edit per-server profile.</li>
+      <li>Type the nickname and press Save.</li>
+    </ol>
+    <p>You can also type <code>/nick</code> followed by the new name in a text channel, or set it under User Settings, Profiles, Per-server Profiles. In every case your role needs the Change Nickname permission. If the server has turned that off for your role, ask a moderator to change it.</p>
+    <p>Your username is changed separately, with the Edit button next to Username on the My Account page. It will only accept the plain characters from the table above.</p>
+
+    <h2>How to Bold, Italic and Underline Text on Discord</h2>
+    <p>For messages, you don't need a font generator at all. Discord uses Markdown: you type a few symbols around your words, and the app formats them. These come from Discord's Markdown Text 101 article:</p>
+    <ul>
+      <li>Bold: <code>**text**</code></li>
+      <li>Italic: <code>*text*</code> or <code>_text_</code></li>
+      <li>Bold italic: <code>***text***</code></li>
+      <li>Underline: <code>__text__</code></li>
+      <li>Strikethrough: <code>~~text~~</code></li>
+      <li>Spoiler: <code>||text||</code></li>
+      <li>Headers: <code>#</code>, <code>##</code> or <code>###</code> and a space at the start of a line</li>
+      <li>Subtext: <code>-#</code> and a space at the start of a line</li>
+      <li>Code: one backtick on each side for inline code, three for a code block</li>
+      <li>Block quote: <code>&gt;</code> and a space at the start of a line</li>
+    </ul>
+    <p>You can stack some of them, such as <code>__**underline bold**__</code>. Discord also notes that a code block cancels spoiler formatting.</p>
+    <p><strong>Markdown bold and pasted bold behave differently.</strong> When you send <code>**Shadow**</code>, the letters are still a normal S, h, a, d, o and w, and Discord only changes how they look. Pasted 𝗦𝗵𝗮𝗱𝗼𝘄 is six separate characters from the math alphabets. That matters for search, because someone typing <em>shadow</em> is matching plain letters. It also matters for screen readers, which may spell styled characters out one at a time or skip them. Our guide to <a href="fancy-fonts-screen-readers.html">fancy fonts and screen readers</a> goes through what listeners actually hear.</p>
+    <p>Discord files Markdown under chat formatting, so it's meant for messages. For a bold look in a name field, people usually paste Unicode characters instead, with the trade-offs covered above.</p>
+
+    <h2>Copy and Paste Fonts for Discord</h2>
+    <p>For a styled display name or nickname, these generators give you text you can paste right into the name field:</p>
+    <ul>
+      <li><a href="../bold-text.html">Bold text generator</a> for heavy sans and serif letters.</li>
+      <li><a href="../cursive-text.html">Cursive text generator</a> for script and handwriting styles.</li>
+      <li><a href="../gothic-text.html">Gothic text generator</a> for Fraktur and medieval blackletter.</li>
+      <li><a href="../tiny-text.html">Tiny text generator</a> for small superscript letters.</li>
+    </ul>
+    <p>Before you save a styled name, paste it into a draft message and look at it. If you see boxes on your own screen, people on similar devices probably will too. For messages, Markdown usually looks cleaner and keeps your words searchable.</p>
+
+    <h2>Keep a Plain Name Findable</h2>
+    <p>Discord's help center says people can find you for an @mention by typing either your display name or your username. Your username is always plain lowercase text, so that route always works. Your display name is what people see most, though, and a fully styled one is hard to type.</p>
+    <p>The easy fix is to mix styles. Keep at least one plain word in your display name, like Shadow 𝕊𝕙𝕒𝕕𝕠𝕨 or ✦ Shadow ✦, so friends can type what they see. Save heavier styling for a nickname in one server, where people already know who you are. And when you give out your name, share the username rather than the styled display name.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://support.discord.com/hc/en-us/articles/12620128861463-New-Usernames-Display-Names" rel="noopener">New Usernames &amp; Display Names</a> (Discord Support)</li>
+      <li><a href="https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames" rel="noopener">Server Nicknames</a> (Discord Support)</li>
+      <li><a href="https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline" rel="noopener">Markdown Text 101 (Chat Formatting: Bold, Italic, Underline)</a> (Discord Support)</li>
+      <li><a href="https://docs.discord.com/developers/resources/user#usernames-and-nicknames" rel="noopener">Usernames and Nicknames</a> (Discord Developer Documentation)</li>
+      <li>Fonts used in the glyph coverage check: <a href="https://github.com/google/fonts/tree/main/ofl" rel="noopener">Noto fonts from the Google Fonts repository</a> and <a href="https://github.com/dejavu-fonts/dejavu-fonts" rel="noopener">DejaVu Fonts 2.37</a></li>
+    </ul>

@@ -887,6 +887,14 @@
         "meta_desc": "Copy and paste blank characters for an invisible Discord name or an Instagram bio spacer, and see why some blank spaces get trimmed while others survive.",
         "summary": "Blank characters you can copy for invisible names and bio spacers, and what Unicode says about why some get stripped.",
         "content_file": "content/guides/invisible-names-blank-spaces.html"
+      },
+      {
+        "slug": "instagram-bio-font",
+        "title": "How to Change the Font in Your Instagram Bio",
+        "h1": "How to Change the Font in Your Instagram Bio",
+        "meta_desc": "Change the font in your Instagram bio with copy and paste, pick fonts for Instagram bio text, and see how styled text eats into the 150-character limit.",
+        "summary": "Copy-paste steps for a styled bio on phone and web, where fancy fonts fit, and how much of your 150 characters they use.",
+        "content_file": "content/guides/instagram-bio-font.html"
       }
     ]
   }

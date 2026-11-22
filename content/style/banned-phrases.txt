@@ -1,0 +1,38 @@
+# Banned phrases for /guides/ articles. One per line, case-insensitive.
+# Lines starting with # are comments. Read by check_guide.py.
+stands out
+delve
+tapestry
+testament
+vibrant
+rich history
+in today
+elevate
+unlock
+seamless
+game-changer
+game changer
+navigate
+realm
+robust
+it's worth noting
+dive into
+embark
+showcase
+crucial
+landscape
+furthermore
+moreover
+in conclusion
+whether you're
+look no further
+unleash
+ever-evolving
+plethora
+myriad
+nestled
+boasts
+meticulous
+journey
+level up
+supercharge

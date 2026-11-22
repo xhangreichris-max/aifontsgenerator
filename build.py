@@ -1,5 +1,7 @@
+import functools
 import json
 import os
+import subprocess
 import html as html_module
 from datetime import date
 
@@ -482,9 +484,84 @@ def build_letter_pages():
     print(f"\nDone. {len(letter_pages)} letter pages generated.")
 
 
-def update_sitemap(letter_pages):
-    today = date.today().isoformat()
+# ── Sitemap lastmod from git history ──────────────────────────────────────────
+# Each URL's <lastmod> is the newest git commit date among the sources that
+# produce it: its own entry in a JSON config (traced through that file's
+# history, so editing one page's entry doesn't bump every page), its content
+# fragment, and its template. Static pages use their own file. A source with
+# uncommitted changes counts as today, so local builds preview correctly.
+# CI must check out full history (fetch-depth: 0) for this to work.
 
+def _git(*args):
+    try:
+        r = subprocess.run(['git', *args], capture_output=True, text=True,
+                           encoding='utf-8', check=True)
+        return r.stdout
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
+@functools.lru_cache(maxsize=None)
+def git_file_lastmod(path):
+    """Last commit date (YYYY-MM-DD) touching `path`; today if dirty/untracked."""
+    today = date.today().isoformat()
+    if _git('status', '--porcelain', '--', path):
+        return today
+    out = _git('log', '-1', '--format=%cs', '--', path)
+    return out.strip() if out and out.strip() else today
+
+
+@functools.lru_cache(maxsize=None)
+def _json_history(path):
+    """[(date, parsed JSON or None)] for every commit touching `path`, newest first."""
+    out = _git('log', '--format=%H %cs', '--', path) or ''
+    history = []
+    for line in out.splitlines():
+        sha, day = line.split()
+        blob = _git('show', f'{sha}:{path}')
+        try:
+            data = json.loads(blob) if blob else None
+        except ValueError:
+            data = None
+        history.append((day, data))
+    return history
+
+
+def git_entry_lastmod(path, key_fn):
+    """Date of the commit where key_fn(<JSON in path>) last changed value."""
+    today = date.today().isoformat()
+    with open(path, 'r', encoding='utf-8') as f:
+        current = key_fn(json.load(f))
+    history = _json_history(path)
+    if not history or history[0][1] is None or key_fn(history[0][1]) != current:
+        return today  # uncommitted change (or file not in git yet)
+    changed = history[0][0]
+    for day, data in history[1:]:
+        if data is None or key_fn(data) != current:
+            break
+        changed = day
+    return changed
+
+
+# Older revisions of pages-config.json were a bare list of pages, so the
+# lookups below accept both shapes.
+def _config_page(filename):
+    def key(c):
+        pages = c if isinstance(c, list) else c.get('pages', [])
+        return next((p for p in pages if isinstance(p, dict) and p.get('filename') == filename), None)
+    return key
+
+
+def _config_guides(c):
+    return c.get('guides', {}) if isinstance(c, dict) else {}
+
+
+def _config_guide(slug):
+    return lambda c: next((a for a in _config_guides(c).get('articles', [])
+                           if a.get('slug') == slug), None)
+
+
+def update_sitemap(letter_pages):
     subpage_files = [
         'glitch-text.html', 'bold-text.html', 'cursive-text.html',
         'tiny-text.html', 'zalgo-text.html', 'upside-down-text.html',
@@ -493,11 +570,22 @@ def update_sitemap(letter_pages):
         'aesthetic-text.html', 'vaporwave-text.html', 'runic-text.html',
         'freaky-text.html',
     ]
+    cfg = 'pages-config.json'
 
-    def url_block(loc, priority, changefreq):
+    def newest(*days):
+        return max(days)
+
+    def tool_page_lastmod(filename):
+        slug = filename[:-len('.html')]
+        return newest(git_entry_lastmod(cfg, _config_page(filename)),
+                      git_entry_lastmod('articles.json',
+                                        lambda a: a.get(slug) if isinstance(a, dict) else None),
+                      git_file_lastmod('template.html'))
+
+    def url_block(loc, priority, changefreq, lastmod):
         return (f'  <url>\n'
                 f'    <loc>{loc}</loc>\n'
-                f'    <lastmod>{today}</lastmod>\n'
+                f'    <lastmod>{lastmod}</lastmod>\n'
                 f'    <changefreq>{changefreq}</changefreq>\n'
                 f'    <priority>{priority}</priority>\n'
                 f'  </url>')
@@ -507,29 +595,52 @@ def update_sitemap(letter_pages):
               '']
 
     base = BASE_URL
-    blocks.append(url_block(f'{base}/', '1.0', 'weekly'))
-    blocks.append(url_block(f'{base}/categories.html', '0.9', 'weekly'))
+    blocks.append(url_block(f'{base}/', '1.0', 'weekly', git_file_lastmod('index.html')))
+    blocks.append(url_block(f'{base}/categories.html', '0.9', 'weekly',
+                            git_file_lastmod('categories.html')))
 
     for f in subpage_files:
-        blocks.append(url_block(f'{base}/{f}', '0.8', 'monthly'))
+        blocks.append(url_block(f'{base}/{f}', '0.8', 'monthly', tool_page_lastmod(f)))
 
-    blocks.append(url_block(f'{base}/chicano-font-generator/', '0.8', 'monthly'))
+    chicano_file = 'chicano-font-generator/index.html'
+    chicano_entry = _config_page(chicano_file)
+    with open(cfg, 'r', encoding='utf-8') as fh:
+        chicano_cfg = chicano_entry(json.load(fh)) or {}
+    chicano_sources = [git_entry_lastmod(cfg, chicano_entry), git_file_lastmod('template-style.html')]
+    if chicano_cfg.get('content_file'):
+        chicano_sources.append(git_file_lastmod(chicano_cfg['content_file']))
+    blocks.append(url_block(f'{base}/chicano-font-generator/', '0.8', 'monthly',
+                            newest(*chicano_sources)))
 
     guide_articles = [a for a in load_guides_config().get('articles', [])
                       if os.path.exists(a['content_file'])]
     if guide_articles:
-        blocks.append(url_block(f'{base}/guides/', '0.7', 'monthly'))
+        guide_template = git_file_lastmod('template-guide.html')
+        guide_dates = {a['slug']: newest(git_entry_lastmod(cfg, _config_guide(a['slug'])),
+                                         git_file_lastmod(a['content_file']),
+                                         guide_template)
+                       for a in guide_articles}
+        # The hub lists every guide (title, summary, read time), so it changes
+        # whenever any guide does, as well as when its own hub entry changes.
+        hub_date = newest(git_entry_lastmod(cfg, lambda c: _config_guides(c).get('hub')),
+                          *guide_dates.values())
+        blocks.append(url_block(f'{base}/guides/', '0.7', 'monthly', hub_date))
         for a in guide_articles:
-            blocks.append(url_block(f'{base}/guides/{a["slug"]}.html', '0.7', 'monthly'))
+            blocks.append(url_block(f'{base}/guides/{a["slug"]}.html', '0.7', 'monthly',
+                                    guide_dates[a['slug']]))
 
+    letter_template = git_file_lastmod('template-letter.html')
     for lp in sorted(letter_pages, key=lambda p: p['letter']):
-        blocks.append(url_block(f'{base}/{lp["filename"]}', '0.7', 'monthly'))
+        blocks.append(url_block(f'{base}/{lp["filename"]}', '0.7', 'monthly',
+                                newest(git_entry_lastmod(cfg, _config_page(lp['filename'])),
+                                       letter_template)))
 
-    blocks.append(url_block(f'{base}/about.html', '0.5', 'yearly'))
-    blocks.append(url_block(f'{base}/embed-guide.html', '0.6', 'monthly'))
-    blocks.append(url_block(f'{base}/api-docs.html', '0.5', 'monthly'))
-    blocks.append(url_block(f'{base}/privacy-policy.html', '0.3', 'yearly'))
-    blocks.append(url_block(f'{base}/contact.html', '0.3', 'yearly'))
+    for f, priority, freq in [('about.html', '0.5', 'yearly'),
+                              ('embed-guide.html', '0.6', 'monthly'),
+                              ('api-docs.html', '0.5', 'monthly'),
+                              ('privacy-policy.html', '0.3', 'yearly'),
+                              ('contact.html', '0.3', 'yearly')]:
+        blocks.append(url_block(f'{base}/{f}', priority, freq, git_file_lastmod(f)))
 
     blocks.append('')
     blocks.append('</urlset>')

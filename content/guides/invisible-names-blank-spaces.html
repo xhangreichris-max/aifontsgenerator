@@ -1,0 +1,77 @@
+    <p><strong>Quick answer:</strong> an invisible name or bio spacer is made from a real Unicode character that draws nothing, such as the Hangul Filler (U+3164) or the Braille Pattern Blank (U+2800). Copy one from the table below and paste it where you want the gap. Apps can trim or block some of these characters, so always check how your name or bio looks after you save it.</p>
+
+    <h2>What an Invisible Character Really Is</h2>
+    <p>Every character on your screen is a numbered entry in Unicode, the shared list that phones and computers use for text. A handful of those entries are blanks. They have official names and take up a slot in your text like any letter, but the font draws nothing for them.</p>
+    <p>So a blank name isn't really empty. To an app, a name made of one Hangul Filler is one character long. To your eyes, there's nothing there. Apps can also have separate rules for each kind of blank, and the Unicode data in the next section shows why they behave so differently.</p>
+
+    <h2>Common Blank Characters to Copy</h2>
+    <p>Press Copy next to a character, then paste it. If the button doesn't work in your browser, select the dashed box and copy it by hand. The box looks empty, but the character is inside.</p>
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr><th>Copy</th><th>Official name</th><th>Code</th><th>Unicode type</th><th>Default ignorable</th><th>Width where a font draws it</th></tr></thead>
+      <tbody>
+        <tr><td><code class="blank-box" style="display:inline-block;min-width:1.6em;border:1px dashed #888;padding:0 4px">&#x3164;</code> <button type="button" class="copy-blank" data-cp="3164" hidden>Copy</button></td><td>HANGUL FILLER</td><td>U+3164</td><td>Letter (Lo)</td><td>Yes</td><td>Wide: 0.92 em in Noto Sans KR</td></tr>
+        <tr><td><code class="blank-box" style="display:inline-block;min-width:1.6em;border:1px dashed #888;padding:0 4px">&#x2800;</code> <button type="button" class="copy-blank" data-cp="2800" hidden>Copy</button></td><td>BRAILLE PATTERN BLANK</td><td>U+2800</td><td>Symbol (So)</td><td>No</td><td>About a letter: 0.70 to 0.73 em</td></tr>
+        <tr><td><code class="blank-box" style="display:inline-block;min-width:1.6em;border:1px dashed #888;padding:0 4px">&#x200B;</code> <button type="button" class="copy-blank" data-cp="200B" hidden>Copy</button></td><td>ZERO WIDTH SPACE</td><td>U+200B</td><td>Format (Cf)</td><td>Yes</td><td>Zero</td></tr>
+        <tr><td><code class="blank-box" style="display:inline-block;min-width:1.6em;border:1px dashed #888;padding:0 4px">&#xA0;</code> <button type="button" class="copy-blank" data-cp="00A0" hidden>Copy</button></td><td>NO-BREAK SPACE</td><td>U+00A0</td><td>Space (Zs), white space</td><td>No</td><td>Same as a normal space</td></tr>
+        <tr><td><code class="blank-box" style="display:inline-block;min-width:1.6em;border:1px dashed #888;padding:0 4px">&#x2003;</code> <button type="button" class="copy-blank" data-cp="2003" hidden>Copy</button></td><td>EM SPACE</td><td>U+2003</td><td>Space (Zs), white space</td><td>No</td><td>Wide: 1 em</td></tr>
+        <tr><td><code class="blank-box" style="display:inline-block;min-width:1.6em;border:1px dashed #888;padding:0 4px">&#x115F;</code> <button type="button" class="copy-blank" data-cp="115F" hidden>Copy</button></td><td>HANGUL CHOSEONG FILLER</td><td>U+115F</td><td>Letter (Lo)</td><td>Yes</td><td>Wide: 0.92 em in Noto Sans KR</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <script>
+    (function () {
+      var buttons = document.querySelectorAll('.copy-blank');
+      for (var i = 0; i < buttons.length; i++) {
+        (function (btn) {
+          btn.hidden = false;
+          btn.addEventListener('click', function () {
+            var ch = String.fromCodePoint(parseInt(btn.getAttribute('data-cp'), 16));
+            var done = function (label) {
+              btn.textContent = label;
+              setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(ch).then(function () { done('Copied'); },
+                function () { done('Select the box'); });
+            } else {
+              done('Select the box');
+            }
+          });
+        })(buttons[i]);
+      }
+    })();
+    </script>
+    <p>The names, types and ignorable flags come from Python's unicodedata module and the official Unicode 15.0 data files. The width column comes from a glyph check of free font files (Noto Sans KR, Noto Sans, Noto Sans Symbols 2, Noto Sans Math, DejaVu Sans Mono and DejaVu Sans). It shows how wide each blank is drawn in those files, not how any app shows it. The two Hangul fillers only appeared in Noto Sans KR, and the Braille blank only in Noto Sans Symbols 2 and DejaVu Sans.</p>
+    <p>Those columns explain a lot of odd behavior. Unicode's FAQ says a default ignorable character should be shown as completely invisible, with no width, when software doesn't support it. That's why a Hangul Filler is wide in a Korean font but can shrink to nothing elsewhere. The no-break space and em space count as white space, and Discord's developer docs, for one, say names are trimmed of white space at the start and end. The Braille Pattern Blank is neither, since Unicode files it as a symbol. Most software treats it as a normal character, but a device with no font for it may draw the missing-glyph box instead of a blank, because Unicode only asks for invisible display for white space and default ignorable characters.</p>
+
+    <h2>Instagram Bio Spacers and Line Breaks</h2>
+    <p>Instagram's help center says a bio can be up to 150 characters and that anyone can see it. On a computer, you go to your profile, click Edit profile, type in the box next to Bio, and click Submit. Button names may change.</p>
+    <p>Instagram's help pages don't say how blank characters or line breaks are handled in a bio. Instagram may remove or trim these characters; check how it looks after saving.</p>
+    <p>A few habits make that easier:</p>
+    <ul>
+      <li>Write the bio with ordinary line breaks first, save it, and look at your profile before you add anything special.</li>
+      <li>If an empty line disappears, try one blank character, such as the Braille Pattern Blank, alone on that line as a spacer.</li>
+      <li>Blanks are still characters, so they take up room in your 150.</li>
+      <li>Look at the bio on a second phone or in a browser too. A missing font can turn a spacer into a box, which our guide to <a href="fancy-text-boxes.html">fancy text turning into boxes</a> explains.</li>
+    </ul>
+
+    <h2>Invisible Names on Discord</h2>
+    <p>Discord's developer docs say names can contain most valid Unicode characters, and that it restricts certain zero-width and non-rendering characters. They also say names are trimmed of leading, trailing and excessive internal whitespace. Discord's help center adds that a display name must be at least 1 character long. Our <a href="discord-name-fonts.html">Discord name fonts guide</a> covers the full username, display name and nickname rules.</p>
+    <p>Taken together, those rules mean a fully invisible display name or server nickname may be refused or trimmed, and Discord doesn't publish a list of the blank characters it allows. If Discord rejects a name, or shows something different from what you pasted, it has filtered that character. Your username can't be invisible at all, because it only allows lowercase letters, digits, underscores and periods.</p>
+    <p>Every name must also stay within Discord's Community Guidelines. A blank nickname as a joke among friends is one thing. Using an invisible name to hide your identity in a deceptive way, to pose as someone else, or to get around a ban is not allowed. The guidelines rule out misrepresenting who you are in a deceptive or harmful way, and they rule out evading Discord-level enforcement. Server moderators with the Manage Nickname permission can also change your nickname.</p>
+
+    <h2>Blank Names and Screen Readers</h2>
+    <p>A name that shows nothing can also say nothing. Depending on the screen reader, a blank character might be skipped, treated as a pause, or read out by its official name. None of those tells a listener who is talking.</p>
+    <p>If you like the look of a blank name, keep a plain version close by, in your bio or a pinned message, so people using screen readers can still tell who you are. Our guide on <a href="fancy-fonts-screen-readers.html">what screen readers do with fancy fonts</a> covers styled text more broadly. And if you want a name people can still see and read, the <a href="../">font generator on our homepage</a> has plenty of styles that stay readable.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li>Discord developer docs: <a href="https://docs.discord.com/developers/resources/user#usernames-and-nicknames" rel="noopener">names section of the User resource</a></li>
+      <li>Discord help center: <a href="https://support.discord.com/hc/en-us/articles/219070107-Server-Nicknames" rel="noopener">article on server nicknames</a></li>
+      <li>Discord help center: <a href="https://support.discord.com/hc/en-us/articles/12620128861463-New-Usernames-Display-Names" rel="noopener">article on the new username system</a></li>
+      <li>Discord: <a href="https://discord.com/guidelines" rel="noopener">Community Guidelines</a></li>
+      <li><a href="https://help.instagram.com/728994388226960" rel="noopener">Add a bio to your Instagram profile</a> (Instagram Help Center)</li>
+      <li><a href="https://www.unicode.org/faq/unsup_char.html" rel="noopener">Display of Unsupported Characters</a> (Unicode FAQ)</li>
+      <li><a href="https://www.unicode.org/Public/15.0.0/ucd/DerivedCoreProperties.txt" rel="noopener">DerivedCoreProperties.txt</a> and <a href="https://www.unicode.org/Public/15.0.0/ucd/PropList.txt" rel="noopener">PropList.txt</a> (Unicode Character Database 15.0)</li>
+    </ul>

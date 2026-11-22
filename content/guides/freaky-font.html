@@ -1,0 +1,53 @@
+    <p><strong>Quick answer:</strong> the freaky font is a joke text style, most often the word freaky spelled out in fancy cursive letters like 𝓯𝓻𝓮𝓪𝓴𝔂 or stretched out with spaces like f r e a k y. People drop it into captions, comments and group chats to make an ordinary sentence sound dramatic and silly. You can make it on our <a href="../freaky-text.html">freaky text generator</a>: type a phrase such as feeling freaky today, then copy the style you like.</p>
+
+    <h2>What the Freaky Font Actually Is</h2>
+    <p>Despite the name, the freaky font isn't a font you install. It's ordinary copy and paste text built from two tricks.</p>
+    <p>The first trick is spacing. Putting a gap between every letter makes a word feel slow and over the top, the way someone might stretch out a word when they say it out loud. The second trick is swapping letters for look-alike Unicode characters, mostly the script and bold script letters that Unicode keeps in its math alphabets. Because they are characters rather than a font, they paste into most apps that accept text.</p>
+    <p>As for the meaning, freaky is used as playful slang for acting a bit wild, odd or extra, so the fancy lettering adds to the joke. Think of captions like feeling freaky today or freaky friday plans under a photo of a very ordinary day.</p>
+    <p>The style spread the way most text jokes do, through meme pages and social media posts that other people copied and reused.</p>
+
+    <h2>The Freaky Styles Side by Side</h2>
+    <p>Our freaky text page has 23 styles in its freaky set. Most of them give the same result every time for the same text, so here are eight of those, run through this site's own code. The first column shows the word freaky. The last two columns count the longer phrase Feeling freaky today, which is 20 characters in plain text.</p>
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr><th>freaky</th><th>Style</th><th>What it's made of</th><th>Code points</th><th>UTF-16 units</th></tr></thead>
+      <tbody>
+        <tr><td>f r e a k y</td><td>Freaky Spaced</td><td>Plain letters, normal spaces, em spaces between words</td><td>35</td><td>35</td></tr>
+        <tr><td>fReAkY</td><td>Freaky Mocking</td><td>Plain letters, case flipped</td><td>20</td><td>20</td></tr>
+        <tr><td>F&#x2009;R&#x2009;E&#x2009;A&#x2009;K&#x2009;Y</td><td>Freaky Spaced Caps</td><td>Plain capitals, thin and en spaces</td><td>35</td><td>35</td></tr>
+        <tr><td>f·r·e·a·k·y</td><td>Freaky Dot Split</td><td>Plain letters, middle dots</td><td>35</td><td>35</td></tr>
+        <tr><td>𝒻&#x2009;𝓇&#x2009;ℯ&#x2009;𝒶&#x2009;𝓀&#x2009;𝓎</td><td>Freaky Cursive Spaced</td><td>Math script and letterlike symbols, thin and en spaces</td><td>35</td><td>47</td></tr>
+        <tr><td>𝗳&#x2009;𝗿&#x2009;𝗲&#x2009;𝗮&#x2009;𝗸&#x2009;𝘆</td><td>Freaky Bold Spaced</td><td>Math bold sans, thin and en spaces</td><td>35</td><td>53</td></tr>
+        <tr><td>𝒻𝓇ℯ𝒶𝓀𝓎</td><td>Cursive</td><td>Math script and letterlike symbols</td><td>20</td><td>32</td></tr>
+        <tr><td>𝓯𝓻𝓮𝓪𝓴𝔂</td><td>Bold Script</td><td>Math bold script</td><td>20</td><td>38</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>We checked which Unicode blocks each style draws from with Python's unicodedata module. A few things are worth knowing:</p>
+    <ul>
+      <li>The spaced styles don't only use the normal space key. Several of them use thin spaces (U+2009) between letters and en or em spaces (U+2002, U+2003) between words, so the gaps look even.</li>
+      <li>Spacing out a phrase almost doubles its length: Feeling freaky today goes from 20 characters to 35.</li>
+      <li>Mocking and dot split stay in plain Latin text, apart from the middle dot. They're the least likely to cause trouble anywhere.</li>
+      <li>The math letters each take two UTF-16 units, the pieces that JavaScript and many apps measure text in. That's why bold spaced reaches 53 units for the same 35 characters as plain spaced.</li>
+    </ul>
+
+    <h2>Freaky in Cursive</h2>
+    <p>When people search for freaky in cursive, they usually mean the swirly 𝓯𝓻𝓮𝓪𝓴𝔂 look. This site has two main cursive styles, and they're built differently.</p>
+    <p><strong>Bold Script</strong> gives you 𝓯𝓻𝓮𝓪𝓴𝔂. Every letter comes from Unicode's bold script math alphabet, so the strokes are thick and the whole word matches.</p>
+    <p><strong>Cursive</strong> gives you 𝒻𝓇ℯ𝒶𝓀𝓎. It uses the lighter script alphabet, but that alphabet has a few gaps, so some letters are borrowed from an older block called Letterlike Symbols. In freaky, the e is really ℯ, and in Feeling freaky today the capital F, the g and the o are borrowed too (ℱ, ℊ, ℴ). The borrowed letters take one UTF-16 unit instead of two, which is why Cursive measures 32 units and Bold Script 38 for the same phrase.</p>
+    <p>On most screens the two look like the same family, just at different weights. If a single letter looks slightly off next to its neighbors, it's usually one of the borrowed ones. You'll find Cursive, plus many more script looks, on our <a href="../cursive-text.html">cursive text generator</a>. Bold Script sits with the heavier styles on the <a href="../bold-text.html">bold text generator</a> and on the homepage.</p>
+
+    <h2>Where It Works and Where It Breaks</h2>
+    <p>The freaky style is at its best in places where a little mess doesn't matter: captions, comments, chat messages and story text. If a reader's phone can't draw a character there, the joke still mostly lands. Our <a href="fancy-text-boxes.html">guide on empty boxes in place of letters</a> covers what happens on devices that are missing the right fonts.</p>
+    <p>Name fields are a different story. Many apps limit names to plain characters or trim extra spaces, and the spaced styles rely on special space characters. Discord's developer docs, for example, say extra whitespace gets stripped from names, at the ends and in the middle, and Discord usernames are limited to simple characters: lowercase letters and digits, plus the underscore and the period. Our <a href="discord-name-fonts.html">Discord name fonts guide</a> goes through which name fields accept styled text at all.</p>
+    <p>A simple rule: use the spaced and cursive styles for a line of text, and if you want one in a display name, pick an unspaced style like Bold Script and keep it short.</p>
+
+    <h2>Keep It Readable</h2>
+    <p>Part of the fun is that the text looks a bit much, but it should still be possible to read. A whole paragraph of cursive spaced letters is hard work for anyone, and harder still for people using screen readers, which may read styled or spaced-out letters one at a time. Our guide on <a href="fancy-fonts-screen-readers.html">screen readers and fancy text</a> explains what listeners hear.</p>
+    <p>Keep the freaky style for one word or a short line, like 𝓯𝓻𝓮𝓪𝓴𝔂 friday, and write the rest of your caption in plain letters. Mocking case and dot split are the gentlest options if you want the joke without the fancy characters, since they stick to ordinary letters.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li>Discord developer docs: <a href="https://docs.discord.com/developers/resources/user#usernames-and-nicknames" rel="noopener">rules for usernames and nicknames</a></li>
+      <li>Discord help center: <a href="https://support.discord.com/hc/en-us/articles/12620128861463-New-Usernames-Display-Names" rel="noopener">what new usernames may contain</a></li>
+    </ul>

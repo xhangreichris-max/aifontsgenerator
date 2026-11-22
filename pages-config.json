@@ -863,6 +863,14 @@
         "meta_desc": "A font generator on when not to use fancy text. How screen readers handle styled letters, which styles are hardest to hear, and simple ways to keep your profile accessible.",
         "summary": "What screen reader users can hear when your name is in fancy text, and how to keep your style without leaving anyone out.",
         "content_file": "content/guides/fancy-fonts-screen-readers.html"
+      },
+      {
+        "slug": "chicano-lettering-styles",
+        "title": "Chicano Lettering: Styles, Alphabet and Tattoo Tips",
+        "h1": "Chicano Lettering: Styles, Alphabet and Tattoo Tips",
+        "meta_desc": "Chicano lettering explained: the history of cholo writing, Old English vs cholo script, how the alphabet works, and what to know before a lettering tattoo.",
+        "summary": "Where cholo writing came from, how Old English and cholo script differ, and what to sort out before a chicano lettering tattoo.",
+        "content_file": "content/guides/chicano-lettering-styles.html"
       }
     ]
   }

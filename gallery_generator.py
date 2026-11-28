@@ -20,8 +20,9 @@ FONT_FILES = {
     # chicano-font-generator/fonts/ for the browser-side local font loader,
     # reused here directly (no download needed).
     'Brock Script': 'chicano-font-generator/fonts/BrockScript.ttf',
-    'Crimson Italic': 'chicano-font-generator/fonts/crimson-italic-webfont.ttf',
-    'Dragonwick': 'chicano-font-generator/fonts/dragonwi.ttf',
+    # Official google/fonts build (OFL), self-hosted so the italic face can be
+    # registered as its own family; see chicano-font-generator/fonts/OFL-CrimsonText.txt.
+    'Crimson Text Italic': 'chicano-font-generator/fonts/CrimsonText-Italic.ttf',
 }
 
 GOOGLE_FONTS_CSS_URL = 'https://fonts.googleapis.com/css2?family={family}&display=swap'

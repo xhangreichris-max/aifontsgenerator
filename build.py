@@ -1328,12 +1328,15 @@ def generate_unicode_cluster_html(clusters, sample_text='Your Name'):
 
 
 def generate_style_font_links(style_fonts):
-    """Return a single combined Google Fonts <link> tag for all style_fonts."""
-    if not style_fonts:
+    """Return a single combined Google Fonts <link> tag for the style_fonts that
+    Google Fonts actually serves (source "google"); self-hosted fonts are loaded
+    by style-preview.js from the page's fonts/ folder instead."""
+    google = [f for f in (style_fonts or []) if f.get('source') == 'google']
+    if not google:
         return ''
     families = '&'.join(
         'family=' + f['name'].replace(' ', '+') + ':wght@400'
-        for f in style_fonts
+        for f in google
     )
     href = f'https://fonts.googleapis.com/css2?{families}&display=swap'
     return f'  <link href="{href}" rel="stylesheet">'
@@ -1358,9 +1361,9 @@ def markdown_strip_inline(text):
 # none of these 18 names are substrings of one another.
 FONT_REF_NAMES = sorted([
     'Brock Script', 'Pinyon Script', 'Great Vibes', 'Style Script',
-    'Mrs Saint Delafield', 'Unifraktur', 'Dragonwick', 'Pirata One',
+    'Mrs Saint Delafield', 'Unifraktur', 'New Rocker', 'Pirata One',
     'Grenze Gotisch', 'Medieval Sharp', 'Eagle Lake', 'Cinzel',
-    'Almendra', 'Metamorphous', 'Crimson Italic', 'Sacramento',
+    'Almendra', 'Metamorphous', 'Crimson Text Italic', 'Sacramento',
     'Tangerine', 'Zeyada',
 ], key=len, reverse=True)
 FONT_REF_RE = re.compile('|'.join(re.escape(n) for n in FONT_REF_NAMES))

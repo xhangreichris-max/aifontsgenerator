@@ -791,7 +791,7 @@
       {"name": "Mrs Saint Delafield", "label": "Saint Delafield", "category": "Script", "source": "google", "vibe": "ORNATE SCRIPT"},
 
       {"name": "UnifrakturMaguntia", "label": "Unifraktur", "category": "Blackletter", "source": "google", "vibe": "OLD ENGLISH"},
-      {"name": "Dragonwick", "label": "Dragonwick", "category": "Blackletter", "source": "local", "vibe": "MEDIEVAL"},
+      {"name": "New Rocker", "label": "New Rocker", "category": "Blackletter", "source": "google", "vibe": "ROCKER GOTHIC"},
       {"name": "Pirata One", "label": "Pirata One", "category": "Blackletter", "source": "google", "vibe": "GANGSTER GOTHIC"},
       {"name": "Grenze Gotisch", "label": "Grenze Gotisch", "category": "Blackletter", "source": "google", "vibe": "CLEAN GOTHIC"},
       {"name": "MedievalSharp", "label": "Medieval Sharp", "category": "Blackletter", "source": "google", "vibe": "SHARP GOTHIC"},
@@ -801,7 +801,7 @@
       {"name": "Metamorphous", "label": "Metamorphous", "category": "Ornate", "source": "google", "vibe": "MEDIEVAL DISPLAY"},
       {"name": "Almendra", "label": "Almendra", "category": "Ornate", "source": "google", "vibe": "ORNATE SERIF"},
 
-      {"name": "Crimson Italic", "label": "Crimson Italic", "category": "Fine Line", "source": "local", "vibe": "FINE SERIF"},
+      {"name": "Crimson Text Italic", "label": "Crimson Text Italic", "category": "Fine Line", "source": "local", "vibe": "FINE SERIF"},
       {"name": "Sacramento", "label": "Sacramento", "category": "Fine Line", "source": "google", "vibe": "ULTRA THIN"},
       {"name": "Tangerine", "label": "Tangerine", "category": "Fine Line", "source": "google", "vibe": "ELEGANT THIN"},
       {"name": "Zeyada", "label": "Zeyada", "category": "Fine Line", "source": "google", "vibe": "HANDWRITTEN"}

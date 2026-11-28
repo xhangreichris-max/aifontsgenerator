@@ -141,14 +141,14 @@
   // used by the Google-Fonts cards, e.g. "Script"/"Serif").
   var LOCAL_FONT_BUCKETS = [
     { name: 'Script', pattern: /brock/i },
-    { name: 'Serif', pattern: /crimson/i },
-    { name: 'Medieval', pattern: /dragon/i }
+    { name: 'Serif', pattern: /crimson/i }
   ];
 
+  // CrimsonText-Italic.ttf is the official google/fonts build (OFL), registered
+  // as its own family so the italic face renders without a style descriptor.
   var LOCAL_FONT_NAMES = {
     'BrockScript.ttf': 'Brock Script',
-    'crimson-italic-webfont.ttf': 'Crimson Italic',
-    'dragonwi.ttf': 'Dragonwick'
+    'CrimsonText-Italic.ttf': 'Crimson Text Italic'
   };
 
   /* ── Artist Remix (Unicode substitution + combining marks) ───────────────
@@ -687,13 +687,15 @@
     if (!footer || footer.querySelector('.footer-ofl-badge')) return;
     var badge = document.createElement('div');
     badge.className = 'footer-ofl-badge';
-    badge.textContent = 'OFL — All fonts free for commercial use';
+    // Brock Script isn't OFL (free for commercial use per its designer), so the
+    // note can't say "all fonts are OFL".
+    badge.textContent = 'All fonts free for commercial use: SIL OFL, plus Brock Script by Dieter Steffmann';
     footer.appendChild(badge);
   }
 
   /* Sorts manifest filenames into named buckets by regex, e.g. so
-   * "BrockScript.ttf" becomes a "Script"-category card and "dragonwi.ttf"
-   * becomes a "Medieval"-category card. Unmatched filenames are dropped. */
+   * "BrockScript.ttf" becomes a "Script"-category card and
+   * "CrimsonText-Italic.ttf" a "Serif"-category card. Unmatched filenames are dropped. */
   function buildLocalBuckets(manifestList) {
     var buckets = {};
     manifestList.forEach(function (filename) {

@@ -818,6 +818,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Build font rows dynamically if page has no hardcoded rows
   var cardsRoot = document.getElementById('all-font-cards');
+  // Build-time sample cards (no-JS content from build.py) make way for the full grid.
+  if (cardsRoot) {
+    cardsRoot.querySelectorAll('[data-prerender]').forEach(function (n) { n.remove(); });
+  }
   if (cardsRoot && cardsRoot.querySelectorAll('.font-row').length === 0) {
     var defaultTxt = document.body.dataset.defaultText || 'Stylish Name';
     var allStyles = (window.styles || []);

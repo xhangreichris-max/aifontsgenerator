@@ -85,6 +85,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Exotic & International Styles,Runic Extended" data-default-text="Runic Name">
@@ -119,6 +128,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -141,6 +152,7 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="EXOTIC &amp; INTERNATIONAL STYLES">EXOTIC &amp; INTERNATIONAL STYLES</h2><p>STYLES</p></div><div class="badge">10<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Signature"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𐌌𐌓𐌉𐌃༻ 𐌉꧁𐋅ད</span><span class="style-name-label">Signature</span></div><div class="font-row" data-style-name="Voltage Cage"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">⚡💀 ⧼R̼⧽⧼ṵ⧽⧼n̼⧽⧼ḭ⧽⧼c̼⧽ ⧼N̰⧽⧼a̼⧽⧼m̰⧽⧼e̼⧽ ⚡💀</span><span class="style-name-label">Voltage Cage</span></div><div class="font-row" data-style-name="Ancient Seal"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">⎝⎝✦⎠⎠ 𖦪ꚶꛘꛈꛕ ꛘ𖤬𖢑𖤟 ⎝⎝✦⎠⎠</span><span class="style-name-label">Ancient Seal</span></div><div class="font-row" data-style-name="Radar Lock"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">◈⟨⟨ R͒͛̾u͒͛̾n͒͛̾i͒͛̾c͒͛̾ N͒͛̾a͒͛̾m͒͛̾e͒͛̾ ⟩⟩◈</span><span class="style-name-label">Radar Lock</span></div><div class="font-row" data-style-name="Quill Strike"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">⚔️彡 『R』『u』『n』『i』『c』 『N』『a』『m』『e』 彡⚔️</span><span class="style-name-label">Quill Strike</span></div><div class="font-row" data-style-name="Death March"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">『†』 R⑊u⑊n⑊i⑊c⑊ N⑊a⑊m⑊e 『†』</span><span class="style-name-label">Death March</span></div><div class="font-row" data-style-name="Hellenic Code"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝛄𝛍𝛈𝒊𝛓 𝛈𝛂𝒎𝛆</span><span class="style-name-label">Hellenic Code</span></div><div class="font-row" data-style-name="Rogue Alphabet"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Řüñîç Ňαɱě</span><span class="style-name-label">Rogue Alphabet</span></div><div class="font-row" data-style-name="Double Underline"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">₊˚⊹ R̳u̳n̳i̳c̳ N̳a̳m̳e̳ ⊹˚₊</span><span class="style-name-label">Double Underline</span></div><div class="font-row" data-style-name="IPA Rage"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">༼つಠ益ಠ༽つ ʀʊռɪƈ ռǟɱɛ ༼つಠ益ಠ༽つ</span><span class="style-name-label">IPA Rage</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -232,6 +244,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

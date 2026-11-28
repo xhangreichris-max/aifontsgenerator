@@ -85,6 +85,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Complex / Glitched,Glitch Extended" data-default-text="Free Fire">
@@ -119,6 +128,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -141,6 +152,7 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="COMPLEX / GLITCHED">COMPLEX / GLITCHED</h2><p>STYLES</p></div><div class="badge">12<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Glitch Hop"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">FⱤ𝙀𝙀 F🇮Ɽ𝙀</span><span class="style-name-label">Glitch Hop</span></div><div class="font-row" data-style-name="Bracket Mix"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝙵𝑅𝘌𝘌 𝙵ⓘ𝑅𝘌</span><span class="style-name-label">Bracket Mix</span></div><div class="font-row" data-style-name="Cursed Script"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">F̶R̷𝐄𝐄 F̶iR̷𝐄</span><span class="style-name-label">Cursed Script</span></div><div class="font-row" data-style-name="Digital Decay"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ᠻ⦑R⦒乇乇 ᠻ𝐼⦑R⦒乇</span><span class="style-name-label">Digital Decay</span></div><div class="font-row" data-style-name="Royal Mix"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">£r𝙴𝙴 £ℑr𝙴</span><span class="style-name-label">Royal Mix</span></div><div class="font-row" data-style-name="Elegant Glitch"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">⦑F⦒᥅𝘌𝘌 ⦑F⦒𝕀᥅𝘌</span><span class="style-name-label">Elegant Glitch</span></div><div class="font-row" data-style-name="Wierd"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𐎣Я𝔈𝔈 𐎣ℑЯ𝔈</span><span class="style-name-label">Wierd</span></div><div class="font-row" data-style-name="Decor"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">₣ⱤɆɆ ₣ŁⱤɆ</span><span class="style-name-label">Decor</span></div><div class="font-row" data-style-name="Alien"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ꄞꌅꈼꈼ ꄞꂑꌅꈼ</span><span class="style-name-label">Alien</span></div><div class="font-row" data-style-name="Neon"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ḟԻḙḙ ḟ!Իḙ</span><span class="style-name-label">Neon</span></div><div class="font-row" data-style-name="Cool"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">F̸̢͐R̴͎͝E̵͎̕E̵͎̕ F̸̢͐I̴̯̋R̴͎͝E̵͎̕</span><span class="style-name-label">Cool</span></div><div class="font-row" data-style-name="Kool"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ƑའƐƐ ƑįའƐ</span><span class="style-name-label">Kool</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -235,6 +247,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

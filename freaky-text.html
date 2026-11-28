@@ -85,6 +85,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Creative & Mixed Styles,Freaky Extended" data-default-text="freaky">
@@ -119,6 +128,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -141,6 +152,8 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="CREATIVE &amp; MIXED STYLES">CREATIVE &amp; MIXED STYLES</h2><p>STYLES</p></div><div class="badge">04<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Cyborg Construct"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝚏𝚛ᛖᚨ𝚔𝚢</span><span class="style-name-label">Cyborg Construct</span></div><div class="font-row" data-style-name="Bubble Pop"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ⓕrⓔaⓚy</span><span class="style-name-label">Bubble Pop</span></div><div class="font-row" data-style-name="Vaporwave"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ｆ ｒ ｅ ａ ｋ ｙ</span><span class="style-name-label">Vaporwave</span></div><div class="font-row" data-style-name="Ember Strike"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">🔥 𝓯𝓻𝓮𝓪𝓴𝔂 🔥</span><span class="style-name-label">Ember Strike</span></div></div></div>
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="FREAKY EXTENDED">FREAKY EXTENDED</h2><p>STYLES</p></div><div class="badge">08<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Freaky Spaced"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">f r e a k y</span><span class="style-name-label">Freaky Spaced</span></div><div class="font-row" data-style-name="Freaky Thin Space"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">f r e a k y</span><span class="style-name-label">Freaky Thin Space</span></div><div class="font-row" data-style-name="Freaky Wide Gap"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">f r e a k y</span><span class="style-name-label">Freaky Wide Gap</span></div><div class="font-row" data-style-name="Freaky Dot Split"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">f·r·e·a·k·y</span><span class="style-name-label">Freaky Dot Split</span></div><div class="font-row" data-style-name="Freaky Underscore Link"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">f_r_e_a_k_y</span><span class="style-name-label">Freaky Underscore Link</span></div><div class="font-row" data-style-name="Freaky Arrow Chain"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">f→r→e→a→k→y</span><span class="style-name-label">Freaky Arrow Chain</span></div><div class="font-row" data-style-name="Freaky Pipe Split"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">f|r|e|a|k|y</span><span class="style-name-label">Freaky Pipe Split</span></div><div class="font-row" data-style-name="Freaky Expand"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">f r e a k y</span><span class="style-name-label">Freaky Expand</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -266,6 +279,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

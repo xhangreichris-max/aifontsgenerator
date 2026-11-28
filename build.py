@@ -220,6 +220,55 @@ def generate_tool_schema_html(page):
         for block in (app, crumbs))
 
 
+# ── No-JS sample rows for tool and letter pages ───────────────────────────────
+# #all-font-cards is filled by apps.js in the browser. To give crawlers and
+# no-JS visitors real content, build.py asks tools/prerender_samples.js (Node)
+# to run the site's own style code for each page's default text, keeping only
+# deterministic styles (max 12 rows). The cards are marked data-prerender and
+# apps.js removes them before building the full grid, so the page with JS on is
+# unchanged. If Node isn't available the grid is simply left empty, as before.
+
+PRERENDER_MAX_ROWS = 12
+
+
+def prerender_samples(requests):
+    """{key: [{name, category, sample}]} for each request, or {} if Node fails."""
+    if not requests:
+        return {}
+    try:
+        r = subprocess.run(['node', 'tools/prerender_samples.js'], input=json.dumps(requests),
+                           capture_output=True, text=True, encoding='utf-8', check=True)
+        return json.loads(r.stdout)
+    except (OSError, subprocess.CalledProcessError, ValueError) as e:
+        print(f"WARNING: sample pre-render skipped ({e.__class__.__name__}); grids stay JS-only.")
+        return {}
+
+
+def render_prerender_html(rows):
+    """Cards in the same markup apps.js builds, grouped by category in order."""
+    if not rows:
+        return ''
+    groups = {}
+    for r in rows:
+        groups.setdefault(r['category'], []).append(r)
+    esc = html_module.escape
+    cards = []
+    for cat, items in groups.items():
+        label = esc(cat.upper())
+        row_html = ''.join(
+            f'<div class="font-row" data-style-name="{esc(r["name"])}">'
+            f'<span class="font-row-burn"></span><span class="font-row-num"></span>'
+            f'<span class="font-sample">{esc(r["sample"], quote=False)}</span>'
+            f'<span class="style-name-label">{esc(r["name"])}</span></div>'
+            for r in items)
+        cards.append(
+            f'<div class="font-card" data-card-style="receipt" data-prerender>'
+            f'<div class="card-header"><div><h2 data-text="{label}">{label}</h2><p>STYLES</p></div>'
+            f'<div class="badge">{len(items):02d}<span>FONTS</span></div></div>'
+            f'<div class="font-list">{row_html}</div></div>')
+    return '\n'.join(cards) + '\n'
+
+
 def build_pages():
     all_pages, clusters = load_pages_config()
 
@@ -231,6 +280,12 @@ def build_pages():
 
     with open('articles.json', 'r', encoding='utf-8') as f:
         articles = json.load(f)
+
+    samples = prerender_samples([
+        {'key': p['slug'],
+         'scripts': ['fonts-core.js'] + ([f"fonts-{p['slug']}.js"] if os.path.exists(f"fonts-{p['slug']}.js") else []),
+         'categories': p['categories'], 'text': p['default_text'], 'max': PRERENDER_MAX_ROWS}
+        for p in pages])
 
     for page in pages:
         slug = page['slug']
@@ -254,6 +309,12 @@ def build_pages():
         html = html.replace('{{DEFAULT_TEXT}}', page['default_text'])
         html = html.replace('{{CATEGORIES}}', categories_str)
         html = html.replace('{{FILENAME}}', page['filename'])
+        # Only reference a page-specific style file if one exists; otherwise the
+        # browser requests a missing fonts-<slug>.js and gets a 404.
+        page_script = f'fonts-{slug}.js'
+        html = html.replace('{{PAGE_SCRIPT_TAG}}',
+                            f'<script src="{page_script}" defer></script>\n' if os.path.exists(page_script) else '')
+        html = html.replace('{{PRERENDER_HTML}}', render_prerender_html(samples.get(slug, [])))
         html = html.replace('{{SLUG}}', page['slug'])
         html = html.replace('{{HERO_IMAGE}}', page.get('hero_image', 'images/article-hero.webp'))
         html = html.replace('{{WHAT_IS}}', article.get('what_is', ''))
@@ -444,6 +505,11 @@ def build_letter_pages():
     with open('template-letter.html', 'r', encoding='utf-8') as f:
         template = f.read()
 
+    samples = prerender_samples([
+        {'key': p['filename'], 'scripts': ['fonts-core.js', 'fonts-letter-page.js'],
+         'categories': p['categories'], 'text': p['default_text'], 'max': PRERENDER_MAX_ROWS}
+        for p in letter_pages])
+
     for page in letter_pages:
         letter = page['letter']
         categories_str = ','.join(page['categories'])
@@ -462,6 +528,7 @@ def build_letter_pages():
         output = output.replace('{{H1}}', page['h1'])
         output = output.replace('{{HERO_SUB}}', page['hero_sub'])
         output = output.replace('{{DEFAULT_TEXT}}', page['default_text'])
+        output = output.replace('{{PRERENDER_HTML}}', render_prerender_html(samples.get(page['filename'], [])))
         output = output.replace('{{CATEGORIES}}', categories_str)
         output = output.replace('{{FILENAME}}', page['filename'])
         output = output.replace('{{SLUG}}', page['slug'])

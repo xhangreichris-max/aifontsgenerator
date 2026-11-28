@@ -1861,7 +1861,7 @@ body::after{
 }
 
 .article-card:nth-child(2) h3{ color:var(--orange); }
-.article-card:nth-child(3) h3{ color:var(--blue);   }
+.article-card:nth-child(3) h3{ color:#6b9bff;   } /* lighter --blue: 5.81:1 on #232323 (was #3d7dff, 4.17:1) */
 .article-card:nth-child(4) h3{ color:var(--purple); }
 
 .article-card h3::before{
@@ -4001,6 +4001,8 @@ body::after {
 @media (max-width: 768px) {
   .style-name-label {
     font-size: 7px !important;
+    /* On mobile the label sits on the light row (#f0ece4): 5.04:1 (was #b0a090, 2.15:1) */
+    color: #6e6253 !important;
   }
 }
 
@@ -4590,7 +4592,7 @@ footer {
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.5px;
-  color: rgba(245,240,232,0.45);
+  color: rgba(245,240,232,0.55); /* #8a8781 on #080604 = 5.65:1 (was 0.45 = 4.06:1) */
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -4604,7 +4606,7 @@ footer {
   font-style: italic;
   font-size: 16px;
   line-height: 1.65;
-  color: rgba(245,240,232,0.35);
+  color: #4a4640; /* on the #e8e8e8 quote card = 7.65:1 (was cream at 0.35 = 1.03:1) */
   display: flex;
   align-items: center;
   border-left: 2px solid rgba(215,255,0,0.2);
@@ -5094,4 +5096,11 @@ footer {
 .article-body .flip-table td.flip-out {
   font-size: 20px;
   color: #f5f0e8;
+}
+
+/* Links inside article paragraphs had no rule and fell back to browser blue
+   (#0000ee, 2.07:1 on #0e0c0a). Site accent instead: 16.91:1, underline kept. */
+.article-body p a {
+  color: var(--accent);
+  text-decoration: underline;
 }

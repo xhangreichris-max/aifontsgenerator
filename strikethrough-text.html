@@ -85,6 +85,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Lines,Strikethrough Extended" data-default-text="Crossed Out">
@@ -119,6 +128,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -141,6 +152,7 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="LINES">LINES</h2><p>STYLES</p></div><div class="badge">09<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Strikethrough"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">C̶r̶o̶s̶s̶e̶d̶ O̶u̶t̶</span><span class="style-name-label">Strikethrough</span></div><div class="font-row" data-style-name="Double Strikethrough"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">C̵r̵o̵s̵s̵e̵d̵ O̵u̵t̵</span><span class="style-name-label">Double Strikethrough</span></div><div class="font-row" data-style-name="Underline Bold"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝐂̲𝐫̲𝐨̲𝐬̲𝐬̲𝐞̲𝐝̲ 𝐎̲𝐮̲𝐭̲</span><span class="style-name-label">Underline Bold</span></div><div class="font-row" data-style-name="Overline"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">C̅r̅o̅s̅s̅e̅d̅ O̅u̅t̅</span><span class="style-name-label">Overline</span></div><div class="font-row" data-style-name="Double Overline"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">C̿r̿o̿s̿s̿e̿d̿ O̿u̿t̿</span><span class="style-name-label">Double Overline</span></div><div class="font-row" data-style-name="Tilde Wave"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">C̴r̴o̴s̴s̴e̴d̴ O̴u̴t̴</span><span class="style-name-label">Tilde Wave</span></div><div class="font-row" data-style-name="Slash Through"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">C̷r̷o̷s̷s̷e̷d̷ O̷u̷t̷</span><span class="style-name-label">Slash Through</span></div><div class="font-row" data-style-name="Cross Hatch"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">C̶̅r̶̅o̶̅s̶̅s̶̅e̶̅d̶̅ O̶̅u̶̅t̶̅</span><span class="style-name-label">Cross Hatch</span></div><div class="font-row" data-style-name="Underline Dots"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Ċ̲ṙ̲ȯ̲ṡ̲ṡ̲ė̲ḋ̲ Ȯ̲u̲̇ṫ̲</span><span class="style-name-label">Underline Dots</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -239,6 +251,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

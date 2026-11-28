@@ -85,6 +85,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Beautiful,Flourish Decorated,Aesthetic Extended" data-default-text="Aesthetic">
@@ -119,6 +128,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -141,6 +152,10 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="FLOURISH DECORATED">FLOURISH DECORATED</h2><p>STYLES</p></div><div class="badge">09<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Skull &amp; Stars"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">꧁༒☠💥✨𝘈𝘦𝘴𝘵𝘩𝘦𝘵𝘪𝘤✨💥☠༒꧂</span><span class="style-name-label">Skull &amp; Stars</span></div><div class="font-row" data-style-name="Heart Wings"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">෴❤️෴ 𝒜ℯ𝓈𝓉𝒽ℯ𝓉𝒾𝒸 ෴❤️෴</span><span class="style-name-label">Heart Wings</span></div><div class="font-row" data-style-name="Fire Brackets"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">🔥(✖ คєรՇђєՇเς ✖)🔥</span><span class="style-name-label">Fire Brackets</span></div><div class="font-row" data-style-name="Pastel Hearts"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">(◍•ᴗ•◍) ミ💖 🄰🄴🅂🅃🄷🄴🅃🄸🄲 💖彡</span><span class="style-name-label">Pastel Hearts</span></div><div class="font-row" data-style-name="Heavy Frame"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">╔═══════════╗
+║  Aesthetic  ║
+╚═══════════╝</span><span class="style-name-label">Heavy Frame</span></div><div class="font-row" data-style-name="Sparkle Throw"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ Aesthetic ✧ﾟ･:*ヽ(◕ヮ◕ヽ)</span><span class="style-name-label">Sparkle Throw</span></div><div class="font-row" data-style-name="Symbolic Hearts"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">♥ﮩ٨ـﮩﮩ٨ـﮩﮩ αєѕтнєтι¢ ﮩﮩـ٨ﮩﮩـ٨ﮩ♥</span><span class="style-name-label">Symbolic Hearts</span></div><div class="font-row" data-style-name="Eclectic Mix"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">`•.,¸¸,.•´¯ αⒺ𝓼𝐓卄Ⓔ𝐓𝐈ⓒ ¯`•.,¸¸,.•´</span><span class="style-name-label">Eclectic Mix</span></div><div class="font-row" data-style-name="Ornate Emblem"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">-·=»‡«=·- ⓐᵉ𝓼Ｔ𝐡ᵉＴι匚 -·=»‡«=·-</span><span class="style-name-label">Ornate Emblem</span></div></div></div>
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="BEAUTIFUL">BEAUTIFUL</h2><p>STYLES</p></div><div class="badge">03<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Floral Script"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">❀ 𝒜ℯ𝓈𝓉𝒽ℯ𝓉𝒾𝒸 ❀</span><span class="style-name-label">Floral Script</span></div><div class="font-row" data-style-name="Blossom"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">🌸 Åe̊s̊t̊h̊e̊t̊i̊c̊ 🌸</span><span class="style-name-label">Blossom</span></div><div class="font-row" data-style-name="Butterfly"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">🦋 𝓐𝓮𝓼𝓽𝓱𝓮𝓽𝓲𝓬 🦋</span><span class="style-name-label">Butterfly</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -239,6 +254,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

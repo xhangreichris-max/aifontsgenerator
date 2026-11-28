@@ -85,6 +85,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Creative & Mixed Styles,Vaporwave Extended" data-default-text="Vaporwave">
@@ -119,6 +128,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -141,6 +152,7 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="CREATIVE &amp; MIXED STYLES">CREATIVE &amp; MIXED STYLES</h2><p>STYLES</p></div><div class="badge">04<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Cyborg Construct"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝚅ᚨ𝚙ᛟ𝚛𝚠ᚨ𝚟ᛖ</span><span class="style-name-label">Cyborg Construct</span></div><div class="font-row" data-style-name="Bubble Pop"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Ⓥaⓟoⓡwⓐvⓔ</span><span class="style-name-label">Bubble Pop</span></div><div class="font-row" data-style-name="Vaporwave"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Ｖ ａ ｐ ｏ ｒ ｗ ａ ｖ ｅ</span><span class="style-name-label">Vaporwave</span></div><div class="font-row" data-style-name="Starlit Ice"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">❄︎ 𝓥ａ𝓹ｏ𝓻𝔀ａ𝓿ｅ ❄︎</span><span class="style-name-label">Starlit Ice</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -239,6 +251,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

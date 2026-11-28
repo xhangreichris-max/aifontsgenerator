@@ -85,6 +85,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Flip & Mirror,Flip Extended,Flip Variants" data-default-text="Flip This">
@@ -119,6 +128,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -141,6 +152,8 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="FLIP &amp; MIRROR">FLIP &amp; MIRROR</h2><p>STYLES</p></div><div class="badge">03<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Flip Upside Down"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">sıɥ┴ dılℲ</span><span class="style-name-label">Flip Upside Down</span></div><div class="font-row" data-style-name="Mirror Reverse"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ꟻliq Tʜiƨ</span><span class="style-name-label">Mirror Reverse</span></div><div class="font-row" data-style-name="Reverse Order"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">sihT pilF</span><span class="style-name-label">Reverse Order</span></div></div></div>
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="FLIP VARIANTS">FLIP VARIANTS</h2><p>STYLES</p></div><div class="badge">01<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Turned Letters"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Ⅎlıd ┴ɥıs</span><span class="style-name-label">Turned Letters</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -296,6 +309,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

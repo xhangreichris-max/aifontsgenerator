@@ -121,6 +121,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Classic Styles,Bold,Beautiful,Featured Styles,Letter Extended" data-default-text="U">
@@ -155,6 +164,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -177,6 +188,8 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="FEATURED STYLES">FEATURED STYLES</h2><p>STYLES</p></div><div class="badge">03<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Ancient Glyphs"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ꚶ</span><span class="style-name-label">Ancient Glyphs</span></div><div class="font-row" data-style-name="Hieroglyphic Mix"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ᕰ</span><span class="style-name-label">Hieroglyphic Mix</span></div><div class="font-row" data-style-name="CJK Radicals"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">ひ</span><span class="style-name-label">CJK Radicals</span></div></div></div>
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="CLASSIC STYLES">CLASSIC STYLES</h2><p>STYLES</p></div><div class="badge">09<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Bold"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝗨</span><span class="style-name-label">Bold</span></div><div class="font-row" data-style-name="Italic"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝘜</span><span class="style-name-label">Italic</span></div><div class="font-row" data-style-name="Cursive"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝒰</span><span class="style-name-label">Cursive</span></div><div class="font-row" data-style-name="Double Struck"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝕌</span><span class="style-name-label">Double Struck</span></div><div class="font-row" data-style-name="Fraktur"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝔘</span><span class="style-name-label">Fraktur</span></div><div class="font-row" data-style-name="Medieval"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝖀</span><span class="style-name-label">Medieval</span></div><div class="font-row" data-style-name="Monospace"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝚄</span><span class="style-name-label">Monospace</span></div><div class="font-row" data-style-name="Circled"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Ⓤ</span><span class="style-name-label">Circled</span></div><div class="font-row" data-style-name="Full Width"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Ｕ</span><span class="style-name-label">Full Width</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -295,6 +308,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

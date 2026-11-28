@@ -45,6 +45,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="{{CATEGORIES}}" data-default-text="{{DEFAULT_TEXT}}">
@@ -79,6 +88,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -101,7 +112,7 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
-</section>
+{{PRERENDER_HTML}}</section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
   <div class="article-wrap">
@@ -176,6 +187,8 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="footer-left">
     <h3>AI FONTS GENERATOR</h3>
@@ -205,8 +218,7 @@
 </footer>
 
 <script src="fonts-core.js"></script>
-<script src="fonts-{{SLUG}}.js" defer></script>
-<link rel="preload" href="fonts-extra.js" as="script">
+{{PAGE_SCRIPT_TAG}}<link rel="preload" href="fonts-extra.js" as="script">
 <script src="apps.js" defer></script>
 <script src="hamburger.js" defer></script>
 

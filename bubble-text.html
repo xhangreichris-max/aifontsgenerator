@@ -85,6 +85,15 @@
   </script>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6862640752769527" crossorigin="anonymous"></script>
+  <style>
+    /* Reserve the space apps.js fills in (frame row, card grid) so the swap
+       from the no-JS sample cards to the full grid doesn't shift the page.
+       Values are at or below the rendered heights measured at each width. */
+    #frameRow { min-height: 187px; }
+    #all-font-cards { min-height: 1100px; }
+    @media (max-width: 768px) { #frameRow { min-height: 231px; } }
+    @media (max-width: 375px) { #frameRow { min-height: 460px; } }
+  </style>
 </head>
 
 <body data-categories="Cute,Classic Styles,Bubble Extended" data-default-text="Kawaii Name">
@@ -119,6 +128,8 @@
   <button class="menu-btn">⊕ MENU</button>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="type-card">
     <div class="sticker">
@@ -141,6 +152,8 @@
 </section>
 
 <section class="fonts-grid" id="all-font-cards">
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="CLASSIC STYLES">CLASSIC STYLES</h2><p>STYLES</p></div><div class="badge">09<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Bold"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝗞𝗮𝘄𝗮𝗶𝗶 𝗡𝗮𝗺𝗲</span><span class="style-name-label">Bold</span></div><div class="font-row" data-style-name="Italic"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝘒𝘢𝘸𝘢𝘪𝘪 𝘕𝘢𝘮𝘦</span><span class="style-name-label">Italic</span></div><div class="font-row" data-style-name="Cursive"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝒦𝒶𝓌𝒶𝒾𝒾 𝒩𝒶𝓂ℯ</span><span class="style-name-label">Cursive</span></div><div class="font-row" data-style-name="Double Struck"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝕂𝕒𝕨𝕒𝕚𝕚 ℕ𝕒𝕞𝕖</span><span class="style-name-label">Double Struck</span></div><div class="font-row" data-style-name="Fraktur"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝔎𝔞𝔴𝔞𝔦𝔦 𝔑𝔞𝔪𝔢</span><span class="style-name-label">Fraktur</span></div><div class="font-row" data-style-name="Medieval"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝕶𝖆𝖜𝖆𝖎𝖎 𝕹𝖆𝖒𝖊</span><span class="style-name-label">Medieval</span></div><div class="font-row" data-style-name="Monospace"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">𝙺𝚊𝚠𝚊𝚒𝚒 𝙽𝚊𝚖𝚎</span><span class="style-name-label">Monospace</span></div><div class="font-row" data-style-name="Circled"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Ⓚⓐⓦⓐⓘⓘ Ⓝⓐⓜⓔ</span><span class="style-name-label">Circled</span></div><div class="font-row" data-style-name="Full Width"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">Ｋａｗａｉｉ Ｎａｍｅ</span><span class="style-name-label">Full Width</span></div></div></div>
+<div class="font-card" data-card-style="receipt" data-prerender><div class="card-header"><div><h2 data-text="CUTE">CUTE</h2><p>STYLES</p></div><div class="badge">03<span>FONTS</span></div></div><div class="font-list"><div class="font-row" data-style-name="Sweet Italic"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">🌸 𝘒𝘢𝘸𝘢𝘪𝘪 𝘕𝘢𝘮𝘦 🌸</span><span class="style-name-label">Sweet Italic</span></div><div class="font-row" data-style-name="Fluffy"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">💖 𝒦𝒶𝓌𝒶𝒾𝒾 𝒩𝒶𝓂ℯ 💖</span><span class="style-name-label">Fluffy</span></div><div class="font-row" data-style-name="Bubble Cute"><span class="font-row-burn"></span><span class="font-row-num"></span><span class="font-sample">(◕ᴗ◕✿) Ⓚⓐⓦⓐⓘⓘ Ⓝⓐⓜⓔ ✿</span><span class="style-name-label">Bubble Cute</span></div></div></div>
 </section>
 
 <section class="article-section" style="width:100%;max-width:100%;margin-left:0;margin-right:0;">
@@ -239,6 +252,8 @@
     </article>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-left">

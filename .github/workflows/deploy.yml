@@ -19,21 +19,21 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0   # full history: build.py dates sitemap <lastmod> from git
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
 
@@ -52,7 +52,9 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add *.html chicano-font-generator/ guides/ content/guides/published.json
+          # gallery_generator.py only rewrites a PNG when its inputs change (see
+          # content/gallery-manifest.json), so unchanged images never show up here.
+          git add *.html chicano-font-generator/ guides/ content/guides/published.json content/gallery-manifest.json
           git diff --staged --quiet || git commit -m "Build: auto-generate sub-pages [skip ci]"
           git push
 
@@ -102,11 +104,25 @@ jobs:
 
       # ── Upload artifact for Pages deployment ──────────────────────────────
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
       # ── Deploy to GitHub Pages ────────────────────────────────────────────
+      # Pages deploys occasionally fail on GitHub's side ("No artifacts named
+      # github-pages were found", HTTP 500 creating the deployment). The first
+      # attempt may fail without failing the job; if it does, wait 60s and try
+      # exactly once more. If the retry also fails, the job fails as normal.
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait before retrying deploy
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+
+      - name: Deploy to GitHub Pages (retry)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v5

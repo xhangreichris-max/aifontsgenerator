@@ -5,10 +5,60 @@ keeps CI builds deterministic and offline-safe instead of depending on a
 live Google Fonts / GitHub mirror on every run.
 """
 
+import hashlib
+import json
 import os
 import re
 import urllib.request
 from PIL import Image, ImageDraw, ImageFont
+
+# ── Skip unchanged PNGs ───────────────────────────────────────────────────────
+# Pillow/FreeType/zlib produce slightly different bytes on different machines,
+# so re-rendering an unchanged image still shows up as a modified file and CI
+# would commit it on every deploy. Instead, each PNG's *inputs* are hashed and
+# stored in GALLERY_MANIFEST; a PNG is re-rendered only when that hash changes
+# or the file is missing. Bump GALLERY_RENDER_VERSION whenever the drawing code
+# below changes in a way that should re-render every image.
+GALLERY_MANIFEST = 'content/gallery-manifest.json'
+GALLERY_RENDER_VERSION = 1
+
+
+def _file_sha256(path):
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for chunk in iter(lambda: f.read(65536), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _inputs_hash(name, font_path):
+    """Everything that decides how a gallery PNG looks, except the library
+    versions doing the encoding (those are what differ between machines)."""
+    spec = {
+        'render_version': GALLERY_RENDER_VERSION,
+        'text': name,
+        'font_sha256': _file_sha256(font_path),
+        'canvas': [CANVAS_W, CANVAS_H],
+        'bg': BG_COLOR, 'text_color': TEXT_COLOR,
+        'watermark': [WATERMARK_TEXT, WATERMARK_COLOR, 22],
+        'fit': {'max_w': CANVAS_W - 160, 'max_h': CANVAS_H - 220, 'start': 200, 'min': 36, 'step': 4},
+    }
+    return hashlib.sha256(json.dumps(spec, sort_keys=True).encode('utf-8')).hexdigest()
+
+
+def _load_manifest():
+    try:
+        with open(GALLERY_MANIFEST, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def _save_manifest(manifest):
+    os.makedirs(os.path.dirname(GALLERY_MANIFEST) or '.', exist_ok=True)
+    with open(GALLERY_MANIFEST, 'w', encoding='utf-8') as f:
+        json.dump(manifest, f, indent=2, sort_keys=True)
+        f.write('\n')
 
 FONT_FILES = {
     'UnifrakturMaguntia': 'fonts/UnifrakturMaguntia-Regular.ttf',
@@ -134,6 +184,9 @@ def generate_gallery(page_slug, fonts, names, out_dir, count=20):
     _ensure_font_files(fonts)
     wm_font = _watermark_font()
     generated = []
+    manifest = _load_manifest()
+    manifest_before = dict(manifest)
+    rendered = adopted = skipped = 0
 
     for i in range(count):
         name = names[i % len(names)]
@@ -143,6 +196,21 @@ def generate_gallery(page_slug, fonts, names, out_dir, count=20):
         font_path = FONT_FILES.get(font_name)
         if not font_path or not os.path.exists(font_path):
             continue
+
+        filename = f'{_slugify(name)}-chicano-{_slugify(style_label)}-lettering.png'
+        out_path = os.path.join(out_dir, filename)
+        key = f'{page_slug}/{filename}'
+        want = _inputs_hash(name, font_path)
+        generated.append({'filename': filename, 'name': name, 'style_label': style_label})
+
+        if os.path.exists(out_path):
+            if manifest.get(key) == want:
+                skipped += 1          # inputs unchanged: keep the committed file
+                continue
+            if key not in manifest:
+                manifest[key] = want  # first run with a manifest: adopt the
+                adopted += 1          # existing committed file as current
+                continue
 
         img = Image.new('RGB', (CANVAS_W, CANVAS_H), BG_COLOR)
         draw = ImageDraw.Draw(img)
@@ -158,11 +226,12 @@ def generate_gallery(page_slug, fonts, names, out_dir, count=20):
         wm_w = wm_bbox[2] - wm_bbox[0]
         draw.text((CANVAS_W - wm_w - 28, CANVAS_H - 40), WATERMARK_TEXT, font=wm_font, fill=WATERMARK_COLOR)
 
-        name_slug = _slugify(name)
-        style_slug = _slugify(style_label)
-        filename = f'{name_slug}-chicano-{style_slug}-lettering.png'
-        img.save(os.path.join(out_dir, filename), 'PNG', optimize=True)
+        img.save(out_path, 'PNG', optimize=True)
+        manifest[key] = want
+        rendered += 1
 
-        generated.append({'filename': filename, 'name': name, 'style_label': style_label})
+    if manifest != manifest_before:
+        _save_manifest(manifest)
+    print(f"  Gallery: {rendered} rendered, {skipped} unchanged (skipped), {adopted} adopted into manifest")
 
     return generated
